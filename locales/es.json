@@ -1,0 +1,297 @@
+{
+  "hero": {
+    "title": {
+      "prefix": "Deja de perder clientes",
+      "highlight": "por webs lentas y obsoletas."
+    },
+    "roles": ["Socio Tecnológico", "Estratega Digital", "Ingeniero de Rendimiento", "Experto en Seguridad"],
+    "description": "Construyo productos digitales de alto rendimiento para empresas que no pueden permitirse tiempos de inactividad o mala UX. Obtén resultados de agencia con la agilidad de un socio senior dedicado.",
+    "buttons": {
+      "primary": "Ver Cómo Trabajo",
+      "secondary": "Agenda Tu Estrategia Gratis",
+      "downloadCv": "Descargar Perfil Corporativo"
+    }
+  },
+  "trustedBy": {
+    "title": "Empresas que han confiado en mí"
+  },
+  "nav": {
+    "home": "Inicio",
+    "services": "Servicios",
+    "work": "Portafolio",
+    "blog": "Blog",
+    "about": "Sobre mí",
+    "contact": "Contacto"
+  },
+  "about": {
+    "title": "Por Qué Trabajar Conmigo",
+    "description": "Cuando contratas una agencia, a menudo te vende el socio senior pero te atiende el pasante junior. Al trabajar conmigo, tienes acceso directo a más de 8 años de experiencia senior. Me convierto en tu socio técnico dedicado, invertido en tu éxito.",
+    "experience": "Experiencia",
+    "education": "Educación",
+    "softSkills": "Habilidades Blandas"
+  },
+  "stats": [
+    { "label": "Años de Experiencia" },
+    { "label": "Proyectos Entregados" },
+    { "label": "Satisfacción del Cliente" },
+    { "label": "Tiempos de Carga más Rápidos" }
+  ],
+  "featuredProjects": {
+    "badge": "Trabajos Seleccionados",
+    "titlePrefix": "Proyectos",
+    "titleHighlight": "Destacados",
+    "description": "Una selección de mis trabajos más recientes y significativos, demostrando mi experiencia en la construcción de aplicaciones web escalables.",
+    "viewAll": "Ver Todos los Proyectos"
+  },
+  "cta": {
+    "badge": "Disponible para nuevas oportunidades",
+    "titlePrefix": "Listo para lanzar tu",
+    "titleHighlight": "próxima gran idea?",
+    "description": "Colaboremos para construir una experiencia digital que no solo se vea increíble, sino que también genere resultados reales para tu negocio.",
+    "primaryButton": "Iniciar un Proyecto",
+    "secondaryButton": "Ver Portafolio"
+  },
+  "footer": {
+    "description": "Desarrollador Full Stack creando experiencias digitales hermosas con tecnologías modernas.",
+    "quickLinks": "Enlaces Rápidos",
+    "services": "Servicios",
+    "builtWith": "Construido con Next.js y Tailwind CSS.",
+    "privacy": "Política de Privacidad",
+    "terms": "Términos de Servicio"
+  },
+  "skills": {
+    "title": "Habilidades y Experiencia",
+    "description": "Un conjunto completo de herramientas para construir aplicaciones modernas y escalables",
+    "categories": {
+      "frontend": "Frontend",
+      "cms": "CMS y Plataformas",
+      "performance": "Rendimiento",
+      "tools": "Herramientas y DevOps",
+      "design": "Diseño",
+      "security": "Seguridad"
+    }
+  },
+  "certificationsPage": {
+    "titlePrefix": "Certificaciones y",
+    "titleHighlight": "Educación",
+    "description": "Logros de aprendizaje continuo y desarrollo profesional",
+    "issued": "Emitido:",
+    "id": "ID:"
+  },
+  "privacyPage": {
+    "title": "Política de Privacidad",
+    "description": "Cómo manejo tus datos y privacidad.",
+    "lastUpdated": "Última Actualización:",
+    "sections": {
+      "introduction": {
+        "title": "1. Introducción",
+        "content": "Bienvenido a mi portafolio. Respeto tu privacidad y estoy comprometido a proteger tus datos personales. Esta política de privacidad te informará sobre cómo cuido tus datos personales cuando visitas mi sitio web y te informará sobre tus derechos de privacidad y cómo la ley te protege."
+      },
+      "information": {
+        "title": "2. Información que Recopilo",
+        "content": "Actualmente, este sitio web de portafolio es principalmente informativo. Puedo recopilar datos de las siguientes maneras:",
+        "items": [
+          "Información de Contacto: Si utilizas el formulario de contacto o me envías un correo electrónico directamente, recopilaré tu nombre, dirección de correo electrónico y el contenido de tu mensaje para responder a tu consulta.",
+          "Datos de Uso: Puedo utilizar herramientas de análisis web estándar para comprender cómo los visitantes interactúan con el sitio. Estos datos son anónimos y me ayudan a mejorar la experiencia del usuario."
+        ]
+      },
+      "usage": {
+        "title": "3. Cómo Uso Tu Información",
+        "content": "Solo utilizo tus datos personales cuando la ley me lo permite. Comúnmente, utilizaré tus datos personales en las siguientes circunstancias:",
+        "items": [
+          "Para comunicarme contigo en respuesta a tus consultas.",
+          "Para mejorar la funcionalidad y el contenido del sitio web."
+        ]
+      },
+      "security": {
+        "title": "4. Seguridad de Datos",
+        "content": "He implementado medidas de seguridad adecuadas para evitar que tus datos personales se pierdan accidentalmente, se utilicen o se acceda a ellos de forma no autorizada, se alteren o se divulguen."
+      },
+      "links": {
+        "title": "5. Enlaces de Terceros",
+        "content": "Este sitio web puede incluir enlaces a sitios web de terceros (como GitHub, LinkedIn, etc.), complementos y aplicaciones. Hacer clic en esos enlaces o habilitar esas conexiones puede permitir que terceros recopilen o compartan datos sobre ti. No controlo estos sitios web de terceros y no soy responsable de sus declaraciones de privacidad."
+      },
+      "contact": {
+        "title": "6. Contáctame",
+        "content": "Si tienes alguna pregunta sobre esta política de privacidad o mis prácticas de privacidad, por favor contáctame en:"
+      }
+    }
+  },
+  "termsPage": {
+    "title": "Términos de Servicio",
+    "description": "Reglas y regulaciones para el uso de este sitio web.",
+    "lastUpdated": "Última Actualización:",
+    "sections": {
+      "agreement": {
+        "title": "1. Acuerdo de Términos",
+        "content": "Al acceder a este sitio web, aceptas estar sujeto a estos Términos y Condiciones de Uso del Sitio Web y aceptas que eres responsable del acuerdo con las leyes locales aplicables. Si no estás de acuerdo con alguno de estos términos, tienes prohibido el acceso a este sitio."
+      },
+      "ip": {
+        "title": "2. Derechos de Propiedad Intelectual",
+        "content": "Todo el contenido, características y funcionalidad son propiedad del dueño del sitio y están protegidos por leyes internacionales de derechos de autor, marcas registradas, patentes, secretos comerciales y otras leyes de propiedad intelectual o derechos de propiedad.",
+        "license": "Se te otorga una licencia limitada solo para fines de visualización del material contenido en este sitio web."
+      },
+      "restrictions": {
+        "title": "3. Restricciones",
+        "content": "Estás específicamente restringido de todo lo siguiente:",
+        "items": [
+          "Publicar cualquier material del sitio web en cualquier otro medio sin consentimiento previo.",
+          "Vender, sublicenciar y/o comercializar de otra manera cualquier material del sitio web.",
+          "Usar este sitio web de cualquier manera que sea o pueda ser perjudicial para este sitio web.",
+          "Usar este sitio web de cualquier manera que afecte el acceso de los usuarios a este sitio web.",
+          "Participar en cualquier extracción de datos, recolección de datos, extracción de datos o cualquier otra actividad similar en relación con este sitio web."
+        ]
+      },
+      "disclaimer": {
+        "title": "4. Descargo de Responsabilidad",
+        "content": "Los materiales en este sitio web se proporcionan \"tal cual\". No ofrezco garantías, expresas o implícitas, y por la presente renuncio y niego todas las otras garantías. Además, no garantizo ni hago ninguna representación con respecto a la exactitud, los resultados probables o la confiabilidad del uso de los materiales en su sitio web o de otra manera relacionados con dichos materiales o en cualquier sitio vinculado a este sitio."
+      },
+      "liability": {
+        "title": "5. Limitación de Responsabilidad",
+        "content": "En ningún caso yo o mis proveedores seremos responsables de ningún daño (incluyendo, sin limitación, daños por pérdida de datos o ganancias, o debido a la interrupción del negocio) que surjan del uso o la imposibilidad de usar los materiales en este sitio web."
+      },
+      "governing": {
+        "title": "6. Ley Aplicable",
+        "content": "Cualquier reclamo relacionado con este sitio web se regirá por las leyes de la República Dominicana sin tener en cuenta sus disposiciones sobre conflictos de leyes."
+      }
+    }
+  },
+  "experience": [
+    {
+      "description": "Especializado en seguridad web, mantenimiento, SEO y gestión de sitios en servidores Azure. Enfocado en la optimización del rendimiento y la usabilidad."
+    },
+    {
+      "description": "Colaborando en el mantenimiento y evolución de la plataforma digital principal."
+    },
+    {
+      "description": "Lideré el desarrollo y mantenimiento de sitios web corporativos utilizando WordPress, enfocándome en temas personalizados y rendimiento."
+    },
+    {
+      "description": "Especializado en desarrollo backend desde cero para proyectos de gran escala y alto tráfico, y administración de servidores."
+    }
+  ],
+  "education": [
+    {
+      "description": "Graduado con una base sólida en programación, algoritmos y sistemas de información."
+    }
+  ],
+  "common": {
+    "viewProject": "Ver Proyecto",
+    "getStarted": "Comenzar",
+    "whatsIncluded": "Qué incluye",
+    "viewWork": "Ver Trabajos",
+    "contactMe": "Contáctame",
+    "downloadCV": "Descargar CV",
+    "getInTouch": "Ponerse en Contacto",
+    "whatsappChat": "Chatea en WhatsApp",
+    "whatsappMessage": "¡Hola Alexis! Vi tu portafolio y me gustaría conversar."
+  },
+  "workPage": {
+    "title": "Trabajos Seleccionados",
+    "description": "Una muestra de productos digitales diseñados para rendimiento, escalabilidad y experiencia de usuario.",
+    "filters": {
+      "all": "Todos",
+      "fullstack": "Full Stack",
+      "frontend": "Frontend"
+    },
+    "cta": {
+      "title": "¿Tienes una visión?",
+      "highlight": "Vamos a construirla.",
+      "description": "Desde la arquitectura técnica hasta la implementación perfecta, ayudo a empresas a construir software que importa.",
+      "button": "Iniciar un Proyecto"
+    }
+  },
+  "servicesPage": {
+    "hero": {
+      "title": "Servicios Profesionales",
+      "description": "Soluciones expertas adaptadas a tus necesidades comerciales. Desde el desarrollo rápido de MVP hasta arquitectura de grado empresarial."
+    },
+    "methodology": {
+      "title": "Mi Proceso Probado",
+      "description": "No solo escribo código. Sigo una metodología estructurada que asegura que tu proyecto se entregue a tiempo, dentro del presupuesto y sin errores.",
+      "pillars": {
+        "cleanArch": {
+          "title": "1. Descubrimiento Estratégico",
+          "description": "Definimos tus objetivos comerciales y requerimientos técnicos antes de escribir una sola línea de código. Sin adivinanzas."
+        },
+        "performance": {
+          "title": "2. Desarrollo Ágil",
+          "description": "Sprints quincenales con progreso visible. Nunca estarás a oscuras sobre el estado de tu proyecto."
+        },
+        "security": {
+          "title": "3. Lanzamiento y Escalado",
+          "description": "QA riguroso, auditoría de seguridad y una estrategia de despliegue suave diseñada para el crecimiento."
+        }
+      }
+    },
+    "cta": {
+      "title": "¿Listo para transformar tu visión?",
+      "description": "Hablemos sobre los requisitos de tu proyecto y construyamos una estrategia que funcione para tus necesidades específicas.",
+      "button": "Iniciar Proyecto"
+    }
+  },
+  "contactPage": {
+    "title": "Trabajemos Juntos",
+    "description": "¿Tienes un proyecto en mente o solo quieres saludar? Siempre estoy abierto a discutir nuevas ideas y oportunidades.",
+    "emailMe": "Envíame un Email",
+    "whatsappMe": "WhatsApp",
+    "socialConnect": "O conecta conmigo en redes sociales"
+  },
+  "projects": [
+    {
+      "description": "La empresa #1 en el mundo especializada en brindar respuestas inmediatas a incidentes de ciberseguridad. Líderes en la recuperación y protección de activos digitales."
+    },
+    {
+      "description": "Desarrollo fullstack para una plataforma de liderazgo global con 150k+ usuarios. Mejoré el tráfico orgánico un 40% mediante estrategias SEO y reduje el tiempo de respuesta del servidor en un 25%."
+    },
+    {
+      "description": "Lideré la transformación digital del portal gubernamental de Puerto Rico. Logré un 99.9% de uptime y cumplimiento total WCAG 2.1 AA, asegurando accesibilidad para más de 3 millones de ciudadanos."
+    },
+    {
+      "description": "SaaS de gestión de tareas que redujo el tiempo de onboarding de usuarios un 40%. Cuenta con colaboración en tiempo real vía WebSockets para equipos remotos."
+    },
+    {
+      "description": "E-commerce especializado para peces ornamentales, acuarios y accesorios. Cuenta con catálogo de productos, servicios de importación y suministros acuáticos completos."
+    },
+    {
+      "description": "Profesional certificado con credenciales de IBM y Google. Experto en la construcción de sistemas seguros, gestión de vulnerabilidades y fomento de entornos técnicos eficientes."
+    },
+    {
+      "description": "Plataforma de seguridad vial que procesó 50k+ reportes de incidentes en su primer año. Integración de mapas en tiempo real para reducir tiempos de respuesta de emergencia."
+    },
+    {
+      "description": "Migración corporativa de WordPress a Webflow que aumentó la puntuación de velocidad de 45 a 95. Implementé integraciones API personalizadas para automatizar actualizaciones de contenido."
+    },
+    {
+      "description": "Motor de blog de alto rendimiento construido para dominar en SEO. Implementación de generación automática de esquemas y estructuras de contenido pilar que impulsaron el ranking de keywords."
+    },
+    {
+      "description": "Portal oficial de salud pública para el Gobierno de Puerto Rico. Manejó 1M+ de visitantes mensuales durante picos de demanda con cero tiempo de inactividad."
+    },
+    {
+      "description": "Plataforma moderna de imágenes médicas integrando diagnósticos por IA. Aumentó las reservas de citas un 60% a través de una UX optimizada y diseño mobile-first."
+    }
+  ],
+  "services": [
+    {
+      "title": "Lanzamiento MVP",
+      "description": "De idea a producto listo para el mercado en 4-6 semanas. Me encargo de toda la tecnología para que te enfoques en conseguir usuarios.",
+      "features": ["Prototipado Rápido", "Arquitectura Escalable", "Configuración BD y Auth", "Estrategia de Lanzamiento"]
+    },
+    {
+      "title": "Escalado Corporativo",
+      "description": "Refactorización y optimización de plataformas legacy para alto tráfico. Mejoro velocidad, seguridad y mantenibilidad para necesidades empresariales.",
+      "features": ["Auditoría de Código", "Ajuste de Rendimiento", "Endurecimiento de Seguridad", "Capacitación de Equipos"]
+    },
+    {
+      "title": "Migración a Webflow",
+      "description": "Mueve tu sitio de marketing a Webflow para total libertad de diseño y hosting sin mantenimiento. Perfecto para equipos de marketing.",
+      "features": ["Diseño Pixel-Perfect", "Arquitectura CMS", "Migración SEO", "Entrenamiento del Equipo"]
+    },
+    {
+      "title": "Partnership Técnico",
+      "description": "Un retainer mensual para empresas que necesitan un socio nivel CTO dedicado sin el costo de un salario a tiempo completo.",
+      "features": ["Soporte Prioritario", "Auditorías Mensuales", "Desarrollo de Features", "Consultoría Estratégica"]
+    }
+  ]
+}
