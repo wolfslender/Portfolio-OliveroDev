@@ -33,8 +33,8 @@ Professional developer portfolio built with modern web technologies to showcase 
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/wolfslender/PortoflioPersonal.git
-   cd PortoflioPersonal
+   git clone https://github.com/wolfslender/Portfolio-OliveroDev.git
+   cd Portfolio-OliveroDev
    ```
 
 2. Install dependencies:
