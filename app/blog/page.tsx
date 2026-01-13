@@ -70,7 +70,7 @@ export default async function BlogPage() {
         </div>
 
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 tracking-tight">
-          The OliveroDev <span className="text-gradient">Blog</span>
+          The <span className="text-gradient">OliveroDev</span> Blog
         </h1>
         <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
           Practical tutorials, coding guides, and technical deep dives. I share my experience as a Senior Frontend Engineer building with React, Next.js, WordPress, Webflow, and modern web architecture.
