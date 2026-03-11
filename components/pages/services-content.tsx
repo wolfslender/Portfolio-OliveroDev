@@ -4,16 +4,23 @@ import { Button } from "@/components/ui/button"
 import { useSiteData } from "@/hooks/use-site-data"
 import { ScrollReveal } from "@/components/scroll-reveal"
 import { ProcessSection } from "@/components/sections/process-section"
-import { ArrowRight, CheckCircle2, Projector } from "lucide-react"
+import { ArrowRight, CheckCircle2, ExternalLink, Rocket, ShieldCheck, Users2, Zap } from "lucide-react"
 import Link from "next/link"
 import { Badge } from "@/components/ui/badge"
 import { cn } from "@/lib/utils"
+import ExportedImage from "next-image-export-optimizer"
 
 export default function ServicesContent() {
-  const { services, servicesPage, projects } = useSiteData()
+  const { services, servicesPage, projects, common } = useSiteData()
 
-  // Find a featured project for a "Mini Case Study" feel
-  const getMiniCaseStudy = (serviceTitle: string) => {
+  const getMiniCaseStudy = (service: any) => {
+    const directTitle = typeof service?.caseStudyTitle === "string" ? service.caseStudyTitle : null
+    if (directTitle) {
+      const match = projects.find(p => p.title === directTitle) || projects.find(p => p.title.includes(directTitle))
+      if (match) return match
+    }
+
+    const serviceTitle = typeof service?.title === "string" ? service.title : ""
     const sTitle = serviceTitle.toLowerCase()
 
     if (sTitle.includes("escalado") || sTitle.includes("corporate") || sTitle.includes("web development")) return projects.find(p => p.title.includes("Co-Active"))
@@ -33,14 +40,13 @@ export default function ServicesContent() {
         <div className="max-w-7xl mx-auto text-center space-y-8">
           <ScrollReveal>
             <Badge variant="outline" className="px-4 py-1.5 rounded-full border-primary/20 bg-primary/5 text-primary text-sm font-semibold mb-6">
-              Executive-Grade Engineering
+              {servicesPage.methodology.title}
             </Badge>
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-balance leading-[1.1]">
-              Transforming Visions into <br />
-              <span className="text-gradient">Market-Leading Assets</span>
+              {servicesPage.hero.title}
             </h1>
             <p className="text-muted-foreground text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed text-balance">
-              More than just code. We engineer strategic digital foundations that drive revenue, scale effortlessly, and provide a fortress-like security for your business.
+              {servicesPage.hero.description}
             </p>
           </ScrollReveal>
         </div>
@@ -53,14 +59,11 @@ export default function ServicesContent() {
       <section className="py-24 space-y-32">
         {services.map((service, index) => {
           const isEven = index % 2 === 0
-          const caseStudy = getMiniCaseStudy(service.title)
+          const caseStudy = getMiniCaseStudy(service)
 
           return (
             <div key={index} className="px-4 sm:px-6 lg:px-8 relative">
-              <div className={cn(
-                "max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center",
-                !isEven && "lg:flex-row-reverse"
-              )}>
+              <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 {/* Content Side */}
                 <ScrollReveal delay={isEven ? 0 : 200}>
                   <div className={cn("space-y-8", !isEven && "lg:order-2")}>
@@ -88,7 +91,7 @@ export default function ServicesContent() {
                     <div className="pt-4">
                       <Button asChild size="lg" className="rounded-full h-14 px-8 text-lg font-bold group shadow-xl hover:shadow-primary/20 transition-all">
                         <Link href="/contact">
-                          Discuss Strategic Needs <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                          {common.getStarted} <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                         </Link>
                       </Button>
                     </div>
@@ -98,37 +101,109 @@ export default function ServicesContent() {
                 {/* Visual/Social Proof Side */}
                 <ScrollReveal delay={isEven ? 200 : 0}>
                   <div className={cn(
-                    "relative aspect-square md:aspect-[4/3] rounded-[3rem] overflow-hidden border border-border/50 group shadow-2xl",
+                    "relative aspect-square md:aspect-[4/3] rounded-[3rem] overflow-hidden border border-border/50 group shadow-2xl bg-card/30 backdrop-blur-sm",
                     !isEven && "lg:order-1"
                   )}>
-                    {/* Background visual placeholder */}
-                    <div className={cn("absolute inset-0 opacity-20", service.bgColor)} />
-                    <div className="absolute inset-0 bg-gradient-to-tr from-background via-transparent to-transparent z-10" />
-
-                    {/* Floating Tech Stack */}
-                    <div className="absolute top-8 left-8 flex flex-wrap gap-2 z-20">
-                      {service.technologies?.map(tech => (
-                        <Badge key={tech} variant="secondary" className="backdrop-blur-md bg-background/50 border-white/10 px-3 py-1 font-mono text-xs uppercase tracking-wider">
-                          {tech}
-                        </Badge>
-                      ))}
-                    </div>
-
-                    {/* Integrated Case Study Bubble */}
-                    {caseStudy && (
-                      <div className="absolute bottom-8 right-8 left-8 p-6 bg-card/80 backdrop-blur-xl border border-white/10 rounded-3xl z-20 shadow-2xl translate-y-4 group-hover:translate-y-0 opacity-90 group-hover:opacity-100 transition-all duration-500">
-                        <div className="flex items-center gap-4 mb-3">
-                          <div className="p-2 bg-primary/10 rounded-lg text-primary">
-                            <Projector size={20} />
-                          </div>
-                          <span className="text-xs font-bold uppercase tracking-widest text-primary">Proven Impact</span>
-                        </div>
-                        <h4 className="font-bold mb-1">{caseStudy.title}</h4>
-                        <p className="text-xs text-muted-foreground line-clamp-2 italic">
-                          "{caseStudy.description}"
-                        </p>
-                      </div>
+                    {caseStudy?.image ? (
+                      <>
+                        <ExportedImage
+                          src={caseStudy.image}
+                          alt={caseStudy.title}
+                          fill
+                          sizes="(max-width: 1024px) 100vw, 50vw"
+                          className="object-cover scale-[1.02] opacity-80 transition-transform duration-700 ease-out group-hover:scale-110"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/50 to-transparent z-10" />
+                        <div className={cn("absolute inset-0 opacity-25 mix-blend-overlay z-10", service.bgColor)} />
+                      </>
+                    ) : (
+                      <>
+                        <div className={cn("absolute inset-0 opacity-20", service.bgColor)} />
+                        <div className="absolute inset-0 bg-gradient-to-tr from-background via-transparent to-transparent z-10" />
+                      </>
                     )}
+
+                    <div className="absolute inset-0 z-20 p-8 flex flex-col">
+                      <div className="flex items-start justify-between gap-4">
+                        <div className="rounded-2xl bg-background/75 backdrop-blur-md border border-white/10 px-4 py-3 shadow-xl shadow-black/10">
+                          <h4 className="text-xl md:text-2xl font-black leading-tight text-foreground">
+                            {caseStudy?.title ?? "Recent Work"}
+                          </h4>
+                          <p className="text-sm text-foreground/80 leading-relaxed line-clamp-2 max-w-[46ch]">
+                            {caseStudy?.description ?? ""}
+                          </p>
+                        </div>
+
+                        {caseStudy?.demo && (
+                          <Button
+                            asChild
+                            size="sm"
+                            variant="secondary"
+                            className="rounded-full bg-background/60 backdrop-blur-md border border-white/10 hover:bg-background/80"
+                          >
+                            <Link href={caseStudy.demo} target="_blank" rel="noopener noreferrer" aria-label={`Open ${caseStudy.title} live site`}>
+                              {common.live} <ExternalLink className="ml-2 h-4 w-4" />
+                            </Link>
+                          </Button>
+                        )}
+                      </div>
+
+                      <div className="mt-auto space-y-5">
+                        {caseStudy?.metrics && (
+                          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                            {caseStudy.metrics.users && (
+                              <div className="rounded-2xl bg-background/60 backdrop-blur-md border border-white/10 px-4 py-3">
+                                <div className="flex items-center gap-2 text-primary mb-1">
+                                  <Users2 className="h-4 w-4" />
+                                  <span className="text-[10px] font-bold uppercase tracking-widest">{common.users}</span>
+                                </div>
+                                <div className="text-sm font-extrabold leading-snug">{caseStudy.metrics.users}</div>
+                              </div>
+                            )}
+                            {caseStudy.metrics.performance && (
+                              <div className="rounded-2xl bg-background/60 backdrop-blur-md border border-white/10 px-4 py-3">
+                                <div className="flex items-center gap-2 text-primary mb-1">
+                                  <Zap className="h-4 w-4" />
+                                  <span className="text-[10px] font-bold uppercase tracking-widest">{common.speed}</span>
+                                </div>
+                                <div className="text-sm font-extrabold leading-snug">{caseStudy.metrics.performance}</div>
+                              </div>
+                            )}
+                            {caseStudy.metrics.impact && (
+                              <div className="rounded-2xl bg-background/60 backdrop-blur-md border border-white/10 px-4 py-3">
+                                <div className="flex items-center gap-2 text-primary mb-1">
+                                  <ShieldCheck className="h-4 w-4" />
+                                  <span className="text-[10px] font-bold uppercase tracking-widest">{common.impact}</span>
+                                </div>
+                                <div className="text-sm font-extrabold leading-snug line-clamp-2">{caseStudy.metrics.impact}</div>
+                              </div>
+                            )}
+                          </div>
+                        )}
+
+                        <div className="flex flex-wrap items-center justify-between gap-3">
+                          <div className="flex flex-wrap gap-2">
+                            {service.technologies?.slice(0, 6).map((tech: string) => (
+                              <Badge
+                                key={tech}
+                                variant="secondary"
+                                className="bg-background/55 backdrop-blur-md border-white/10 px-3 py-1 font-mono text-[10px] uppercase tracking-wider"
+                              >
+                                {tech}
+                              </Badge>
+                            ))}
+                          </div>
+
+                          <div className="flex gap-2">
+                            <Button asChild size="sm" className="rounded-full h-10 px-4 font-bold">
+                              <Link href="/work">
+                                {common.seeWork} <Rocket className="ml-2 h-4 w-4" />
+                              </Link>
+                            </Button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </ScrollReveal>
               </div>
@@ -148,11 +223,10 @@ export default function ServicesContent() {
             <div className="relative z-10 space-y-10">
               <ScrollReveal>
                 <h2 className="text-4xl md:text-6xl font-black tracking-tighter leading-none mb-6">
-                  Ready to Build your <br />
-                  <span className="text-blue-400 italic font-serif">Digital Legacy?</span>
+                  {servicesPage.cta.title}
                 </h2>
                 <p className="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-                  We don't just accept projects. We form strategic partnerships with companies ready to dominate their market through superior engineering.
+                  {servicesPage.cta.description}
                 </p>
 
                 <div className="pt-8">
@@ -162,13 +236,10 @@ export default function ServicesContent() {
                     className="bg-white text-slate-950 hover:bg-slate-200 shadow-2xl shadow-white/10 border-0 rounded-full h-16 px-12 text-xl font-black transition-all hover:scale-105 active:scale-95 w-full sm:w-auto"
                   >
                     <Link href="/contact">
-                      Request Strategic Consultation
+                      {servicesPage.cta.button}
                     </Link>
                   </Button>
                 </div>
-                <p className="text-sm text-slate-500 mt-8 font-medium italic">
-                  Currently accepting 2 new high-impact projects for Q1 2026.
-                </p>
               </ScrollReveal>
             </div>
           </div>

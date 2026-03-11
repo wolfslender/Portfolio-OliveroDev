@@ -183,6 +183,12 @@
     "contactMe": "Contáctame",
     "downloadCV": "Descargar CV",
     "getInTouch": "Ponerse en Contacto",
+    "proof": "Prueba",
+    "live": "En vivo",
+    "seeWork": "Ver Trabajos",
+    "users": "Usuarios",
+    "speed": "Velocidad",
+    "impact": "Impacto",
     "whatsappChat": "Chatea en WhatsApp",
     "whatsappMessage": "¡Hola Alexis! Vi tu portafolio y me gustaría conversar."
   },
@@ -203,8 +209,8 @@
   },
   "servicesPage": {
     "hero": {
-      "title": "Servicios Profesionales",
-      "description": "Soluciones expertas adaptadas a tus necesidades comerciales. Desde el desarrollo rápido de MVP hasta arquitectura de grado empresarial."
+      "title": "Construye, Lanza y Escala",
+      "description": "MVPs listos para convertir y sitios de alto rendimiento entregados rápido. Estrategia, desarrollo y soporte de lanzamiento incluidos."
     },
     "methodology": {
       "title": "Mi Proceso Probado",
@@ -225,9 +231,9 @@
       }
     },
     "cta": {
-      "title": "¿Listo para transformar tu visión?",
-      "description": "Hablemos sobre los requisitos de tu proyecto y construyamos una estrategia que funcione para tus necesidades específicas.",
-      "button": "Iniciar Proyecto"
+      "title": "¿Listo para lanzar algo que convierta?",
+      "description": "Cuéntame qué vas a construir. Te respondo con un plan claro, timeline y próximos pasos en menos de 24 horas.",
+      "button": "Agendar Llamada Estratégica"
     }
   },
   "contactPage": {

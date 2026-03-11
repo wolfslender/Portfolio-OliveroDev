@@ -183,6 +183,12 @@
     "contactMe": "Contact Me",
     "downloadCV": "Download CV",
     "getInTouch": "Get In Touch",
+    "proof": "Proof",
+    "live": "Live",
+    "seeWork": "See Work",
+    "users": "Users",
+    "speed": "Speed",
+    "impact": "Impact",
     "whatsappChat": "Chat on WhatsApp",
     "whatsappMessage": "Hi Alexis! I saw your portfolio and would like to chat."
   },
@@ -203,8 +209,8 @@
   },
   "servicesPage": {
     "hero": {
-      "title": "Professional Services",
-      "description": "Expert solutions tailored to your business needs. From rapid MVP development to enterprise-grade architecture, I deliver scalable and secure digital products."
+      "title": "Build, Launch & Scale",
+      "description": "Conversion-ready MVPs and high-performance websites delivered fast. Strategy, development, and launch support included."
     },
     "methodology": {
       "title": "My Proven Process",
@@ -225,9 +231,9 @@
       }
     },
     "cta": {
-      "title": "Ready to transform your vision?",
-      "description": "Let's discuss your project requirements and build a strategy that works for your specific needs. No commitment required.",
-      "button": "Start Project"
+      "title": "Ready to ship something that converts?",
+      "description": "Tell me what you're building. I’ll reply with a clear plan, timeline, and next steps within 24 hours.",
+      "button": "Book a Strategy Call"
     }
   },
   "contactPage": {
