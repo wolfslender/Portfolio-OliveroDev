@@ -3,6 +3,8 @@ import { render, screen } from '@testing-library/react'
 import { cn } from '@/lib/utils'
 import { services } from '@/lib/data'
 import { Footer } from '@/components/sections/footer'
+import i18next from 'i18next'
+import { I18nProvider } from '@/components/i18n-provider'
 
 // Test Suite 1: Utilities
 describe('Utility Functions', () => {
@@ -40,14 +42,19 @@ describe('Data Integrity', () => {
 
 // Test Suite 3: Components
 describe('Footer Component', () => {
-  it('renders Services section correctly', () => {
-    render(<Footer />)
+  it('renders Services section correctly', async () => {
+    await i18next.changeLanguage('en')
+    render(
+      <I18nProvider>
+        <Footer />
+      </I18nProvider>,
+    )
 
     // Check if "Services" header exists
     expect(screen.getAllByText('Services')[0]).toBeDefined()
 
     // Check if the new service is visible in the list
-    expect(screen.getByText('Partnership Técnico')).toBeDefined()
+    expect(screen.getByText('Technical Partnership')).toBeDefined()
 
     // Check if Quick Links exist
     expect(screen.getByText('Quick Links')).toBeDefined()
