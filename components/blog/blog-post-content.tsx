@@ -14,6 +14,7 @@ import { siteConfig } from "@/lib/config"
 import { SocialShareButtons } from "@/components/blog/social-share-buttons"
 import { TableOfContents } from "@/components/blog/table-of-contents"
 import { AuthorBio } from "@/components/blog/author-bio"
+import { Badge } from "@/components/ui/badge"
 
 interface BlogPostContentProps {
   post: any
@@ -25,6 +26,12 @@ export function BlogPostContent({ post, tags }: BlogPostContentProps) {
   const router = useRouter()
   const [searchQuery, setSearchQuery] = useState("")
   const isSpanish = i18n.language.startsWith("es")
+  const keywords: string[] =
+    Array.isArray(post?.keywords) && post.keywords.length > 0
+      ? post.keywords
+      : Array.isArray(post?.categories)
+        ? post.categories
+        : []
 
   const handleSearchSubmit = (query: string) => {
     if (query.trim()) {
@@ -79,6 +86,7 @@ export function BlogPostContent({ post, tags }: BlogPostContentProps) {
             headline: title,
             description: description,
             image: post.mainImage ? urlFor(post.mainImage).url() : undefined,
+            keywords: keywords.length > 0 ? keywords.join(", ") : undefined,
             author: {
               "@type": "Person",
               name: post.authorName,
@@ -102,13 +110,22 @@ export function BlogPostContent({ post, tags }: BlogPostContentProps) {
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
         <article className="lg:col-span-3">
           <div className="mb-8">
-            <div className="flex gap-2 mb-4">
-              {post.categories?.map((category: string) => (
-                <span key={category} className="text-xs font-medium bg-secondary px-2.5 py-0.5 rounded-full text-secondary-foreground">
-                  {category}
-                </span>
-              ))}
-            </div>
+            {keywords.length > 0 && (
+              <div className="mb-5" aria-label={isSpanish ? "Palabras clave" : "Keywords"}>
+                <div className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-2">
+                  {isSpanish ? "Palabras clave" : "Keywords"}
+                </div>
+                <ul className="flex flex-wrap gap-2" role="list">
+                  {keywords.map((keyword: string) => (
+                    <li key={keyword}>
+                      <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/10 font-semibold">
+                        {keyword}
+                      </Badge>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
             
             <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">{title}</h1>
 

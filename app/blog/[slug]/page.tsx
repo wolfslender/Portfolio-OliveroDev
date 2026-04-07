@@ -24,6 +24,7 @@ const postQuery = groq`
     "authorName": author->name,
     "authorImage": author->image,
     "categories": categories[]->title,
+    keywords,
     body,
     body_es
   }
@@ -129,4 +130,3 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
     <BlogPostContent post={post} tags={tags} />
   )
 }
-

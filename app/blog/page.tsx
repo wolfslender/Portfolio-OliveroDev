@@ -12,6 +12,7 @@ const postsQuery = groq`
     publishedAt,
     "authorName": author->name,
     "categories": categories[]->title,
+    keywords,
     mainImage
   }
 `

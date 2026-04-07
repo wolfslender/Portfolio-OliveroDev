@@ -46,6 +46,14 @@ export default {
       of: [{ type: 'reference', to: { type: 'category' } }],
     },
     {
+      name: 'keywords',
+      title: 'Keywords',
+      type: 'array',
+      of: [{ type: 'string' }],
+      options: { layout: 'tags' },
+      validation: (Rule: any) => Rule.max(20),
+    },
+    {
       name: 'publishedAt',
       title: 'Published at',
       type: 'datetime',
