@@ -1,13 +1,11 @@
 "use client"
 
-import { useEffect, useState } from "react"
-import { ArrowDown, Download } from "lucide-react"
+import { ArrowDown, CheckCircle2, Download } from "lucide-react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { useSiteData } from "@/hooks/use-site-data"
 import { SocialLinks } from "@/components/social-links"
 import { Spotlight } from "@/components/ui/spotlight"
-import { cn } from "@/lib/utils"
 
 export function HeroSection() {
   const { hero } = useSiteData()
@@ -53,7 +51,7 @@ export function HeroSection() {
               size="lg"
               className="shimmer w-full sm:w-auto rounded-full text-lg h-12 px-8 bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/25 transition-all hover:scale-105 active:scale-95"
             >
-              <Link href="/work">
+              <Link href="/contact?audit=true">
                 {hero.buttons.primary}
               </Link>
             </Button>
@@ -63,7 +61,7 @@ export function HeroSection() {
               size="lg"
               className="w-full sm:w-auto rounded-full text-lg h-12 px-8 border bg-background/50 backdrop-blur-sm hover:bg-accent/50 text-foreground transition-all hover:scale-105 active:scale-95"
             >
-              <Link href="/contact">
+              <Link href="/work">
                 {hero.buttons.secondary}
               </Link>
             </Button>
@@ -80,6 +78,17 @@ export function HeroSection() {
               </a>
             </Button>
           </div>
+
+          {hero.proof?.length > 0 && (
+            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 max-w-4xl mx-auto">
+              {hero.proof.map((item) => (
+                <div key={item} className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-background/60 px-4 py-2 backdrop-blur-sm">
+                  <CheckCircle2 className="h-4 w-4 text-primary" />
+                  <span className="text-sm font-semibold text-foreground/80">{item}</span>
+                </div>
+              ))}
+            </div>
+          )}
 
           <div className="pt-12 flex justify-center animate-bounce">
             <SocialLinks iconClassName="w-6 h-6 hover:scale-110 transition-transform" />

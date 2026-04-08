@@ -66,13 +66,13 @@ export default function WorkContent() {
             <div className="text-center mb-12 space-y-4">
               <Badge variant="outline" className="px-4 py-1.5 rounded-full border-primary/20 bg-primary/5 text-primary text-sm font-semibold mb-4">
                 <Sparkles className="w-3 h-3 mr-2 inline" />
-                Proven Track Record
+                {workPage.proofBadge}
               </Badge>
               <h3 className="text-3xl md:text-5xl font-bold tracking-tight">
-                More <span className="text-gradient">Success Stories</span>
+                {workPage.gridTitle}
               </h3>
               <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
-                A curated selection of high-impact projects across industries, each delivering measurable business value.
+                {workPage.gridDescription}
               </p>
             </div>
           </ScrollReveal>
@@ -170,14 +170,11 @@ export default function WorkContent() {
                     size="lg"
                     className="bg-white text-slate-950 hover:bg-slate-200 shadow-2xl shadow-white/10 border-0 rounded-full h-16 px-12 text-xl font-black transition-all hover:scale-105 active:scale-95 w-full sm:w-auto"
                   >
-                    <Link href="/contact">
+                    <Link href="/contact?audit=true">
                       {workPage.cta.button} <ArrowRight className="w-6 h-6 ml-2" />
                     </Link>
                   </Button>
                 </div>
-                <p className="text-sm text-slate-500 mt-8 font-medium italic">
-                  Currently accepting 2 new high-impact projects for Q1 2026.
-                </p>
               </ScrollReveal>
             </div>
           </div>

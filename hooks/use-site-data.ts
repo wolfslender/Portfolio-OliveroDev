@@ -24,6 +24,7 @@ export function useSiteData() {
     },
     roles: t('hero.roles', { returnObjects: true, defaultValue: defaultHero.roles }) as string[],
     description: t('hero.description', defaultHero.description),
+    proof: t('hero.proof', { returnObjects: true, defaultValue: defaultHero.proof }) as string[],
     buttons: {
       primary: t('hero.buttons.primary', defaultHero.buttons.primary),
       secondary: t('hero.buttons.secondary', defaultHero.buttons.secondary),
@@ -41,7 +42,11 @@ export function useSiteData() {
       ...service,
       title: servicesData[index]?.title || service.title,
       description: servicesData[index]?.description || service.description,
-      features: servicesData[index]?.features || service.features
+      features: servicesData[index]?.features || service.features,
+      bestFor: servicesData[index]?.bestFor || service.bestFor,
+      timeline: servicesData[index]?.timeline || service.timeline,
+      outcome: servicesData[index]?.outcome || service.outcome,
+      deliverables: servicesData[index]?.deliverables || service.deliverables
     }))
   }, [t])
 
@@ -55,7 +60,7 @@ export function useSiteData() {
 
   const about = useMemo(() => ({
     title: t('about.title', "About Me"),
-    description: t('about.description', "Passionate developer with 8+ years of experience building modern web applications. I love turning complex problems into simple, beautiful solutions."),
+    description: t('about.description', "Passionate developer with 10+ years of experience building modern web applications. I love turning complex problems into simple, beautiful solutions."),
     experienceTitle: t('about.experience', "Experience"),
     educationTitle: t('about.education', "Education"),
     softSkillsTitle: t('about.softSkills', "Soft Skills")
@@ -136,12 +141,22 @@ export function useSiteData() {
     seeWork: t('common.seeWork', "See Work"),
     users: t('common.users', "Users"),
     speed: t('common.speed', "Speed"),
-    impact: t('common.impact', "Impact")
+    impact: t('common.impact', "Impact"),
+    bestFor: t('common.bestFor', "Best For"),
+    timeline: t('common.timeline', "Timeline"),
+    outcome: t('common.outcome', "Outcome"),
+    included: t('common.included', "Included"),
+    bookCall: t('common.bookCall', "Book a Strategy Call"),
+    freeAudit: t('common.freeAudit', "Get Free Website Audit"),
+    viewServices: t('common.viewServices', "View Services")
   }), [t])
 
   const workPage = useMemo(() => ({
     title: t('workPage.title', "Selected Work"),
     description: t('workPage.description', "A showcase of digital products engineered for performance, scalability, and user experience."),
+    proofBadge: t('workPage.proofBadge', "Proof of Execution"),
+    gridTitle: t('workPage.gridTitle', "More Winning Builds"),
+    gridDescription: t('workPage.gridDescription', "Projects built to improve credibility, performance, and conversions across high-stakes industries."),
     filters: {
       all: t('workPage.filters.all', "All Work"),
       fullstack: t('workPage.filters.fullstack', "Full Stack"),

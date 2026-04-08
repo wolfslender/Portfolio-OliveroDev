@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight, Users, Zap, Globe, CheckCircle2 } from "lucide-react"
 import Link from "next/link"
 import ExportedImage from "next-image-export-optimizer"
+import { useSiteData } from "@/hooks/use-site-data"
 
 interface FeaturedCaseStudyProps {
     project: {
@@ -27,6 +28,8 @@ interface FeaturedCaseStudyProps {
 }
 
 export function FeaturedCaseStudy({ project }: FeaturedCaseStudyProps) {
+    const { common } = useSiteData()
+
     return (
         <section className="py-24 px-4 bg-gradient-to-b from-muted/30 to-background relative overflow-hidden">
             {/* Decorative background */}
@@ -148,10 +151,15 @@ export function FeaturedCaseStudy({ project }: FeaturedCaseStudyProps) {
                             )}
 
                             {/* CTA */}
-                            <div className="pt-4">
+                            <div className="pt-4 flex flex-col sm:flex-row gap-4">
                                 <Button asChild size="lg" className="rounded-full h-14 px-8 text-lg font-bold group shadow-xl hover:shadow-primary/20 transition-all">
                                     <Link href={project.demo} target="_blank" rel="noopener noreferrer">
-                                        View Live Project <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                                        {common.viewProject} <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                                    </Link>
+                                </Button>
+                                <Button asChild size="lg" variant="outline" className="rounded-full h-14 px-8 text-lg font-bold group">
+                                    <Link href="/contact?audit=true">
+                                        {common.freeAudit}
                                     </Link>
                                 </Button>
                             </div>

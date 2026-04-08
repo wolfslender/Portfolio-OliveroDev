@@ -25,7 +25,7 @@ export default function ServicesContent() {
 
     if (sTitle.includes("escalado") || sTitle.includes("corporate") || sTitle.includes("web development")) return projects.find(p => p.title.includes("Co-Active"))
     if (sTitle.includes("mvp") || sTitle.includes("lanzamiento")) return projects.find(p => p.title.includes("Cybernetips"))
-    if (sTitle.includes("webflow") || sTitle.includes("migración")) return projects.find(p => p.title.includes("CST"))
+    if (sTitle.includes("webflow") || sTitle.includes("migración")) return projects.find(p => p.title.includes("Truenorth"))
     if (sTitle.includes("partnership") || sTitle.includes("socio")) return projects.find(p => p.title.includes("GovValue"))
     if (sTitle.includes("security") || sTitle.includes("seguridad") || sTitle.includes("cloud")) return projects.find(p => p.title.includes("Departamento de Educación"))
 
@@ -88,10 +88,49 @@ export default function ServicesContent() {
                       ))}
                     </div>
 
-                    <div className="pt-4">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                      <div className="rounded-2xl border border-border/60 bg-card/40 p-4 backdrop-blur-sm">
+                        <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-primary mb-2">{common.bestFor}</p>
+                        <p className="text-sm leading-relaxed text-foreground/80">{service.bestFor}</p>
+                      </div>
+                      <div className="rounded-2xl border border-border/60 bg-card/40 p-4 backdrop-blur-sm">
+                        <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-primary mb-2">{common.timeline}</p>
+                        <p className="text-sm leading-relaxed text-foreground/80">{service.timeline}</p>
+                      </div>
+                      <div className="rounded-2xl border border-border/60 bg-card/40 p-4 backdrop-blur-sm">
+                        <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-primary mb-2">{common.outcome}</p>
+                        <p className="text-sm leading-relaxed text-foreground/80">{service.outcome}</p>
+                      </div>
+                    </div>
+
+                    {service.deliverables?.length > 0 && (
+                      <div className="space-y-3">
+                        <p className="text-sm font-bold uppercase tracking-[0.25em] text-muted-foreground">
+                          {common.included}
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                          {service.deliverables.map((item: string) => (
+                            <Badge
+                              key={item}
+                              variant="secondary"
+                              className="rounded-full bg-primary/10 text-primary border-primary/10 px-4 py-2 text-xs font-semibold"
+                            >
+                              {item}
+                            </Badge>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    <div className="pt-2 flex flex-col sm:flex-row gap-4">
                       <Button asChild size="lg" className="rounded-full h-14 px-8 text-lg font-bold group shadow-xl hover:shadow-primary/20 transition-all">
-                        <Link href="/contact">
+                        <Link href="/contact?audit=true">
                           {common.getStarted} <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                        </Link>
+                      </Button>
+                      <Button asChild size="lg" variant="outline" className="rounded-full h-14 px-8 text-lg font-bold group">
+                        <Link href="/contact">
+                          {common.bookCall}
                         </Link>
                       </Button>
                     </div>
@@ -198,6 +237,11 @@ export default function ServicesContent() {
                             <Button asChild size="sm" className="rounded-full h-10 px-4 font-bold">
                               <Link href="/work">
                                 {common.seeWork} <Rocket className="ml-2 h-4 w-4" />
+                              </Link>
+                            </Button>
+                            <Button asChild size="sm" variant="secondary" className="rounded-full h-10 px-4 font-bold bg-background/60 backdrop-blur-md border border-white/10">
+                              <Link href="/contact?audit=true">
+                                {common.freeAudit}
                               </Link>
                             </Button>
                           </div>

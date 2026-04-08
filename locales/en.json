@@ -1,15 +1,16 @@
 {
   "hero": {
     "title": {
-      "prefix": "Stop losing customers",
-      "highlight": "to slow, outdated websites."
+      "prefix": "Websites built to",
+      "highlight": "win trust, leads, and growth."
     },
-    "roles": ["Tech Partner", "Digital Strategist", "Performance Engineer", "Security Expert"],
-    "description": "I build high-performance digital products for businesses that can't afford downtime or bad UX. Get agency-level results with the agility of a dedicated senior partner.",
+    "roles": ["Conversion-Focused UX", "SEO + Performance", "Webflow / WordPress / Next.js", "Direct Senior Execution"],
+    "description": "I help businesses launch and improve high-performance websites that look premium, load fast, and turn more visitors into real inquiries.",
+    "proof": ["Reply within 24h", "Built for SEO + speed", "Launch support included"],
     "buttons": {
-      "primary": "See How I Work",
-      "secondary": "Book Free Strategy Call",
-      "downloadCv": "Download Corporate Profile"
+      "primary": "Get Free Website Audit",
+      "secondary": "View Results",
+      "downloadCv": "Download Capabilities Deck"
     }
   },
   "trustedBy": {
@@ -25,7 +26,7 @@
   },
   "about": {
     "title": "Why Work With Me",
-    "description": "When you hire an agency, you often get sold by the senior partner but serviced by the junior intern. When you work with me, you get direct access to 8+ years of senior expertise. I become your dedicated technical partner, invested in your success.",
+    "description": "When you hire an agency, you often get sold by the senior partner but serviced by the junior intern. When you work with me, you get direct access to 10+ years of senior expertise. I become your dedicated technical partner, invested in your success.",
     "experience": "Experience",
     "education": "Education",
     "softSkills": "Soft Skills"
@@ -38,18 +39,18 @@
   ],
   "featuredProjects": {
     "badge": "Selected Work",
-    "titlePrefix": "Featured",
-    "titleHighlight": "Projects",
-    "description": "A selection of my most recent and significant work, showcasing my expertise in building scalable web applications.",
-    "viewAll": "View All Projects"
+    "titlePrefix": "Results",
+    "titleHighlight": "You Can Verify",
+    "description": "Selected launches, rebuilds, and migrations that improved speed, credibility, and conversion readiness.",
+    "viewAll": "View All Case Studies"
   },
   "cta": {
-    "badge": "Available for new opportunities",
-    "titlePrefix": "Ready to launch your",
-    "titleHighlight": "next big idea?",
-    "description": "Let's collaborate to build a digital experience that not only looks amazing but also drives real results for your business.",
-    "primaryButton": "Start a Project",
-    "secondaryButton": "View Portfolio"
+    "badge": "Need more leads from your website?",
+    "titlePrefix": "Ready to turn your site into a",
+    "titleHighlight": "sales asset?",
+    "description": "Book a strategy call or request a free video audit. I’ll show you what’s hurting conversions and how to fix it.",
+    "primaryButton": "Book a Strategy Call",
+    "secondaryButton": "Get Free Video Audit"
   },
   "footer": {
     "description": "Full Stack Developer crafting beautiful digital experiences with modern technologies.",
@@ -189,22 +190,32 @@
     "users": "Users",
     "speed": "Speed",
     "impact": "Impact",
+    "bestFor": "Best For",
+    "timeline": "Timeline",
+    "outcome": "Outcome",
+    "included": "Included",
+    "bookCall": "Book a Strategy Call",
+    "freeAudit": "Get Free Website Audit",
+    "viewServices": "View Services",
     "whatsappChat": "Chat on WhatsApp",
     "whatsappMessage": "Hi Alexis! I saw your portfolio and would like to chat."
   },
   "workPage": {
-    "title": "Selected Work",
-    "description": "A showcase of digital products engineered for performance, scalability, and user experience.",
+    "title": "Results That Build Trust",
+    "description": "Real websites shipped for speed, clarity, and conversion across government, enterprise, and growth-stage teams.",
+    "proofBadge": "Proof of Execution",
+    "gridTitle": "More Winning Builds",
+    "gridDescription": "Projects designed to improve credibility, performance, and the way users move toward action.",
     "filters": {
       "all": "All Work",
       "fullstack": "Full Stack",
       "frontend": "Frontend"
     },
     "cta": {
-      "title": "Have a vision?",
-      "highlight": "Let's engineer it.",
-      "description": "From technical architecture to pixel-perfect implementation, I help companies build software that matters.",
-      "button": "Start a Project"
+      "title": "Want similar results?",
+      "highlight": "Let's map your next build.",
+      "description": "If you need a site that looks premium and performs under pressure, I can help you plan, design, and launch it.",
+      "button": "Request a Website Audit"
     }
   },
   "servicesPage": {
@@ -281,23 +292,48 @@
   "services": [
     {
       "title": "MVP Launchpad",
-      "description": "Go from idea to market-ready product in 4-6 weeks. I handle the full tech stack so you can focus on user acquisition.",
-      "features": ["Rapid Prototyping", "Scalable Architecture", "Auth & Database Setup", "Launch Strategy"]
+      "description": "Launch a conversion-ready website or MVP fast, with the strategy, UX, and technical setup needed to start generating traction.",
+      "features": ["Rapid Prototyping", "Conversion-Focused UX", "CMS or App Build", "Launch Strategy"],
+      "bestFor": "Founders and growing businesses that need to validate or relaunch quickly.",
+      "timeline": "4-6 weeks",
+      "outcome": "A fast, premium website or MVP built to win trust, capture leads, and support growth.",
+      "deliverables": ["Strategy Sprint", "UX/UI Direction", "CMS or Product Build", "Launch Support"]
     },
     {
       "title": "Corporate Scaling",
-      "description": "Refactoring and optimizing legacy platforms for high traffic. I improve speed, security, and maintainability for enterprise needs.",
-      "features": ["Code Audit", "Performance Tuning", "Security Hardening", "Team Training"]
+      "description": "Refactor and upgrade high-traffic or outdated websites so they load faster, convert better, and are easier for your team to manage.",
+      "features": ["Code Audit", "Performance Tuning", "Security Hardening", "Team Training"],
+      "bestFor": "Established companies with legacy platforms, performance bottlenecks, or conversion leaks.",
+      "timeline": "3-8 weeks",
+      "outcome": "A more stable, maintainable platform that supports marketing, SEO, and long-term scale.",
+      "deliverables": ["Technical Audit", "Priority Fix Roadmap", "Refactor & Optimization", "Documentation"]
     },
     {
       "title": "Webflow Migration",
-      "description": "Move your marketing site to Webflow for total design freedom and zero-maintenance hosting. Perfect for marketing teams.",
-      "features": ["Pixel-Perfect Design", "CMS Architecture", "SEO Migration", "Team Training"]
+      "description": "Move from WordPress or a brittle marketing stack to Webflow with a cleaner CMS, stronger design control, and easier day-to-day updates.",
+      "features": ["Pixel-Perfect Rebuild", "CMS Architecture", "SEO Migration", "Team Training"],
+      "bestFor": "Marketing teams that want speed, autonomy, and less dependency on developers for updates.",
+      "timeline": "2-5 weeks",
+      "outcome": "A polished marketing site your team can actually update without breaking SEO or design consistency.",
+      "deliverables": ["Content Mapping", "Webflow Build", "SEO Safeguards", "Editor Training"]
     },
     {
       "title": "Technical Partnership",
-      "description": "A monthly retainer for businesses that need a dedicated CTO-level partner without the full-time salary overhead.",
-      "features": ["Priority Support", "Monthly Audits", "Feature Development", "Strategic Consulting"]
+      "description": "Get a senior technical partner on retainer to improve your website, ship new features, and keep your digital presence moving forward.",
+      "features": ["Priority Support", "Monthly Audits", "Feature Development", "Strategic Consulting"],
+      "bestFor": "Teams that need senior execution every month without hiring a full in-house lead.",
+      "timeline": "Monthly retainer",
+      "outcome": "A dependable partner that helps your team ship faster, reduce risk, and stay technically aligned.",
+      "deliverables": ["Priority Queue", "Monthly Roadmap", "Feature Delivery", "Strategic Guidance"]
+    },
+    {
+      "title": "Cloud & Web Security",
+      "description": "Harden infrastructure, improve deployments, and reduce risk for websites that cannot afford weak security or downtime.",
+      "features": ["Security Reviews", "Server Hardening", "Deployment Pipelines", "Monitoring Guidance"],
+      "bestFor": "Organizations that need safer releases, stronger hosting practices, and more resilient infrastructure.",
+      "timeline": "2-4 weeks",
+      "outcome": "A safer, more resilient setup with cleaner deployments and fewer operational surprises.",
+      "deliverables": ["Security Review", "Deployment Workflow", "Server Hardening", "Monitoring Setup"]
     }
   ]
 }

@@ -15,6 +15,7 @@ import { SocialShareButtons } from "@/components/blog/social-share-buttons"
 import { TableOfContents } from "@/components/blog/table-of-contents"
 import { AuthorBio } from "@/components/blog/author-bio"
 import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
 
 interface BlogPostContentProps {
   post: any
@@ -167,6 +168,34 @@ export function BlogPostContent({ post, tags }: BlogPostContentProps) {
 
           <div className="prose prose-lg dark:prose-invert max-w-none">
             <PortableText value={body} components={components} />
+          </div>
+
+          <div className="mt-12 rounded-[2rem] border border-border/60 bg-card/40 p-8 backdrop-blur-sm">
+            <div className="space-y-4">
+              <div className="inline-flex rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.25em] text-primary">
+                {isSpanish ? "Siguiente paso" : "Next Step"}
+              </div>
+              <h3 className="text-3xl font-black tracking-tight">
+                {isSpanish ? "¿Tu web también necesita más conversiones?" : "Need your website to convert better too?"}
+              </h3>
+              <p className="text-muted-foreground text-lg leading-relaxed">
+                {isSpanish
+                  ? "Puedo revisar tu sitio, detectar fricciones y proponerte mejoras claras para rendimiento, SEO, UX y ventas."
+                  : "I can review your site, find the biggest friction points, and map clear improvements for performance, SEO, UX, and sales."}
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 pt-2">
+                <Button asChild size="lg" className="rounded-full">
+                  <Link href="/contact?audit=true">
+                    {isSpanish ? "Obtener Auditoría Gratis" : "Get Free Website Audit"}
+                  </Link>
+                </Button>
+                <Button asChild size="lg" variant="outline" className="rounded-full">
+                  <Link href="/services">
+                    {isSpanish ? "Ver Servicios" : "View Services"}
+                  </Link>
+                </Button>
+              </div>
+            </div>
           </div>
 
           <AuthorBio authorName={post.authorName} authorImage={post.authorImage} />

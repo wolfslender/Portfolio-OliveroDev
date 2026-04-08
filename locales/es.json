@@ -1,15 +1,16 @@
 {
   "hero": {
     "title": {
-      "prefix": "Deja de perder clientes",
-      "highlight": "por webs lentas y obsoletas."
+      "prefix": "Websites creados para",
+      "highlight": "ganar confianza, leads y crecimiento."
     },
-    "roles": ["Socio Tecnológico", "Estratega Digital", "Ingeniero de Rendimiento", "Experto en Seguridad"],
-    "description": "Construyo productos digitales de alto rendimiento para empresas que no pueden permitirse tiempos de inactividad o mala UX. Obtén resultados de agencia con la agilidad de un socio senior dedicado.",
+    "roles": ["UX orientada a conversión", "SEO + Rendimiento", "Webflow / WordPress / Next.js", "Ejecución senior directa"],
+    "description": "Ayudo a empresas a lanzar y mejorar websites de alto rendimiento que se ven premium, cargan rápido y convierten más visitantes en oportunidades reales.",
+    "proof": ["Respuesta en menos de 24h", "Pensado para SEO + velocidad", "Soporte de lanzamiento incluido"],
     "buttons": {
-      "primary": "Ver Cómo Trabajo",
-      "secondary": "Agenda Tu Estrategia Gratis",
-      "downloadCv": "Descargar Perfil Corporativo"
+      "primary": "Obtén una Auditoría Gratis",
+      "secondary": "Ver Resultados",
+      "downloadCv": "Descargar Deck Comercial"
     }
   },
   "trustedBy": {
@@ -25,7 +26,7 @@
   },
   "about": {
     "title": "Por Qué Trabajar Conmigo",
-    "description": "Cuando contratas una agencia, a menudo te vende el socio senior pero te atiende el pasante junior. Al trabajar conmigo, tienes acceso directo a más de 8 años de experiencia senior. Me convierto en tu socio técnico dedicado, invertido en tu éxito.",
+    "description": "Cuando contratas una agencia, a menudo te vende el socio senior pero te atiende el pasante junior. Al trabajar conmigo, tienes acceso directo a más de 10 años de experiencia senior. Me convierto en tu socio técnico dedicado, invertido en tu éxito.",
     "experience": "Experiencia",
     "education": "Educación",
     "softSkills": "Habilidades Blandas"
@@ -38,18 +39,18 @@
   ],
   "featuredProjects": {
     "badge": "Trabajos Seleccionados",
-    "titlePrefix": "Proyectos",
-    "titleHighlight": "Destacados",
-    "description": "Una selección de mis trabajos más recientes y significativos, demostrando mi experiencia en la construcción de aplicaciones web escalables.",
-    "viewAll": "Ver Todos los Proyectos"
+    "titlePrefix": "Resultados",
+    "titleHighlight": "Que Puedes Verificar",
+    "description": "Lanzamientos, rediseños y migraciones que mejoraron velocidad, credibilidad y preparación para convertir.",
+    "viewAll": "Ver Todos los Casos"
   },
   "cta": {
-    "badge": "Disponible para nuevas oportunidades",
-    "titlePrefix": "Listo para lanzar tu",
-    "titleHighlight": "próxima gran idea?",
-    "description": "Colaboremos para construir una experiencia digital que no solo se vea increíble, sino que también genere resultados reales para tu negocio.",
-    "primaryButton": "Iniciar un Proyecto",
-    "secondaryButton": "Ver Portafolio"
+    "badge": "¿Necesitas más leads desde tu website?",
+    "titlePrefix": "¿Listo para convertir tu sitio en un",
+    "titleHighlight": "activo de ventas?",
+    "description": "Agenda una llamada estratégica o pide una auditoría en video gratis. Te muestro qué está frenando tus conversiones y cómo corregirlo.",
+    "primaryButton": "Agendar Llamada Estratégica",
+    "secondaryButton": "Obtener Auditoría en Video"
   },
   "footer": {
     "description": "Desarrollador Full Stack creando experiencias digitales hermosas con tecnologías modernas.",
@@ -189,22 +190,32 @@
     "users": "Usuarios",
     "speed": "Velocidad",
     "impact": "Impacto",
+    "bestFor": "Ideal Para",
+    "timeline": "Timeline",
+    "outcome": "Resultado",
+    "included": "Incluye",
+    "bookCall": "Agendar Llamada Estratégica",
+    "freeAudit": "Obtener Auditoría Gratis",
+    "viewServices": "Ver Servicios",
     "whatsappChat": "Chatea en WhatsApp",
     "whatsappMessage": "¡Hola Alexis! Vi tu portafolio y me gustaría conversar."
   },
   "workPage": {
-    "title": "Trabajos Seleccionados",
-    "description": "Una muestra de productos digitales diseñados para rendimiento, escalabilidad y experiencia de usuario.",
+    "title": "Resultados Que Generan Confianza",
+    "description": "Websites reales creados para velocidad, claridad y conversión en sectores de alta exigencia.",
+    "proofBadge": "Prueba de Ejecución",
+    "gridTitle": "Más Builds Ganadores",
+    "gridDescription": "Proyectos pensados para elevar credibilidad, rendimiento y la manera en que el usuario llega a la acción.",
     "filters": {
       "all": "Todos",
       "fullstack": "Full Stack",
       "frontend": "Frontend"
     },
     "cta": {
-      "title": "¿Tienes una visión?",
-      "highlight": "Vamos a construirla.",
-      "description": "Desde la arquitectura técnica hasta la implementación perfecta, ayudo a empresas a construir software que importa.",
-      "button": "Iniciar un Proyecto"
+      "title": "¿Quieres resultados similares?",
+      "highlight": "Diseñemos tu próxima web.",
+      "description": "Si necesitas un sitio que se vea premium y funcione bajo presión, puedo ayudarte a planificarlo, diseñarlo y lanzarlo.",
+      "button": "Solicitar Auditoría Web"
     }
   },
   "servicesPage": {
@@ -281,23 +292,48 @@
   "services": [
     {
       "title": "Lanzamiento MVP",
-      "description": "De idea a producto listo para el mercado en 4-6 semanas. Me encargo de toda la tecnología para que te enfoques en conseguir usuarios.",
-      "features": ["Prototipado Rápido", "Arquitectura Escalable", "Configuración BD y Auth", "Estrategia de Lanzamiento"]
+      "description": "Lanza un website o MVP listo para convertir, con la estrategia, UX y base técnica necesarias para empezar a generar tracción.",
+      "features": ["Prototipado Rápido", "UX orientada a conversión", "Build CMS o App", "Estrategia de Lanzamiento"],
+      "bestFor": "Founders y negocios en crecimiento que necesitan validar o relanzar rápido.",
+      "timeline": "4-6 semanas",
+      "outcome": "Un website o MVP rápido, premium y preparado para ganar confianza, captar leads y soportar crecimiento.",
+      "deliverables": ["Sprint Estratégico", "Dirección UX/UI", "Build CMS o Producto", "Soporte de Lanzamiento"]
     },
     {
       "title": "Escalado Corporativo",
-      "description": "Refactorización y optimización de plataformas legacy para alto tráfico. Mejoro velocidad, seguridad y mantenibilidad para necesidades empresariales.",
-      "features": ["Auditoría de Código", "Ajuste de Rendimiento", "Endurecimiento de Seguridad", "Capacitación de Equipos"]
+      "description": "Refactoriza y mejora websites con alto tráfico o desactualizados para que carguen más rápido, conviertan mejor y sean más fáciles de mantener.",
+      "features": ["Auditoría de Código", "Ajuste de Rendimiento", "Refuerzo de Seguridad", "Capacitación del Equipo"],
+      "bestFor": "Empresas establecidas con plataformas legacy, cuellos de botella técnicos o fugas de conversión.",
+      "timeline": "3-8 semanas",
+      "outcome": "Una plataforma más estable y mantenible que respalda marketing, SEO y escalado a largo plazo.",
+      "deliverables": ["Auditoría Técnica", "Roadmap Prioritario", "Refactor y Optimización", "Documentación"]
     },
     {
       "title": "Migración a Webflow",
-      "description": "Mueve tu sitio de marketing a Webflow para total libertad de diseño y hosting sin mantenimiento. Perfecto para equipos de marketing.",
-      "features": ["Diseño Pixel-Perfect", "Arquitectura CMS", "Migración SEO", "Entrenamiento del Equipo"]
+      "description": "Migra desde WordPress o un stack frágil de marketing a Webflow con mejor control visual, un CMS más limpio y actualizaciones mucho más fáciles.",
+      "features": ["Rebuild Pixel-Perfect", "Arquitectura CMS", "Migración SEO", "Entrenamiento del Equipo"],
+      "bestFor": "Equipos de marketing que quieren autonomía, velocidad y menos dependencia técnica para actualizar el sitio.",
+      "timeline": "2-5 semanas",
+      "outcome": "Un sitio de marketing pulido que tu equipo puede gestionar sin romper SEO ni consistencia visual.",
+      "deliverables": ["Mapeo de Contenido", "Build en Webflow", "Protección SEO", "Entrenamiento de Editores"]
     },
     {
       "title": "Partnership Técnico",
-      "description": "Un retainer mensual para empresas que necesitan un socio nivel CTO dedicado sin el costo de un salario a tiempo completo.",
-      "features": ["Soporte Prioritario", "Auditorías Mensuales", "Desarrollo de Features", "Consultoría Estratégica"]
+      "description": "Obtén un socio técnico senior en modalidad retainer para mejorar tu website, lanzar nuevas funcionalidades y mantener el impulso digital de tu empresa.",
+      "features": ["Soporte Prioritario", "Auditorías Mensuales", "Desarrollo de Features", "Consultoría Estratégica"],
+      "bestFor": "Equipos que necesitan ejecución senior todos los meses sin contratar un lead full-time.",
+      "timeline": "Retainer mensual",
+      "outcome": "Un partner confiable que ayuda a tu equipo a lanzar más rápido, reducir riesgos y mantenerse alineado técnicamente.",
+      "deliverables": ["Cola Prioritaria", "Roadmap Mensual", "Entrega de Features", "Guía Estratégica"]
+    },
+    {
+      "title": "Cloud & Web Security",
+      "description": "Fortalece infraestructura, despliegues y prácticas de seguridad para websites que no pueden permitirse caídas ni riesgos evitables.",
+      "features": ["Revisiones de Seguridad", "Hardening de Servidor", "Pipelines de Deploy", "Guía de Monitoreo"],
+      "bestFor": "Organizaciones que necesitan releases más seguros, mejor hosting y una infraestructura más resiliente.",
+      "timeline": "2-4 semanas",
+      "outcome": "Una base más segura y resistente, con despliegues más limpios y menos sorpresas operativas.",
+      "deliverables": ["Revisión de Seguridad", "Workflow de Deploy", "Hardening de Servidor", "Setup de Monitoreo"]
     }
   ]
 }

@@ -12,7 +12,7 @@ export function getPersonSchema() {
       siteConfig.links.linkedin,
       siteConfig.links.instagram,
     ],
-    jobTitle: "Frontend Developer",
+    jobTitle: "Web Developer & Conversion Specialist",
     worksFor: {
       "@type": "Organization",
       name: "Freelance",

@@ -1,8 +1,8 @@
 export const siteConfig = {
   name: "Alexis Olivero",
-  title: "Frontend Developer & Web Specialist",
+  title: "Web Developer for High-Converting Websites",
   description:
-    "Frontend Developer with over 6 years of experience delivering high-impact web solutions. Specialized in WordPress, Webflow, and React, with a strong focus on building scalable, maintainable architectures.",
+    "I design and build high-performance websites for businesses that want more leads, better SEO, and a stronger digital presence through Webflow, WordPress, and Next.js.",
   url: "https://oliverodev.com",
   ogImage: "https://oliverodev.com/opengraph-image",
   links: {
