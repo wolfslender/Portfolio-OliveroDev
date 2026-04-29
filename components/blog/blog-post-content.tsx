@@ -56,6 +56,28 @@ export function BlogPostContent({ post, tags }: BlogPostContentProps) {
 
   // Custom components for PortableText to render headings with IDs
   const components = {
+    types: {
+      image: ({ value }: any) => {
+        if (!value?.asset?._ref) return null
+        return (
+          <figure className="my-8">
+            <div className="relative w-full aspect-video rounded-xl overflow-hidden">
+              <ExportedImage
+                src={urlFor(value).url()}
+                alt={value.alt || ""}
+                fill
+                className="object-cover"
+              />
+            </div>
+            {value.caption && (
+              <figcaption className="text-center text-sm text-muted-foreground mt-2">
+                {value.caption}
+              </figcaption>
+            )}
+          </figure>
+        )
+      }
+    },
     block: {
       h2: ({ value, children }: any) => {
         const text = value.children?.map((c: any) => c.text).join('') || ''
