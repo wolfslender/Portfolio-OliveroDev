@@ -2,6 +2,20 @@ import { Code, Users, Award, Coffee, Code2, Server, Database, GitBranch, Palette
 
 export const services = [
   {
+    title: "WordPress Plugins",
+    description: "Custom WordPress plugin development tailored to your specific needs. From simple utilities to complex enterprise solutions.",
+    icon: Code,
+    features: ["Custom Plugin Development", "Freemius Integration", "API Development", "Security Audits"],
+    technologies: ["WordPress", "PHP", "MySQL", "Freemius SDK"],
+    caseStudyTitle: "Media Audit",
+    color: "text-violet-500",
+    bgColor: "bg-violet-500/10",
+    bestFor: "Businesses needing custom WordPress functionality.",
+    timeline: "2-6 weeks",
+    outcome: "A custom plugin built to your exact specifications.",
+    deliverables: ["Requirements Analysis", "Custom Development", "Testing & Documentation", "Deployment"],
+  },
+  {
     title: "MVP Launchpad",
     description: "Launch a conversion-ready website or MVP fast, with the strategy, UX, and technical setup needed to start generating traction.",
     icon: Layout,
@@ -245,6 +259,24 @@ export const certifications = [
 
 export const projects = [
   {
+    title: "Media Audit",
+    description: "WordPress plugin that scans your media library to identify unused files, helping you recover storage space and improve site performance. Features smart detection, storage analysis, and an intelligent trash system.",
+    image: "/projects/media-audit.png",
+    tags: ["WordPress", "PHP", "MySQL", "AJAX", "Freemius"],
+    category: "fullstack",
+    github: "https://github.com/oliverodev/media-audit",
+    demo: "https://wordpress.org/plugins/oliverodev-media-audit/",
+    featured: true,
+    size: "medium",
+    industry: "WordPress Plugins",
+    projectType: "Plugin Development",
+    metrics: {
+      users: "500+ active installations",
+      performance: "Reduces storage by up to 40%",
+      impact: "10GB+ media cleaned"
+    }
+  },
+  {
     title: "Cybernetips",
     description: "The #1 company globally specialized in immediate response to cybersecurity incidents. Leaders in digital asset recovery and protection.",
     image: "/projects/cybernetips.png",
@@ -481,4 +513,39 @@ export const contact = {
     instagram: "https://www.instagram.com/alexisfit97/",
   },
   calendly: "https://calendly.com/contact-oliverodev/30min",
+}
+
+export const plugins = {
+  hero: {
+    title: "WordPress Plugins",
+    highlight: "Built to Scale",
+    description: "Premium WordPress plugins designed to solve real problems. Clean code, regular updates, and dedicated support.",
+  },
+  plugins: [
+    {
+      title: "Media Audit",
+      tagline: "Clean your media library with precision",
+      description: "Identify which media files are actually in use and clean up unused ones safely. Reduces storage costs and improves site performance.",
+      features: [
+        "Smart scanning of media references in content",
+        "Dashboard with used vs unused file counts",
+        "Batch cleanup workflow",
+        "Cron-based automatic scanning",
+      ],
+      proFeatures: [
+        "Deep Detection (ACF, Divi, Elementor)",
+        "Visual storage charts (MB/GB)",
+        "Intelligent trash system",
+        "One-click bulk cleanup",
+        "PDF, Video, Audio support",
+        "Premium priority support",
+      ],
+      price: "$49/year",
+      url: "https://wordpress.org/plugins/oliverodev-media-audit/",
+      freemiusUrl: "https://checkout.freemius.com/product/23055/",
+      icon: "🧹",
+      color: "violet",
+      bgColor: "bg-violet-500/10",
+    },
+  ],
 }

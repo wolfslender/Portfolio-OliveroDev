@@ -2,14 +2,15 @@ import { useTranslation } from "react-i18next"
 import { 
   hero as defaultHero, 
   services as defaultServices, 
-  stats as defaultStats, 
+  stats as defaultStats,
   skills, 
   softSkills, 
   certifications, 
   projects, 
   experience, 
   education, 
-  contact 
+  contact,
+  plugins as defaultPlugins
 } from "@/lib/data"
 import { useMemo } from "react"
 
@@ -69,6 +70,7 @@ export function useSiteData() {
   const nav = useMemo(() => ([
     { label: t('nav.home', "Home"), href: "/" },
     { label: t('nav.services', "Services"), href: "/services" },
+    { label: t('nav.plugins', "Plugins"), href: "/plugins" },
     { label: t('nav.work', "Work"), href: "/work" },
     { label: t('nav.blog', "Blog"), href: "/blog" },
     { label: t('nav.about', "About"), href: "/about" },
@@ -250,6 +252,24 @@ export function useSiteData() {
     }
   }, [t])
 
+  const plugins = useMemo(() => ({
+    hero: defaultPlugins.hero,
+    plugins: defaultPlugins.plugins.map((plugin: any) => ({
+      ...plugin,
+      title: plugin.title,
+      tagline: plugin.tagline,
+      description: plugin.description,
+      features: plugin.features,
+      proFeatures: plugin.proFeatures,
+      price: plugin.price,
+      url: plugin.url,
+      freemiusUrl: plugin.freemiusUrl,
+      icon: plugin.icon,
+      color: plugin.color,
+      bgColor: plugin.bgColor,
+    }))
+  }), [])
+
   return {
     nav,
     hero,
@@ -274,6 +294,7 @@ export function useSiteData() {
     experience: mappedExperience,
     education: mappedEducation,
     contact,
-    trustedBy
+    trustedBy,
+    plugins
   }
 }
