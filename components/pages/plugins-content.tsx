@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { useSiteData } from "@/hooks/use-site-data"
 import { ScrollReveal } from "@/components/scroll-reveal"
-import { ArrowRight, CheckCircle2, ExternalLink, Star } from "lucide-react"
+import { ArrowRight, CheckCircle2, ExternalLink, Star, TrendingUp, Users } from "lucide-react"
 import Link from "next/link"
 import { Badge } from "@/components/ui/badge"
 import { cn } from "@/lib/utils"
