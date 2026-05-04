@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { useSiteData } from "@/hooks/use-site-data"
 import { ScrollReveal } from "@/components/scroll-reveal"
-import { ArrowRight, CheckCircle2, ExternalLink, Star, Download, Users, TrendingUp } from "lucide-react"
+import { ArrowRight, CheckCircle2, ExternalLink, Star } from "lucide-react"
 import Link from "next/link"
 import { Badge } from "@/components/ui/badge"
 import { cn } from "@/lib/utils"
@@ -106,24 +106,7 @@ export default function PluginsContent() {
                       </div>
                     </div>
 
-                    {/* Stats */}
-                    <div className="grid grid-cols-3 gap-4">
-                      <div className="rounded-xl border border-border/60 bg-card/40 p-4 text-center">
-                        <Users className="w-5 h-5 mx-auto mb-2 text-violet-500" />
-                        <p className="text-2xl font-bold">500+</p>
-                        <p className="text-xs text-muted-foreground">Active Sites</p>
-                      </div>
-                      <div className="rounded-xl border border-border/60 bg-card/40 p-4 text-center">
-                        <TrendingUp className="w-5 h-5 mx-auto mb-2 text-violet-500" />
-                        <p className="text-2xl font-bold">10GB+</p>
-                        <p className="text-xs text-muted-foreground">Cleaned</p>
-                      </div>
-                      <div className="rounded-xl border border-border/60 bg-card/40 p-4 text-center">
-                        <Download className="w-5 h-5 mx-auto mb-2 text-violet-500" />
-                        <p className="text-2xl font-bold">4.8★</p>
-                        <p className="text-xs text-muted-foreground">Rating</p>
-                      </div>
-                    </div>
+                    
                   </div>
                 </div>
               </div>
