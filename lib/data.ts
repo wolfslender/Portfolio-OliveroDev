@@ -531,7 +531,7 @@ export const plugins = {
         "Dashboard with used vs unused file counts",
         "Batch cleanup workflow",
         "Cron-based automatic scanning",
-      ],
+      ] as string[],
       proFeatures: [
         "Deep Detection (ACF, Divi, Elementor)",
         "Visual storage charts (MB/GB)",
@@ -539,7 +539,7 @@ export const plugins = {
         "One-click bulk cleanup",
         "PDF, Video, Audio support",
         "Premium priority support",
-      ],
+      ] as string[],
       price: "$49/year",
       url: "https://wordpress.org/plugins/oliverodev-media-audit/",
       freemiusUrl: "https://checkout.freemius.com/product/23055/",

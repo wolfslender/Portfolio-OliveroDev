@@ -62,7 +62,7 @@ export default function PluginsContent() {
                     <div>
                       <p className="text-sm font-bold uppercase tracking-wider text-muted-foreground mb-3">What's Included (FREE)</p>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                        {plugin.features.map((feature, fIdx) => (
+                        {plugin.features.map((feature: string, fIdx: number) => (
                           <div key={fIdx} className="flex items-center gap-2">
                             <CheckCircle2 className="w-4 h-4 text-green-500 shrink-0" />
                             <span className="text-sm text-muted-foreground">{feature}</span>
@@ -97,7 +97,7 @@ export default function PluginsContent() {
                         </Badge>
                       </div>
                       <div className="grid grid-cols-1 gap-3">
-                        {plugin.proFeatures.map((feature, pfIdx) => (
+                        {plugin.proFeatures.map((feature: string, pfIdx: number) => (
                           <div key={pfIdx} className="flex items-center gap-3">
                             <Star className="w-4 h-4 text-yellow-400 shrink-0 fill-yellow-400" />
                             <span className="text-white/90">{feature}</span>
