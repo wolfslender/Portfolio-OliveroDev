@@ -7,7 +7,7 @@ import { ProcessSection } from "@/components/sections/process-section"
 import { ArrowRight, CheckCircle2, ExternalLink, Rocket, ShieldCheck, Users2, Zap } from "lucide-react"
 import Link from "next/link"
 import { Badge } from "@/components/ui/badge"
-import { cn } from "@/lib/utils"
+import { cn, getMetricLabel, getMetricValue } from "@/lib/utils"
 import ExportedImage from "next-image-export-optimizer"
 
 export default function ServicesContent() {
@@ -194,27 +194,27 @@ export default function ServicesContent() {
                               <div className="rounded-2xl bg-background/60 backdrop-blur-md border border-white/10 px-4 py-3">
                                 <div className="flex items-center gap-2 text-primary mb-1">
                                   <Users2 className="h-4 w-4" />
-                                  <span className="text-[10px] font-bold uppercase tracking-widest">{common.users}</span>
+                                  <span className="text-[10px] font-bold uppercase tracking-widest">{getMetricLabel(caseStudy.metrics.users, common.users)}</span>
                                 </div>
-                                <div className="text-sm font-extrabold leading-snug">{caseStudy.metrics.users}</div>
+                                <div className="text-sm font-extrabold leading-snug">{getMetricValue(caseStudy.metrics.users)}</div>
                               </div>
                             )}
                             {caseStudy.metrics.performance && (
                               <div className="rounded-2xl bg-background/60 backdrop-blur-md border border-white/10 px-4 py-3">
                                 <div className="flex items-center gap-2 text-primary mb-1">
                                   <Zap className="h-4 w-4" />
-                                  <span className="text-[10px] font-bold uppercase tracking-widest">{common.speed}</span>
+                                  <span className="text-[10px] font-bold uppercase tracking-widest">{getMetricLabel(caseStudy.metrics.performance, common.speed)}</span>
                                 </div>
-                                <div className="text-sm font-extrabold leading-snug">{caseStudy.metrics.performance}</div>
+                                <div className="text-sm font-extrabold leading-snug">{getMetricValue(caseStudy.metrics.performance)}</div>
                               </div>
                             )}
                             {caseStudy.metrics.impact && (
                               <div className="rounded-2xl bg-background/60 backdrop-blur-md border border-white/10 px-4 py-3">
                                 <div className="flex items-center gap-2 text-primary mb-1">
                                   <ShieldCheck className="h-4 w-4" />
-                                  <span className="text-[10px] font-bold uppercase tracking-widest">{common.impact}</span>
+                                  <span className="text-[10px] font-bold uppercase tracking-widest">{getMetricLabel(caseStudy.metrics.impact, common.impact)}</span>
                                 </div>
-                                <div className="text-sm font-extrabold leading-snug line-clamp-2">{caseStudy.metrics.impact}</div>
+                                <div className="text-sm font-extrabold leading-snug line-clamp-2">{getMetricValue(caseStudy.metrics.impact)}</div>
                               </div>
                             )}
                           </div>

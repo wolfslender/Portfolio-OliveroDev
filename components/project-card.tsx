@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge"
 import { ExternalLink, Github, ArrowUpRight, TrendingUp } from "lucide-react"
 import Link from "next/link"
 import ExportedImage from "next-image-export-optimizer"
-import { cn } from "@/lib/utils"
+import { cn, getMetricLabel, getMetricValue, type MetricField } from "@/lib/utils"
 import { useSiteData } from "@/hooks/use-site-data"
 
 interface ProjectCardProps {
@@ -18,9 +18,9 @@ interface ProjectCardProps {
   size?: "large" | "medium" | "small"
   industry?: string
   metrics?: {
-    users?: string
-    performance?: string
-    impact?: string
+    users?: MetricField
+    performance?: MetricField
+    impact?: MetricField
   }
 }
 
@@ -109,20 +109,20 @@ export function ProjectCard({
           <div className="mb-6 grid grid-cols-3 gap-3 p-4 bg-muted/30 rounded-xl border border-border/50">
             {metrics.users && (
               <div className="text-center">
-                <div className="text-xs font-bold text-primary mb-1">{metrics.users}</div>
-                <div className="text-[10px] text-muted-foreground uppercase tracking-wider">Users</div>
+                <div className="text-xs font-bold text-primary mb-1">{getMetricValue(metrics.users)}</div>
+                <div className="text-[10px] text-muted-foreground uppercase tracking-wider">{getMetricLabel(metrics.users, "Users")}</div>
               </div>
             )}
             {metrics.performance && (
               <div className="text-center">
-                <div className="text-xs font-bold text-primary mb-1">{metrics.performance}</div>
-                <div className="text-[10px] text-muted-foreground uppercase tracking-wider">Speed</div>
+                <div className="text-xs font-bold text-primary mb-1">{getMetricValue(metrics.performance)}</div>
+                <div className="text-[10px] text-muted-foreground uppercase tracking-wider">{getMetricLabel(metrics.performance, "Speed")}</div>
               </div>
             )}
             {metrics.impact && (
               <div className="text-center">
-                <div className="text-xs font-bold text-primary mb-1 line-clamp-2">{metrics.impact}</div>
-                <div className="text-[10px] text-muted-foreground uppercase tracking-wider">Impact</div>
+                <div className="text-xs font-bold text-primary mb-1 line-clamp-2">{getMetricValue(metrics.impact)}</div>
+                <div className="text-[10px] text-muted-foreground uppercase tracking-wider">{getMetricLabel(metrics.impact, "Impact")}</div>
               </div>
             )}
           </div>

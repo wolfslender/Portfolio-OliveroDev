@@ -7,6 +7,7 @@ import { ArrowRight, Users, Zap, Globe, CheckCircle2 } from "lucide-react"
 import Link from "next/link"
 import ExportedImage from "next-image-export-optimizer"
 import { useSiteData } from "@/hooks/use-site-data"
+import { getMetricLabel, getMetricValue, type MetricField } from "@/lib/utils"
 
 interface FeaturedCaseStudyProps {
     project: {
@@ -17,9 +18,9 @@ interface FeaturedCaseStudyProps {
         demo: string
         industry?: string
         metrics?: {
-            users?: string
-            performance?: string
-            impact?: string
+            users?: MetricField
+            performance?: MetricField
+            impact?: MetricField
         }
         challenge?: string
         solution?: string
@@ -96,22 +97,22 @@ export function FeaturedCaseStudy({ project }: FeaturedCaseStudyProps) {
                                     {project.metrics.users && (
                                         <div className="text-center space-y-2">
                                             <Users className="w-6 h-6 mx-auto text-primary" />
-                                            <div className="font-bold text-lg">{project.metrics.users}</div>
-                                            <div className="text-xs text-muted-foreground uppercase tracking-wider">Users</div>
+                                            <div className="font-bold text-lg">{getMetricValue(project.metrics.users)}</div>
+                                            <div className="text-xs text-muted-foreground uppercase tracking-wider">{getMetricLabel(project.metrics.users, "Users")}</div>
                                         </div>
                                     )}
                                     {project.metrics.performance && (
                                         <div className="text-center space-y-2">
                                             <Zap className="w-6 h-6 mx-auto text-primary" />
-                                            <div className="font-bold text-lg">{project.metrics.performance}</div>
-                                            <div className="text-xs text-muted-foreground uppercase tracking-wider">Performance</div>
+                                            <div className="font-bold text-lg">{getMetricValue(project.metrics.performance)}</div>
+                                            <div className="text-xs text-muted-foreground uppercase tracking-wider">{getMetricLabel(project.metrics.performance, "Performance")}</div>
                                         </div>
                                     )}
                                     {project.metrics.impact && (
                                         <div className="text-center space-y-2">
                                             <Globe className="w-6 h-6 mx-auto text-primary" />
-                                            <div className="font-bold text-lg line-clamp-2">{project.metrics.impact}</div>
-                                            <div className="text-xs text-muted-foreground uppercase tracking-wider">Impact</div>
+                                            <div className="font-bold text-lg line-clamp-2">{getMetricValue(project.metrics.impact)}</div>
+                                            <div className="text-xs text-muted-foreground uppercase tracking-wider">{getMetricLabel(project.metrics.impact, "Impact")}</div>
                                         </div>
                                     )}
                                 </div>

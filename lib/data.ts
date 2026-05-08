@@ -261,7 +261,7 @@ export const projects = [
   {
     title: "Media Audit",
     description: "WordPress plugin that scans your media library to identify unused files, helping you recover storage space and improve site performance. Features smart detection, storage analysis, and an intelligent trash system.",
-    image: "/projects/media-audit.png",
+    image: "/projects/media-audit-pro.png",
     tags: ["WordPress", "PHP", "MySQL", "AJAX", "Freemius"],
     category: "fullstack",
     github: "https://github.com/oliverodev/media-audit",
@@ -271,7 +271,10 @@ export const projects = [
     industry: "WordPress Plugins",
     projectType: "Plugin Development",
     metrics: {
-      users: "500+ active installations",
+      users: {
+        value: "WordPress.org published",
+        label: "Status"
+      },
       performance: "Reduces storage by up to 40%",
       impact: "10GB+ media cleaned"
     }
