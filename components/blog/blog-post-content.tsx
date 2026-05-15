@@ -11,6 +11,7 @@ import { urlFor } from "@/lib/sanity/client"
 import { formatDate, slugify } from "@/lib/utils"
 import { BlogSidebar } from "@/components/blog/blog-sidebar"
 import { siteConfig } from "@/lib/config"
+import { getBlogPostingSchema } from "@/lib/seo"
 import { SocialShareButtons } from "@/components/blog/social-share-buttons"
 import { TableOfContents } from "@/components/blog/table-of-contents"
 import { AuthorBio } from "@/components/blog/author-bio"
@@ -103,27 +104,16 @@ export function BlogPostContent({ post, tags }: BlogPostContentProps) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BlogPosting",
-            headline: title,
-            description: description,
-            image: post.mainImage ? urlFor(post.mainImage).url() : undefined,
-            keywords: keywords.length > 0 ? keywords.join(", ") : undefined,
-            author: {
-              "@type": "Person",
-              name: post.authorName,
-            },
+          __html: JSON.stringify(getBlogPostingSchema({
+            title,
+            description,
+            imageUrl: post.mainImage ? urlFor(post.mainImage).width(1200).height(630).url() : undefined,
+            keywords: keywords.length > 0 ? keywords : undefined,
+            authorName: post.authorName,
             datePublished: post.publishedAt,
-            publisher: {
-              "@type": "Organization",
-              name: siteConfig.name,
-              logo: {
-                "@type": "ImageObject",
-                url: siteConfig.ogImage,
-              },
-            },
-          }),
+            dateModified: post._updatedAt || post.publishedAt,
+            slug: post.slug.current,
+          })),
         }}
       />
       <Link href="/blog" className="inline-flex items-center text-sm text-muted-foreground hover:text-primary mb-8 transition-colors">

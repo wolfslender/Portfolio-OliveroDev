@@ -43,9 +43,14 @@ export function getWebSiteSchema() {
     "@type": "WebSite",
     url: siteConfig.url,
     name: siteConfig.name,
+    description: siteConfig.description,
+    inLanguage: ["en-US", "es-ES"],
     potentialAction: {
       "@type": "SearchAction",
-      target: `${siteConfig.url}/search?q={search_term_string}`,
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: `${siteConfig.url}/blog?search={search_term_string}`,
+      },
       "query-input": "required name=search_term_string",
     },
   }
@@ -72,6 +77,74 @@ export function getProfessionalServiceSchema() {
       "@type": "ContactPoint",
       email: siteConfig.links.email,
       contactType: "customer service",
+    },
+  }
+}
+
+export function getBlogPostingSchema({
+  title,
+  description,
+  imageUrl,
+  keywords,
+  authorName,
+  datePublished,
+  dateModified,
+  slug,
+}: {
+  title: string
+  description?: string
+  imageUrl?: string
+  keywords?: string[]
+  authorName?: string
+  datePublished?: string
+  dateModified?: string
+  slug: string
+}) {
+  const postUrl = `${siteConfig.url}/blog/${slug}`
+  return {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": postUrl,
+    },
+    url: postUrl,
+    headline: title,
+    description: description || siteConfig.description,
+    ...(imageUrl && {
+      image: {
+        "@type": "ImageObject",
+        url: imageUrl,
+        width: 1200,
+        height: 630,
+      },
+    }),
+    ...(keywords && keywords.length > 0 && { keywords: keywords.join(", ") }),
+    author: {
+      "@type": "Person",
+      name: authorName || siteConfig.author,
+      url: siteConfig.url,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: siteConfig.name,
+      url: siteConfig.url,
+      logo: {
+        "@type": "ImageObject",
+        url: `${siteConfig.url}/icon.svg`,
+      },
+    },
+    datePublished: datePublished,
+    dateModified: dateModified || datePublished,
+    inLanguage: "en-US",
+    isPartOf: {
+      "@type": "Blog",
+      "@id": `${siteConfig.url}/blog`,
+      name: "OliveroDev Blog",
+      publisher: {
+        "@type": "Person",
+        name: siteConfig.author,
+      },
     },
   }
 }

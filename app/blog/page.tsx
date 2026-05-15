@@ -25,13 +25,55 @@ const categoriesQuery = groq`
 `
 
 import { siteConfig } from "@/lib/config"
+import type { Metadata } from "next"
 
-export const metadata = {
-  title: "Blog - OliveroDev",
-  description: "Insights on Web Development, SEO, and Tech.",
+export const metadata: Metadata = {
+  title: "Blog",
+  description: "Practical tutorials, coding guides, and deep dives on React, Next.js, WordPress, Webflow, SEO, and modern web development. Written by Alexis Olivero, Senior Frontend Engineer.",
+  keywords: [
+    "web development blog", "react tutorials", "next.js guides", "wordpress development",
+    "webflow tips", "seo strategies", "frontend engineering", "javascript tutorials",
+    "typescript guide", "web performance", "blog desarrollo web",
+  ],
   alternates: {
     canonical: `${siteConfig.url}/blog`,
   },
+  openGraph: {
+    type: "website",
+    title: "OliveroDev Blog — Web Dev, SEO & Tech Insights",
+    description: "Practical tutorials, coding guides, and deep dives on React, Next.js, WordPress, Webflow, SEO, and modern web development.",
+    url: `${siteConfig.url}/blog`,
+    siteName: siteConfig.name,
+    images: [
+      {
+        url: `${siteConfig.url}/opengraph-image`,
+        width: 1200,
+        height: 630,
+        alt: "OliveroDev Blog",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "OliveroDev Blog — Web Dev, SEO & Tech Insights",
+    description: "Practical tutorials and deep dives on React, Next.js, WordPress, and modern web development.",
+    images: [`${siteConfig.url}/opengraph-image`],
+  },
+}
+
+const blogListSchema = {
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "@id": `${siteConfig.url}/blog`,
+  name: "OliveroDev Blog",
+  description: "Practical tutorials, coding guides, and deep dives on React, Next.js, WordPress, Webflow, SEO, and modern web development.",
+  url: `${siteConfig.url}/blog`,
+  publisher: {
+    "@type": "Person",
+    name: siteConfig.author,
+    url: siteConfig.url,
+  },
+  inLanguage: ["en-US", "es-ES"],
 }
 
 export default async function BlogPage() {
@@ -59,6 +101,10 @@ export default async function BlogPage() {
 
   return (
     <div className="py-24 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogListSchema) }}
+      />
       {/* Premium Header */}
       <header className="mb-20 text-center relative">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[300px] bg-gradient-to-b from-primary/5 to-transparent blur-3xl -z-10" />

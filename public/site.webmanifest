@@ -1,0 +1,26 @@
+{
+  "name": "Alexis Olivero — Web Developer",
+  "short_name": "OliveroDev",
+  "description": "High-performance websites for businesses that want more leads, better SEO, and a stronger digital presence.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "apple touch icon"
+    }
+  ],
+  "categories": ["business", "technology"],
+  "screenshots": []
+}

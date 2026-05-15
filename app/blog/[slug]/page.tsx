@@ -4,16 +4,16 @@ import { ArrowLeft } from "lucide-react"
 import Link from "next/link"
 import { client, urlFor } from "@/lib/sanity/client"
 import { groq } from "next-sanity"
-import { PortableText } from "@portabletext/react"
 import { formatDate, slugify } from "@/lib/utils"
-import { BlogSidebar } from "@/components/blog/blog-sidebar"
 import { siteConfig } from "@/lib/config"
 import { BlogPostContent } from "@/components/blog/blog-post-content"
+import type { Metadata } from "next"
 
 
 const postQuery = groq`
   *[_type == "post" && slug.current == $slug][0] {
     _id,
+    _updatedAt,
     title,
     title_es,
     slug,
@@ -55,7 +55,7 @@ export async function generateStaticParams() {
   return [{ slug: 'welcome' }]
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params
   if (slug === 'welcome') return { title: 'Welcome to Blog' }
   if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) return { title: 'Blog Post' }
@@ -64,18 +64,37 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const post = await client.fetch(postQuery, { slug })
     if (!post) return { title: 'Not Found' }
 
+    const ogImage = post.mainImage
+      ? urlFor(post.mainImage).width(1200).height(630).url()
+      : `${siteConfig.url}/opengraph-image`
+
+    const postUrl = `${siteConfig.url}/blog/${slug}`
+
     return {
-      title: `${post.title} - OliveroDev`,
+      title: post.title,
       description: post.description || siteConfig.description,
+      keywords: Array.isArray(post.keywords) && post.keywords.length > 0
+        ? post.keywords
+        : post.categories,
+      alternates: {
+        canonical: postUrl,
+      },
       openGraph: {
         title: post.title,
         description: post.description || siteConfig.description,
         type: "article",
+        url: postUrl,
+        siteName: siteConfig.name,
         publishedTime: post.publishedAt,
-        authors: [post.authorName],
-        ...(post.mainImage && {
-          images: [urlFor(post.mainImage).width(1200).height(630).url()],
-        }),
+        modifiedTime: post._updatedAt || post.publishedAt,
+        authors: [post.authorName || siteConfig.author],
+        images: [{ url: ogImage, width: 1200, height: 630, alt: post.title }],
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: post.title,
+        description: post.description || siteConfig.description,
+        images: [ogImage],
       },
     }
   } catch (error) {

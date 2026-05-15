@@ -9,13 +9,10 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/private/', '/admin/'],
+        disallow: ['/private/', '/admin/', '/studio/'],
       },
-      {
-        userAgent: ['GPTBot', 'CCBot', 'Google-Extended'],
-        allow: '/',
-      }
     ],
     sitemap: `${siteConfig.url}/sitemap.xml`,
+    host: siteConfig.url,
   }
 }

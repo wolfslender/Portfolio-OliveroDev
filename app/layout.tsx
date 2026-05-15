@@ -40,10 +40,6 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: siteConfig.url,
-    languages: {
-      'en-US': `${siteConfig.url}/en`,
-      'es-ES': `${siteConfig.url}/es`,
-    },
   },
   openGraph: {
     type: "website",
@@ -91,6 +87,7 @@ export const metadata: Metadata = {
       { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
     ],
   },
+  manifest: "/site.webmanifest",
 }
 
 export const viewport = {
