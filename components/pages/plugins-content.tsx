@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { useSiteData } from "@/hooks/use-site-data"
 import { ScrollReveal } from "@/components/scroll-reveal"
-import { ArrowRight, CheckCircle2, ExternalLink, Star, TrendingUp, Users } from "lucide-react"
+import { ArrowRight, CheckCircle2, Clock, ExternalLink, Shield, Star, TrendingUp, Users, Zap } from "lucide-react"
 import Link from "next/link"
 import { Badge } from "@/components/ui/badge"
 import { cn } from "@/lib/utils"
@@ -36,77 +36,114 @@ export default function PluginsContent() {
 
       {/* Plugins Grid */}
       <section className="px-4 sm:px-6 lg:px-8 mb-20">
-        <div className="max-w-6xl mx-auto space-y-16">
+        <div className="max-w-6xl mx-auto space-y-24">
           {pluginsData.plugins.map((plugin, index) => (
             <ScrollReveal key={index} delay={index * 100}>
               <div className={cn(
                 "rounded-3xl border border-border/60 bg-card/40 p-8 md:p-12 backdrop-blur-sm",
                 plugin.bgColor
               )}>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
                   {/* Left - Info */}
-                  <div className="space-y-6">
+                  <div className="space-y-7">
                     <div className="flex items-center gap-4">
                       <span className="text-5xl">{plugin.icon}</span>
                       <div>
-                        <h3 className="text-3xl md:text-4xl font-bold">{plugin.title}</h3>
-                        <p className="text-muted-foreground">{plugin.tagline}</p>
+                        <h3 className="text-2xl md:text-3xl font-bold">{plugin.title}</h3>
+                        <p className="text-muted-foreground text-sm mt-1">{plugin.tagline}</p>
                       </div>
                     </div>
-                    
-                    <p className="text-lg text-muted-foreground leading-relaxed">
+
+                    <p className="text-base text-muted-foreground leading-relaxed">
                       {plugin.description}
                     </p>
 
                     {/* Free Features */}
                     <div>
-                      <p className="text-sm font-bold uppercase tracking-wider text-muted-foreground mb-3">What's Included (FREE)</p>
+                      <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-3">
+                        Free — Always
+                      </p>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                         {plugin.features.map((feature: string, fIdx: number) => (
-                          <div key={fIdx} className="flex items-center gap-2">
-                            <CheckCircle2 className="w-4 h-4 text-green-500 shrink-0" />
+                          <div key={fIdx} className="flex items-start gap-2">
+                            <CheckCircle2 className="w-4 h-4 text-green-500 shrink-0 mt-0.5" />
                             <span className="text-sm text-muted-foreground">{feature}</span>
                           </div>
                         ))}
                       </div>
                     </div>
 
-                    <div className="flex flex-wrap gap-4">
+                    <div className="flex flex-wrap gap-3 pt-1">
                       <Button asChild size="lg" className="rounded-full px-8">
                         <Link href={plugin.freemiusUrl} target="_blank">
-                          Get PRO
+                          Start Free Trial
                           <ArrowRight className="ml-2 w-5 h-5" />
                         </Link>
                       </Button>
                       <Button asChild variant="outline" size="lg" className="rounded-full px-8">
                         <Link href={plugin.url} target="_blank">
-                          Free Version
+                          Free on WP.org
                           <ExternalLink className="ml-2 w-4 h-4" />
                         </Link>
                       </Button>
                     </div>
+
+                    {/* Trust badges */}
+                    <div className="flex items-center gap-4 text-xs text-muted-foreground pt-1">
+                      <span className="flex items-center gap-1"><Shield className="w-3 h-3" /> No credit card for trial</span>
+                      <span className="flex items-center gap-1"><Zap className="w-3 h-3" /> 3-day free trial</span>
+                      <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> Cancel anytime</span>
+                    </div>
                   </div>
 
-                  {/* Right - PRO Features */}
-                  <div className="space-y-6">
+                  {/* Right - PRO plans + features */}
+                  <div className="space-y-5">
+                    {/* PRO Features card */}
                     <div className="rounded-2xl bg-gradient-to-br from-violet-600 to-violet-800 p-6 text-white">
-                      <div className="flex items-center justify-between mb-4">
-                        <h4 className="text-xl font-bold">PRO Features</h4>
-                        <Badge className="bg-white/20 text-white rounded-full">
+                      <div className="flex items-center justify-between mb-5">
+                        <h4 className="text-lg font-bold">PRO Features</h4>
+                        <Badge className="bg-white/20 text-white rounded-full text-xs">
                           {plugin.price}
                         </Badge>
                       </div>
-                      <div className="grid grid-cols-1 gap-3">
+                      <div className="grid grid-cols-1 gap-2.5">
                         {plugin.proFeatures.map((feature: string, pfIdx: number) => (
-                          <div key={pfIdx} className="flex items-center gap-3">
-                            <Star className="w-4 h-4 text-yellow-400 shrink-0 fill-yellow-400" />
-                            <span className="text-white/90">{feature}</span>
+                          <div key={pfIdx} className="flex items-start gap-3">
+                            <Star className="w-3.5 h-3.5 text-yellow-400 shrink-0 fill-yellow-400 mt-0.5" />
+                            <span className="text-white/90 text-sm">{feature}</span>
                           </div>
                         ))}
                       </div>
                     </div>
 
-                    
+                    {/* Pricing plans */}
+                    {plugin.plans && (
+                      <div className="grid grid-cols-2 gap-3">
+                        {plugin.plans.map((plan: { name: string; price: string; period: string; checkoutUrl: string }, pIdx: number) => (
+                          <Link
+                            key={pIdx}
+                            href={plan.checkoutUrl}
+                            target="_blank"
+                            className={cn(
+                              "rounded-xl border p-4 text-center transition-all hover:shadow-md hover:-translate-y-0.5",
+                              pIdx === 0
+                                ? "border-violet-500/40 bg-violet-500/5 hover:border-violet-500/70"
+                                : "border-border/60 bg-card/60 hover:border-violet-500/40"
+                            )}
+                          >
+                            <p className="text-xs font-semibold text-muted-foreground mb-1">{plan.name}</p>
+                            <p className="text-2xl font-bold">{plan.price}</p>
+                            <p className="text-xs text-muted-foreground">{plan.period}</p>
+                            <p className={cn(
+                              "text-xs font-semibold mt-2",
+                              pIdx === 0 ? "text-violet-600 dark:text-violet-400" : "text-muted-foreground"
+                            )}>
+                              {pIdx === 0 ? "Get started →" : "For agencies →"}
+                            </p>
+                          </Link>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
