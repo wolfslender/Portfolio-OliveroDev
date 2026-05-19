@@ -25,3 +25,13 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Claude memory
+memory/
+
+# OS
+.DS_Store
+
+# Loose marketing assets (use public/ instead)
+"OliveroDev Media PRO.png"
+OliveroDev*.png
