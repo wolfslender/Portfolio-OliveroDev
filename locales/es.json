@@ -58,7 +58,8 @@
     "services": "Servicios",
     "builtWith": "Construido con Next.js y Tailwind CSS.",
     "privacy": "Política de Privacidad",
-    "terms": "Términos de Servicio"
+    "terms": "Términos de Servicio",
+    "disclaimer": "Todas las marcas comerciales, logotipos y nombres de marca son propiedad de sus respectivos dueños. Usados solo con fines de portafolio."
   },
   "skills": {
     "title": "Habilidades y Experiencia",

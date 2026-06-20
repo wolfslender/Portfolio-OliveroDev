@@ -58,7 +58,8 @@
     "services": "Services",
     "builtWith": "Built with Next.js & Tailwind CSS.",
     "privacy": "Privacy Policy",
-    "terms": "Terms of Service"
+    "terms": "Terms of Service",
+    "disclaimer": "All trademarks, logos, and brand names are property of their respective owners. Used for portfolio purposes only."
   },
   "skills": {
     "title": "Skills & Expertise",

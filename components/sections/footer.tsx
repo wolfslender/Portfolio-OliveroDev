@@ -83,6 +83,9 @@ export function Footer() {
             <p className="text-sm text-muted-foreground text-center md:text-left">
               © {new Date().getFullYear()} {siteConfig.name}. {footer.builtWith}
             </p>
+            <p className="text-xs text-muted-foreground/60 text-center md:text-left max-w-2xl">
+              {footer.disclaimer}
+            </p>
 
             <div className="flex items-center gap-6 text-sm">
               <a href="/privacy" className="text-muted-foreground hover:text-foreground transition-colors">
