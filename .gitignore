@@ -38,7 +38,11 @@ public/**/nextImageExportOptimizer/
 # empty api route
 app/api/
 
-# OS
+# test files
+__tests__/
+vitest.config.ts
+
+# OS files
 .DS_Store
 
 # Loose marketing assets (use public/ instead)
