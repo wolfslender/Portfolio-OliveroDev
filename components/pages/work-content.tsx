@@ -1,141 +1,182 @@
 "use client"
 
 import { useState } from "react"
-import { useSiteData } from "@/hooks/use-site-data"
-import { SectionHeader } from "@/components/ui/section-header"
-import { ScrollReveal } from "@/components/scroll-reveal"
-import { ProjectCard } from "@/components/project-card"
-import { FeaturedCaseStudy } from "@/components/sections/featured-case-study"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Sparkles } from "lucide-react"
+import { useProjects } from "@/hooks/use-projects"
+import { useWorkPage } from "@/hooks/use-work-page"
+import { useCommon } from "@/hooks/use-common"
+import { CTABanner } from "@/components/cta-banner"
+import { ArrowRight, ExternalLink } from "lucide-react"
 import Link from "next/link"
-import { Badge } from "@/components/ui/badge"
+import { cn } from "@/lib/utils"
+import ExportedImage from "next-image-export-optimizer"
 
 export default function WorkContent() {
-  const { projects, workPage } = useSiteData()
+  const projects = useProjects()
+  const workPage = useWorkPage()
+  const common = useCommon()
   const [categoryFilter, setCategoryFilter] = useState("all")
-  const [industryFilter, setIndustryFilter] = useState("all")
 
-  const categoryFilters = [
+  const featuredProject = projects.find(p => p.title.includes("Co-Active"))
+
+  const filterOptions = [
     { id: "all", label: workPage.filters.all },
     { id: "fullstack", label: workPage.filters.fullstack },
     { id: "frontend", label: workPage.filters.frontend },
   ]
 
-  const industryFilters = [
-    { id: "all", label: "All Industries" },
-    { id: "Government", label: "Government" },
-    { id: "Enterprise", label: "Enterprise" },
-    { id: "Cybersecurity", label: "Cybersecurity" },
-  ]
-
-  // Find the featured case study (Co-Active)
-  const featuredProject = projects.find(p => p.title.includes("Co-Active"))
-
-  // Filter projects
   const filteredProjects = projects
-    .filter(p => p.title !== featuredProject?.title) // Exclude featured from grid
+    .filter(p => p.title !== featuredProject?.title)
     .filter(p => categoryFilter === "all" || p.category === categoryFilter)
-    .filter(p => industryFilter === "all" || (p as any).industry === industryFilter)
 
   return (
-    <div className="pt-24 pb-20">
-      {/* Header Section */}
-      <section className="px-4 sm:px-6 lg:px-8 mb-16">
+    <div className="pt-24">
+      {/* Hero */}
+      <section className="px-4 sm:px-6 lg:px-8 mb-8 relative">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-gradient-to-b from-primary/[0.07] to-transparent -z-10" />
         <div className="max-w-7xl mx-auto">
-          <SectionHeader
-            title={workPage.title}
-            description={workPage.description}
-          />
+          <div className="max-w-3xl">
+            <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-[1.1] mb-6">
+              {workPage.title}
+            </h1>
+            <p className="text-muted-foreground text-xl md:text-2xl leading-relaxed">
+              {workPage.description}
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* Featured Case Study Hero */}
-      {featuredProject && <FeaturedCaseStudy project={featuredProject as any} />}
+      {/* Featured Project — Editorial Section */}
+      {featuredProject && (
+        <section className="px-4 sm:px-6 lg:px-8 py-24 md:py-32 relative overflow-hidden bg-primary/[0.03]">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+              <div className="lg:col-span-7">
+                <div className="relative aspect-video overflow-hidden">
+                  <ExportedImage
+                    src={featuredProject.image}
+                    alt={featuredProject.title}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, (max-width: 1400px) 55vw, 750px"
+                    className="object-cover transition-transform duration-700 hover:scale-[1.03]"
+                  />
+                </div>
+              </div>
+              <div className="lg:col-span-5">
+                <p className="text-xs font-bold tracking-[0.3em] uppercase text-primary mb-4">
+                  Featured Case Study
+                </p>
+                <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 leading-[1.1]">
+                  {featuredProject.title}
+                </h2>
+                <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+                  {featuredProject.description}
+                </p>
 
-      {/* Premium Divider */}
-      <div className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/20 to-background" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+                <div className="flex flex-wrap gap-2 mb-8">
+                  {featuredProject.tags.slice(0, 4).map((tag) => (
+                    <span
+                      key={tag}
+                      className="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-medium border border-border/50 bg-background/60"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Button asChild size="lg" className="rounded-full h-14 px-8 text-lg font-bold group shadow-xl hover:shadow-primary/20 transition-all">
+                    <Link href={`/work/${featuredProject.slug}`}>
+                      View Case Study <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    </Link>
+                  </Button>
+                  <Button asChild size="lg" variant="outline" className="rounded-full h-14 px-8 text-lg font-bold group">
+                    <Link href={featuredProject.demo} target="_blank" rel="noopener noreferrer">
+                      Live Site <ExternalLink className="ml-2 w-5 h-5" />
+                    </Link>
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Separator */}
+      <div className="relative flex items-center justify-center py-10 md:py-14">
+        <div className="h-px w-full max-w-2xl bg-gradient-to-r from-transparent via-border/60 to-transparent" />
+        <div className="absolute w-2.5 h-2.5 rotate-45 border border-border/50 bg-background" />
       </div>
 
-      {/* Filters Section - Premium Redesign */}
-      <section className="px-4 sm:px-6 lg:px-8 mb-20">
-        <div className="max-w-7xl mx-auto">
-          <ScrollReveal>
-            <div className="text-center mb-12 space-y-4">
-              <Badge variant="outline" className="px-4 py-1.5 rounded-full border-primary/20 bg-primary/5 text-primary text-sm font-semibold mb-4">
-                <Sparkles className="w-3 h-3 mr-2 inline" />
-                {workPage.proofBadge}
-              </Badge>
-              <h3 className="text-3xl md:text-5xl font-bold tracking-tight">
-                {workPage.gridTitle}
-              </h3>
-              <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
-                {workPage.gridDescription}
-              </p>
-            </div>
-          </ScrollReveal>
-
-          {/* Category Filters - Enhanced */}
-          <div className="flex justify-center mb-8">
-            <div className="inline-flex rounded-2xl border-2 border-border/50 bg-card/50 backdrop-blur-sm p-1.5 shadow-lg">
-              {categoryFilters.map((filter) => (
-                <button
-                  key={filter.id}
-                  onClick={() => setCategoryFilter(filter.id)}
-                  className={`px-8 py-3 rounded-xl text-sm font-bold transition-all duration-300 ${categoryFilter === filter.id
-                    ? "bg-primary text-primary-foreground shadow-lg shadow-primary/20"
-                    : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
-                    }`}
-                >
-                  {filter.label}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Industry Filters - Enhanced */}
-          <div className="flex justify-center">
-            <div className="flex flex-wrap gap-3 justify-center max-w-3xl">
-              {industryFilters.map((filter) => (
-                <button
-                  key={filter.id}
-                  onClick={() => setIndustryFilter(filter.id)}
-                  className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 border-2 ${industryFilter === filter.id
-                    ? "bg-gradient-to-r from-primary to-primary/80 text-primary-foreground border-primary shadow-lg shadow-primary/20 scale-105"
-                    : "bg-background/80 backdrop-blur-sm text-muted-foreground border-border/50 hover:border-primary/50 hover:text-foreground hover:scale-105"
-                    }`}
-                >
-                  {filter.label}
-                </button>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Projects Grid - Premium Layout */}
+      {/* Filters + Projects */}
       <section className="px-4 sm:px-6 lg:px-8 mb-32">
         <div className="max-w-7xl mx-auto">
+          <div className="mb-12">
+            <h3 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
+              {workPage.gridTitle}
+            </h3>
+            <p className="text-muted-foreground text-lg max-w-2xl leading-relaxed">
+              {workPage.gridDescription}
+            </p>
+          </div>
+
+          {/* Filters — Minimal Pills */}
+          <div className="flex flex-wrap gap-2 mb-12 pb-12 border-b border-border/30">
+            {filterOptions.map((filter) => (
+              <button
+                key={filter.id}
+                onClick={() => setCategoryFilter(filter.id)}
+                className={cn(
+                  "px-5 py-2 text-sm font-medium transition-all rounded-full",
+                  categoryFilter === filter.id
+                    ? "bg-foreground text-background"
+                    : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                )}
+              >
+                {filter.label}
+              </button>
+            ))}
+          </div>
+
+          {/* Project Grid — Editorial 2-Column */}
           {filteredProjects.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-20">
               {filteredProjects.map((project, index) => (
-                <ScrollReveal
-                  key={index}
-                  delay={index * 50}
-                  className={project.size === "large" ? "lg:col-span-2" : ""}
-                >
-                  {/* @ts-ignore - size is strictly typed in component but data might be loose */}
-                  <ProjectCard {...project} />
-                </ScrollReveal>
+                <div key={index} className="group">
+                  <Link href={`/work/${project.slug}`} className="block">
+                    <div className="relative aspect-video overflow-hidden mb-5">
+                      <ExportedImage
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1400px) 45vw, 640px"
+                        className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                      />
+                    </div>
+                    <div className="space-y-3">
+                      <div className="flex flex-wrap gap-x-1.5 text-xs text-muted-foreground font-medium">
+                        {project.tags.slice(0, 3).map((tag, i) => (
+                          <span key={tag}>
+                            {tag}{i < Math.min(2, project.tags.slice(0, 3).length - 1) ? " ·" : ""}
+                          </span>
+                        ))}
+                      </div>
+                      <h3 className="text-2xl font-bold tracking-tight group-hover:text-primary transition-colors">
+                        {project.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground line-clamp-2 leading-relaxed">
+                        {project.description}
+                      </p>
+                      <span className="inline-flex items-center gap-1 text-sm font-medium text-primary">
+                        View Project <ArrowRight className="w-3.5 h-3.5" />
+                      </span>
+                    </div>
+                  </Link>
+                </div>
               ))}
             </div>
           ) : (
             <div className="text-center py-20">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-muted mb-4">
-                <Sparkles className="w-8 h-8 text-muted-foreground" />
-              </div>
               <h4 className="text-xl font-bold mb-2">No projects found</h4>
               <p className="text-muted-foreground">Try adjusting your filters to see more results.</p>
             </div>
@@ -143,43 +184,13 @@ export default function WorkContent() {
         </div>
       </section>
 
-      {/* Enhanced CTA Section - Premium Redesign */}
-      <section className="px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
-          <div className="relative overflow-hidden rounded-[3rem] bg-slate-950 border border-white/5 p-12 md:p-20 text-center text-white shadow-3xl">
-            {/* Animated background elements */}
-            <div className="absolute -top-24 -left-24 w-96 h-96 bg-blue-500/20 rounded-full blur-[120px] animate-pulse" />
-            <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-cyan-500/20 rounded-full blur-[120px] animate-pulse" />
-
-            <div className="relative z-10 space-y-10">
-              <ScrollReveal>
-                <Badge className="bg-white/10 text-white border-white/20 backdrop-blur-md px-4 py-1.5 text-sm font-semibold mb-6">
-                  Ready to Scale?
-                </Badge>
-                <h2 className="text-4xl md:text-6xl font-black tracking-tighter leading-none mb-6">
-                  {workPage.cta.title} <br />
-                  <span className="text-blue-400 italic font-serif">{workPage.cta.highlight}</span>
-                </h2>
-                <p className="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-                  {workPage.cta.description}
-                </p>
-
-                <div className="pt-8">
-                  <Button
-                    asChild
-                    size="lg"
-                    className="bg-white text-slate-950 hover:bg-slate-200 shadow-2xl shadow-white/10 border-0 rounded-full h-16 px-12 text-xl font-black transition-all hover:scale-105 active:scale-95 w-full sm:w-auto"
-                  >
-                    <Link href="/contact?audit=true">
-                      {workPage.cta.button} <ArrowRight className="w-6 h-6 ml-2" />
-                    </Link>
-                  </Button>
-                </div>
-              </ScrollReveal>
-            </div>
-          </div>
-        </div>
-      </section>
+      <CTABanner
+        badge="Ready to Scale?"
+        title={<>{workPage.cta.title} <br /><span className="text-primary italic">{workPage.cta.highlight}</span></>}
+        description={workPage.cta.description}
+        buttonText={workPage.cta.button}
+        buttonHref="/contact?audit=true"
+      />
     </div>
   )
 }

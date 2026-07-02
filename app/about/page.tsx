@@ -14,22 +14,12 @@ import { SkillsSection } from "@/components/sections/skills-section"
 import { CertificationsSection } from "@/components/sections/certifications-section"
 import { SectionDivider } from "@/components/section-divider"
 
+import { BreadcrumbSchema } from "@/components/breadcrumb-schema"
+
 export default function AboutPage() {
   return (
     <div className="pt-24 pb-20">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            itemListElement: [
-              { "@type": "ListItem", position: 1, name: "Home", item: `${siteConfig.url}/` },
-              { "@type": "ListItem", position: 2, name: "About", item: `${siteConfig.url}/about/` },
-            ],
-          }),
-        }}
-      />
+      <BreadcrumbSchema items={[{ name: "Home", path: "/" }, { name: "About", path: "/about/" }]} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

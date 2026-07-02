@@ -2,10 +2,16 @@
 
 import { siteConfig } from "@/lib/config"
 import { SocialLinks } from "@/components/social-links"
-import { useSiteData } from "@/hooks/use-site-data"
+import { useNav } from "@/hooks/use-nav"
+import { useServices } from "@/hooks/use-services"
+import { useFooter } from "@/hooks/use-footer"
+import { useHero } from "@/hooks/use-hero"
 
 export function Footer() {
-  const { nav: navLinks, services, footer, hero } = useSiteData()
+  const navLinks = useNav()
+  const services = useServices()
+  const footer = useFooter()
+  const hero = useHero()
   
   const quickLinks = navLinks.map((item) => ({
     name: item.label,
@@ -25,7 +31,7 @@ export function Footer() {
         <div className="grid md:grid-cols-3 gap-12 mb-12">
           {/* Brand Section */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">
+            <h3 className="text-2xl font-bold text-foreground">
               {siteConfig.name}
             </h3>
             <p className="text-muted-foreground leading-relaxed">

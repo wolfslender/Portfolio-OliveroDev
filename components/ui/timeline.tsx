@@ -23,14 +23,14 @@ interface TimelineProps {
 export function Timeline({ title, icon: Icon, items, color, delay = 0 }: TimelineProps) {
   const colorClasses = {
     blue: {
-      bg: "bg-blue-500",
-      bgLight: "bg-blue-500/10",
-      text: "text-blue-500",
+      bg: "bg-primary",
+      bgLight: "bg-primary/10",
+      text: "text-primary",
     },
     cyan: {
-      bg: "bg-cyan-500",
-      bgLight: "bg-cyan-500/10",
-      text: "text-cyan-500",
+      bg: "bg-secondary",
+      bgLight: "bg-secondary/10",
+      text: "text-secondary",
     },
   }
 

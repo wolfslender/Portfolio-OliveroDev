@@ -1,75 +1,75 @@
 "use client"
 
 import { Card } from "@/components/ui/card"
-import { useSiteData } from "@/hooks/use-site-data"
+import { useSkills, useSkillsSection } from "@/hooks/use-skills"
 import { ScrollReveal } from "@/components/scroll-reveal"
 import { Badge } from "@/components/ui/badge"
 import { TrendingUp, Zap, Shield, Users, Globe, Award, ArrowRight } from "lucide-react"
 
 export function SkillsSection() {
-  const { skills, skillsSection } = useSiteData()
+  const skills = useSkills()
+  const skillsSection = useSkillsSection()
 
-  // Premium outcome-focused categories with visual hierarchy
   const outcomeCategories = [
     {
-      title: "Performance Engineering",
+      title: "Frontend & Performance",
       icon: Zap,
-      outcome: "40% faster load times = Higher conversions & better SEO",
-      impact: "Optimized platforms serving 150K+ concurrent users",
-      skills: ["Next.js", "React", "Performance Optimization", "CDN Strategy"],
-      color: "text-yellow-500",
-      bgColor: "bg-yellow-500/10",
-      borderColor: "border-yellow-500/20",
+      outcome: "Fast, responsive interfaces that users actually enjoy",
+      impact: "Optimized apps serving 150K+ concurrent users",
+      skills: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+      color: "text-primary",
+      bgColor: "bg-primary/10",
+      borderColor: "border-primary/20",
     },
     {
-      title: "Scalable Architecture",
+      title: "Backend & Architecture",
       icon: TrendingUp,
-      outcome: "Built to handle exponential growth without breaking",
-      impact: "Zero-downtime deployments for mission-critical systems",
-      skills: ["Microservices", "Cloud Infrastructure", "Docker", "CI/CD"],
-      color: "text-blue-500",
-      bgColor: "bg-blue-500/10",
-      borderColor: "border-blue-500/20",
+      outcome: "APIs and systems that scale without constant fixes",
+      impact: "Zero-downtime deployments for critical systems",
+      skills: ["Node.js", "PostgreSQL", "Docker", "REST APIs"],
+      color: "text-primary",
+      bgColor: "bg-primary/10",
+      borderColor: "border-primary/20",
     },
     {
-      title: "Security & Compliance",
+      title: "Security & Accessibility",
       icon: Shield,
-      outcome: "Government-grade security for enterprise clients",
-      impact: "WCAG 2.1 AA compliance & data protection standards",
-      skills: ["Azure", "AWS", "Security Audits", "Accessibility"],
-      color: "text-purple-500",
-      bgColor: "bg-purple-500/10",
-      borderColor: "border-purple-500/20",
+      outcome: "Sites that are secure and usable by everyone",
+      impact: "WCAG 2.1 AA compliance & security best practices",
+      skills: ["Azure", "AWS", "Security Audits", "WCAG"],
+      color: "text-secondary",
+      bgColor: "bg-secondary/10",
+      borderColor: "border-secondary/20",
     },
     {
-      title: "Full-Stack Mastery",
+      title: "Full Stack",
       icon: Globe,
-      outcome: "End-to-end ownership from database to UI",
-      impact: "Seamless integration across the entire tech stack",
+      outcome: "End-to-end delivery from database to UI",
+      impact: "Seamless integration across the whole stack",
       skills: ["TypeScript", "Node.js", "PostgreSQL", "REST APIs"],
-      color: "text-emerald-500",
-      bgColor: "bg-emerald-500/10",
-      borderColor: "border-emerald-500/20",
+      color: "text-primary",
+      bgColor: "bg-primary/10",
+      borderColor: "border-primary/20",
     },
     {
-      title: "CMS & Content Strategy",
+      title: "CMS & Platforms",
       icon: Users,
-      outcome: "Empowering non-technical teams to manage content",
-      impact: "Custom WordPress & Webflow solutions for enterprise",
+      outcome: "Content management that non-devs can actually use",
+      impact: "Custom WordPress & Webflow for enterprise clients",
       skills: ["WordPress", "Webflow", "Sanity", "Headless CMS"],
-      color: "text-pink-500",
-      bgColor: "bg-pink-500/10",
-      borderColor: "border-pink-500/20",
+      color: "text-secondary",
+      bgColor: "bg-secondary/10",
+      borderColor: "border-secondary/20",
     },
     {
       title: "SEO & Analytics",
       icon: Award,
-      outcome: "Data-driven decisions that increase organic traffic",
-      impact: "Strategic SEO implementations for global reach",
+      outcome: "More organic traffic, better rankings",
+      impact: "SEO implementations that actually move the needle",
       skills: ["Technical SEO", "Google Analytics", "Schema Markup", "Core Web Vitals"],
-      color: "text-orange-500",
-      bgColor: "bg-orange-500/10",
-      borderColor: "border-orange-500/20",
+      color: "text-primary",
+      bgColor: "bg-primary/10",
+      borderColor: "border-primary/20",
     },
   ]
 
@@ -82,14 +82,11 @@ export function SkillsSection() {
       <div className="max-w-7xl mx-auto">
         <ScrollReveal>
           <div className="text-center mb-20">
-            <Badge variant="outline" className="px-4 py-1.5 rounded-full border-primary/20 bg-primary/5 text-primary text-sm font-semibold mb-6">
-              Technical Arsenal
-            </Badge>
             <h2 className="text-4xl sm:text-6xl font-black mb-6 tracking-tight">
-              Skills That Drive <span className="text-gradient">Business Impact</span>
+              What <span className="text-primary">I work with</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Strategic technology expertise that translates directly into revenue growth, operational efficiency, and competitive advantage.
+              The tools and technologies I use day to day to get the job done.
             </p>
           </div>
         </ScrollReveal>
@@ -120,7 +117,7 @@ export function SkillsSection() {
 
                     {/* Outcome Box */}
                     <div className="mb-6 p-5 bg-gradient-to-br from-primary/5 to-transparent rounded-2xl border-l-4 border-primary">
-                      <p className="text-xs font-bold uppercase tracking-widest text-primary mb-2">Business Outcome</p>
+                      <p className="text-xs font-bold uppercase tracking-widest text-primary mb-2">What this means</p>
                       <p className="text-base font-semibold text-foreground leading-relaxed">{category.outcome}</p>
                     </div>
 
@@ -149,17 +146,16 @@ export function SkillsSection() {
           })}
         </div>
 
-        {/* Comprehensive Tech Stack - Premium Presentation */}
+        {/* Tech Stack */}
         <ScrollReveal delay={500}>
           <div className="relative p-12 bg-gradient-to-br from-slate-950 to-slate-900 rounded-[3rem] border border-white/5 overflow-hidden">
-            {/* Animated background */}
-            <div className="absolute -top-24 -right-24 w-96 h-96 bg-blue-500/10 rounded-full blur-[120px]" />
-            <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-cyan-500/10 rounded-full blur-[120px]" />
+            <div className="absolute -top-24 -right-24 w-96 h-96 bg-primary/10 rounded-full blur-[120px]" />
+            <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-secondary/10 rounded-full blur-[120px]" />
 
             <div className="relative z-10">
               <div className="text-center mb-10">
-                <h3 className="text-3xl font-black text-white mb-3">Complete Technical Toolkit</h3>
-                <p className="text-slate-400 text-lg">Mastery across the modern web development ecosystem</p>
+                <h3 className="text-3xl font-black text-white mb-3">Full tech stack</h3>
+                <p className="text-slate-400 text-lg">Everything I use to build and ship</p>
               </div>
 
               <div className="flex flex-wrap justify-center gap-3">

@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { useSiteData } from "@/hooks/use-site-data"
+import { usePlugins } from "@/hooks/use-plugins"
 import { ScrollReveal } from "@/components/scroll-reveal"
 import { ArrowRight, CheckCircle2, Clock, ExternalLink, Shield, Star, TrendingUp, Users, Zap } from "lucide-react"
 import Link from "next/link"
@@ -9,7 +9,7 @@ import { Badge } from "@/components/ui/badge"
 import { cn } from "@/lib/utils"
 
 export default function PluginsContent() {
-  const { plugins: pluginsData } = useSiteData()
+  const pluginsData = usePlugins()
 
   return (
     <div className="pt-24 pb-20 overflow-hidden">
@@ -23,7 +23,7 @@ export default function PluginsContent() {
             </Badge>
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-balance leading-[1.1]">
               {pluginsData.hero.title} <br />
-              <span className="text-gradient">
+              <span className="text-primary">
                 {pluginsData.hero.highlight}
               </span>
             </h1>
@@ -161,8 +161,8 @@ export default function PluginsContent() {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="rounded-2xl border border-border/60 bg-card/40 p-6 backdrop-blur-sm">
-                <div className="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center mb-4">
-                  <CheckCircle2 className="w-6 h-6 text-blue-500" />
+                <div className="w-12 h-12 bg-primary/10 flex items-center justify-center mb-4">
+                  <CheckCircle2 className="w-6 h-6 text-primary" />
                 </div>
                 <h4 className="font-bold mb-2">Clean Code</h4>
                 <p className="text-sm text-muted-foreground">Well-documented, optimized, and following WordPress best practices.</p>

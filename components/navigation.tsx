@@ -3,11 +3,12 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Menu, X, Moon, Sun, Sparkles } from "lucide-react"
+import { Menu, X, Moon, Sun } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useTheme } from "next-themes"
 import { siteConfig } from "@/lib/config"
-import { useSiteData } from "@/hooks/use-site-data"
+import { useNav } from "@/hooks/use-nav"
+import { useCommon } from "@/hooks/use-common"
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
@@ -15,7 +16,7 @@ export function Navigation() {
   const { theme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
   const pathname = usePathname()
-  const { nav: navLinks } = useSiteData()
+  const navLinks = useNav()
 
   useEffect(() => {
     setMounted(true)
@@ -43,10 +44,9 @@ export function Navigation() {
         <div className="flex items-center justify-between h-16">
           <Link
             href="/"
-            className="flex items-center gap-2 text-xl font-bold text-foreground hover:text-primary transition-colors group"
+            className="text-xl font-bold text-foreground hover:text-primary transition-colors"
           >
-            <Sparkles className="h-5 w-5 text-primary group-hover:rotate-180 transition-transform duration-500" />
-            <span className="text-gradient">OliveroDev</span>
+            OliveroDev
           </Link>
 
           {/* Desktop Navigation - Modern design with active indicators */}

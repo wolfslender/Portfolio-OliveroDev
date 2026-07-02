@@ -27,7 +27,7 @@ export function SectionDivider({ variant = "wave" }: { variant?: "wave" | "dots"
           {[...Array(5)].map((_, i) => (
             <div
               key={i}
-              className="w-2 h-2 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 animate-pulse"
+              className="w-2 h-2 rounded-full bg-primary animate-pulse"
               style={{ animationDelay: `${i * 0.2}s` }}
             />
           ))}
@@ -38,7 +38,7 @@ export function SectionDivider({ variant = "wave" }: { variant?: "wave" | "dots"
 
   return (
     <div className="relative h-32 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-500/5 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/[0.04] to-transparent" />
     </div>
   )
 }

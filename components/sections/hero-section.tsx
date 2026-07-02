@@ -1,102 +1,61 @@
 "use client"
 
-import { ArrowDown, CheckCircle2, Download } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { useSiteData } from "@/hooks/use-site-data"
+import { useHero } from "@/hooks/use-hero"
 import { SocialLinks } from "@/components/social-links"
-import { Spotlight } from "@/components/ui/spotlight"
+import { InteractiveGradient } from "@/components/interactive-gradient"
 
 export function HeroSection() {
-  const { hero } = useSiteData()
+  const hero = useHero()
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background/[0.96] antialiased bg-grid-white/[0.02]">
-      <div className="dark:block">
-        <Spotlight className="-top-40 left-0 md:left-60 md:-top-20" fill="currentColor" />
-      </div>
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background antialiased">
+      <InteractiveGradient />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-32 md:pt-40">
-        <div className="space-y-12 animate-fade-in">
+        <div className="space-y-10 max-w-4xl mx-auto">
 
           <div className="space-y-6">
-            <h1 className="text-6xl sm:text-7xl md:text-9xl font-black tracking-tighter text-balance leading-[0.9]">
-              {hero.title.prefix} <br className="hidden md:block" />
-              <span className="text-gradient">
+            <h1 className="text-5xl sm:text-6xl md:text-8xl font-black tracking-tight text-balance leading-[1]">
+              {hero.title.prefix}{" "}
+              <span className="text-primary">
                 {hero.title.highlight}
               </span>
             </h1>
-
-            <div className="flex flex-wrap items-center justify-center gap-3">
-              {hero.roles.map((role, idx) => (
-                <div key={role} className="flex items-center gap-3">
-                  <span className="text-sm md:text-base font-black uppercase tracking-[0.2em] text-primary/80">
-                    {role}
-                  </span>
-                  {idx < hero.roles.length - 1 && (
-                    <span className="w-1.5 h-1.5 rounded-full bg-border" />
-                  )}
-                </div>
-              ))}
-            </div>
           </div>
 
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto text-balance leading-relaxed font-medium">
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto text-balance leading-relaxed">
             {hero.description}
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
             <Button
               asChild
               size="lg"
-              className="shimmer w-full sm:w-auto rounded-full text-lg h-12 px-8 bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/25 transition-all hover:scale-105 active:scale-95"
+              className="w-full sm:w-auto h-14 px-10 bg-primary hover:bg-primary/90 text-primary-foreground text-lg font-bold transition-all hover:shadow-xl hover:shadow-primary/20 active:scale-[0.98]"
             >
               <Link href="/contact?audit=true">
                 {hero.buttons.primary}
+                <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
             <Button
               asChild
               variant="outline"
               size="lg"
-              className="w-full sm:w-auto rounded-full text-lg h-12 px-8 border bg-background/50 backdrop-blur-sm hover:bg-accent/50 text-foreground transition-all hover:scale-105 active:scale-95"
+              className="w-full sm:w-auto h-14 px-10 text-lg font-bold border-2 hover:bg-muted/50 transition-all active:scale-[0.98]"
             >
               <Link href="/work">
                 {hero.buttons.secondary}
               </Link>
             </Button>
-
-            <Button
-              asChild
-              variant="ghost"
-              size="lg"
-              className="w-full sm:w-auto rounded-full text-lg h-12 px-8 bg-zinc-100 hover:bg-zinc-200 text-zinc-900 dark:bg-transparent dark:text-foreground dark:hover:bg-muted/50"
-            >
-              <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" download>
-                {hero.buttons.downloadCv}
-                <Download className="ml-2 h-4 w-4" />
-              </a>
-            </Button>
           </div>
 
-          {hero.proof?.length > 0 && (
-            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 max-w-4xl mx-auto">
-              {hero.proof.map((item) => (
-                <div key={item} className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-background/60 px-4 py-2 backdrop-blur-sm">
-                  <CheckCircle2 className="h-4 w-4 text-primary" />
-                  <span className="text-sm font-semibold text-foreground/80">{item}</span>
-                </div>
-              ))}
-            </div>
-          )}
-
-          <div className="pt-12 flex justify-center animate-bounce">
-            <SocialLinks iconClassName="w-6 h-6 hover:scale-110 transition-transform" />
+          <div className="pt-8 flex justify-center">
+            <SocialLinks iconClassName="w-5 h-5 hover:text-primary transition-colors" />
           </div>
-        </div>
-
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce p-2 rounded-full hover:bg-muted/50 transition-colors">
-          <ArrowDown className="w-6 h-6 text-muted-foreground" />
         </div>
       </div>
     </section>

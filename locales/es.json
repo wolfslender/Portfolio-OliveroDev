@@ -1,20 +1,20 @@
 {
   "hero": {
     "title": {
-      "prefix": "Websites creados para",
-      "highlight": "ganar confianza, leads y crecimiento."
+      "prefix": "Websites que de verdad",
+      "highlight": "traen clientes."
     },
-    "roles": ["UX orientada a conversión", "SEO + Rendimiento", "Webflow / WordPress / Next.js", "Ejecución senior directa"],
-    "description": "Ayudo a empresas a lanzar y mejorar websites de alto rendimiento que se ven premium, cargan rápido y convierten más visitantes en oportunidades reales.",
-    "proof": ["Respuesta en menos de 24h", "Pensado para SEO + velocidad", "Soporte de lanzamiento incluido"],
+    "roles": ["UX que convierte", "SEO + Velocidad", "Webflow / WordPress / Next.js", "Yo mismo hago el trabajo"],
+    "description": "Construyo y arreglo websites para negocios que necesitan cargar rápido, verse profesionales y convertir visitantes en clientes reales. Sin agencias, sin vueltas — solo yo.",
+    "proof": ["Respondo en menos de 24h", "Construido para SEO desde el día 1", "Soporte de lanzamiento incluido"],
     "buttons": {
       "primary": "Obtén una Auditoría Gratis",
-      "secondary": "Ver Resultados",
-      "downloadCv": "Descargar Deck Comercial"
+      "secondary": "Ver Mi Trabajo",
+      "downloadCv": "Descargar Mi CV"
     }
   },
   "trustedBy": {
-    "title": "Empresas que han confiado en mí"
+    "title": "Algunas marcas con las que he trabajado"
   },
   "nav": {
     "home": "Inicio",
@@ -26,44 +26,44 @@
   },
   "about": {
     "title": "Por Qué Trabajar Conmigo",
-    "description": "Cuando contratas una agencia, a menudo te vende el socio senior pero te atiende el pasante junior. Al trabajar conmigo, tienes acceso directo a más de 10 años de experiencia senior. Me convierto en tu socio técnico dedicado, invertido en tu éxito.",
-    "experience": "Experiencia",
+    "description": "Cuando contratas una agencia, el socio senior te vende el proyecto y un becario lo construye. Cuando trabajas conmigo, recibes directamente mis más de 10 años de experiencia. Sin intermediarios, sin sorpresas.",
+    "experience": "Dónde he trabajado",
     "education": "Educación",
-    "softSkills": "Habilidades Blandas"
+    "softSkills": "Cómo trabajo"
   },
   "stats": [
-    { "label": "Años de Experiencia" },
-    { "label": "Proyectos Entregados" },
-    { "label": "Satisfacción del Cliente" },
-    { "label": "Tiempos de Carga más Rápidos" }
+    { "label": "Años en el ruedo" },
+    { "label": "Proyectos entregados" },
+    { "label": "Clientes contentos" },
+    { "label": "Carga más rápida" }
   ],
   "featuredProjects": {
-    "badge": "Trabajos Seleccionados",
-    "titlePrefix": "Resultados",
-    "titleHighlight": "Que Puedes Verificar",
-    "description": "Lanzamientos, rediseños y migraciones que mejoraron velocidad, credibilidad y preparación para convertir.",
-    "viewAll": "Ver Todos los Casos"
+    "badge": "Trabajos recientes",
+    "titlePrefix": "Cosas que",
+    "titleHighlight": "he construido",
+    "description": "Algunos proyectos que he sacado adelante — desde portales gubernamentales hasta plugins de WordPress. Cada uno me enseñó algo.",
+    "viewAll": "Ver todos los proyectos"
   },
   "cta": {
-    "badge": "¿Necesitas más leads desde tu website?",
-    "titlePrefix": "¿Listo para convertir tu sitio en un",
-    "titleHighlight": "activo de ventas?",
-    "description": "Agenda una llamada estratégica o pide una auditoría en video gratis. Te muestro qué está frenando tus conversiones y cómo corregirlo.",
+    "badge": "¿No estás recibiendo suficientes clientes?",
+    "titlePrefix": "Hagamos que tu web",
+    "titleHighlight": "trabaje más para ti.",
+    "description": "Agenda una llamada rápida o pide una auditoría gratis. Te muestro exactamente qué está frenando tu sitio y cómo arreglarlo.",
     "primaryButton": "Agendar Llamada Estratégica",
-    "secondaryButton": "Obtener Auditoría en Video"
+    "secondaryButton": "Obtener Auditoría en Video Gratis"
   },
   "footer": {
-    "description": "Desarrollador Full Stack creando experiencias digitales hermosas con tecnologías modernas.",
+    "description": "Soy Alexis, desarrollador full stack en Santo Domingo. Construyo websites que realmente funcionan.",
     "quickLinks": "Enlaces Rápidos",
     "services": "Servicios",
-    "builtWith": "Construido con Next.js y Tailwind CSS.",
+    "builtWith": "Hecho con Next.js y Tailwind.",
     "privacy": "Política de Privacidad",
     "terms": "Términos de Servicio",
-    "disclaimer": "Todas las marcas comerciales, logotipos y nombres de marca son propiedad de sus respectivos dueños. Usados solo con fines de portafolio."
+    "disclaimer": "Todas las marcas, logos y nombres de marca son propiedad de sus respectivos dueños. Usados solo con fines de portafolio."
   },
   "skills": {
-    "title": "Habilidades y Experiencia",
-    "description": "Un conjunto completo de herramientas para construir aplicaciones modernas y escalables",
+    "title": "Con qué trabajo",
+    "description": "Herramientas y tecnologías que uso día a día",
     "categories": {
       "frontend": "Frontend",
       "cms": "CMS y Plataformas",
@@ -74,9 +74,9 @@
     }
   },
   "certificationsPage": {
-    "titlePrefix": "Certificaciones y",
-    "titleHighlight": "Educación",
-    "description": "Logros de aprendizaje continuo y desarrollo profesional",
+    "titlePrefix": "Certificaciones",
+    "titleHighlight": "y Aprendizaje",
+    "description": "Cursos y certificaciones que he obtenido en el camino",
     "issued": "Emitido:",
     "id": "ID:"
   },
@@ -160,21 +160,21 @@
   },
   "experience": [
     {
-      "description": "Especializado en seguridad web, mantenimiento, SEO y gestión de sitios en servidores Azure. Enfocado en la optimización del rendimiento y la usabilidad."
+      "description": "Seguridad web, mantenimiento, SEO y administración de servidores en Azure. Manteniendo sitios rápidos y seguros."
     },
     {
-      "description": "Colaborando en el mantenimiento y evolución de la plataforma digital principal."
+      "description": "Ayudando a mantener y mejorar la plataforma digital principal."
     },
     {
-      "description": "Lideré el desarrollo y mantenimiento de sitios web corporativos utilizando WordPress, enfocándome en temas personalizados y rendimiento."
+      "description": "Construí y mantuve sitios corporativos en WordPress — temas personalizados, rendimiento, todo el stack."
     },
     {
-      "description": "Especializado en desarrollo backend desde cero para proyectos de gran escala y alto tráfico, y administración de servidores."
+      "description": "Desarrollo backend desde cero para proyectos de alto tráfico, más administración de servidores."
     }
   ],
   "education": [
     {
-      "description": "Graduado con una base sólida en programación, algoritmos y sistemas de información."
+      "description": "Carrera en Ciencias de la Computación. Base sólida en programación, algoritmos y sistemas de información."
     }
   ],
   "common": {
@@ -202,92 +202,92 @@
     "whatsappMessage": "¡Hola Alexis! Vi tu portafolio y me gustaría conversar."
   },
   "workPage": {
-    "title": "Resultados Que Generan Confianza",
-    "description": "Websites reales creados para velocidad, claridad y conversión en sectores de alta exigencia.",
-    "proofBadge": "Prueba de Ejecución",
-    "gridTitle": "Más Builds Ganadores",
-    "gridDescription": "Proyectos pensados para elevar credibilidad, rendimiento y la manera en que el usuario llega a la acción.",
+    "title": "Proyectos que he entregado",
+    "description": "Sitios reales para clientes reales — portales gubernamentales, SaaS, e-commerce y más.",
+    "proofBadge": "En vivo y funcionando",
+    "gridTitle": "Más proyectos",
+    "gridDescription": "Cada uno construido pensando en velocidad, usabilidad y en resolver el problema de verdad.",
     "filters": {
       "all": "Todos",
       "fullstack": "Full Stack",
       "frontend": "Frontend"
     },
     "cta": {
-      "title": "¿Quieres resultados similares?",
-      "highlight": "Diseñemos tu próxima web.",
-      "description": "Si necesitas un sitio que se vea premium y funcione bajo presión, puedo ayudarte a planificarlo, diseñarlo y lanzarlo.",
+      "title": "¿Quieres algo similar?",
+      "highlight": "Hablemos de tu proyecto.",
+      "description": "Si necesitas un sitio que cargue rápido y se vea profesional, puedo ayudarte a planificarlo, construirlo y lanzarlo.",
       "button": "Solicitar Auditoría Web"
     }
   },
   "servicesPage": {
     "hero": {
-      "title": "Construye, Lanza y Escala",
-      "description": "MVPs listos para convertir y sitios de alto rendimiento entregados rápido. Estrategia, desarrollo y soporte de lanzamiento incluidos."
+      "title": "Lo que puedo hacer por ti",
+      "description": "Desde MVPs hasta plataformas completas. Yo manejo la tecnología para que tú te enfoques en el negocio."
     },
     "methodology": {
-      "title": "Mi Proceso Probado",
-      "description": "No solo escribo código. Sigo una metodología estructurada que asegura que tu proyecto se entregue a tiempo, dentro del presupuesto y sin errores.",
+      "title": "Cómo trabajo",
+      "description": "Sigo un proceso simple para asegurar que los proyectos se entreguen a tiempo y funcionen bien.",
       "pillars": {
         "cleanArch": {
-          "title": "1. Descubrimiento Estratégico",
-          "description": "Definimos tus objetivos comerciales y requerimientos técnicos antes de escribir una sola línea de código. Sin adivinanzas."
+          "title": "1. Entender qué necesitas",
+          "description": "Hablamos de tus objetivos antes de escribir una sola línea de código. Sin adivinanzas."
         },
         "performance": {
-          "title": "2. Desarrollo Ágil",
-          "description": "Sprints quincenales con progreso visible. Nunca estarás a oscuras sobre el estado de tu proyecto."
+          "title": "2. Construir por etapas",
+          "description": "Revisiones quincenales para que siempre sepas cómo va todo. Sin cajas negras."
         },
         "security": {
-          "title": "3. Lanzamiento y Escalado",
-          "description": "QA riguroso, auditoría de seguridad y una estrategia de despliegue suave diseñada para el crecimiento."
+          "title": "3. Lanzar y seguir mejorando",
+          "description": "QA, revisión de seguridad y un plan de despliegue que te prepare para el largo plazo."
         }
       }
     },
     "cta": {
-      "title": "¿Listo para lanzar algo que convierta?",
-      "description": "Cuéntame qué vas a construir. Te respondo con un plan claro, timeline y próximos pasos en menos de 24 horas.",
+      "title": "¿Listo para empezar?",
+      "description": "Cuéntame qué vas a construir. Te respondo con un plan y timeline en menos de 24 horas.",
       "button": "Agendar Llamada Estratégica"
     }
   },
   "contactPage": {
-    "title": "Trabajemos Juntos",
-    "description": "¿Tienes un proyecto en mente o solo quieres saludar? Siempre estoy abierto a discutir nuevas ideas y oportunidades.",
+    "title": "Hablemos",
+    "description": "¿Tienes un proyecto en mente? ¿O solo quieres saludar? Siempre estoy abierto a conversar.",
     "emailMe": "Envíame un Email",
     "whatsappMe": "WhatsApp",
-    "socialConnect": "O conecta conmigo en redes sociales"
+    "socialConnect": "O búscame en redes sociales"
   },
   "projects": [
     {
-      "description": "La empresa #1 en el mundo especializada en brindar respuestas inmediatas a incidentes de ciberseguridad. Líderes en la recuperación y protección de activos digitales."
+      "description": "Empresa global de ciberseguridad — líder en recuperación de activos digitales y respuesta a incidentes."
     },
     {
-      "description": "Desarrollo fullstack para una plataforma de liderazgo global con 150k+ usuarios. Mejoré el tráfico orgánico un 40% mediante estrategias SEO y reduje el tiempo de respuesta del servidor en un 25%."
+      "description": "Desarrollo fullstack para plataforma de liderazgo con 150k+ usuarios. Aumenté tráfico orgánico 40% y reduje respuesta del servidor 25%."
     },
     {
-      "description": "Lideré la transformación digital del portal gubernamental de Puerto Rico. Logré un 99.9% de uptime y cumplimiento total WCAG 2.1 AA, asegurando accesibilidad para más de 3 millones de ciudadanos."
+      "description": "Lideré la transformación digital del portal de gobierno de Puerto Rico. 99.9% uptime, WCAG 2.1 AA, 3M+ ciudadanos servidos."
     },
     {
-      "description": "SaaS de gestión de tareas que redujo el tiempo de onboarding de usuarios un 40%. Cuenta con colaboración en tiempo real vía WebSockets para equipos remotos."
+      "description": "SaaS de gestión de tareas con drag-and-drop y colaboración en tiempo real. Reduje el onboarding 40%."
     },
     {
-      "description": "E-commerce especializado para peces ornamentales, acuarios y accesorios. Cuenta con catálogo de productos, servicios de importación y suministros acuáticos completos."
+      "description": "E-commerce especializado en peces ornamentales y accesorios de acuario. Catálogo, importaciones, todo."
     },
     {
-      "description": "Profesional certificado con credenciales de IBM y Google. Experto en la construcción de sistemas seguros, gestión de vulnerabilidades y fomento de entornos técnicos eficientes."
+      "description": "Profesional certificado por IBM y Google. Enfoque en sistemas seguros y gestión de vulnerabilidades."
     },
     {
-      "description": "Plataforma de seguridad vial que procesó 50k+ reportes de incidentes en su primer año. Integración de mapas en tiempo real para reducir tiempos de respuesta de emergencia."
+      "description": "Plataforma de seguridad vial — procesó 50k+ reportes de incidentes en su primer año con mapas en tiempo real."
     },
     {
-      "description": "Migración corporativa de WordPress a Webflow que aumentó la puntuación de velocidad de 45 a 95. Implementé integraciones API personalizadas para automatizar actualizaciones de contenido."
+      "description": "Migración de WordPress a Webflow. Velocidad pasó de 45 a 95. APIs personalizadas para actualizaciones automáticas."
     },
     {
-      "description": "Motor de blog de alto rendimiento construido para dominar en SEO. Implementación de generación automática de esquemas y estructuras de contenido pilar que impulsaron el ranking de keywords."
+      "description": "Motor de blog construido para SEO. Esquemas automáticos y contenido pilar que mejoraron rankings."
     },
     {
-      "description": "Portal oficial de salud pública para el Gobierno de Puerto Rico. Manejó 1M+ de visitantes mensuales durante picos de demanda con cero tiempo de inactividad."
+      "description": "Portal de salud pública para el Gobierno de Puerto Rico. 1M+ visitas mensuales en pico con cero caídas."
     },
     {
-      "description": "Plataforma moderna de imágenes médicas integrando diagnósticos por IA. Aumentó las reservas de citas un 60% a través de una UX optimizada y diseño mobile-first."
+      "description": "Plataforma de imágenes médicas con IA. Aumenté reservas de citas 60% con una UX más limpia."
     }
   ],
   "services": [

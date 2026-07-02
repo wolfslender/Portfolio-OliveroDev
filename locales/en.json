@@ -1,20 +1,20 @@
 {
   "hero": {
     "title": {
-      "prefix": "Websites built to",
-      "highlight": "win trust, leads, and growth."
+      "prefix": "Websites that actually",
+      "highlight": "bring in business."
     },
-    "roles": ["Conversion-Focused UX", "SEO + Performance", "Webflow / WordPress / Next.js", "Direct Senior Execution"],
-    "description": "I help businesses launch and improve high-performance websites that look premium, load fast, and turn more visitors into real inquiries.",
-    "proof": ["Reply within 24h", "Built for SEO + speed", "Launch support included"],
+    "roles": ["UI/UX that converts", "SEO + Speed", "Webflow / WordPress / Next.js", "I do the work myself"],
+    "description": "I build and fix websites for businesses that need them to load fast, look legit, and turn visitors into paying customers. No fluff, no agencies — just me.",
+    "proof": ["I reply within 24h", "Built for SEO from day one", "Launch support included"],
     "buttons": {
-      "primary": "Get Free Website Audit",
-      "secondary": "View Results",
-      "downloadCv": "Download Capabilities Deck"
+      "primary": "Get a Free Website Audit",
+      "secondary": "See My Work",
+      "downloadCv": "Download My Resume"
     }
   },
   "trustedBy": {
-    "title": "Trusted by innovative companies"
+    "title": "Some folks I've worked with"
   },
   "nav": {
     "home": "Home",
@@ -26,44 +26,44 @@
   },
   "about": {
     "title": "Why Work With Me",
-    "description": "When you hire an agency, you often get sold by the senior partner but serviced by the junior intern. When you work with me, you get direct access to 10+ years of senior expertise. I become your dedicated technical partner, invested in your success.",
-    "experience": "Experience",
+    "description": "When you hire an agency, the senior person sells you the project and a junior builds it. When you work with me, you get me — 10+ years of experience, directly on your project. No handoffs, no surprises.",
+    "experience": "Where I've worked",
     "education": "Education",
-    "softSkills": "Soft Skills"
+    "softSkills": "How I work"
   },
   "stats": [
-    { "label": "Years Experience" },
-    { "label": "Projects Delivered" },
-    { "label": "Client Satisfaction" },
-    { "label": "Faster Load Times" }
+    { "label": "Years in the game" },
+    { "label": "Projects shipped" },
+    { "label": "Happy clients" },
+    { "label": "Faster load times" }
   ],
   "featuredProjects": {
-    "badge": "Selected Work",
-    "titlePrefix": "Results",
-    "titleHighlight": "You Can Verify",
-    "description": "Selected launches, rebuilds, and migrations that improved speed, credibility, and conversion readiness.",
-    "viewAll": "View All Case Studies"
+    "badge": "Recent work",
+    "titlePrefix": "Stuff I've",
+    "titleHighlight": "built recently",
+    "description": "A few projects I've shipped — from government portals to WordPress plugins. Each one taught me something.",
+    "viewAll": "View all projects"
   },
   "cta": {
-    "badge": "Need more leads from your website?",
-    "titlePrefix": "Ready to turn your site into a",
-    "titleHighlight": "sales asset?",
-    "description": "Book a strategy call or request a free video audit. I’ll show you what’s hurting conversions and how to fix it.",
+    "badge": "Not getting enough leads?",
+    "titlePrefix": "Let's make your website",
+    "titleHighlight": "work harder for you.",
+    "description": "Book a quick call or let me audit your site for free. I'll show you exactly what's slowing it down and what to fix.",
     "primaryButton": "Book a Strategy Call",
-    "secondaryButton": "Get Free Video Audit"
+    "secondaryButton": "Get a Free Video Audit"
   },
   "footer": {
-    "description": "Full Stack Developer crafting beautiful digital experiences with modern technologies.",
+    "description": "I'm Alexis, a full-stack developer based in Santo Domingo. I build websites that actually perform.",
     "quickLinks": "Quick Links",
     "services": "Services",
-    "builtWith": "Built with Next.js & Tailwind CSS.",
+    "builtWith": "Built with Next.js & Tailwind.",
     "privacy": "Privacy Policy",
     "terms": "Terms of Service",
     "disclaimer": "All trademarks, logos, and brand names are property of their respective owners. Used for portfolio purposes only."
   },
   "skills": {
-    "title": "Skills & Expertise",
-    "description": "A comprehensive toolkit for building modern, scalable applications",
+    "title": "What I work with",
+    "description": "Tools and tech I use day to day",
     "categories": {
       "frontend": "Frontend",
       "cms": "CMS & Platforms",
@@ -74,9 +74,9 @@
     }
   },
   "certificationsPage": {
-    "titlePrefix": "Certifications &",
-    "titleHighlight": "Education",
-    "description": "Continuous learning and professional development achievements",
+    "titlePrefix": "Certifications",
+    "titleHighlight": "& Learning",
+    "description": "Courses and certs I've picked up along the way",
     "issued": "Issued:",
     "id": "ID:"
   },
@@ -160,21 +160,21 @@
   },
   "experience": [
     {
-      "description": "Specializing in web security, maintenance, SEO, and site management on Azure servers. Focused on performance optimization and usability."
+      "description": "Web security, maintenance, SEO, and server management on Azure. Keeping sites fast and secure."
     },
     {
-      "description": "Collaborating on the maintenance and evolution of the main digital platform."
+      "description": "Helping maintain and improve the main digital platform."
     },
     {
-      "description": "Led the development and maintenance of corporate websites using WordPress, focusing on custom themes and performance."
+      "description": "Built and maintained corporate WordPress sites — custom themes, performance, the whole stack."
     },
     {
-      "description": "Specializing in backend development from scratch for high-traffic, large-scale projects and server administration."
+      "description": "Backend development from scratch for high-traffic projects, plus server admin."
     }
   ],
   "education": [
     {
-      "description": "Graduated with a strong foundation in programming, algorithms, and information systems."
+      "description": "Computer Science degree. Solid foundation in programming, algorithms, and information systems."
     }
   ],
   "common": {
@@ -202,98 +202,98 @@
     "whatsappMessage": "Hi Alexis! I saw your portfolio and would like to chat."
   },
   "workPage": {
-    "title": "Results That Build Trust",
-    "description": "Real websites shipped for speed, clarity, and conversion across government, enterprise, and growth-stage teams.",
-    "proofBadge": "Proof of Execution",
-    "gridTitle": "More Winning Builds",
-    "gridDescription": "Projects designed to improve credibility, performance, and the way users move toward action.",
+    "title": "Projects I've shipped",
+    "description": "Real sites for real clients — government portals, SaaS platforms, e-commerce, and more.",
+    "proofBadge": "Live & running",
+    "gridTitle": "More projects",
+    "gridDescription": "Each one built with a focus on speed, usability, and actually solving the problem.",
     "filters": {
       "all": "All Work",
       "fullstack": "Full Stack",
       "frontend": "Frontend"
     },
     "cta": {
-      "title": "Want similar results?",
-      "highlight": "Let's map your next build.",
-      "description": "If you need a site that looks premium and performs under pressure, I can help you plan, design, and launch it.",
+      "title": "Want something similar?",
+      "highlight": "Let's talk about your project.",
+      "description": "If you need a site that loads fast and looks professional, I can help plan, build, and launch it.",
       "button": "Request a Website Audit"
     }
   },
   "servicesPage": {
     "hero": {
-      "title": "Build, Launch & Scale",
-      "description": "Conversion-ready MVPs and high-performance websites delivered fast. Strategy, development, and launch support included."
+      "title": "What I can do for you",
+      "description": "From MVPs to full-scale platforms. I handle the tech so you can focus on the business."
     },
     "methodology": {
-      "title": "My Proven Process",
-      "description": "I don't just write code. I follow a structured methodology that ensures your project is delivered on time, on budget, and bug-free.",
+      "title": "How I work",
+      "description": "I follow a simple process to make sure projects ship on time and actually work.",
       "pillars": {
         "cleanArch": {
-          "title": "1. Strategic Discovery",
-          "description": "We define your business goals and technical requirements before writing a single line of code. No guesswork."
+          "title": "1. Figure out what you need",
+          "description": "We talk through your goals before I write a single line of code. No guesswork."
         },
         "performance": {
-          "title": "2. Agile Development",
-          "description": "Bi-weekly sprints with visible progress. You're never in the dark about where your project stands."
+          "title": "2. Build it in stages",
+          "description": "Bi-weekly check-ins so you always know where things stand. No black boxes."
         },
         "security": {
-          "title": "3. Launch & Scale",
-          "description": "Rigorous QA, security auditing, and a smooth deployment strategy designed for growth."
+          "title": "3. Launch and keep improving",
+          "description": "QA, security checks, and a deployment plan that sets you up for the long run."
         }
       }
     },
     "cta": {
-      "title": "Ready to ship something that converts?",
-      "description": "Tell me what you're building. I’ll reply with a clear plan, timeline, and next steps within 24 hours.",
+      "title": "Ready to get started?",
+      "description": "Tell me what you're building. I'll reply with a plan and timeline within 24 hours.",
       "button": "Book a Strategy Call"
     }
   },
   "contactPage": {
-    "title": "Let's Work Together",
-    "description": "Have a project in mind or just want to say hi? I'm always open to discussing new ideas and opportunities.",
+    "title": "Let's Talk",
+    "description": "Got a project in mind? Just want to say hi? I'm always open to a conversation.",
     "emailMe": "Email Me",
     "whatsappMe": "WhatsApp Me",
-    "socialConnect": "Or connect with me on social media"
+    "socialConnect": "Or find me on social media"
   },
   "projects": [
     {
-      "description": "The #1 company globally specialized in immediate response to cybersecurity incidents. Leaders in digital asset recovery and protection."
+      "description": "Global cybersecurity company — the go-to for digital asset recovery and incident response."
     },
     {
-      "description": "Fullstack development for a global leadership platform serving 150k+ professionals. Improved organic traffic by 40% through SEO strategies and reduced server response time by 25%."
+      "description": "Fullstack dev for a leadership platform with 150k+ users. Boosted organic traffic 40% and cut server response time 25%."
     },
     {
-      "description": "Led the digital transformation for Puerto Rico's government portal. Achieved 99.9% uptime and full WCAG 2.1 AA compliance, ensuring accessibility for over 3 million citizens."
+      "description": "Led the digital transformation of Puerto Rico's government portal. 99.9% uptime, full WCAG 2.1 AA compliance, 3M+ citizens served."
     },
     {
-      "description": "Drag-and-drop task management SaaS that reduced user onboarding time by 40%. Features real-time WebSocket collaboration for remote teams."
+      "description": "Task management SaaS with drag-and-drop and real-time WebSocket collaboration. Cut onboarding time by 40%."
     },
     {
-      "description": "Specialized e-commerce for ornamental fish, aquariums, and accessories. Features product catalog, import services, and comprehensive aquatic supplies."
+      "description": "Niche e-commerce for ornamental fish and aquarium supplies. Product catalog, import services, the works."
     },
     {
-      "description": "Certified professional with credentials from IBM and Google. Expert in building secure systems, vulnerability management, and fostering efficient technical environments."
+      "description": "Certified professional with credentials from IBM and Google. Focus on secure systems and vulnerability management."
     },
     {
-      "description": "Traffic safety platform that processed 50k+ incident reports in its first year. Integrated real-time mapping systems to reduce emergency response times."
+      "description": "Traffic safety platform — processed 50k+ incident reports in year one with real-time mapping."
     },
     {
-      "description": "Corporate migration from WordPress to Webflow that increased page speed scores from 45 to 95. Implemented custom API integrations to automate content updates."
+      "description": "Migrated from WordPress to Webflow. Page speed went from 45 to 95. Custom API integrations for automated updates."
     },
     {
-      "description": "High-performance blog engine built for SEO dominance. Implemented automatic schema generation and pillar content structures that boosted keyword rankings."
+      "description": "Blog engine built for SEO. Auto-generated schema and pillar content structures that actually moved keyword rankings."
     },
     {
-      "description": "Official public health portal for Puerto Rico Government. Handled 1M+ monthly visitors during peak demand with zero downtime."
+      "description": "Public health portal for Puerto Rico Government. Handled 1M+ monthly visitors during peak with zero downtime."
     },
     {
-      "description": "Modern medical imaging platform integrating AI diagnostics. Increased appointment bookings by 60% through a streamlined UX and mobile-first design."
+      "description": "Medical imaging platform with AI diagnostics. Increased appointment bookings 60% with a cleaner UX."
     }
   ],
   "services": [
     {
       "title": "MVP Launchpad",
-      "description": "Launch a conversion-ready website or MVP fast, with the strategy, UX, and technical setup needed to start generating traction.",
+      "description": "Get a working website or MVP out the door fast. Strategy, UX, and build — everything you need to start seeing results.",
       "features": ["Rapid Prototyping", "Conversion-Focused UX", "CMS or App Build", "Launch Strategy"],
       "bestFor": "Founders and growing businesses that need to validate or relaunch quickly.",
       "timeline": "4-6 weeks",

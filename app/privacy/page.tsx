@@ -9,22 +9,12 @@ export const metadata: Metadata = {
 
 import PrivacyContent from "@/components/pages/privacy-content"
 
+import { BreadcrumbSchema } from "@/components/breadcrumb-schema"
+
 export default function PrivacyPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            itemListElement: [
-              { "@type": "ListItem", position: 1, name: "Home", item: `${siteConfig.url}/` },
-              { "@type": "ListItem", position: 2, name: "Privacy Policy", item: `${siteConfig.url}/privacy/` },
-            ],
-          }),
-        }}
-      />
+      <BreadcrumbSchema items={[{ name: "Home", path: "/" }, { name: "Privacy Policy", path: "/privacy/" }]} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

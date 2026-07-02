@@ -1,68 +1,87 @@
 "use client"
 
 import { siteConfig } from "@/lib/config"
-import { Quote, Star } from "lucide-react"
 import { ScrollReveal } from "@/components/scroll-reveal"
+import { Star } from "lucide-react"
+
+function getInitials(name: string) {
+  return name
+    .split(" ")
+    .map(w => w[0])
+    .join("")
+    .toUpperCase()
+    .slice(0, 2)
+}
+
+const cardStyles = [
+  { border: "border-primary/20", bg: "bg-primary/5", text: "text-primary" },
+  { border: "border-secondary/20", bg: "bg-secondary/5", text: "text-secondary" },
+  { border: "border-primary/20", bg: "bg-primary/5", text: "text-primary" },
+]
 
 export function TestimonialsSection() {
     const { testimonials } = siteConfig
 
     return (
-        <section className="py-32 px-4 bg-slate-950 text-white relative overflow-hidden">
-            {/* Minimalist Grid Pattern */}
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,#1f2937_1px,transparent_1px),linear-gradient(to_bottom,#1f2937_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-20" />
+        <section className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-muted/30 to-transparent pointer-events-none" />
 
-            <div className="max-w-7xl mx-auto relative z-10">
+            <div className="max-w-7xl mx-auto relative">
                 <ScrollReveal>
-                    <div className="text-center mb-24 space-y-6">
-                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-black uppercase tracking-[0.3em]">
-                            Institutional Proof
-                        </div>
-                        <h2 className="text-4xl md:text-7xl font-black tracking-tight leading-none">
-                            Trusted by <span className="text-blue-500">Industry Leaders</span>
+                    <div className="text-center mb-16 space-y-4">
+                        <h2 className="text-4xl md:text-6xl font-black tracking-tight">
+                            What clients{" "}
+                            <span className="text-primary">say</span>
                         </h2>
-                        <p className="text-slate-400 text-xl max-w-2xl mx-auto font-medium">
-                            Strategic partnerships defined by technical excellence and measurable impact.
+                        <p className="text-muted-foreground text-xl max-w-2xl mx-auto leading-relaxed">
+                            Real feedback from people I have worked with.
                         </p>
                     </div>
                 </ScrollReveal>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-                    {testimonials.map((testimonial, index) => (
-                        <ScrollReveal key={index} delay={index * 0.1}>
-                            <div className="group relative pt-12">
-                                {/* Top accent line */}
-                                <div className="absolute top-0 left-0 w-12 h-[2px] bg-blue-500 transition-all duration-500 group-hover:w-full" />
+                <div className="grid md:grid-cols-3 gap-6">
+                    {testimonials.map((testimonial, index) => {
+                        const style = cardStyles[index % cardStyles.length]
+                        return (
+                            <ScrollReveal key={index} delay={index * 100}>
+                                <div className="group relative p-8 bg-card border border-border/60 hover:border-primary/30 transition-all duration-300 h-full flex flex-col">
+                                    {/* Top accent line */}
+                                    <div className={`absolute top-0 left-0 right-0 h-1 ${style.bg} group-hover:opacity-80 transition-opacity`} />
 
-                                <div className="space-y-8">
-                                    <div className="flex gap-1">
-                                        {[...Array(5)].map((_, i) => (
-                                            <Star key={i} className="w-3 h-3 fill-blue-500 text-blue-500" />
-                                        ))}
-                                    </div>
+                                    <div className="flex-1 flex flex-col">
+                                        {/* Stars */}
+                                        <div className="flex gap-1 mb-6">
+                                            {[...Array(5)].map((_, i) => (
+                                                <Star key={i} className={`w-3.5 h-3.5 fill-current ${style.text}`} />
+                                            ))}
+                                        </div>
 
-                                    <blockquote className="relative">
-                                        <Quote className="absolute -top-6 -left-4 w-12 h-12 text-blue-500/10 -z-10" />
-                                        <p className="text-2xl md:text-3xl font-bold leading-tight tracking-tight text-white/90 group-hover:text-white transition-colors duration-300">
-                                            "{testimonial.quote}"
-                                        </p>
-                                    </blockquote>
-
-                                    <div className="pt-8 border-t border-slate-800">
-                                        <h4 className="text-lg font-black uppercase tracking-widest text-white tracking-wider mb-1">
-                                            {testimonial.author}
-                                        </h4>
-                                        <div className="flex items-center gap-2">
-                                            <div className="w-4 h-[1px] bg-blue-500" />
-                                            <p className="text-sm font-bold text-blue-500 uppercase tracking-widest">
-                                                {testimonial.role}
+                                        {/* Quote */}
+                                        <blockquote className="flex-1">
+                                            <p className="text-base md:text-lg leading-relaxed text-foreground/85">
+                                                &ldquo;{testimonial.quote}&rdquo;
                                             </p>
+                                        </blockquote>
+
+                                        {/* Author */}
+                                        <div className="flex items-center gap-4 pt-6 mt-6 border-t border-border/50">
+                                            <div className={`w-11 h-11 flex items-center justify-center text-sm font-bold ${style.bg} ${style.text} shrink-0`}>
+                                                {getInitials(testimonial.author)}
+                                            </div>
+                                            <div className="min-w-0">
+                                                <h4 className="text-sm font-bold truncate">
+                                                    {testimonial.author}
+                                                </h4>
+                                                <p className="text-xs text-muted-foreground truncate">
+                                                    {testimonial.role}
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </ScrollReveal>
-                    ))}
+                            </ScrollReveal>
+                        )
+                    })}
                 </div>
             </div>
         </section>

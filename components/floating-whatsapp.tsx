@@ -1,10 +1,12 @@
 "use client"
 
 import { MessageCircle } from "lucide-react"
-import { useSiteData } from "@/hooks/use-site-data"
+import { useCommon } from "@/hooks/use-common"
+import { useContact } from "@/hooks/use-contact"
 
 export function FloatingWhatsApp() {
-  const { contact, common } = useSiteData()
+  const contact = useContact()
+  const common = useCommon()
   // Sanitize phone number for WhatsApp API
   // Removes non-numeric characters
   // Assuming the phone number in data.ts is local, we might need to add country code.

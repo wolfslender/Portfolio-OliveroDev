@@ -2,10 +2,10 @@
 
 import { siteConfig } from "@/lib/config"
 import { SectionHeader } from "@/components/ui/section-header"
-import { useSiteData } from "@/hooks/use-site-data"
+import { usePrivacyPage } from "@/hooks/use-privacy-page"
 
 export default function PrivacyContent() {
-  const { privacyPage } = useSiteData()
+  const privacyPage = usePrivacyPage()
   const { sections } = privacyPage
   
   // Guard against missing sections during initial load or error states

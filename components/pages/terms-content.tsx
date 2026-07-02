@@ -1,10 +1,10 @@
 "use client"
 
 import { SectionHeader } from "@/components/ui/section-header"
-import { useSiteData } from "@/hooks/use-site-data"
+import { useTermsPage } from "@/hooks/use-terms-page"
 
 export default function TermsContent() {
-  const { termsPage } = useSiteData()
+  const termsPage = useTermsPage()
   const { sections } = termsPage
   
   // Guard against missing sections during initial load or error states

@@ -6,10 +6,11 @@ import { ExternalLink, Github, ArrowUpRight, TrendingUp } from "lucide-react"
 import Link from "next/link"
 import ExportedImage from "next-image-export-optimizer"
 import { cn, getMetricLabel, getMetricValue, type MetricField } from "@/lib/utils"
-import { useSiteData } from "@/hooks/use-site-data"
+import { useCommon } from "@/hooks/use-common"
 
 interface ProjectCardProps {
   title: string
+  slug?: string
   description: string
   image: string
   tags: string[]
@@ -26,6 +27,7 @@ interface ProjectCardProps {
 
 export function ProjectCard({
   title,
+  slug,
   description,
   image,
   tags,
@@ -35,7 +37,7 @@ export function ProjectCard({
   industry,
   metrics,
 }: ProjectCardProps) {
-  const { common } = useSiteData()
+  const common = useCommon()
 
   return (
     <Card
@@ -94,10 +96,14 @@ export function ProjectCard({
         </div>
 
         <h3 className={cn(
-          "font-bold mb-2 leading-tight group-hover:text-primary transition-colors duration-300",
+          "font-bold mb-2 leading-tight transition-colors duration-300",
           size === "large" ? "text-2xl md:text-3xl" : "text-xl"
         )}>
-          {title}
+          {slug ? (
+            <Link href={`/work/${slug}`} className="hover:text-primary transition-colors">
+              {title}
+            </Link>
+          ) : title}
         </h3>
 
         <p className="text-muted-foreground line-clamp-3 mb-6 text-sm md:text-base flex-1 leading-relaxed">

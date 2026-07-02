@@ -1,13 +1,14 @@
 "use client"
 
 import { Card } from "@/components/ui/card"
-import { Award, ExternalLink, Calendar, Sparkles, CheckCircle2 } from "lucide-react"
-import { useSiteData } from "@/hooks/use-site-data"
+import { Award, ExternalLink, Calendar, CheckCircle2 } from "lucide-react"
+import { useCertifications, useCertificationsPage } from "@/hooks/use-certifications"
 import { ScrollReveal } from "@/components/scroll-reveal"
 import { Badge } from "@/components/ui/badge"
 
 export function CertificationsSection() {
-  const { certifications, certificationsPage } = useSiteData()
+  const certifications = useCertifications()
+  const certificationsPage = useCertificationsPage()
 
   return (
     <section id="certifications" className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
@@ -18,18 +19,15 @@ export function CertificationsSection() {
         {/* Section Header - Premium */}
         <ScrollReveal>
           <div className="text-center mb-20">
-            <Badge variant="outline" className="px-4 py-1.5 rounded-full border-primary/20 bg-primary/5 text-primary text-sm font-semibold mb-6">
-              <Sparkles className="w-3 h-3 mr-2 inline" />
-              Continuous Excellence
-            </Badge>
+
             <h2 className="text-4xl md:text-6xl font-black mb-6 tracking-tight">
               {certificationsPage.titlePrefix}{" "}
-              <span className="text-gradient">
+              <span className="text-primary">
                 {certificationsPage.titleHighlight}
               </span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Committed to staying at the forefront of technology through continuous learning and industry-recognized credentials.
+              Courses and certifications I've picked up along the way.
             </p>
           </div>
         </ScrollReveal>
@@ -104,7 +102,7 @@ export function CertificationsSection() {
         <ScrollReveal delay={600}>
           <div className="mt-20 text-center p-10 bg-gradient-to-br from-primary/5 to-transparent rounded-3xl border border-primary/10">
             <p className="text-lg text-muted-foreground italic">
-              "Continuous learning isn't just a commitment—it's a competitive advantage that ensures every solution leverages the latest industry best practices."
+              Always learning, always improving.
             </p>
           </div>
         </ScrollReveal>

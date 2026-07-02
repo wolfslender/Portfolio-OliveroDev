@@ -3,7 +3,7 @@ import { Code, Users, Award, Coffee, Code2, Server, Database, GitBranch, Palette
 export const services = [
   {
     title: "WordPress Plugins",
-    description: "Custom WordPress plugin development tailored to your specific needs. From simple utilities to complex enterprise solutions.",
+    description: "Need something WordPress can't do out of the box? I build custom plugins — from simple utilities to full solutions that actually fit your workflow.",
     icon: Code,
     features: ["Custom Plugin Development", "Freemius Integration", "API Development", "Security Audits"],
     technologies: ["WordPress", "PHP", "MySQL", "Freemius SDK"],
@@ -17,7 +17,7 @@ export const services = [
   },
   {
     title: "MVP Launchpad",
-    description: "Launch a conversion-ready website or MVP fast, with the strategy, UX, and technical setup needed to start generating traction.",
+    description: "Get a working website or MVP out the door fast — strategy, UX, and build included. Everything you need to start getting traction.",
     icon: Layout,
     features: ["Rapid Prototyping", "Conversion-Focused UX", "CMS or App Build", "Launch Strategy"],
     technologies: ["Next.js", "React", "WordPress", "Supabase"],
@@ -31,7 +31,7 @@ export const services = [
   },
   {
     title: "Corporate Scaling",
-    description: "Refactor and upgrade high-traffic or outdated websites so they load faster, convert better, and are easier for your team to manage.",
+    description: "Got a site that's slow, outdated, or a pain to maintain? I clean it up, speed it up, and make it manageable for your team.",
     icon: Code2,
     features: ["Code Audit", "Performance Tuning", "Security Hardening", "Team Training"],
     technologies: ["WordPress", "PHP", "JavaScript", "SEO"],
@@ -45,7 +45,7 @@ export const services = [
   },
   {
     title: "Webflow Migration",
-    description: "Move from WordPress or a brittle marketing stack to Webflow with a cleaner CMS, stronger design control, and easier day-to-day updates.",
+    description: "Tired of WordPress headaches? I'll move you to Webflow — cleaner CMS, way easier updates, and a design you can actually edit yourself.",
     icon: Rocket,
     features: ["Pixel-Perfect Rebuild", "CMS Architecture", "SEO Migration", "Team Training"],
     technologies: ["Webflow", "WordPress", "React", "Node.js"],
@@ -59,7 +59,7 @@ export const services = [
   },
   {
     title: "Technical Partnership",
-    description: "Get a senior technical partner on retainer to improve your website, ship new features, and keep your digital presence moving forward.",
+    description: "Need ongoing dev work without hiring a full-time employee? I act as your remote technical partner — monthly retainer, priority support.",
     icon: Users,
     features: ["Priority Support", "Monthly Audits", "Feature Development", "Strategic Consulting"],
     technologies: ["React", "Next.js", "Cloud Architecture", "Agile"],
@@ -73,7 +73,7 @@ export const services = [
   },
   {
     title: "Cloud & Web Security",
-    description: "Secure server management (Azure/AWS), deployment strategies, and implementation of strict security protocols for digital assets.",
+    description: "I harden servers, set up secure deployments, and make sure your infrastructure won't let you down when it matters.",
     icon: Shield,
     features: ["Azure/AWS Management", "Security Audits", "Server Hardening", "Deployment Pipelines"],
     technologies: ["Azure", "AWS", "Docker", "Linux", "WordPress", "PHP"],
@@ -89,16 +89,16 @@ export const services = [
 
 export const hero = {
   title: {
-    prefix: "Websites built to",
-    highlight: "win trust, leads, and growth.",
+    prefix: "Websites that actually",
+    highlight: "bring in business.",
   },
-  roles: ["Conversion-Focused UX", "SEO + Performance", "Webflow / WordPress / Next.js", "Direct Senior Execution"],
-  description: "I help businesses launch and improve high-performance websites that look premium, load fast, and turn more visitors into real inquiries.",
-  proof: ["Reply within 24h", "Built for SEO + speed", "Launch support included"],
+  roles: ["UI/UX that converts", "SEO + Speed", "Webflow / WordPress / Next.js", "I do the work myself"],
+  description: "I build and fix websites for businesses that need them to load fast, look legit, and turn visitors into paying customers. No fluff, no agencies — just me.",
+  proof: ["I reply within 24h", "Built for SEO from day one", "Launch support included"],
   buttons: {
     primary: "Get Free Website Audit",
-    secondary: "View Results",
-    downloadCv: "Download Capabilities Deck",
+    secondary: "See My Work",
+    downloadCv: "Download My Resume",
   },
 }
 
@@ -260,6 +260,7 @@ export const certifications = [
 export const projects = [
   {
     title: "Media Audit",
+    slug: "media-audit",
     description: "WordPress plugin that scans your media library to identify unused files, helping you recover storage space and improve site performance. Features smart detection, storage analysis, and an intelligent trash system.",
     image: "/projects/media-audit-pro.png",
     tags: ["WordPress", "PHP", "MySQL", "AJAX", "Freemius"],
@@ -281,6 +282,7 @@ export const projects = [
   },
   {
     title: "Cybernetips",
+    slug: "cybernetips",
     description: "The #1 company globally specialized in immediate response to cybersecurity incidents. Leaders in digital asset recovery and protection.",
     image: "/projects/cybernetips.png",
     tags: ["Cybersecurity", "Incident Response", "Digital Recovery", "Fullstack"],
@@ -299,6 +301,7 @@ export const projects = [
   },
   {
     title: "Co-Active Training Institute",
+    slug: "co-active-training-institute",
     description: "Ongoing fullstack development and maintenance for a global leadership training platform. Responsible for SEO strategies, performance optimization, and implementing new features for a site serving over 150k professionals worldwide.",
     image: "/projects/coactive.jpg",
     tags: ["Wordpress", "JS", "PHP", "Arlo", "Moodle", "SEO", "Performance"],
@@ -320,10 +323,11 @@ export const projects = [
   },
   {
     title: "Departamento de Educación PR",
+    slug: "departamento-de-educacion-pr",
     description:
       "Led end-to-end development of a government website for Puerto Rico. Delivered a responsive, accessible, and CMS-integrated solution aligned with public sector standards.",
     image: "/projects/departamento-educacion.jpg",
-    tags: ["WordPress", "PHP", "Tailwind CSS", "MySQL"],
+    tags: ["WordPress", "PHP", "CSS", "JavaScript"],
     category: "fullstack",
     github: "https://github.com/wolfslender",
     demo: "https://de.pr.gov/",
@@ -339,9 +343,10 @@ export const projects = [
   },
   {
     title: "D.Med Healthcare Group",
+    slug: "dmed-healthcare-group",
     description: "Developed a drag-and-drop task management app with real-time updates, team collaboration, and authentication features.",
     image: "/projects/dmed.jpg",
-    tags: ["PHP", "Docker", "JavaScript", "MySQL"],
+    tags: ["WordPress", "PHP", "CSS", "JavaScript"],
     category: "fullstack",
     github: "https://github.com/wolfslender",
     demo: "https://dmed-healthcare.com/",
@@ -350,9 +355,10 @@ export const projects = [
   },
   {
     title: "Acuastock",
+    slug: "acuastock",
     description: "Specialized e-commerce for ornamental fish, aquariums, and accessories. Features product catalog, import services, and comprehensive aquatic supplies.",
     image: "/projects/acuastock.jpg",
-    tags: ["WordPress", "WooCommerce", "E-commerce"],
+    tags: ["WordPress", "PHP", "CSS", "JavaScript"],
     category: "fullstack",
     github: "#",
     demo: "https://acuastock.com/",
@@ -361,6 +367,7 @@ export const projects = [
   },
   {
     title: "Keitel De Luna - Cybersecurity Analyst | IT Portfolio",
+    slug: "keitel-de-luna-cybersecurity-analyst",
     description: "Certified professional with credentials from IBM and Google. Expert in building secure systems, vulnerability management, and fostering efficient technical environments.",
     image: "/projects/Keitel-De-Luna.png",
     tags: ["Cybersecurity", "IT Support", "Vulnerability Management"],
@@ -372,6 +379,7 @@ export const projects = [
   },
   {
     title: "CST Puerto Rico Website",
+    slug: "cst-puerto-rico-website",
     description: "Government project focused on traffic safety. Includes CMS, incident reports, interactive maps, and community feedback tools.",
     image: "/projects/cst-puerto-rico.jpg",
     tags: ["Webflow", "JS", "Tailwind CSS"],
@@ -385,6 +393,7 @@ export const projects = [
   },
   {
     title: "Truenorth Corporation",
+    slug: "truenorth-corporation",
     description: "Migrated corporate website from WordPress to Webflow, rebuilding the frontend and integrating custom API functionalities for better performance.",
     image: "/projects/truenorth.jpg",
     tags: ["Webflow", "React", "Node.js"],
@@ -406,6 +415,7 @@ export const projects = [
   },
   {
     title: "GovValue",
+    slug: "govvalue",
     description: "Dynamic blog system with SEO optimization, author management, and custom call-to-action banners to attract new users.",
     image: "/projects/govvalue.jpg",
     tags: ["React", "JavaScript", "CSS Grid", "SEO"],
@@ -417,10 +427,11 @@ export const projects = [
   },
   {
     title: "AESAN Website",
+    slug: "aesan-website",
     description: "Official website for the Government of Puerto Rico. Responsive, accessible platform aligned with public health communication standards.",
     image: "/projects/aesan.jpg",
-    tags: ["JavaScript", "DataTables", "API Integration"],
-    category: "frontend",
+    tags: ["WordPress", "PHP", "CSS", "JavaScript"],
+    category: "fullstack",
     github: "https://github.com/wolfslender",
     demo: "https://aesan.dde.pr/",
     industry: "Government",
@@ -430,10 +441,11 @@ export const projects = [
   },
   {
     title: "Centro de Sonografía PRE-VUE",
+    slug: "centro-de-sonografia-pre-vue",
     description: "Official website for PRE-VUE Sonography Center in Puerto Rico. Features AI-powered 4D/HD Live imaging services, appointment scheduling, and a holistic wellness center integration.",
     image: "/projects/pre-vue.webp",
-    tags: ["Next.js", "React", "Tailwind CSS", "Framer Motion"],
-    category: "frontend",
+    tags: ["WordPress", "PHP", "CSS", "JavaScript"],
+    category: "fullstack",
     github: "https://github.com/wolfslender",
     demo: "https://pre-vue.com/",
     featured: false,

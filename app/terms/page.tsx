@@ -9,22 +9,12 @@ export const metadata: Metadata = {
 
 import TermsContent from "@/components/pages/terms-content"
 
+import { BreadcrumbSchema } from "@/components/breadcrumb-schema"
+
 export default function TermsPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            itemListElement: [
-              { "@type": "ListItem", position: 1, name: "Home", item: `${siteConfig.url}/` },
-              { "@type": "ListItem", position: 2, name: "Terms of Service", item: `${siteConfig.url}/terms/` },
-            ],
-          }),
-        }}
-      />
+      <BreadcrumbSchema items={[{ name: "Home", path: "/" }, { name: "Terms of Service", path: "/terms/" }]} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

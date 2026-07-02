@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { Mail, ArrowRight, Calendar, Copy, Check } from "lucide-react"
-import { useSiteData } from "@/hooks/use-site-data"
+import { useContact, useContactPage } from "@/hooks/use-contact"
 import { ScrollReveal } from "@/components/scroll-reveal"
 import { SocialLinks } from "@/components/social-links"
 import { useSearchParams } from "next/navigation"
@@ -15,7 +15,8 @@ const PopupModal = dynamic(
 )
 
 export function ContactSection() {
-  const { contact, contactPage } = useSiteData()
+  const contact = useContact()
+  const contactPage = useContactPage()
   const [isCalendlyOpen, setIsCalendlyOpen] = useState(false)
   const [mounted, setMounted] = useState(false)
   const [copied, setCopied] = useState(false)
@@ -46,14 +47,13 @@ export function ContactSection() {
     <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 bg-muted/30 relative overflow-hidden min-h-[80vh] flex items-center">
       {/* Decorative background elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-[-10%] left-[-5%] w-[500px] h-[500px] bg-cyan-500/5 rounded-full blur-3xl" />
+        <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl" />
       </div>
 
       <div className="max-w-2xl mx-auto relative z-10 w-full">
         <ScrollReveal>
           <div className="space-y-6 text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-cyan-500">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground">
               {contactPage.title}
             </h2>
             <p className="text-muted-foreground text-xl leading-relaxed max-w-lg mx-auto italic">
@@ -83,10 +83,10 @@ export function ContactSection() {
             <div className="group relative">
               <a
                 href={`mailto:${contact.email}`}
-                className="flex items-center justify-between p-6 bg-background border border-border rounded-2xl hover:border-blue-500/50 hover:shadow-xl transition-all duration-300 cursor-pointer"
+                className="flex items-center justify-between p-6 bg-background border border-border rounded-2xl hover:border-primary/50 hover:shadow-xl transition-all duration-300 cursor-pointer"
               >
                 <div className="flex items-center gap-4">
-                  <div className="p-3 bg-blue-500/10 rounded-xl text-blue-500 group-hover:scale-110 transition-transform">
+                  <div className="p-3 bg-primary/10 rounded-xl text-primary group-hover:scale-110 transition-transform">
                     <Mail className="w-6 h-6" />
                   </div>
                   <div className="text-left">
@@ -94,7 +94,7 @@ export function ContactSection() {
                     <span className="text-sm text-muted-foreground">{contact.email}</span>
                   </div>
                 </div>
-                <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-blue-500 group-hover:translate-x-1 transition-all" />
+                <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
               </a>
               <button
                 onClick={(e) => { e.preventDefault(); copyEmail(); }}

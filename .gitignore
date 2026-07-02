@@ -29,6 +29,15 @@ next-env.d.ts
 # Claude memory
 memory/
 
+# next-image-export-optimizer generated assets
+public/**/nextImageExportOptimizer/
+
+# editor
+.vscode/
+
+# empty api route
+app/api/
+
 # OS
 .DS_Store
 

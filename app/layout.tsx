@@ -1,7 +1,7 @@
 import type React from "react"
 import type { Metadata } from "next"
 import Script from "next/script"
-import { Geist, Geist_Mono } from "next/font/google"
+import { DM_Sans, Geist_Mono } from "next/font/google"
 import { siteConfig } from "@/lib/config"
 import { ThemeProvider } from "@/components/theme-provider"
 import { I18nProvider } from "@/components/i18n-provider"
@@ -11,6 +11,8 @@ import { Footer } from "@/components/sections/footer"
 import { ScrollProgress } from "@/components/scroll-progress"
 import { BackToTop } from "@/components/back-to-top"
 import { AvailabilityBadge } from "@/components/availability-badge"
+import { GoogleAnalytics } from "@/components/google-analytics"
+import { CookieConsent } from "@/components/cookie-consent"
 import {
   getPersonSchema,
   getOrganizationSchema,
@@ -19,8 +21,15 @@ import {
 } from "@/lib/seo"
 import "./globals.css"
 
-const _geist = Geist({ subsets: ["latin"] })
-const _geistMono = Geist_Mono({ subsets: ["latin"] })
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  weight: ["400", "500", "600", "700", "800"],
+})
+const geistMono = Geist_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+})
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -107,21 +116,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning className="scroll-smooth">
-      <body className={`${_geist.className} antialiased selection:bg-blue-500/30 selection:text-blue-500`}>
-        {/* Google Analytics */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-WZCLD4H3QT"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'G-WZCLD4H3QT');
-          `}
-        </Script>
+      <body className={`${dmSans.variable} ${geistMono.variable} font-sans antialiased selection:bg-primary/30 selection:text-primary`}>
+        {/* Google Analytics (conditional on consent) */}
+        <GoogleAnalytics />
 
         {/* Global SEO Schemas */}
         <Script
@@ -147,7 +144,7 @@ export default function RootLayout({
 
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >
@@ -161,6 +158,7 @@ export default function RootLayout({
 
             <Footer />
             <LanguageSwitcher />
+            <CookieConsent />
           </I18nProvider>
         </ThemeProvider>
       </body>

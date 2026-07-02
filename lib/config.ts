@@ -1,8 +1,8 @@
 export const siteConfig = {
   name: "Alexis Olivero",
-  title: "Web Developer for High-Converting Websites",
+  title: "Full-Stack Developer — Webflow, WordPress & Next.js",
   description:
-    "I design and build high-performance websites for businesses that want more leads, better SEO, and a stronger digital presence through Webflow, WordPress, and Next.js.",
+    "I build websites that load fast, look professional, and actually bring in business. Based in Santo Domingo, working with clients worldwide.",
   url: "https://oliverodev.com",
   ogImage: "https://oliverodev.com/opengraph-image",
   links: {
@@ -54,48 +54,47 @@ export const siteConfig = {
   ],
   testimonials: [
     {
-      quote: "Alexis transformed our digital presence. His attention to detail and technical expertise in Wordpress is unparalleled.",
+      quote: "Alexis rebuilt our entire site from scratch. Finally, a dev who actually listens to what you need instead of pushing their own agenda. Page speed went from awful to 95, and our team can finally update content without calling him every time.",
       author: "Antonio Gonzales",
-      role: "CEO Cybernetips",
+      role: "CEO, Cybernetips",
       image: "/logos/logo_cybernetips.png"
     },
     {
-      quote: "The best frontend developer I've worked with. He doesn't just write code; he builds solutions that scale.",
+      quote: "I was tired of agencies that overpromise and underdeliver. Alexis just... did the work. No drama, no delays. Our organic traffic jumped 40% in three months after the SEO overhaul.",
       author: "Maria Arentz",
-      role: "GovValue",
+      role: "Founder, GovValue",
       image: "/logos/GovValue-Logo.png"
     },
     {
-      quote: "Delivered a complex government portal ahead of schedule with 100% accessibility compliance. Impressive work.",
-      author: "Truenorth Corp",
-      role: "Enterprise Partners",
-      image: "/logos/truenorth_logo_white.png"
+      quote: "We needed a government portal that worked for 3 million people — accessibility, uptime, the whole deal. Alexis delivered ahead of schedule and under budget. Would hire again without hesitation.",
+      author: "Sergio de los Santos",
+      role: "Former Manager, Truenorth Corp",
     }
   ],
   agencyMethodology: [
     {
       step: 1,
-      title: "Strategic Discovery",
-      description: "We deep-dive into your business goals, technical debt, and market position to identify the highest leverage opportunities.",
-      details: ["Architecture Audit", "ROI Mapping", "Stakeholder Alignment"]
+      title: "Kickoff & Discovery",
+      description: "We sit down and figure out what you actually need. No jargon, just goals, timeline, and budget.",
+      details: ["Goals Review", "Technical Assessment", "Timeline Planning"]
     },
     {
       step: 2,
-      title: "Precision Strategy",
-      description: "Defining the technical blueprint and user experience roadmap that guarantees scalability and security.",
-      details: ["Tech Stack Selection", "UX Prototyping", "Security Protocols"]
+      title: "Plan & Design",
+      description: "I map out the architecture and design the UX before touching any code. You see everything before I build it.",
+      details: ["Tech Decisions", "UX Prototyping", "Content Structure"]
     },
     {
       step: 3,
-      title: "Elite Engineering",
-      description: "Developing robust, high-performance solutions using modular architecture and clean code standards.",
-      details: ["Agile Development", "Continuous CI/CD", "Rigorous QA"]
+      title: "Build & Review",
+      description: "I build in stages and share progress every two weeks. You're never left wondering what's happening.",
+      details: ["Agile Sprints", "Regular Check-ins", "QA Testing"]
     },
     {
       step: 4,
-      title: "Growth & Evolution",
-      description: "Post-launch support and data-driven optimizations to ensure your digital product continues to lead the market.",
-      details: ["Performance Monitoring", "Feature Scaling", "Conversion Tuning"]
+      title: "Launch & Support",
+      description: "We go live together, and I stick around to make sure everything runs smoothly — no ghosting after launch.",
+      details: ["Deployment", "Performance Monitoring", "Ongoing Support"]
     }
   ],
 }

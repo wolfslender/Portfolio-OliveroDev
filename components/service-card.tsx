@@ -6,7 +6,7 @@ import { Check, ArrowRight } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { LucideIcon } from "lucide-react"
 import Link from "next/link"
-import { useSiteData } from "@/hooks/use-site-data"
+import { useCommon } from "@/hooks/use-common"
 
 interface ServiceCardProps {
   title: string
@@ -29,7 +29,7 @@ export function ServiceCard({
   color,
   bgColor,
 }: ServiceCardProps) {
-  const { common } = useSiteData()
+  const common = useCommon()
   return (
     <Card className={`flex flex-col h-full p-8 transition-all duration-500 border-border/50 group bg-card/50 backdrop-blur-sm relative overflow-hidden border-t-4 ${color.replace('text-', 'border-')} hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/5 active:scale-[0.98]`}>
       {/* Decorative gradient blob */}

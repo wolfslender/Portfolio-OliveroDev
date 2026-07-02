@@ -9,7 +9,8 @@ import { BlogSidebar } from "./blog-sidebar"
 import { urlFor } from "@/lib/sanity/client"
 import { useTranslation } from "react-i18next"
 import { Badge } from "@/components/ui/badge"
-import { Calendar, User, ArrowRight, TrendingUp } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { Calendar, User, ArrowRight, TrendingUp, ChevronLeft, ChevronRight } from "lucide-react"
 import { ScrollReveal } from "@/components/scroll-reveal"
 
 interface Post {
@@ -33,6 +34,8 @@ export function BlogList({ posts, tags }: BlogListProps) {
   const isSpanish = i18n.language.startsWith("es")
   const [searchQuery, setSearchQuery] = useState("")
   const [selectedTag, setSelectedTag] = useState<string | null>(null)
+  const [currentPage, setCurrentPage] = useState(1)
+  const postsPerPage = 6
 
   const filteredPosts = posts.filter((post) => {
     const title = isSpanish && post.title_es ? post.title_es : post.title
@@ -44,7 +47,24 @@ export function BlogList({ posts, tags }: BlogListProps) {
 
   // Featured post (most recent)
   const featuredPost = filteredPosts[0]
-  const regularPosts = filteredPosts.slice(1)
+  const regularPostsAll = filteredPosts.slice(1)
+
+  // Pagination
+  const totalPages = Math.ceil(regularPostsAll.length / postsPerPage)
+  const paginatedPosts = regularPostsAll.slice(
+    (currentPage - 1) * postsPerPage,
+    currentPage * postsPerPage
+  )
+
+  // Reset to page 1 when filters change
+  const handleSearchChange = (value: string) => {
+    setSearchQuery(value)
+    setCurrentPage(1)
+  }
+  const handleTagSelect = (tag: string | null) => {
+    setSelectedTag(tag)
+    setCurrentPage(1)
+  }
 
   return (
     <div className="space-y-20">
@@ -120,8 +140,8 @@ export function BlogList({ posts, tags }: BlogListProps) {
         {/* Posts Grid */}
         <div className="lg:col-span-3">
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-2">
-            {regularPosts.length > 0 ? (
-              regularPosts.map((post, index) => {
+            {paginatedPosts.length > 0 ? (
+              paginatedPosts.map((post, index) => {
                 const title = isSpanish && post.title_es ? post.title_es : post.title
                 const slug = post.slug?.current || '#'
                 return (
@@ -192,6 +212,42 @@ export function BlogList({ posts, tags }: BlogListProps) {
               </div>
             )}
           </div>
+
+          {/* Pagination */}
+          {totalPages > 1 && (
+            <div className="mt-12 flex items-center justify-center gap-2">
+              <Button
+                variant="outline"
+                size="icon"
+                className="rounded-full"
+                disabled={currentPage <= 1}
+                onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
+              >
+                <ChevronLeft className="w-4 h-4" />
+              </Button>
+
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                <Button
+                  key={page}
+                  variant={currentPage === page ? "default" : "outline"}
+                  className="rounded-full w-10 h-10"
+                  onClick={() => setCurrentPage(page)}
+                >
+                  {page}
+                </Button>
+              ))}
+
+              <Button
+                variant="outline"
+                size="icon"
+                className="rounded-full"
+                disabled={currentPage >= totalPages}
+                onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
+              >
+                <ChevronRight className="w-4 h-4" />
+              </Button>
+            </div>
+          )}
         </div>
 
         {/* Enhanced Sidebar */}
@@ -201,9 +257,9 @@ export function BlogList({ posts, tags }: BlogListProps) {
               tags={tags}
               showSearch={true}
               searchQuery={searchQuery}
-              onSearchChange={setSearchQuery}
+              onSearchChange={handleSearchChange}
               selectedTag={selectedTag}
-              onTagSelect={setSelectedTag}
+              onTagSelect={handleTagSelect}
             />
           </div>
         </div>
