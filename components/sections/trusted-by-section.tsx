@@ -4,7 +4,13 @@ import ExportedImage from "next-image-export-optimizer"
 import { cn } from "@/lib/utils"
 import { ScrollReveal } from "@/components/scroll-reveal"
 
-const partners = [
+const partners: {
+  name: string
+  logo?: string
+  contact?: string
+  industry: string
+  context: string
+}[] = [
   {
     name: "Cybernetips",
     logo: "/logos/logo_cybernetips.png",
@@ -19,7 +25,7 @@ const partners = [
   },
   {
     name: "Dmed Health Care",
-    contact: "Jana del Rosario",
+    logo: "/logos/dmedhealthcare-logo-blue-166x64.webp",
     industry: "Healthcare",
     context: "Custom patient management portal with secure data handling.",
   },
@@ -81,6 +87,11 @@ export function TrustedBySection() {
                     <p className="text-xs font-bold uppercase tracking-widest text-primary">
                       {partner.industry}
                     </p>
+                    {'contact' in partner && (
+                      <p className="text-xs text-muted-foreground font-medium">
+                        {partner.contact}
+                      </p>
+                    )}
                     {'context' in partner && (
                       <p className="text-xs text-muted-foreground leading-relaxed max-w-[130px] mx-auto">
                         {partner.context}
