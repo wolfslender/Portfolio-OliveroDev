@@ -7,9 +7,10 @@
     "roles": ["UX que convierte", "SEO + Velocidad", "Webflow / WordPress / Next.js", "Yo mismo hago el trabajo"],
     "description": "Construyo y arreglo websites para negocios que necesitan cargar rápido, verse profesionales y convertir visitantes en clientes reales. Sin agencias, sin vueltas — solo yo.",
     "proof": ["Respondo en menos de 24h", "Construido para SEO desde el día 1", "Soporte de lanzamiento incluido"],
+    "location": "Basado en Santo Domingo · Trabajo con clientes globales",
     "buttons": {
-      "primary": "Obtén una Auditoría Gratis",
-      "secondary": "Ver Mi Trabajo",
+      "primary": "Agendar Llamada Estratégica",
+      "secondary": "Obtén Auditoría Gratis",
       "downloadCv": "Descargar Mi CV"
     }
   },
@@ -24,6 +25,7 @@
     "about": "Sobre mí",
     "contact": "Contacto"
   },
+  "pluginsNav": "Plugins",
   "about": {
     "title": "Por Qué Trabajar Conmigo",
     "description": "Cuando contratas una agencia, el socio senior te vende el proyecto y un becario lo construye. Cuando trabajas conmigo, recibes directamente mis más de 10 años de experiencia. Sin intermediarios, sin sorpresas.",
@@ -292,49 +294,31 @@
   ],
   "services": [
     {
-      "title": "Lanzamiento MVP",
-      "description": "Lanza un website o MVP listo para convertir, con la estrategia, UX y base técnica necesarias para empezar a generar tracción.",
-      "features": ["Prototipado Rápido", "UX orientada a conversión", "Build CMS o App", "Estrategia de Lanzamiento"],
-      "bestFor": "Founders y negocios en crecimiento que necesitan validar o relanzar rápido.",
+      "title": "Websites y MVPs",
+      "description": "Un website o MVP funcional en semanas, no meses. Estrategia, UX y desarrollo en un solo paquete. Incluye migraciones a Webflow si estás cansado de WordPress.",
+      "features": ["Prototipado Rápido", "UX orientada a conversión", "Build CMS o App", "Estrategia de Lanzamiento", "Migraciones a Webflow"],
+      "bestFor": "Founders y negocios en crecimiento que necesitan un sitio nuevo o MVP rápido.",
       "timeline": "4-6 semanas",
       "outcome": "Un website o MVP rápido, premium y preparado para ganar confianza, captar leads y soportar crecimiento.",
       "deliverables": ["Sprint Estratégico", "Dirección UX/UI", "Build CMS o Producto", "Soporte de Lanzamiento"]
     },
     {
-      "title": "Escalado Corporativo",
-      "description": "Refactoriza y mejora websites con alto tráfico o desactualizados para que carguen más rápido, conviertan mejor y sean más fáciles de mantener.",
-      "features": ["Auditoría de Código", "Ajuste de Rendimiento", "Refuerzo de Seguridad", "Capacitación del Equipo"],
-      "bestFor": "Empresas establecidas con plataformas legacy, cuellos de botella técnicos o fugas de conversión.",
-      "timeline": "3-8 semanas",
-      "outcome": "Una plataforma más estable y mantenible que respalda marketing, SEO y escalado a largo plazo.",
-      "deliverables": ["Auditoría Técnica", "Roadmap Prioritario", "Refactor y Optimización", "Documentación"]
+      "title": "Escalado de Plataforma",
+      "description": "Tu sitio es lento, está desactualizado o es difícil de mantener. Lo limpio, lo acelero, refuerzo la seguridad y puedo quedarme como tu partner técnico. Sin intermediarios, sin desapariciones.",
+      "features": ["Auditoría y Refactor", "Optimización de Rendimiento", "Refuerzo de Seguridad", "Retainer Continuo", "Infraestructura"],
+      "bestFor": "Empresas con plataformas legacy, cuellos de botella técnicos o fugas de conversión.",
+      "timeline": "3-8 semanas (retainer continuo disponible)",
+      "outcome": "Una plataforma más rápida, segura y mantenible — con un partner que se queda en tu equipo.",
+      "deliverables": ["Auditoría Técnica", "Roadmap Prioritario", "Refactor y Optimización", "Soporte Retainer"]
     },
     {
-      "title": "Migración a Webflow",
-      "description": "Migra desde WordPress o un stack frágil de marketing a Webflow con mejor control visual, un CMS más limpio y actualizaciones mucho más fáciles.",
-      "features": ["Rebuild Pixel-Perfect", "Arquitectura CMS", "Migración SEO", "Entrenamiento del Equipo"],
-      "bestFor": "Equipos de marketing que quieren autonomía, velocidad y menos dependencia técnica para actualizar el sitio.",
-      "timeline": "2-5 semanas",
-      "outcome": "Un sitio de marketing pulido que tu equipo puede gestionar sin romper SEO ni consistencia visual.",
-      "deliverables": ["Mapeo de Contenido", "Build en Webflow", "Protección SEO", "Entrenamiento de Editores"]
-    },
-    {
-      "title": "Partnership Técnico",
-      "description": "Obtén un socio técnico senior en modalidad retainer para mejorar tu website, lanzar nuevas funcionalidades y mantener el impulso digital de tu empresa.",
-      "features": ["Soporte Prioritario", "Auditorías Mensuales", "Desarrollo de Features", "Consultoría Estratégica"],
-      "bestFor": "Equipos que necesitan ejecución senior todos los meses sin contratar un lead full-time.",
-      "timeline": "Retainer mensual",
-      "outcome": "Un partner confiable que ayuda a tu equipo a lanzar más rápido, reducir riesgos y mantenerse alineado técnicamente.",
-      "deliverables": ["Cola Prioritaria", "Roadmap Mensual", "Entrega de Features", "Guía Estratégica"]
-    },
-    {
-      "title": "Cloud & Web Security",
-      "description": "Fortalece infraestructura, despliegues y prácticas de seguridad para websites que no pueden permitirse caídas ni riesgos evitables.",
-      "features": ["Revisiones de Seguridad", "Hardening de Servidor", "Pipelines de Deploy", "Guía de Monitoreo"],
-      "bestFor": "Organizaciones que necesitan releases más seguros, mejor hosting y una infraestructura más resiliente.",
-      "timeline": "2-4 semanas",
-      "outcome": "Una base más segura y resistente, con despliegues más limpios y menos sorpresas operativas.",
-      "deliverables": ["Revisión de Seguridad", "Workflow de Deploy", "Hardening de Servidor", "Setup de Monitoreo"]
+      "title": "Plugins WordPress",
+      "description": "¿Necesitas algo que WordPress no puede hacer por defecto? Construyo plugins personalizados — desde utilidades simples hasta soluciones completas que se adaptan a tu flujo de trabajo.",
+      "features": ["Desarrollo de Plugins", "Integración Freemius", "Desarrollo de APIs", "Auditorías de Seguridad"],
+      "bestFor": "Negocios que necesitan funcionalidad WordPress personalizada.",
+      "timeline": "2-6 semanas",
+      "outcome": "Un plugin personalizado construido exactamente para tus necesidades.",
+      "deliverables": ["Análisis de Requisitos", "Desarrollo", "Pruebas y Documentación", "Despliegue"]
     }
   ]
 }

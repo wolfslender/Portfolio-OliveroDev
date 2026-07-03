@@ -10,6 +10,8 @@ const steps = [
     title: "Discovery",
     description: "We talk about your goals, your current setup, and what success looks like for you. No jargon, no pitch.",
     details: ["Current state audit", "Goal alignment", "Scope definition"],
+    duration: "1–2 weeks",
+    deliverable: "Discovery report",
   },
   {
     step: 2,
@@ -17,6 +19,8 @@ const steps = [
     title: "Strategy",
     description: "I map out the architecture, tech stack, and timeline before writing a single line of code.",
     details: ["Architecture design", "Tech selection", "Milestone plan"],
+    duration: "1–2 weeks",
+    deliverable: "Architecture blueprint",
   },
   {
     step: 3,
@@ -24,6 +28,8 @@ const steps = [
     title: "Build & Iterate",
     description: "Development in stages with regular check-ins. You see progress as it happens, not just at the end.",
     details: ["Sprint-based delivery", "Regular demos", "Feedback loops"],
+    duration: "4–8 weeks",
+    deliverable: "Production-ready codebase",
   },
   {
     step: 4,
@@ -31,6 +37,8 @@ const steps = [
     title: "Launch & Beyond",
     description: "Deploy with confidence, monitor performance, and I stay around for support. No ghosting after launch.",
     details: ["Production deployment", "Performance monitoring", "Ongoing support"],
+    duration: "1–2 weeks",
+    deliverable: "Live deployed site",
   },
 ]
 
@@ -71,9 +79,17 @@ export function ProcessSection() {
                   </p>
 
                   <div className="space-y-2 pt-4 border-t border-border/50">
+                    <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary">
+                      <span className="w-1.5 h-1.5 bg-primary shrink-0" />
+                      Duration: {step.duration}
+                    </div>
+                    <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-secondary">
+                      <span className="w-1.5 h-1.5 bg-secondary shrink-0" />
+                      Deliverable: {step.deliverable}
+                    </div>
                     {step.details.map((detail, idx) => (
                       <div key={idx} className="flex items-center gap-2 text-xs font-medium text-foreground/70">
-                        <div className="w-1.5 h-1.5 bg-primary/40 shrink-0" />
+                        <div className="w-1.5 h-1.5 bg-foreground/20 shrink-0" />
                         {detail}
                       </div>
                     ))}

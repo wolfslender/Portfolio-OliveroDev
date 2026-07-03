@@ -53,53 +53,44 @@ export default function Home() {
       <TestimonialsSection />
 
       {/* Plugins Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-primary/[0.02]">
         <div className="max-w-6xl mx-auto">
-          <div className="p-8 md:p-12 bg-card border border-border/60">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Need a WordPress Plugin?
-              </h2>
-              <p className="text-muted-foreground max-w-xl mx-auto">
-                I also build premium WordPress plugins for storage optimization, media management, and more.
-              </p>
+          <div className="text-center mb-12 space-y-4">
+            <h2 className="text-4xl md:text-6xl font-black tracking-tight">
+              Need a <span className="text-primary">WordPress Plugin?</span>
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
+              I also build premium WordPress plugins for storage optimization, media management, and more.
+            </p>
+          </div>
+
+          <div className="max-w-xl mx-auto">
+            <div className="flex flex-wrap justify-center gap-2 mb-10">
+              <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium border border-border/50 bg-background/60">
+                Smart detection
+              </span>
+              <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium border border-border/50 bg-background/60">
+                Storage analysis
+              </span>
+              <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium border border-border/50 bg-background/60">
+                Trash system
+              </span>
+              <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium border border-border/50 bg-background/60">
+                Premium support
+              </span>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-              <div className="space-y-4">
-                <div className="flex items-center gap-4">
-                  <span className="text-4xl" role="img" aria-label="clean">🧹</span>
-                  <div>
-                    <h3 className="text-xl font-bold">Media Audit</h3>
-                    <p className="text-sm text-muted-foreground">Clean unused media files safely</p>
-                  </div>
-                </div>
-                <div className="grid grid-cols-2 gap-2 text-sm text-muted-foreground">
-                  <div className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 bg-primary shrink-0" />
-                    <span>Smart detection</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 bg-primary shrink-0" />
-                    <span>Storage analysis</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 bg-primary shrink-0" />
-                    <span>Trash system</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 bg-primary shrink-0" />
-                    <span>Premium support</span>
-                  </div>
-                </div>
-              </div>
+
+            <div className="text-center">
+              <h3 className="text-xl font-bold mb-2">Media Audit</h3>
+              <p className="text-sm text-muted-foreground mb-6">Clean unused media files safely</p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button asChild className="px-6 font-bold">
+                <Button asChild size="lg" className="rounded-full h-14 px-8 font-bold group shadow-xl hover:shadow-primary/20 transition-all">
                   <Link href="/plugins">
                     View All Plugins
-                    <ArrowRight className="ml-2 w-4 h-4" />
+                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </Button>
-                <Button asChild variant="outline" className="px-6 font-bold border-2">
+                <Button asChild size="lg" variant="outline" className="rounded-full h-14 px-8 font-bold border-2">
                   <Link href="https://wordpress.org/plugins/oliverodev-media-audit/" target="_blank">
                     Try Free Version
                   </Link>

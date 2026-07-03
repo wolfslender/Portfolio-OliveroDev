@@ -1,6 +1,6 @@
 "use client"
 
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, BarChart3 } from "lucide-react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { useHero } from "@/hooks/use-hero"
@@ -36,7 +36,7 @@ export function HeroSection() {
               size="lg"
               className="w-full sm:w-auto h-14 px-10 bg-primary hover:bg-primary/90 text-primary-foreground text-lg font-bold transition-all hover:shadow-xl hover:shadow-primary/20 active:scale-[0.98]"
             >
-              <Link href="/contact?audit=true">
+              <Link href="/contact">
                 {hero.buttons.primary}
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
@@ -45,16 +45,22 @@ export function HeroSection() {
               asChild
               variant="outline"
               size="lg"
-              className="w-full sm:w-auto h-14 px-10 text-lg font-bold border-2 hover:bg-muted/50 transition-all active:scale-[0.98]"
+              className="w-full sm:w-auto h-14 px-10 text-lg font-bold border-2 border-primary/30 hover:bg-primary/10 hover:border-primary hover:text-primary transition-all active:scale-[0.98]"
             >
-              <Link href="/work">
+              <Link href="/contact?audit=true">
+                <BarChart3 className="mr-2 h-5 w-5" />
                 {hero.buttons.secondary}
               </Link>
             </Button>
           </div>
 
-          <div className="pt-8 flex justify-center">
-            <SocialLinks iconClassName="w-5 h-5 hover:text-primary transition-colors" />
+          <div className="pt-4 flex flex-col items-center gap-3">
+            <p className="text-sm text-muted-foreground font-medium">
+              {hero.location}
+            </p>
+            <div className="flex justify-center">
+              <SocialLinks iconClassName="w-5 h-5 hover:text-primary transition-colors" />
+            </div>
           </div>
         </div>
       </div>

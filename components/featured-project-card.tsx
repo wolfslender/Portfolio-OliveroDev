@@ -60,7 +60,7 @@ export function FeaturedProjectCard({
             <Badge 
               key={tag} 
               variant="secondary" 
-              className="bg-black/70 text-white hover:bg-black/80 backdrop-blur-sm border-white/10 px-2 py-0.5 text-[10px] font-medium tracking-wide"
+              className="bg-black/70 text-white hover:bg-black/80 backdrop-blur-sm border-white/10 px-2 py-0.5 text-xs font-medium tracking-wide"
             >
               {tag}
             </Badge>

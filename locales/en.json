@@ -7,9 +7,10 @@
     "roles": ["UI/UX that converts", "SEO + Speed", "Webflow / WordPress / Next.js", "I do the work myself"],
     "description": "I build and fix websites for businesses that need them to load fast, look legit, and turn visitors into paying customers. No fluff, no agencies — just me.",
     "proof": ["I reply within 24h", "Built for SEO from day one", "Launch support included"],
+    "location": "Based in Santo Domingo · Working worldwide",
     "buttons": {
-      "primary": "Get a Free Website Audit",
-      "secondary": "See My Work",
+      "primary": "Book a Strategy Call",
+      "secondary": "Get a Free Audit",
       "downloadCv": "Download My Resume"
     }
   },
@@ -24,6 +25,7 @@
     "about": "About",
     "contact": "Contact"
   },
+  "pluginsNav": "Plugins",
   "about": {
     "title": "Why Work With Me",
     "description": "When you hire an agency, the senior person sells you the project and a junior builds it. When you work with me, you get me — 10+ years of experience, directly on your project. No handoffs, no surprises.",
@@ -292,49 +294,31 @@
   ],
   "services": [
     {
-      "title": "MVP Launchpad",
-      "description": "Get a working website or MVP out the door fast. Strategy, UX, and build — everything you need to start seeing results.",
-      "features": ["Rapid Prototyping", "Conversion-Focused UX", "CMS or App Build", "Launch Strategy"],
-      "bestFor": "Founders and growing businesses that need to validate or relaunch quickly.",
+      "title": "Websites & MVPs",
+      "description": "A working website or MVP in weeks — not months. Strategy, UX, and build all in one package. Includes Webflow migrations if you're tired of WordPress.",
+      "features": ["Rapid Prototyping", "Conversion-Focused UX", "CMS or App Build", "Launch Strategy", "Webflow Migrations"],
+      "bestFor": "Founders and growing businesses that need a new site or MVP fast.",
       "timeline": "4-6 weeks",
       "outcome": "A fast, premium website or MVP built to win trust, capture leads, and support growth.",
       "deliverables": ["Strategy Sprint", "UX/UI Direction", "CMS or Product Build", "Launch Support"]
     },
     {
-      "title": "Corporate Scaling",
-      "description": "Refactor and upgrade high-traffic or outdated websites so they load faster, convert better, and are easier for your team to manage.",
-      "features": ["Code Audit", "Performance Tuning", "Security Hardening", "Team Training"],
+      "title": "Platform Scaling",
+      "description": "Your site is slow, outdated, or a pain to maintain. I clean it up, speed it up, lock down security, and can stay on as your technical partner. No handoffs, no ghosting.",
+      "features": ["Code Audit & Refactor", "Performance Tuning", "Security Hardening", "Ongoing Retainer", "Infrastructure"],
       "bestFor": "Established companies with legacy platforms, performance bottlenecks, or conversion leaks.",
-      "timeline": "3-8 weeks",
-      "outcome": "A more stable, maintainable platform that supports marketing, SEO, and long-term scale.",
-      "deliverables": ["Technical Audit", "Priority Fix Roadmap", "Refactor & Optimization", "Documentation"]
+      "timeline": "3-8 weeks (ongoing retainer available)",
+      "outcome": "A faster, safer, more maintainable platform — with a partner who stays on your team.",
+      "deliverables": ["Technical Audit", "Priority Fix Roadmap", "Refactor & Optimization", "Retainer Support"]
     },
     {
-      "title": "Webflow Migration",
-      "description": "Move from WordPress or a brittle marketing stack to Webflow with a cleaner CMS, stronger design control, and easier day-to-day updates.",
-      "features": ["Pixel-Perfect Rebuild", "CMS Architecture", "SEO Migration", "Team Training"],
-      "bestFor": "Marketing teams that want speed, autonomy, and less dependency on developers for updates.",
-      "timeline": "2-5 weeks",
-      "outcome": "A polished marketing site your team can actually update without breaking SEO or design consistency.",
-      "deliverables": ["Content Mapping", "Webflow Build", "SEO Safeguards", "Editor Training"]
-    },
-    {
-      "title": "Technical Partnership",
-      "description": "Get a senior technical partner on retainer to improve your website, ship new features, and keep your digital presence moving forward.",
-      "features": ["Priority Support", "Monthly Audits", "Feature Development", "Strategic Consulting"],
-      "bestFor": "Teams that need senior execution every month without hiring a full in-house lead.",
-      "timeline": "Monthly retainer",
-      "outcome": "A dependable partner that helps your team ship faster, reduce risk, and stay technically aligned.",
-      "deliverables": ["Priority Queue", "Monthly Roadmap", "Feature Delivery", "Strategic Guidance"]
-    },
-    {
-      "title": "Cloud & Web Security",
-      "description": "Harden infrastructure, improve deployments, and reduce risk for websites that cannot afford weak security or downtime.",
-      "features": ["Security Reviews", "Server Hardening", "Deployment Pipelines", "Monitoring Guidance"],
-      "bestFor": "Organizations that need safer releases, stronger hosting practices, and more resilient infrastructure.",
-      "timeline": "2-4 weeks",
-      "outcome": "A safer, more resilient setup with cleaner deployments and fewer operational surprises.",
-      "deliverables": ["Security Review", "Deployment Workflow", "Server Hardening", "Monitoring Setup"]
+      "title": "WordPress Plugins",
+      "description": "Need something WordPress can't do out of the box? I build custom plugins — from simple utilities to full solutions that actually fit your workflow.",
+      "features": ["Custom Plugin Development", "Freemius Integration", "API Development", "Security Audits"],
+      "bestFor": "Businesses needing custom WordPress functionality.",
+      "timeline": "2-6 weeks",
+      "outcome": "A custom plugin built to your exact specifications.",
+      "deliverables": ["Requirements Analysis", "Custom Development", "Testing & Documentation", "Deployment"]
     }
   ]
 }

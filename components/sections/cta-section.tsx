@@ -37,11 +37,6 @@ export function CTASection() {
                 </Button>
               </div>
 
-              <p className="text-sm text-muted-foreground pt-2">
-                <Link href="/contact?audit=true" className="underline hover:text-primary transition-colors">
-                  Not ready? Get a free website audit first.
-                </Link>
-              </p>
             </div>
           </div>
         </ScrollReveal>

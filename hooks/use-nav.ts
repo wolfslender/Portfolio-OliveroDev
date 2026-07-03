@@ -6,7 +6,6 @@ export function useNav() {
   return useMemo(() => ([
     { label: t('nav.home', "Home"), href: "/" },
     { label: t('nav.services', "Services"), href: "/services" },
-    { label: t('nav.plugins', "Plugins"), href: "/plugins" },
     { label: t('nav.work', "Work"), href: "/work" },
     { label: t('nav.blog', "Blog"), href: "/blog" },
     { label: t('nav.about', "About"), href: "/about" },

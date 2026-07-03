@@ -9,31 +9,37 @@ const partners = [
     name: "Cybernetips",
     logo: "/logos/logo_cybernetips.png",
     industry: "Cybersecurity",
+    context: "Brand identity and web presence for a cybersecurity startup.",
   },
   {
     name: "Co-Active",
     logo: "/logos/CTI_Logo_Primary-1-png.webp",
     industry: "Global EdTech",
+    context: "Fullstack platform rebuild serving 150K+ users across 60 countries.",
   },
   {
     name: "Dmed Health Care",
     contact: "Jana del Rosario",
     industry: "Healthcare",
+    context: "Custom patient management portal with secure data handling.",
   },
   {
     name: "Gov PR",
     logo: "/logos/DEPR-Logo-2025-1.svg",
     industry: "Government",
+    context: "Digital transformation for PR government portal — 99.9% uptime, WCAG 2.1 AA.",
   },
   {
     name: "AESAN",
     logo: "/logos/aesan-espanol-logo.svg",
     industry: "Public Health",
+    context: "Public-facing platform for Spain's food safety agency.",
   },
   {
     name: "CST",
     logo: "/logos/cst-logo-white-2025.svg",
     industry: "GovTech",
+    context: "Built a custom LMS portal for government employee training.",
   },
 ]
 
@@ -63,34 +69,44 @@ export function TrustedBySection() {
             >
               {partner.logo ? (
                 <>
-                  <div className="relative h-12 w-full max-w-[120px] transition-all duration-300 group-hover:scale-105 grayscale group-hover:grayscale-0 opacity-40 group-hover:opacity-100">
+                  <div className="relative h-12 w-full max-w-[120px] transition-all duration-300 group-hover:scale-105 opacity-70 hover:opacity-100">
                     <ExportedImage
                       src={partner.logo}
                       alt={partner.name}
                       fill
-                      className="object-contain dark:brightness-0 dark:invert"
+                      className="object-contain"
                     />
                   </div>
-                  <div className="text-center space-y-1 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                    <p className="text-[10px] font-bold uppercase tracking-widest text-primary">
+                  <div className="text-center space-y-1 opacity-70 group-hover:opacity-100 transition-all duration-300">
+                    <p className="text-xs font-bold uppercase tracking-widest text-primary">
                       {partner.industry}
                     </p>
+                    {'context' in partner && (
+                      <p className="text-xs text-muted-foreground leading-relaxed max-w-[130px] mx-auto">
+                        {partner.context}
+                      </p>
+                    )}
                   </div>
                 </>
               ) : (
                 <>
                   <div className="flex flex-col items-center justify-center h-12 transition-all duration-300">
-                    <p className="text-lg font-bold text-foreground/60 group-hover:text-foreground transition-colors text-center leading-tight">
+                    <p className="text-lg font-bold text-foreground/80 group-hover:text-foreground transition-colors text-center leading-tight">
                       {partner.name}
                     </p>
                   </div>
                   <div className="text-center space-y-1">
-                    <p className="text-[10px] font-bold uppercase tracking-widest text-primary">
+                    <p className="text-xs font-bold uppercase tracking-widest text-primary">
                       {partner.industry}
                     </p>
                     {'contact' in partner && (
-                      <p className="text-[10px] text-muted-foreground font-medium">
+                      <p className="text-xs text-muted-foreground font-medium">
                         {partner.contact}
+                      </p>
+                    )}
+                    {'context' in partner && (
+                      <p className="text-xs text-muted-foreground leading-relaxed max-w-[130px] mx-auto">
+                        {partner.context}
                       </p>
                     )}
                   </div>

@@ -41,15 +41,15 @@ export function FeaturedCaseStudy({ project }: FeaturedCaseStudyProps) {
                             Featured Case Study
                         </Badge>
                         <h2 className="text-4xl md:text-6xl font-black tracking-tight">
-                            Real results for{" "}
-                            <span className="text-primary">real clients</span>
+                            How Co-Active scaled to{" "}
+                            <span className="text-primary">150K+ users across 60 countries</span>
                         </h2>
                     </div>
                 </ScrollReveal>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <ScrollReveal delay={100}>
-                        <div className="relative aspect-[4/3] overflow-hidden border border-border/60 bg-card group">
+                        <div className="relative aspect-[4/3] overflow-hidden group">
                             <ExportedImage
                                 src={project.image}
                                 alt={project.title}
@@ -89,7 +89,7 @@ export function FeaturedCaseStudy({ project }: FeaturedCaseStudyProps) {
                             </div>
 
                             {project.metrics && (
-                                <div className="grid grid-cols-3 gap-4 p-5 bg-background border border-border/60">
+                                <div className="grid grid-cols-3 gap-4">
                                     {project.metrics.users && (
                                         <div className="text-center space-y-1">
                                             <TrendingUp className="w-5 h-5 mx-auto text-primary" />

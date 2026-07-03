@@ -116,19 +116,19 @@ export function ProjectCard({
             {metrics.users && (
               <div className="text-center">
                 <div className="text-xs font-bold text-primary mb-1">{getMetricValue(metrics.users)}</div>
-                <div className="text-[10px] text-muted-foreground uppercase tracking-wider">{getMetricLabel(metrics.users, "Users")}</div>
+                <div className="text-xs text-muted-foreground uppercase tracking-wider">{getMetricLabel(metrics.users, "Users")}</div>
               </div>
             )}
             {metrics.performance && (
               <div className="text-center">
                 <div className="text-xs font-bold text-primary mb-1">{getMetricValue(metrics.performance)}</div>
-                <div className="text-[10px] text-muted-foreground uppercase tracking-wider">{getMetricLabel(metrics.performance, "Speed")}</div>
+                <div className="text-xs text-muted-foreground uppercase tracking-wider">{getMetricLabel(metrics.performance, "Speed")}</div>
               </div>
             )}
             {metrics.impact && (
               <div className="text-center">
                 <div className="text-xs font-bold text-primary mb-1 line-clamp-2">{getMetricValue(metrics.impact)}</div>
-                <div className="text-[10px] text-muted-foreground uppercase tracking-wider">{getMetricLabel(metrics.impact, "Impact")}</div>
+                <div className="text-xs text-muted-foreground uppercase tracking-wider">{getMetricLabel(metrics.impact, "Impact")}</div>
               </div>
             )}
           </div>

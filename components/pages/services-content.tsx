@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button"
 import { useServices } from "@/hooks/use-services"
 import { useServicesPage } from "@/hooks/use-services-page"
 import { useCommon } from "@/hooks/use-common"
-import { CTABanner } from "@/components/cta-banner"
 import { ArrowRight, Clock, Target, TrendingUp } from "lucide-react"
 import Link from "next/link"
 import { cn } from "@/lib/utils"
@@ -90,23 +89,32 @@ export default function ServicesContent() {
                   </div>
 
                   {/* Details Grid */}
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+                    {service.startingPrice && (
+                      <div className="rounded-xl border border-border/30 bg-background/50 p-4">
+                        <div className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-muted-foreground mb-1.5">
+                          <Target className="w-3 h-3" />
+                          Starting at
+                        </div>
+                        <p className="text-sm font-bold text-primary leading-snug">{service.startingPrice}</p>
+                      </div>
+                    )}
                     <div className="rounded-xl border border-border/30 bg-background/50 p-4">
-                      <div className="flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-widest text-muted-foreground mb-1.5">
+                      <div className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-muted-foreground mb-1.5">
                         <Target className="w-3 h-3" />
                         {common.bestFor}
                       </div>
                       <p className="text-sm font-medium leading-snug">{service.bestFor}</p>
                     </div>
                     <div className="rounded-xl border border-border/30 bg-background/50 p-4">
-                      <div className="flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-widest text-muted-foreground mb-1.5">
+                      <div className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-muted-foreground mb-1.5">
                         <Clock className="w-3 h-3" />
                         {common.timeline}
                       </div>
                       <p className="text-sm font-medium leading-snug">{service.timeline}</p>
                     </div>
                     <div className="rounded-xl border border-border/30 bg-background/50 p-4">
-                      <div className="flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-widest text-muted-foreground mb-1.5">
+                      <div className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-muted-foreground mb-1.5">
                         <TrendingUp className="w-3 h-3" />
                         {common.outcome}
                       </div>
@@ -117,7 +125,7 @@ export default function ServicesContent() {
                   {/* Deliverables */}
                   {service.deliverables?.length > 0 && (
                     <div className="mb-10">
-                      <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-muted-foreground mb-3">
+                      <p className="text-xs font-bold uppercase tracking-[0.25em] text-muted-foreground mb-3">
                         {common.included}
                       </p>
                       <div className="flex flex-wrap gap-1.5">
@@ -153,13 +161,6 @@ export default function ServicesContent() {
         </div>
       ))}
 
-      <CTABanner
-        title={servicesPage.cta.title}
-        description={servicesPage.cta.description}
-        buttonText={servicesPage.cta.button}
-        buttonHref="/contact"
-        className="mt-8 mb-20"
-      />
     </div>
   )
 }

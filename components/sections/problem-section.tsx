@@ -51,7 +51,7 @@ export function ProblemSection() {
                 </div>
                 <div className="space-y-1.5">
                   <h3 className="text-lg font-bold">{problem.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{problem.description}</p>
+                  <p className="text-base text-muted-foreground leading-relaxed">{problem.description}</p>
                 </div>
               </div>
             )

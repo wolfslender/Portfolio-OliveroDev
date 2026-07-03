@@ -36,6 +36,7 @@ export interface Service {
   timeline: string
   outcome: string
   deliverables: string[]
+  startingPrice?: string
 }
 
 export interface Skill {
