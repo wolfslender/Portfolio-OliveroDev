@@ -2,8 +2,8 @@ import type { Metadata } from "next"
 import { siteConfig } from "@/lib/config"
 
 export const metadata: Metadata = {
-  title: "Work",
-  description: "Featured projects and case studies. Web development portfolio showcasing React, Next.js, and Full Stack applications.",
+  title: "Portfolio & Case Studies",
+  description: "Featured web development projects and case studies. React, Next.js, WordPress, Webflow — performance-focused builds for real businesses.",
   alternates: { canonical: `${siteConfig.url}/work/` },
 }
 

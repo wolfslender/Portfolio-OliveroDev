@@ -13,6 +13,7 @@ import { BackToTop } from "@/components/back-to-top"
 import { AvailabilityBadge } from "@/components/availability-badge"
 import { GoogleAnalytics } from "@/components/google-analytics"
 import { CookieConsent } from "@/components/cookie-consent"
+import { LanguageMeta } from "@/components/language-meta"
 import {
   getPersonSchema,
   getOrganizationSchema,
@@ -49,6 +50,11 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: siteConfig.url,
+    languages: {
+      "en": siteConfig.url,
+      "es": siteConfig.url,
+      "x-default": siteConfig.url,
+    },
   },
   openGraph: {
     type: "website",
@@ -149,6 +155,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <I18nProvider>
+            <LanguageMeta />
             <ScrollProgress />
             <Navigation />
             <BackToTop />

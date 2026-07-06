@@ -2,8 +2,8 @@ import type { Metadata } from "next"
 import { siteConfig } from "@/lib/config"
 
 export const metadata: Metadata = {
-  title: "Services",
-  description: "Expert web development services: React, Next.js, Webflow, performance and security.",
+  title: "Web Development Services",
+  description: "Expert web development services — React, Next.js, Webflow, WordPress, performance optimization, and security audits. Based in Santo Domingo, working worldwide.",
   alternates: { canonical: `${siteConfig.url}/services/` },
 }
 

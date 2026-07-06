@@ -4,8 +4,8 @@ import type { Metadata } from "next"
 import { siteConfig } from "@/lib/config"
 
 export const metadata: Metadata = {
-  title: "Contact",
-  description: "Get in touch to start your project. Email, LinkedIn, GitHub, and WhatsApp available.",
+  title: "Get in Touch",
+  description: "Let's work together. Email, LinkedIn, GitHub, and WhatsApp — reach out to start your next project.",
   alternates: { canonical: `${siteConfig.url}/contact/` },
 }
 

@@ -16,7 +16,7 @@ const TrustedBySection = dynamic(() => import("@/components/sections/trusted-by-
 const CTASection = dynamic(() => import("@/components/sections/cta-section").then(mod => mod.CTASection))
 
 export const metadata: Metadata = {
-  title: "Home",
+  title: "Alexis Olivero — Full-Stack Developer",
   description: siteConfig.description,
   alternates: { canonical: `${siteConfig.url}/` },
 }

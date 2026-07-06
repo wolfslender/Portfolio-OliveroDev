@@ -4,8 +4,8 @@ import type { Metadata } from "next"
 import { siteConfig } from "@/lib/config"
 
 export const metadata: Metadata = {
-  title: "About",
-  description: "Experience, skills, and certifications. Frontend developer focused on SEO, performance and security.",
+  title: "About Me",
+  description: "Senior Frontend Engineer specializing in React, Next.js, WordPress, and Webflow. Certified in Google Analytics, cybersecurity, and SEO. Based in Santo Domingo.",
   alternates: { canonical: `${siteConfig.url}/about/` },
 }
 
