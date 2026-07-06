@@ -13,6 +13,19 @@ export function useAbout() {
   }), [t])
 }
 
+export function useAboutPage() {
+  const { t } = useTranslation()
+  return useMemo(() => ({
+    aboutLabel: t('aboutPage.aboutLabel', "About"),
+    heroTitle: t('aboutPage.heroTitle', "Building websites and tools"),
+    heroHighlight: t('aboutPage.heroHighlight', "that actually work"),
+    heroDescription: t('aboutPage.heroDescription', "10+ years building for government, enterprise, and global platforms. I focus on speed, security, and making sure the site does what it's supposed to do — bring in results."),
+    heroDescription2: t('aboutPage.heroDescription2', "No project managers, no junior devs, no handoffs. From discovery to deployment, I handle your project end-to-end. Government portals, global EdTech platforms, healthcare systems — I've shipped across industries and I know what works."),
+    workedTitle: t('aboutPage.workedTitle', "Where"),
+    workedHighlight: t('aboutPage.workedHighlight', "I've worked")
+  }), [t])
+}
+
 export function useExperience() {
   const { t } = useTranslation()
   return useMemo(() => {

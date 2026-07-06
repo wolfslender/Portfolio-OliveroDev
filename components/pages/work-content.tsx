@@ -10,11 +10,13 @@ import { ArrowRight, ExternalLink } from "lucide-react"
 import Link from "next/link"
 import { cn } from "@/lib/utils"
 import ExportedImage from "next-image-export-optimizer"
+import { useTranslation } from "react-i18next"
 
 export default function WorkContent() {
   const projects = useProjects()
   const workPage = useWorkPage()
   const common = useCommon()
+  const { t } = useTranslation()
   const [categoryFilter, setCategoryFilter] = useState("all")
 
   const featuredProject = projects.find(p => p.title.includes("Co-Active"))
@@ -31,7 +33,6 @@ export default function WorkContent() {
 
   return (
     <div className="pt-24">
-      {/* Hero */}
       <section className="px-4 sm:px-6 lg:px-8 mb-8 relative">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-gradient-to-b from-primary/[0.07] to-transparent -z-10" />
         <div className="max-w-7xl mx-auto">
@@ -46,7 +47,6 @@ export default function WorkContent() {
         </div>
       </section>
 
-      {/* Featured Project — Editorial Section */}
       {featuredProject && (
         <section className="px-4 sm:px-6 lg:px-8 py-24 md:py-32 relative overflow-hidden bg-primary/[0.03]">
           <div className="max-w-7xl mx-auto">
@@ -64,7 +64,7 @@ export default function WorkContent() {
               </div>
               <div className="lg:col-span-5">
                 <p className="text-xs font-bold tracking-[0.3em] uppercase text-primary mb-4">
-                  Featured Case Study
+                  {t('workPage.featuredBadge')}
                 </p>
                 <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 leading-[1.1]">
                   {featuredProject.title}
@@ -87,12 +87,12 @@ export default function WorkContent() {
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button asChild size="lg" className="rounded-full h-14 px-8 text-lg font-bold group shadow-xl hover:shadow-primary/20 transition-all">
                     <Link href={`/work/${featuredProject.slug}`}>
-                      View Case Study <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                      {t('workPage.viewCaseStudy')} <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </Link>
                   </Button>
                   <Button asChild size="lg" variant="outline" className="rounded-full h-14 px-8 text-lg font-bold group">
                     <Link href={featuredProject.demo} target="_blank" rel="noopener noreferrer">
-                      Live Site <ExternalLink className="ml-2 w-5 h-5" />
+                      {common.live} <ExternalLink className="ml-2 w-5 h-5" />
                     </Link>
                   </Button>
                 </div>
@@ -102,13 +102,11 @@ export default function WorkContent() {
         </section>
       )}
 
-      {/* Separator */}
       <div className="relative flex items-center justify-center py-10 md:py-14">
         <div className="h-px w-full max-w-2xl bg-gradient-to-r from-transparent via-border/60 to-transparent" />
         <div className="absolute w-2.5 h-2.5 rotate-45 border border-border/50 bg-background" />
       </div>
 
-      {/* Filters + Projects */}
       <section className="px-4 sm:px-6 lg:px-8 mb-32">
         <div className="max-w-7xl mx-auto">
           <div className="mb-12">
@@ -120,7 +118,6 @@ export default function WorkContent() {
             </p>
           </div>
 
-          {/* Filters — Minimal Pills */}
           <div className="flex flex-wrap gap-2 mb-12 pb-12 border-b border-border/30">
             {filterOptions.map((filter) => (
               <button
@@ -138,7 +135,6 @@ export default function WorkContent() {
             ))}
           </div>
 
-          {/* Project Grid — Editorial 2-Column */}
           {filteredProjects.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-20">
               {filteredProjects.map((project, index) => (
@@ -168,7 +164,7 @@ export default function WorkContent() {
                         {project.description}
                       </p>
                       <span className="inline-flex items-center gap-1 text-sm font-medium text-primary">
-                        View Project <ArrowRight className="w-3.5 h-3.5" />
+                        {common.viewProject} <ArrowRight className="w-3.5 h-3.5" />
                       </span>
                     </div>
                   </Link>
@@ -177,8 +173,8 @@ export default function WorkContent() {
             </div>
           ) : (
             <div className="text-center py-20">
-              <h4 className="text-xl font-bold mb-2">No projects found</h4>
-              <p className="text-muted-foreground">Try adjusting your filters to see more results.</p>
+              <h4 className="text-xl font-bold mb-2">{t('workPage.noProjects')}</h4>
+              <p className="text-muted-foreground">{t('workPage.noProjectsDescription')}</p>
             </div>
           )}
         </div>

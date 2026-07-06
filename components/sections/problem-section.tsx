@@ -3,41 +3,44 @@
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Clock, Shield, BarChart3, Smartphone } from "lucide-react"
 import Link from "next/link"
-
-const problems = [
-  {
-    icon: Clock,
-    title: "Your site is slow",
-    description: "Every second of load time costs you visitors. I build for speed from the ground up.",
-  },
-  {
-    icon: Shield,
-    title: "Security keeps you up at night",
-    description: "Outdated plugins, vulnerable dependencies, no backup plan. I fix that.",
-  },
-  {
-    icon: BarChart3,
-    title: "It's not converting",
-    description: "Beautiful but broken. I focus on what actually drives results — not just aesthetics.",
-  },
-  {
-    icon: Smartphone,
-    title: "The mobile experience is an afterthought",
-    description: "Over 60% of traffic comes from phones. I design mobile-first, not mobile-last.",
-  },
-]
+import { useTranslation } from "react-i18next"
 
 export function ProblemSection() {
+  const { t } = useTranslation()
+
+  const problems = [
+    {
+      icon: Clock,
+      title: t('problemSection.problems.0.title'),
+      description: t('problemSection.problems.0.description'),
+    },
+    {
+      icon: Shield,
+      title: t('problemSection.problems.1.title'),
+      description: t('problemSection.problems.1.description'),
+    },
+    {
+      icon: BarChart3,
+      title: t('problemSection.problems.2.title'),
+      description: t('problemSection.problems.2.description'),
+    },
+    {
+      icon: Smartphone,
+      title: t('problemSection.problems.3.title'),
+      description: t('problemSection.problems.3.description'),
+    },
+  ]
+
   return (
     <section className="py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16 space-y-4">
           <h2 className="text-4xl md:text-6xl font-black tracking-tight">
-            Is your website{" "}
-            <span className="text-primary">working for you?</span>
+            {t('problemSection.titlePrefix')}{" "}
+            <span className="text-primary">{t('problemSection.titleHighlight')}</span>
           </h2>
           <p className="text-muted-foreground text-xl max-w-2xl mx-auto leading-relaxed">
-            Most sites I see have the same problems. Here is how I fix them.
+            {t('problemSection.description')}
           </p>
         </div>
 
@@ -61,7 +64,7 @@ export function ProblemSection() {
         <div className="text-center mt-12">
           <Button asChild className="h-12 px-8 font-bold group">
             <Link href="/services">
-              See how I solve these
+              {t('problemSection.cta')}
               <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </Link>
           </Button>

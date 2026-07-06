@@ -24,7 +24,7 @@ interface BlogPostContentProps {
 }
 
 export function BlogPostContent({ post, tags }: BlogPostContentProps) {
-  const { i18n } = useTranslation()
+  const { i18n, t } = useTranslation()
   const router = useRouter()
   const [searchQuery, setSearchQuery] = useState("")
   const isSpanish = i18n.language.startsWith("es")
@@ -41,12 +41,10 @@ export function BlogPostContent({ post, tags }: BlogPostContentProps) {
     }
   }
 
-  // Determine content based on language
   const title = isSpanish && post.title_es ? post.title_es : post.title
   const description = isSpanish && post.description_es ? post.description_es : post.description
   const body = isSpanish && post.body_es ? post.body_es : post.body
 
-  // Extract headings for Table of Contents from the correct body
   const headings = body
     ?.filter((block: any) => block._type === 'block' && (block.style === 'h2' || block.style === 'h3'))
     .map((block: any) => ({
@@ -55,7 +53,6 @@ export function BlogPostContent({ post, tags }: BlogPostContentProps) {
       level: block.style === 'h2' ? 2 : 3
     })) || []
 
-  // Custom components for PortableText to render headings with IDs
   const components = {
     types: {
       image: ({ value }: any) => {
@@ -117,16 +114,16 @@ export function BlogPostContent({ post, tags }: BlogPostContentProps) {
         }}
       />
       <Link href="/blog" className="inline-flex items-center text-sm text-muted-foreground hover:text-primary mb-8 transition-colors">
-        <ArrowLeft className="mr-2 h-4 w-4" /> {isSpanish ? "Volver al Blog" : "Back to Blog"}
+        <ArrowLeft className="mr-2 h-4 w-4" /> {t('blogPost.backToBlog')}
       </Link>
 
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
         <article className="lg:col-span-3">
           <div className="mb-8">
             {keywords.length > 0 && (
-              <div className="mb-5" aria-label={isSpanish ? "Palabras clave" : "Keywords"}>
+              <div className="mb-5" aria-label={t('blogPost.keywords')}>
                 <div className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-2">
-                  {isSpanish ? "Palabras clave" : "Keywords"}
+                  {t('blogPost.keywords')}
                 </div>
                 <ul className="flex flex-wrap gap-2" role="list">
                   {keywords.map((keyword: string) => (
@@ -170,7 +167,7 @@ export function BlogPostContent({ post, tags }: BlogPostContentProps) {
             <TableOfContents headings={headings} />
 
             <div className="flex items-center justify-between py-6 border-y mb-8">
-               <span className="text-2xl font-bold text-foreground mr-4">{isSpanish ? "Compartir:" : "Share:"}</span>
+               <span className="text-2xl font-bold text-foreground mr-4">{t('blogPost.share')}</span>
                <SocialShareButtons 
                  url={`${siteConfig.url}/blog/${post.slug.current}`} 
                  title={title} 
@@ -185,25 +182,23 @@ export function BlogPostContent({ post, tags }: BlogPostContentProps) {
           <div className="mt-12 rounded-[2rem] border border-border/60 bg-card/40 p-8 backdrop-blur-sm">
             <div className="space-y-4">
               <div className="inline-flex rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.25em] text-primary">
-                {isSpanish ? "Siguiente paso" : "Next Step"}
+                {t('blogPost.nextStep')}
               </div>
               <h3 className="text-3xl font-black tracking-tight">
-                {isSpanish ? "¿Tu web también necesita más conversiones?" : "Need your website to convert better too?"}
+                {t('blogPost.ctaTitle')}
               </h3>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                {isSpanish
-                  ? "Puedo revisar tu sitio, detectar fricciones y proponerte mejoras claras para rendimiento, SEO, UX y ventas."
-                  : "I can review your site, find the biggest friction points, and map clear improvements for performance, SEO, UX, and sales."}
+                {t('blogPost.ctaDescription')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 pt-2">
                 <Button asChild size="lg" className="rounded-full">
                   <Link href="/contact?audit=true">
-                    {isSpanish ? "Obtener Auditoría Gratis" : "Get Free Website Audit"}
+                    {t('common.freeAudit')}
                   </Link>
                 </Button>
                 <Button asChild size="lg" variant="outline" className="rounded-full">
                   <Link href="/services">
-                    {isSpanish ? "Ver Servicios" : "View Services"}
+                    {t('common.viewServices')}
                   </Link>
                 </Button>
               </div>
@@ -213,7 +208,7 @@ export function BlogPostContent({ post, tags }: BlogPostContentProps) {
           <AuthorBio authorName={post.authorName} authorImage={post.authorImage} />
 
           <div className="mt-12 pt-8 border-t">
-            <h3 className="text-2xl font-bold mb-6">{isSpanish ? "Comparte este artículo" : "Share this article"}</h3>
+            <h3 className="text-2xl font-bold mb-6">{t('blogPost.shareArticle')}</h3>
             <SocialShareButtons 
                  url={`${siteConfig.url}/blog/${post.slug.current}`} 
                  title={title} 

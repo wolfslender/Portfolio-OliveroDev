@@ -15,7 +15,8 @@
     }
   },
   "trustedBy": {
-    "title": "Algunas marcas con las que he trabajado"
+    "title": "Algunas marcas con las que he trabajado",
+    "description": "Organizaciones con las que he trabajado a lo largo de mi carrera."
   },
   "nav": {
     "home": "Inicio",
@@ -32,6 +33,15 @@
     "experience": "Dónde he trabajado",
     "education": "Educación",
     "softSkills": "Cómo trabajo"
+  },
+  "aboutPage": {
+    "aboutLabel": "Sobre mí",
+    "heroTitle": "Construyo websites y herramientas",
+    "heroHighlight": "que sí funcionan",
+    "heroDescription": "Más de 10 años construyendo para gobierno, empresas y plataformas globales. Me enfoco en velocidad, seguridad y asegurarme de que el sitio haga lo que debe hacer — traer resultados.",
+    "heroDescription2": "Sin project managers, sin juniors, sin traspasos. Desde el descubrimiento hasta el despliegue, manejo tu proyecto de principio a fin. Portales gubernamentales, plataformas globales EdTech, sistemas de salud — he trabajado en múltiples industrias y sé lo que funciona.",
+    "workedTitle": "Dónde",
+    "workedHighlight": "he trabajado"
   },
   "stats": [
     { "label": "Años en el ruedo" },
@@ -74,6 +84,117 @@
       "design": "Diseño",
       "security": "Seguridad"
     }
+  },
+  "testimonialsSection": {
+    "title": "Lo que los clientes",
+    "highlight": "dicen",
+    "subtitle": "Comentarios reales de personas con las que he trabajado."
+  },
+  "glossaryPage": {
+    "metaTitle": "Glosario y FAQ de Desarrollo Web - Alexis Olivero",
+    "metaDescription": "Preguntas comunes sobre desarrollo web, SEO, rendimiento y arquitectura frontend explicadas claramente.",
+    "title": "Glosario de Desarrollo Web",
+    "subtitle": "Respuestas claras a preguntas técnicas complejas.",
+    "faqs": [
+      {
+        "question": "¿Qué es un Headless CMS y por qué debería usarlo?",
+        "answer": "Un Headless CMS (como Sanity o Strapi) separa la gestión de contenido del backend de la presentación frontend. Esto permite usar el mismo contenido en múltiples canales (web, app móvil, smartwatches) y da a los desarrolladores la libertad de usar frameworks modernos como Next.js para mejor rendimiento y seguridad."
+      },
+      {
+        "question": "¿Cómo impactan los Core Web Vitals en mi SEO?",
+        "answer": "Los Core Web Vitals son las métricas estandarizadas de Google para la experiencia de usuario. Miden velocidad de carga (LCP), interactividad (INP) y estabilidad visual (CLS). Una puntuación baja puede reducir significativamente tu posicionamiento porque Google prioriza sitios que ofrecen una experiencia de usuario fluida."
+      },
+      {
+        "question": "¿Por qué migrar de WordPress a Next.js?",
+        "answer": "Aunque WordPress es excelente para blogs simples, Next.js ofrece rendimiento superior mediante server-side rendering (SSR) y static site generation (SSG). Proporciona mejor seguridad (sin exposición directa a la base de datos), transiciones de página instantáneas y completa flexibilidad de diseño sin estar limitado por temas."
+      },
+      {
+        "question": "¿Qué es el SEO Técnico?",
+        "answer": "El SEO Técnico se refiere a optimizaciones del sitio y del servidor que ayudan a los motores de búsqueda a rastrear e indexar tu sitio más efectivamente. Incluye sitemaps, robots.txt, marcado schema, etiquetas canónicas, velocidad del sitio y compatibilidad móvil."
+      },
+      {
+        "question": "¿Cómo aseguras la accesibilidad web (WCAG)?",
+        "answer": "Sigo los estándares WCAG 2.1 AA usando HTML semántico, etiquetas ARIA adecuadas, suficiente contraste de color, soporte para navegación por teclado y pruebas con lectores de pantalla. Esto asegura que tu producto digital sea usable por todos, incluyendo personas con discapacidades."
+      }
+    ]
+  },
+  "homePluginsSection": {
+    "title": "¿Necesitas un",
+    "titleHighlight": "Plugin de WordPress?",
+    "description": "También construyo plugins premium de WordPress para optimización de almacenamiento, gestión de medios y más.",
+    "features": ["Detección inteligente", "Análisis de almacenamiento", "Sistema de papelera", "Soporte premium"],
+    "productTitle": "Media Audit",
+    "productTagline": "Limpia archivos multimedia no usados de forma segura",
+    "viewAll": "Ver Todos los Plugins",
+    "tryFree": "Probar Versión Gratis"
+  },
+  "pluginsPage": {
+    "metaTitle": "Plugins WordPress - Construidos para Escalar",
+    "metaDescription": "Plugins premium de WordPress diseñados para resolver problemas reales. Código limpio, actualizaciones regulares y soporte dedicado.",
+    "heroBadge": "Plugins WordPress",
+    "heroTitle": "Plugins WordPress",
+    "heroHighlight": "Construidos para Escalar",
+    "heroDescription": "Plugins premium de WordPress diseñados para resolver problemas reales. Código limpio, actualizaciones regulares y soporte dedicado.",
+    "freeLabel": "Gratis — Siempre",
+    "startTrial": "Prueba Gratis",
+    "freeOnWp": "Gratis en WP.org",
+    "noCreditCard": "Sin tarjeta de crédito",
+    "threeDayTrial": "Prueba de 3 días",
+    "cancelAnytime": "Cancela cuando quieras",
+    "getStarted": "Comenzar",
+    "forAgencies": "Para agencias",
+    "whyTitle": "¿Por qué mis Plugins?",
+    "whyCards": [
+      {
+        "title": "Código Limpio",
+        "description": "Bien documentado, optimizado y siguiendo las mejores prácticas de WordPress."
+      },
+      {
+        "title": "Actualizaciones Regulares",
+        "description": "Mejoras continuas, parches de seguridad y nuevas funcionalidades."
+      },
+      {
+        "title": "Soporte Dedicado",
+        "description": "Acceso directo a soporte para ayuda con configuración y preguntas personalizadas."
+      }
+    ],
+    "ctaTitle": "¿Necesitas una Solución WordPress Personalizada?",
+    "ctaDescription": "También construyo plugins y temas personalizados de WordPress adaptados a tus necesidades específicas.",
+    "ctaButton": "Hablemos de tu Proyecto"
+  },
+  "pluginsData": {
+    "hero": {
+      "title": "Plugins WordPress",
+      "highlight": "Construidos para Escalar",
+      "description": "Plugins premium de WordPress diseñados para resolver problemas reales. Código limpio, actualizaciones regulares y soporte dedicado."
+    },
+    "plugins": [
+      {
+        "title": "OliveroDev Media Audit",
+        "tagline": "Encuentra medios no usados. Recupera almacenamiento. Sin conjeturas.",
+        "description": "El limpiador de librería multimedia de WordPress que realmente funciona. El escaneo inteligente detecta archivos no usados en posts, page builders, campos ACF y WooCommerce — y luego te permite eliminarlos de forma segura con un sistema de puntuación de riesgo que evita errores costosos.",
+        "features": [
+          "Escaneo inteligente: posts, páginas, widgets, theme mods",
+          "Dashboard de usados vs no usados con desglose de almacenamiento",
+          "Localizador \"¿Dónde se usa?\" por archivo",
+          "Contador de progreso en tiempo real",
+          "Modal de eliminación segura con vista previa",
+          "Exportar archivos no usados como CSV",
+          "Escaneo por lotes y auto-escaneos WP-Cron"
+        ],
+        "proFeatures": [
+          "Detección Profunda: Elementor, ACF, Divi, WooCommerce",
+          "Puntuación de Riesgo (0–100) — sabe antes de eliminar",
+          "Papelera PRO: restaura archivos antes de borrado permanente",
+          "Limpieza por lotes por nivel de riesgo (Bajo / Medio / Todo)",
+          "Analíticas de almacenamiento con gráficos visuales",
+          "Reportes automáticos por email (diario / semanal)",
+          "Reglas de exclusión avanzadas (carpeta, tamaño, autor, MIME)",
+          "Prueba gratis de 3 días — sin tarjeta de crédito"
+        ],
+        "price": "Desde $29/año"
+      }
+    ]
   },
   "certificationsPage": {
     "titlePrefix": "Certificaciones",
@@ -219,7 +340,11 @@
       "highlight": "Hablemos de tu proyecto.",
       "description": "Si necesitas un sitio que cargue rápido y se vea profesional, puedo ayudarte a planificarlo, construirlo y lanzarlo.",
       "button": "Solicitar Auditoría Web"
-    }
+    },
+    "featuredBadge": "Caso de Estudio Destacado",
+    "viewCaseStudy": "Ver Caso de Estudio",
+    "noProjects": "No se encontraron proyectos",
+    "noProjectsDescription": "Ajusta los filtros para ver más resultados."
   },
   "servicesPage": {
     "hero": {
@@ -255,7 +380,12 @@
     "description": "¿Tienes un proyecto en mente? ¿O solo quieres saludar? Siempre estoy abierto a conversar.",
     "emailMe": "Envíame un Email",
     "whatsappMe": "WhatsApp",
-    "socialConnect": "O búscame en redes sociales"
+    "socialConnect": "O búscame en redes sociales",
+    "quote": "\"Convirtiendo desafíos complejos en experiencias digitales de alto rendimiento.\"",
+    "bookCall": "Agendar Llamada Estratégica",
+    "freeConsultation": "Consultoría UI/UX gratuita de 30 min",
+    "sendEmail": "Enviar un Email",
+    "copyEmail": "Copiar dirección de correo"
   },
   "projects": [
     {
@@ -320,5 +450,175 @@
       "outcome": "Un plugin personalizado construido exactamente para tus necesidades.",
       "deliverables": ["Análisis de Requisitos", "Desarrollo", "Pruebas y Documentación", "Despliegue"]
     }
-  ]
+  ],
+  "problemSection": {
+    "titlePrefix": "¿Tu sitio web",
+    "titleHighlight": "está trabajando para ti?",
+    "description": "La mayoría de los sitios que veo tienen los mismos problemas. Así es como los resuelvo.",
+    "cta": "Mira cómo resuelvo esto",
+    "problems": [
+      { "title": "Tu sitio es lento", "description": "Cada segundo de carga te cuesta visitantes. Construyo pensando en velocidad desde el inicio." },
+      { "title": "La seguridad no te deja dormir", "description": "Plugins desactualizados, dependencias vulnerables, sin respaldo. Yo lo arreglo." },
+      { "title": "No está convirtiendo", "description": "Hermoso pero roto. Me enfoco en lo que realmente genera resultados, no solo estética." },
+      { "title": "La experiencia móvil es secundaria", "description": "Más del 60% del tráfico viene de celulares. Diseño mobile-first, no mobile-last." }
+    ]
+  },
+  "processSection": {
+    "titlePrefix": "Cómo",
+    "titleHighlight": "entrego",
+    "description": "Un proceso transparente construido alrededor de la comunicación y los resultados.",
+    "duration": "Duración: ",
+    "deliverable": "Entregable: ",
+    "steps": [
+      {
+        "title": "Descubrimiento",
+        "description": "Hablamos de tus objetivos, tu configuración actual y cómo se ve el éxito para ti. Sin jerga, sin discursos.",
+        "details": ["Auditoría de estado actual", "Alineación de objetivos", "Definición de alcance"],
+        "duration": "1–2 semanas",
+        "deliverable": "Reporte de descubrimiento"
+      },
+      {
+        "title": "Estrategia",
+        "description": "Diseño la arquitectura, el stack tecnológico y el cronograma antes de escribir una sola línea de código.",
+        "details": ["Diseño de arquitectura", "Selección tecnológica", "Plan de hitos"],
+        "duration": "1–2 semanas",
+        "deliverable": "Plan de arquitectura"
+      },
+      {
+        "title": "Construcción e Iteración",
+        "description": "Desarrollo por etapas con revisiones periódicas. Ves el progreso en tiempo real, no solo al final.",
+        "details": ["Entrega por sprints", "Demos regulares", "Bucles de retroalimentación"],
+        "duration": "4–8 semanas",
+        "deliverable": "Código listo para producción"
+      },
+      {
+        "title": "Lanzamiento y Más Allá",
+        "description": "Despliegue con confianza, monitoreo de rendimiento, y me quedo para soporte. Sin desapariciones después del lanzamiento.",
+        "details": ["Despliegue a producción", "Monitoreo de rendimiento", "Soporte continuo"],
+        "duration": "1–2 semanas",
+        "deliverable": "Sitio en vivo desplegado"
+      }
+    ]
+  },
+  "skillsSection": {
+    "titlePrefix": "Con qué",
+    "titleHighlight": "trabajo",
+    "description": "Las herramientas y tecnologías que uso día a día para hacer el trabajo.",
+    "whatThisMeans": "Qué significa esto",
+    "fullTechStack": "Stack tecnológico completo",
+    "everythingUse": "Todo lo que uso para construir y lanzar",
+    "categories": [
+      { "title": "Frontend y Rendimiento", "outcome": "Interfaces rápidas y responsivas que los usuarios realmente disfrutan", "impact": "Apps optimizadas sirviendo a 150K+ usuarios concurrentes" },
+      { "title": "Backend y Arquitectura", "outcome": "APIs y sistemas que escalan sin arreglos constantes", "impact": "Despliegues con cero caídas para sistemas críticos" },
+      { "title": "Seguridad y Accesibilidad", "outcome": "Sitios seguros y utilizables por todos", "impact": "Cumplimiento WCAG 2.1 AA y mejores prácticas de seguridad" },
+      { "title": "Full Stack", "outcome": "Entrega integral desde la base de datos hasta la UI", "impact": "Integración perfecta en todo el stack" },
+      { "title": "CMS y Plataformas", "outcome": "Gestión de contenido que los no-programadores pueden usar", "impact": "WordPress y Webflow personalizados para clientes empresariales" },
+      { "title": "SEO y Analíticas", "outcome": "Más tráfico orgánico, mejores posiciones", "impact": "Implementaciones SEO que realmente mueven la aguja" }
+    ]
+  },
+  "cookieConsent": {
+    "message": "Este sitio usa Google Analytics para entender cómo los visitantes interactúan con el sitio. Al hacer clic en \"Aceptar\", consientes el uso de cookies. Más información en nuestra",
+    "privacyLink": "Política de Privacidad",
+    "reject": "Rechazar",
+    "accept": "Aceptar"
+  },
+  "availabilityBadge": {
+    "available": "Disponible para trabajar",
+    "unavailable": "No disponible actualmente"
+  },
+  "notFound": {
+    "title": "Página no encontrada",
+    "description": "La página que buscas no existe o ha sido movida.",
+    "backHome": "Volver al Inicio"
+  },
+  "error": {
+    "title": "Algo salió mal",
+    "description": "Ocurrió un error inesperado. Intenta de nuevo o vuelve al inicio.",
+    "tryAgain": "Intentar de Nuevo",
+    "backHome": "Volver al Inicio"
+  },
+  "loading": {
+    "message": "Cargando..."
+  },
+  "featuredCaseStudy": {
+    "badge": "Caso de Estudio Destacado",
+    "titlePrefix": "Cómo",
+    "titleHighlight": "150K+ usuarios en 60 países"
+  },
+  "projectDetail": {
+    "backToWork": "Volver a Trabajos",
+    "challenge": "El Desafío",
+    "solution": "La Solución",
+    "impact": "El Impacto",
+    "techStack": "Stack Tecnológico",
+    "viewLiveSite": "Ver Sitio en Vivo",
+    "viewSource": "Ver Código Fuente",
+    "relatedProjects": "Proyectos Relacionados",
+    "startProject": "Iniciar un Proyecto"
+  },
+  "servicesContent": {
+    "serviceLabel": "Servicio {number}",
+    "startingAt": "Desde"
+  },
+  "blogList": {
+    "featuredArticle": "Artículo Destacado",
+    "readArticle": "Leer Artículo",
+    "noPosts": "No se encontraron artículos",
+    "noPostsDescription": "Ajusta la búsqueda o los filtros",
+    "clearFilters": "Limpiar filtros"
+  },
+  "blogPost": {
+    "backToBlog": "Volver al Blog",
+    "keywords": "Palabras clave",
+    "share": "Compartir:",
+    "nextStep": "Siguiente paso",
+    "ctaTitle": "¿Tu web también necesita más conversiones?",
+    "ctaDescription": "Puedo revisar tu sitio, detectar los mayores puntos de fricción y trazarte mejoras claras para rendimiento, SEO, UX y ventas.",
+    "shareArticle": "Comparte este artículo"
+  },
+  "blogSidebar": {
+    "validEmail": "Por favor ingresa un correo válido",
+    "subscribed": "¡Suscrito exitosamente!",
+    "somethingWrong": "Algo salió mal",
+    "connectionError": "Error de conexión. Intenta de nuevo más tarde.",
+    "searchArticles": "Buscar Artículos",
+    "searchPlaceholder": "Buscar artículos...",
+    "topics": "Temas",
+    "clear": "Limpiar",
+    "noTopics": "No hay temas disponibles.",
+    "stayUpdated": "Mantente al Día",
+    "newsletterDescription": "Recibe notificaciones cuando publique nuevos artículos sobre desarrollo web y rendimiento.",
+    "subscribe": "Suscribirse",
+    "subscribeTitle": "Suscríbete al Newsletter",
+    "newsletterBody": "Recibe las últimas ideas sobre desarrollo web en tu bandeja de entrada.",
+    "emailLabel": "Correo Electrónico",
+    "emailPlaceholder": "tu@email.com",
+    "subscribing": "Suscribiendo...",
+    "subscribeNow": "Suscríbete Ahora",
+    "agreement": "Al suscribirte, aceptas recibir correos míos. Puedes cancelar cuando quieras."
+  },
+  "blogPage": {
+    "comingSoon": "Blog Próximamente",
+    "settingUp": "Estamos configurando nuestro sistema de contenido.",
+    "badge": "Tutoriales, Guías y Tecnología",
+    "titlePrefix": "El",
+    "titleHighlight": "OliveroDev",
+    "description": "Tutoriales prácticos, guías de codificación y perspectivas sobre desarrollo web, optimización de rendimiento y construcción de cosas que realmente funcionan."
+  },
+  "blogWelcome": {
+    "title": "¡Bienvenido a nuestro Blog!",
+    "description": "Nuestro sistema de contenido está listo. Vuelve pronto para ver actualizaciones."
+  },
+  "projectCard": {
+    "highImpact": "Alto Impacto"
+  },
+  "socialShare": {
+    "shareOn": "Compartir en {name}"
+  },
+  "tableOfContents": {
+    "title": "Tabla de Contenido"
+  },
+  "authorBio": {
+    "bio": "Desarrollador Frontend e IT especializado en la creación de soluciones digitales modernas con un fuerte enfoque en la experiencia de usuario, el rendimiento y la escalabilidad. Con experiencia en WordPress, Webflow y tecnologías frontend, aplicando pensamiento de producto y mejores prácticas de TI para crear plataformas web eficientes, seguras y orientadas al negocio."
+  }
 }

@@ -1,8 +1,13 @@
+"use client"
+
 import Link from "next/link"
 import { ArrowLeft, Home } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { useTranslation } from "react-i18next"
 
 export default function NotFound() {
+  const { t } = useTranslation()
+
   return (
     <main className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
       <div className="max-w-lg mx-auto text-center">
@@ -11,23 +16,23 @@ export default function NotFound() {
             <span className="text-5xl font-black text-primary">404</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Page not found
+            {t('notFound.title')}
           </h1>
           <p className="text-muted-foreground text-lg leading-relaxed">
-            The page you&apos;re looking for doesn&apos;t exist or has been moved.
+            {t('notFound.description')}
           </p>
         </div>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button asChild className="rounded-full px-6">
             <Link href="/">
               <Home className="mr-2 w-4 h-4" />
-              Back to Home
+              {t('notFound.backHome')}
             </Link>
           </Button>
           <Button asChild variant="outline" className="rounded-full px-6">
             <Link href="/contact">
               <ArrowLeft className="mr-2 w-4 h-4" />
-              Contact Me
+              {t('common.contactMe')}
             </Link>
           </Button>
         </div>

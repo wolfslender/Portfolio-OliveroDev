@@ -93,10 +93,10 @@ export function SocialShareButtons({ url, title, className = "" }: SocialShareBu
           size="icon"
           className={`w-14 h-14 rounded-2xl transition-all duration-300 hover:scale-110 hover:-translate-y-1 shadow-lg ${link.className}`}
           onClick={() => handleShare(link.href)}
-          title={`Share on ${link.name}`}
+          title={t('socialShare.shareOn', { name: link.name })}
         >
           {link.icon}
-          <span className="sr-only">Share on {link.name}</span>
+          <span className="sr-only">{t('socialShare.shareOn', { name: link.name })}</span>
         </Button>
       ))}
     </div>

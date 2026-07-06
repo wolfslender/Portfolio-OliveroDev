@@ -4,11 +4,13 @@ import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { X } from "lucide-react"
 import Link from "next/link"
+import { useTranslation } from "react-i18next"
 
 const COOKIE_CONSENT_KEY = "oliverodev-cookie-consent"
 
 export function CookieConsent() {
   const [show, setShow] = useState(false)
+  const { t } = useTranslation()
 
   useEffect(() => {
     const consent = localStorage.getItem(COOKIE_CONSENT_KEY)
@@ -34,17 +36,17 @@ export function CookieConsent() {
     <div className="fixed bottom-0 left-0 right-0 z-[100] p-4 animate-in slide-in-from-bottom-5 fade-in duration-500">
       <div className="max-w-3xl mx-auto bg-card border border-border/50 rounded-2xl shadow-2xl backdrop-blur-xl bg-background/95 p-6 flex flex-col sm:flex-row items-start sm:items-center gap-4">
         <div className="flex-1 text-sm text-muted-foreground leading-relaxed">
-          This site uses Google Analytics to understand how visitors interact with the site. By clicking &quot;Accept&quot;, you consent to the use of cookies. Learn more in our{" "}
+          {t('cookieConsent.message')}{" "}
           <Link href="/privacy" className="text-primary hover:underline font-medium">
-            Privacy Policy
+            {t('cookieConsent.privacyLink')}
           </Link>.
         </div>
         <div className="flex items-center gap-3 shrink-0">
           <Button variant="outline" size="sm" onClick={reject} className="rounded-full">
-            Reject
+            {t('cookieConsent.reject')}
           </Button>
           <Button size="sm" onClick={accept} className="rounded-full">
-            Accept
+            {t('cookieConsent.accept')}
           </Button>
           <button
             onClick={reject}

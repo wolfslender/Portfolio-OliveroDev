@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge"
 import { Search, Tag, Sparkles, Mail, X, Loader2 } from "lucide-react"
 import { useState } from "react"
 import { toast } from "sonner"
+import { useTranslation } from "react-i18next"
 
 interface BlogSidebarProps {
   tags: string[]
@@ -52,11 +53,11 @@ export function BlogSidebar({
   onTagSelect,
   className = "",
 }: BlogSidebarProps) {
+  const { t } = useTranslation()
   const [showModal, setShowModal] = useState(false)
   const [email, setEmail] = useState("")
   const [isSubmitting, setIsSubmitting] = useState(false)
 
-  // Mailchimp Config from hidden fields
   const U_VALUE = "d115a5e75b31c0484490081e3"
   const ID_VALUE = "011f42ce9d"
   const FID_VALUE = "00ba66e7f0"
@@ -65,21 +66,18 @@ export function BlogSidebar({
     e.preventDefault()
 
     if (!email || !email.includes('@')) {
-      toast.error('Please enter a valid email address')
+      toast.error(t('blogSidebar.validEmail'))
       return
     }
 
     setIsSubmitting(true)
 
-    // JSONP Implementation for Static Sites (No CORS issues)
     const callbackName = `jsonp_callback_${Math.round(100000 * Math.random())}`
     const url = `https://oliverodev.us19.list-manage.com/subscribe/post-json?u=${U_VALUE}&id=${ID_VALUE}&f_id=${FID_VALUE}&EMAIL=${encodeURIComponent(email)}&c=${callbackName}`
 
-    // Create script tag for JSONP
     const script = document.createElement('script')
     script.src = url
 
-      // Define global callback
       ; (window as any)[callbackName] = (data: any) => {
         delete (window as any)[callbackName]
         document.body.removeChild(script)
@@ -87,22 +85,20 @@ export function BlogSidebar({
         setIsSubmitting(false)
 
         if (data.result === 'success') {
-          toast.success(data.msg || 'Successfully subscribed!')
+          toast.success(data.msg || t('blogSidebar.subscribed'))
           setEmail('')
           setShowModal(false)
         } else {
-          // Sanitize Mailchimp error messages (often contain HTML)
-          const errorMsg = data.msg?.replace(/<[^>]*>?/gm, '') || 'Something went wrong'
+          const errorMsg = data.msg?.replace(/<[^>]*>?/gm, '') || t('blogSidebar.somethingWrong')
           toast.error(errorMsg)
         }
       }
 
-    // Handle network errors
     script.onerror = () => {
       delete (window as any)[callbackName]
       document.body.removeChild(script)
       setIsSubmitting(false)
-      toast.error('Connection error. Please try again later.')
+      toast.error(t('blogSidebar.connectionError'))
     }
 
     document.body.appendChild(script)
@@ -115,13 +111,13 @@ export function BlogSidebar({
           <div className="bg-card text-card-foreground rounded-3xl border-2 border-border/50 shadow-lg p-6 hover:border-primary/30 transition-all duration-300">
             <div className="flex items-center gap-2 mb-4">
               <Search className="w-5 h-5 text-primary" />
-              <h3 className="font-bold text-lg">Search Articles</h3>
+              <h3 className="font-bold text-lg">{t('blogSidebar.searchArticles')}</h3>
             </div>
             <div className="relative">
               <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
               <input
                 type="text"
-                placeholder="Search posts..."
+                placeholder={t('blogSidebar.searchPlaceholder')}
                 className="flex h-11 w-full rounded-xl border-2 border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:border-primary disabled:cursor-not-allowed disabled:opacity-50 pl-9 transition-all font-medium"
                 value={searchQuery}
                 onChange={(e) => onSearchChange?.(e.target.value)}
@@ -139,14 +135,14 @@ export function BlogSidebar({
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-2">
               <Tag className="w-5 h-5 text-primary" />
-              <h3 className="font-bold text-lg">Topics</h3>
+              <h3 className="font-bold text-lg">{t('blogSidebar.topics')}</h3>
             </div>
             {selectedTag && (
               <button
                 onClick={() => onTagSelect?.(null)}
                 className="text-xs font-semibold text-primary hover:underline transition-all"
               >
-                Clear
+                {t('blogSidebar.clear')}
               </button>
             )}
           </div>
@@ -175,31 +171,29 @@ export function BlogSidebar({
                 )
               })
             ) : (
-              <p className="text-sm text-muted-foreground italic">No topics available.</p>
+              <p className="text-sm text-muted-foreground italic">{t('blogSidebar.noTopics')}</p>
             )}
           </div>
         </div>
 
-        {/* Newsletter CTA */}
         <div className="relative overflow-hidden bg-gradient-to-br from-primary to-primary/80 rounded-3xl p-8 text-white shadow-xl">
           <div className="absolute -top-12 -right-12 w-32 h-32 bg-white/10 rounded-full blur-2xl" />
           <div className="relative z-10">
             <Sparkles className="w-8 h-8 mb-4" />
-            <h3 className="font-black text-xl mb-2">Stay Updated</h3>
+            <h3 className="font-black text-xl mb-2">{t('blogSidebar.stayUpdated')}</h3>
             <p className="text-sm text-white/90 mb-4 leading-relaxed">
-              Get notified when I publish new insights on web development and performance.
+              {t('blogSidebar.newsletterDescription')}
             </p>
             <button
               onClick={() => setShowModal(true)}
               className="w-full bg-white text-primary font-bold py-3 px-6 rounded-xl hover:bg-slate-100 transition-all hover:scale-105 active:scale-95 shadow-lg"
             >
-              Subscribe
+              {t('blogSidebar.subscribe')}
             </button>
           </div>
         </div>
       </aside>
 
-      {/* Subscription Modal */}
       {showModal && (
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-in fade-in duration-200">
           <div className="bg-card rounded-3xl max-w-md w-full p-8 shadow-2xl animate-in zoom-in duration-200 relative">
@@ -215,22 +209,22 @@ export function BlogSidebar({
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
                 <Mail className="w-8 h-8 text-primary" />
               </div>
-              <h3 className="text-2xl font-black mb-2">Subscribe to Newsletter</h3>
+              <h3 className="text-2xl font-black mb-2">{t('blogSidebar.subscribeTitle')}</h3>
               <p className="text-muted-foreground">
-                Get the latest insights on web development delivered to your inbox.
+                {t('blogSidebar.newsletterBody')}
               </p>
             </div>
 
             <form onSubmit={handleSubscribe} className="space-y-4">
               <div>
                 <label htmlFor="email" className="block text-sm font-semibold mb-2">
-                  Email Address
+                  {t('blogSidebar.emailLabel')}
                 </label>
                 <input
                   id="email"
                   name="email"
                   type="email"
-                  placeholder="your@email.com"
+                  placeholder={t('blogSidebar.emailPlaceholder')}
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="flex h-12 w-full rounded-xl border-2 border-input bg-background px-4 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:border-primary disabled:cursor-not-allowed disabled:opacity-50 transition-all font-medium"
@@ -247,15 +241,15 @@ export function BlogSidebar({
                 {isSubmitting ? (
                   <>
                     <Loader2 className="w-5 h-5 animate-spin" />
-                    Subscribing...
+                    {t('blogSidebar.subscribing')}
                   </>
                 ) : (
-                  'Subscribe Now'
+                  t('blogSidebar.subscribeNow')
                 )}
               </button>
 
               <p className="text-xs text-muted-foreground text-center">
-                By subscribing, you agree to receive emails from me. Unsubscribe anytime.
+                {t('blogSidebar.agreement')}
               </p>
             </form>
           </div>

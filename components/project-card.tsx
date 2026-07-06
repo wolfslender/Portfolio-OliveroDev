@@ -7,6 +7,7 @@ import Link from "next/link"
 import ExportedImage from "next-image-export-optimizer"
 import { cn, getMetricLabel, getMetricValue, type MetricField } from "@/lib/utils"
 import { useCommon } from "@/hooks/use-common"
+import { useTranslation } from "react-i18next"
 
 interface ProjectCardProps {
   title: string
@@ -38,6 +39,7 @@ export function ProjectCard({
   metrics,
 }: ProjectCardProps) {
   const common = useCommon()
+  const { t } = useTranslation()
 
   return (
     <Card
@@ -46,7 +48,6 @@ export function ProjectCard({
         size === "large" ? "md:col-span-2 row-span-2" : "h-full"
       )}
     >
-      {/* Image Section */}
       <div className={cn(
         "relative w-full overflow-hidden",
         size === "large" ? "h-64 md:h-[400px]" : "h-56"
@@ -58,10 +59,8 @@ export function ProjectCard({
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
         />
-        {/* Overlay for hover effect */}
         <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-40" />
 
-        {/* Industry Badge */}
         {industry && (
           <div className="absolute top-4 left-4">
             <Badge className="bg-background/80 backdrop-blur-md border-white/10 text-foreground font-semibold">
@@ -70,18 +69,16 @@ export function ProjectCard({
           </div>
         )}
 
-        {/* Impact Indicator */}
         {metrics && (
           <div className="absolute top-4 right-4">
             <Badge className="bg-primary/90 backdrop-blur-md text-primary-foreground border-primary/20 font-bold flex items-center gap-1">
               <TrendingUp className="w-3 h-3" />
-              High Impact
+              {t('projectCard.highImpact')}
             </Badge>
           </div>
         )}
       </div>
 
-      {/* Content Section */}
       <div className="flex flex-1 flex-col p-6">
         <div className="mb-4 flex flex-wrap gap-2">
           {tags.slice(0, 4).map((tag) => (
@@ -110,25 +107,24 @@ export function ProjectCard({
           {description}
         </p>
 
-        {/* Metrics Display */}
         {metrics && (
           <div className="mb-6 grid grid-cols-3 gap-3 p-4 bg-muted/30 rounded-xl border border-border/50">
             {metrics.users && (
               <div className="text-center">
                 <div className="text-xs font-bold text-primary mb-1">{getMetricValue(metrics.users)}</div>
-                <div className="text-xs text-muted-foreground uppercase tracking-wider">{getMetricLabel(metrics.users, "Users")}</div>
+                <div className="text-xs text-muted-foreground uppercase tracking-wider">{getMetricLabel(metrics.users, common.users)}</div>
               </div>
             )}
             {metrics.performance && (
               <div className="text-center">
                 <div className="text-xs font-bold text-primary mb-1">{getMetricValue(metrics.performance)}</div>
-                <div className="text-xs text-muted-foreground uppercase tracking-wider">{getMetricLabel(metrics.performance, "Speed")}</div>
+                <div className="text-xs text-muted-foreground uppercase tracking-wider">{getMetricLabel(metrics.performance, common.speed)}</div>
               </div>
             )}
             {metrics.impact && (
               <div className="text-center">
                 <div className="text-xs font-bold text-primary mb-1 line-clamp-2">{getMetricValue(metrics.impact)}</div>
-                <div className="text-xs text-muted-foreground uppercase tracking-wider">{getMetricLabel(metrics.impact, "Impact")}</div>
+                <div className="text-xs text-muted-foreground uppercase tracking-wider">{getMetricLabel(metrics.impact, common.impact)}</div>
               </div>
             )}
           </div>

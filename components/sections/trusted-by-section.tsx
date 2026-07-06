@@ -3,6 +3,7 @@
 import ExportedImage from "next-image-export-optimizer"
 import { cn } from "@/lib/utils"
 import { ScrollReveal } from "@/components/scroll-reveal"
+import { useTranslation } from "react-i18next"
 
 const partners: {
   name: string
@@ -50,16 +51,18 @@ const partners: {
 ]
 
 export function TrustedBySection() {
+  const { t } = useTranslation()
+
   return (
     <section className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-muted/20 border-t border-border/50">
       <div className="max-w-7xl mx-auto">
         <ScrollReveal>
           <div className="text-center mb-12 space-y-4">
             <h3 className="text-sm font-black uppercase tracking-[0.3em] text-muted-foreground">
-              Past Collaborations
+              {t('trustedBy.title')}
             </h3>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Organizations I have worked with throughout my career.
+              {t('trustedBy.description')}
             </p>
           </div>
         </ScrollReveal>

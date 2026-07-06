@@ -8,8 +8,7 @@ interface TableOfContentsProps {
 }
 
 export function TableOfContents({ headings }: TableOfContentsProps) {
-  const { i18n } = useTranslation()
-  const isSpanish = i18n.language.startsWith("es")
+  const { t } = useTranslation()
 
   if (!headings || headings.length === 0) return null
 
@@ -18,7 +17,7 @@ export function TableOfContents({ headings }: TableOfContentsProps) {
       className="my-10 bg-card/50 text-card-foreground rounded-xl border p-6 backdrop-blur-sm animate-in fade-in slide-in-from-bottom-4 duration-500"
     >
       <h3 className="font-bold text-xl mb-4 border-b pb-2">
-        {isSpanish ? "Tabla de Contenido" : "Table of Contents"}
+        {t('tableOfContents.title')}
       </h3>
       <nav className="flex flex-col gap-2.5">
         {headings.map((heading) => (

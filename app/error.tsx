@@ -4,6 +4,7 @@ import { useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { RefreshCw, ArrowLeft } from "lucide-react"
 import Link from "next/link"
+import { useTranslation } from "react-i18next"
 
 export default function Error({
   error,
@@ -12,6 +13,8 @@ export default function Error({
   error: Error & { digest?: string }
   reset: () => void
 }) {
+  const { t } = useTranslation()
+
   useEffect(() => {
     console.error(error)
   }, [error])
@@ -24,21 +27,21 @@ export default function Error({
             <span className="text-4xl">⚠</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Something went wrong
+            {t('error.title')}
           </h1>
           <p className="text-muted-foreground text-lg leading-relaxed">
-            An unexpected error occurred. Please try again or go back home.
+            {t('error.description')}
           </p>
         </div>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button onClick={reset} className="rounded-full px-6">
             <RefreshCw className="mr-2 w-4 h-4" />
-            Try Again
+            {t('error.tryAgain')}
           </Button>
           <Button asChild variant="outline" className="rounded-full px-6">
             <Link href="/">
               <ArrowLeft className="mr-2 w-4 h-4" />
-              Back to Home
+              {t('error.backHome')}
             </Link>
           </Button>
         </div>

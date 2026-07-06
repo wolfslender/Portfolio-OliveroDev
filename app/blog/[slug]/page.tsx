@@ -1,12 +1,9 @@
-
 import { notFound } from "next/navigation"
-import { ArrowLeft } from "lucide-react"
-import Link from "next/link"
 import { client, urlFor } from "@/lib/sanity/client"
 import { groq } from "next-sanity"
-import { formatDate, slugify } from "@/lib/utils"
 import { siteConfig } from "@/lib/config"
 import { BlogPostContent } from "@/components/blog/blog-post-content"
+import { BlogWelcome } from "../blog-page-header"
 import type { Metadata } from "next"
 
 
@@ -106,15 +103,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
   const { slug } = await params
 
   if (slug === 'welcome') {
-    return (
-      <div className="container py-24 text-center">
-        <Link href="/blog" className="inline-flex items-center text-sm text-muted-foreground hover:text-primary mb-8 transition-colors">
-          <ArrowLeft className="mr-2 h-4 w-4" /> Back to Blog
-        </Link>
-        <h1 className="text-4xl font-bold mb-4">Welcome to our Blog!</h1>
-        <p className="text-muted-foreground">Our content system is ready. Check back soon for updates.</p>
-      </div>
-    )
+    return <BlogWelcome />
   }
 
   if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) {

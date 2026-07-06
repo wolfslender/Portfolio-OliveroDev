@@ -8,6 +8,7 @@ import Link from "next/link"
 import ExportedImage from "next-image-export-optimizer"
 import { useCommon } from "@/hooks/use-common"
 import { getMetricValue, type MetricField } from "@/lib/utils"
+import { useTranslation } from "react-i18next"
 
 interface FeaturedCaseStudyProps {
     project: {
@@ -31,6 +32,7 @@ interface FeaturedCaseStudyProps {
 
 export function FeaturedCaseStudy({ project }: FeaturedCaseStudyProps) {
     const common = useCommon()
+    const { t } = useTranslation()
 
     return (
         <section className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-muted/20">
@@ -38,11 +40,11 @@ export function FeaturedCaseStudy({ project }: FeaturedCaseStudyProps) {
                 <ScrollReveal>
                     <div className="text-center mb-12 space-y-4">
                         <Badge className="px-4 py-1.5 bg-primary/5 text-primary border-primary/20 text-sm font-semibold">
-                            Featured Case Study
+                            {t('featuredCaseStudy.badge')}
                         </Badge>
                         <h2 className="text-4xl md:text-6xl font-black tracking-tight">
-                            How Co-Active scaled to{" "}
-                            <span className="text-primary">150K+ users across 60 countries</span>
+                            {t('featuredCaseStudy.titlePrefix')} {project.title.split("scaled to")[0]}{" "}
+                            <span className="text-primary">{t('featuredCaseStudy.titleHighlight')}</span>
                         </h2>
                     </div>
                 </ScrollReveal>
@@ -94,21 +96,21 @@ export function FeaturedCaseStudy({ project }: FeaturedCaseStudyProps) {
                                         <div className="text-center space-y-1">
                                             <TrendingUp className="w-5 h-5 mx-auto text-primary" />
                                             <div className="font-bold text-lg">{getMetricValue(project.metrics.users)}</div>
-                                            <div className="text-xs text-muted-foreground">Users</div>
+                                            <div className="text-xs text-muted-foreground">{common.users}</div>
                                         </div>
                                     )}
                                     {project.metrics.performance && (
                                         <div className="text-center space-y-1">
                                             <TrendingUp className="w-5 h-5 mx-auto text-secondary" />
                                             <div className="font-bold text-lg">{getMetricValue(project.metrics.performance)}</div>
-                                            <div className="text-xs text-muted-foreground">Speed</div>
+                                            <div className="text-xs text-muted-foreground">{common.speed}</div>
                                         </div>
                                     )}
                                     {project.metrics.impact && (
                                         <div className="text-center space-y-1">
                                             <TrendingUp className="w-5 h-5 mx-auto text-primary" />
                                             <div className="font-bold text-lg line-clamp-2">{getMetricValue(project.metrics.impact)}</div>
-                                            <div className="text-xs text-muted-foreground">Impact</div>
+                                            <div className="text-xs text-muted-foreground">{common.impact}</div>
                                         </div>
                                     )}
                                 </div>

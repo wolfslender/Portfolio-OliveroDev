@@ -15,7 +15,8 @@
     }
   },
   "trustedBy": {
-    "title": "Some folks I've worked with"
+    "title": "Some folks I've worked with",
+    "description": "Organizations I have worked with throughout my career."
   },
   "nav": {
     "home": "Home",
@@ -32,6 +33,15 @@
     "experience": "Where I've worked",
     "education": "Education",
     "softSkills": "How I work"
+  },
+  "aboutPage": {
+    "aboutLabel": "About",
+    "heroTitle": "Building websites and tools",
+    "heroHighlight": "that actually work",
+    "heroDescription": "10+ years building for government, enterprise, and global platforms. I focus on speed, security, and making sure the site does what it's supposed to do — bring in results.",
+    "heroDescription2": "No project managers, no junior devs, no handoffs. From discovery to deployment, I handle your project end-to-end. Government portals, global EdTech platforms, healthcare systems — I've shipped across industries and I know what works.",
+    "workedTitle": "Where",
+    "workedHighlight": "I've worked"
   },
   "stats": [
     { "label": "Years in the game" },
@@ -74,6 +84,117 @@
       "design": "Design",
       "security": "Security"
     }
+  },
+  "testimonialsSection": {
+    "title": "What clients",
+    "highlight": "say",
+    "subtitle": "Real feedback from people I have worked with."
+  },
+  "glossaryPage": {
+    "metaTitle": "Web Development Glossary & FAQ - Alexis Olivero",
+    "metaDescription": "Common questions about web development, SEO, performance, and frontend architecture explained clearly.",
+    "title": "Web Development Glossary",
+    "subtitle": "Clear answers to complex technical questions.",
+    "faqs": [
+      {
+        "question": "What is Headless CMS and why should I use it?",
+        "answer": "A Headless CMS (like Sanity or Strapi) decouples the backend content management from the frontend presentation. This allows you to use the same content across multiple channels (web, mobile app, smartwatches) and gives developers the freedom to use modern frameworks like Next.js for better performance and security."
+      },
+      {
+        "question": "How does Core Web Vitals impact my SEO?",
+        "answer": "Core Web Vitals are Google's standardized metrics for user experience. They measure loading speed (LCP), interactivity (INP), and visual stability (CLS). A poor score can significantly lower your search rankings because Google prioritizes sites that offer a smooth user experience."
+      },
+      {
+        "question": "Why migrate from WordPress to Next.js?",
+        "answer": "While WordPress is great for simple blogs, Next.js offers superior performance through server-side rendering (SSR) and static site generation (SSG). It provides better security (no direct database exposure), instant page transitions, and complete design flexibility without being constrained by themes."
+      },
+      {
+        "question": "What is Technical SEO?",
+        "answer": "Technical SEO refers to website and server optimizations that help search engine spiders crawl and index your site more effectively. It includes sitemaps, robots.txt, schema markup, canonical tags, site speed, and mobile-friendliness."
+      },
+      {
+        "question": "How do you ensure web accessibility (WCAG)?",
+        "answer": "I follow WCAG 2.1 AA standards by using semantic HTML, proper ARIA labels, sufficient color contrast, keyboard navigation support, and screen reader testing. This ensures your digital product is usable by everyone, including people with disabilities."
+      }
+    ]
+  },
+  "homePluginsSection": {
+    "title": "Need a",
+    "titleHighlight": "WordPress Plugin?",
+    "description": "I also build premium WordPress plugins for storage optimization, media management, and more.",
+    "features": ["Smart detection", "Storage analysis", "Trash system", "Premium support"],
+    "productTitle": "Media Audit",
+    "productTagline": "Clean unused media files safely",
+    "viewAll": "View All Plugins",
+    "tryFree": "Try Free Version"
+  },
+  "pluginsPage": {
+    "metaTitle": "WordPress Plugins - Built to Scale",
+    "metaDescription": "Premium WordPress plugins designed to solve real problems. Clean code, regular updates, and dedicated support.",
+    "heroBadge": "WordPress Plugins",
+    "heroTitle": "WordPress Plugins",
+    "heroHighlight": "Built to Scale",
+    "heroDescription": "Premium WordPress plugins designed to solve real problems. Clean code, regular updates, and dedicated support.",
+    "freeLabel": "Free — Always",
+    "startTrial": "Start Free Trial",
+    "freeOnWp": "Free on WP.org",
+    "noCreditCard": "No credit card for trial",
+    "threeDayTrial": "3-day free trial",
+    "cancelAnytime": "Cancel anytime",
+    "getStarted": "Get started",
+    "forAgencies": "For agencies",
+    "whyTitle": "Why My Plugins?",
+    "whyCards": [
+      {
+        "title": "Clean Code",
+        "description": "Well-documented, optimized, and following WordPress best practices."
+      },
+      {
+        "title": "Regular Updates",
+        "description": "Continuous improvements, security patches, and new features."
+      },
+      {
+        "title": "Dedicated Support",
+        "description": "Direct access to support for setup help and custom questions."
+      }
+    ],
+    "ctaTitle": "Need a Custom WordPress Solution?",
+    "ctaDescription": "I also build custom WordPress plugins and themes tailored to your specific needs.",
+    "ctaButton": "Let's Discuss Your Project"
+  },
+  "pluginsData": {
+    "hero": {
+      "title": "WordPress Plugins",
+      "highlight": "Built to Scale",
+      "description": "Premium WordPress plugins designed to solve real problems. Clean code, regular updates, and dedicated support."
+    },
+    "plugins": [
+      {
+        "title": "OliveroDev Media Audit",
+        "tagline": "Find unused media. Recover storage. Zero guesswork.",
+        "description": "The WordPress media library cleaner that actually works. Smart scanning detects unused files across posts, page builders, ACF fields, and WooCommerce — then lets you safely remove them with a risk-scoring system that prevents costly mistakes.",
+        "features": [
+          "Smart scan: posts, pages, widgets, theme mods",
+          "Used vs Unused dashboard with storage breakdown",
+          "\"Where is it used?\" location finder per file",
+          "Real-time scan progress counter",
+          "Safe delete modal with thumbnail preview",
+          "Export unused files as CSV",
+          "Batch scanning & WP-Cron auto-scans"
+        ],
+        "proFeatures": [
+          "Deep Detection: Elementor, ACF, Divi, WooCommerce",
+          "Risk Scoring (0–100) — know before you delete",
+          "PRO Trash: restore files before permanent delete",
+          "Bulk Cleanup by risk level (Low / Medium / All)",
+          "Storage Analytics with visual charts",
+          "Automated email reports (daily / weekly)",
+          "Advanced exclusion rules (folder, size, author, MIME)",
+          "3-day free trial — no credit card required"
+        ],
+        "price": "From $29/year"
+      }
+    ]
   },
   "certificationsPage": {
     "titlePrefix": "Certifications",
@@ -219,7 +340,11 @@
       "highlight": "Let's talk about your project.",
       "description": "If you need a site that loads fast and looks professional, I can help plan, build, and launch it.",
       "button": "Request a Website Audit"
-    }
+    },
+    "featuredBadge": "Featured Case Study",
+    "viewCaseStudy": "View Case Study",
+    "noProjects": "No projects found",
+    "noProjectsDescription": "Try adjusting your filters to see more results."
   },
   "servicesPage": {
     "hero": {
@@ -255,7 +380,12 @@
     "description": "Got a project in mind? Just want to say hi? I'm always open to a conversation.",
     "emailMe": "Email Me",
     "whatsappMe": "WhatsApp Me",
-    "socialConnect": "Or find me on social media"
+    "socialConnect": "Or find me on social media",
+    "quote": "\"Turning complex challenges into high-performance digital experiences.\"",
+    "bookCall": "Book a Strategy Call",
+    "freeConsultation": "Free 30-min UI/UX consultation",
+    "sendEmail": "Send an Email",
+    "copyEmail": "Copy email address"
   },
   "projects": [
     {
@@ -320,5 +450,175 @@
       "outcome": "A custom plugin built to your exact specifications.",
       "deliverables": ["Requirements Analysis", "Custom Development", "Testing & Documentation", "Deployment"]
     }
-  ]
+  ],
+  "problemSection": {
+    "titlePrefix": "Is your website",
+    "titleHighlight": "working for you?",
+    "description": "Most sites I see have the same problems. Here is how I fix them.",
+    "cta": "See how I solve these",
+    "problems": [
+      { "title": "Your site is slow", "description": "Every second of load time costs you visitors. I build for speed from the ground up." },
+      { "title": "Security keeps you up at night", "description": "Outdated plugins, vulnerable dependencies, no backup plan. I fix that." },
+      { "title": "It's not converting", "description": "Beautiful but broken. I focus on what actually drives results — not just aesthetics." },
+      { "title": "The mobile experience is an afterthought", "description": "Over 60% of traffic comes from phones. I design mobile-first, not mobile-last." }
+    ]
+  },
+  "processSection": {
+    "titlePrefix": "How",
+    "titleHighlight": "I deliver",
+    "description": "A transparent process built around communication and results.",
+    "duration": "Duration: ",
+    "deliverable": "Deliverable: ",
+    "steps": [
+      {
+        "title": "Discovery",
+        "description": "We talk about your goals, your current setup, and what success looks like for you. No jargon, no pitch.",
+        "details": ["Current state audit", "Goal alignment", "Scope definition"],
+        "duration": "1–2 weeks",
+        "deliverable": "Discovery report"
+      },
+      {
+        "title": "Strategy",
+        "description": "I map out the architecture, tech stack, and timeline before writing a single line of code.",
+        "details": ["Architecture design", "Tech selection", "Milestone plan"],
+        "duration": "1–2 weeks",
+        "deliverable": "Architecture blueprint"
+      },
+      {
+        "title": "Build & Iterate",
+        "description": "Development in stages with regular check-ins. You see progress as it happens, not just at the end.",
+        "details": ["Sprint-based delivery", "Regular demos", "Feedback loops"],
+        "duration": "4–8 weeks",
+        "deliverable": "Production-ready codebase"
+      },
+      {
+        "title": "Launch & Beyond",
+        "description": "Deploy with confidence, monitor performance, and I stay around for support. No ghosting after launch.",
+        "details": ["Production deployment", "Performance monitoring", "Ongoing support"],
+        "duration": "1–2 weeks",
+        "deliverable": "Live deployed site"
+      }
+    ]
+  },
+  "skillsSection": {
+    "titlePrefix": "What",
+    "titleHighlight": "I work with",
+    "description": "The tools and technologies I use day to day to get the job done.",
+    "whatThisMeans": "What this means",
+    "fullTechStack": "Full tech stack",
+    "everythingUse": "Everything I use to build and ship",
+    "categories": [
+      { "title": "Frontend & Performance", "outcome": "Fast, responsive interfaces that users actually enjoy", "impact": "Optimized apps serving 150K+ concurrent users" },
+      { "title": "Backend & Architecture", "outcome": "APIs and systems that scale without constant fixes", "impact": "Zero-downtime deployments for critical systems" },
+      { "title": "Security & Accessibility", "outcome": "Sites that are secure and usable by everyone", "impact": "WCAG 2.1 AA compliance & security best practices" },
+      { "title": "Full Stack", "outcome": "End-to-end delivery from database to UI", "impact": "Seamless integration across the whole stack" },
+      { "title": "CMS & Platforms", "outcome": "Content management that non-devs can actually use", "impact": "Custom WordPress & Webflow for enterprise clients" },
+      { "title": "SEO & Analytics", "outcome": "More organic traffic, better rankings", "impact": "SEO implementations that actually move the needle" }
+    ]
+  },
+  "cookieConsent": {
+    "message": "This site uses Google Analytics to understand how visitors interact with the site. By clicking \"Accept\", you consent to the use of cookies. Learn more in our",
+    "privacyLink": "Privacy Policy",
+    "reject": "Reject",
+    "accept": "Accept"
+  },
+  "availabilityBadge": {
+    "available": "Available for work",
+    "unavailable": "Currently unavailable"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "The page you're looking for doesn't exist or has been moved.",
+    "backHome": "Back to Home"
+  },
+  "error": {
+    "title": "Something went wrong",
+    "description": "An unexpected error occurred. Please try again or go back home.",
+    "tryAgain": "Try Again",
+    "backHome": "Back to Home"
+  },
+  "loading": {
+    "message": "Loading..."
+  },
+  "featuredCaseStudy": {
+    "badge": "Featured Case Study",
+    "titlePrefix": "How",
+    "titleHighlight": "150K+ users across 60 countries"
+  },
+  "projectDetail": {
+    "backToWork": "Back to Work",
+    "challenge": "The Challenge",
+    "solution": "The Solution",
+    "impact": "The Impact",
+    "techStack": "Tech Stack",
+    "viewLiveSite": "View Live Site",
+    "viewSource": "View Source Code",
+    "relatedProjects": "Related Projects",
+    "startProject": "Start a Project"
+  },
+  "servicesContent": {
+    "serviceLabel": "Service {number}",
+    "startingAt": "Starting at"
+  },
+  "blogList": {
+    "featuredArticle": "Featured Article",
+    "readArticle": "Read Article",
+    "noPosts": "No posts found",
+    "noPostsDescription": "Try adjusting your search or filters",
+    "clearFilters": "Clear all filters"
+  },
+  "blogPost": {
+    "backToBlog": "Back to Blog",
+    "keywords": "Keywords",
+    "share": "Share:",
+    "nextStep": "Next Step",
+    "ctaTitle": "Need your website to convert better too?",
+    "ctaDescription": "I can review your site, find the biggest friction points, and map clear improvements for performance, SEO, UX, and sales.",
+    "shareArticle": "Share this article"
+  },
+  "blogSidebar": {
+    "validEmail": "Please enter a valid email address",
+    "subscribed": "Successfully subscribed!",
+    "somethingWrong": "Something went wrong",
+    "connectionError": "Connection error. Please try again later.",
+    "searchArticles": "Search Articles",
+    "searchPlaceholder": "Search posts...",
+    "topics": "Topics",
+    "clear": "Clear",
+    "noTopics": "No topics available.",
+    "stayUpdated": "Stay Updated",
+    "newsletterDescription": "Get notified when I publish new insights on web development and performance.",
+    "subscribe": "Subscribe",
+    "subscribeTitle": "Subscribe to Newsletter",
+    "newsletterBody": "Get the latest insights on web development delivered to your inbox.",
+    "emailLabel": "Email Address",
+    "emailPlaceholder": "your@email.com",
+    "subscribing": "Subscribing...",
+    "subscribeNow": "Subscribe Now",
+    "agreement": "By subscribing, you agree to receive emails from me. Unsubscribe anytime."
+  },
+  "blogPage": {
+    "comingSoon": "Blog Coming Soon",
+    "settingUp": "We are currently setting up our content system.",
+    "badge": "Tutorials, Guides & Tech",
+    "titlePrefix": "The",
+    "titleHighlight": "OliveroDev",
+    "description": "Practical tutorials, coding guides, and insights on web development, performance optimization, and building things that actually work."
+  },
+  "blogWelcome": {
+    "title": "Welcome to our Blog!",
+    "description": "Our content system is ready. Check back soon for updates."
+  },
+  "projectCard": {
+    "highImpact": "High Impact"
+  },
+  "socialShare": {
+    "shareOn": "Share on {name}"
+  },
+  "tableOfContents": {
+    "title": "Table of Contents"
+  },
+  "authorBio": {
+    "bio": "IT & Frontend Developer specialized in building modern digital solutions with a strong focus on user experience, performance, and scalability. Experienced in WordPress, Webflow, and frontend technologies, applying product thinking and IT best practices to create efficient, secure, and business-oriented web platforms."
+  }
 }

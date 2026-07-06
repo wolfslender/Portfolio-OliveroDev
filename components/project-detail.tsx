@@ -8,6 +8,8 @@ import { Button } from "@/components/ui/button"
 import { ScrollReveal } from "@/components/scroll-reveal"
 import { CTABanner } from "@/components/cta-banner"
 import type { Project } from "@/lib/types"
+import { useTranslation } from "react-i18next"
+import { useCommon } from "@/hooks/use-common"
 
 interface ProjectDetailProps {
   project: Project
@@ -21,11 +23,12 @@ const metricIcons: Record<string, React.ComponentType<{ className?: string }>> =
 }
 
 export function ProjectDetail({ project, related }: ProjectDetailProps) {
+  const { t } = useTranslation()
+  const common = useCommon()
   const { title, description, image, tags, github, demo, industry, projectType, metrics, challenge, solution, impactStatement } = project
 
   return (
     <main className="pt-24 pb-20">
-      {/* Back link */}
       <section className="px-4 sm:px-6 lg:px-8 mb-8">
         <div className="max-w-6xl mx-auto">
           <Link
@@ -33,12 +36,11 @@ export function ProjectDetail({ project, related }: ProjectDetailProps) {
             className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
-            Back to Work
+            {t('projectDetail.backToWork')}
           </Link>
         </div>
       </section>
 
-      {/* Hero */}
       <section className="px-4 sm:px-6 lg:px-8 mb-16">
         <div className="max-w-6xl mx-auto">
           <div className="relative w-full aspect-video rounded-3xl overflow-hidden mb-10">
@@ -84,7 +86,6 @@ export function ProjectDetail({ project, related }: ProjectDetailProps) {
         </div>
       </section>
 
-      {/* Metrics */}
       {metrics && (
         <section className="px-4 sm:px-6 lg:px-8 mb-20">
           <div className="max-w-6xl mx-auto">
@@ -113,7 +114,6 @@ export function ProjectDetail({ project, related }: ProjectDetailProps) {
         </section>
       )}
 
-      {/* Challenge / Solution / Impact */}
       {(challenge || solution || impactStatement) && (
         <section className="px-4 sm:px-6 lg:px-8 mb-20">
           <div className="max-w-4xl mx-auto space-y-12">
@@ -122,7 +122,7 @@ export function ProjectDetail({ project, related }: ProjectDetailProps) {
                 <div>
                   <h2 className="text-2xl font-bold mb-3 flex items-center gap-3">
                     <span className="w-8 h-8 rounded-lg bg-destructive/10 text-destructive flex items-center justify-center text-sm font-black">01</span>
-                    The Challenge
+                    {t('projectDetail.challenge')}
                   </h2>
                   <p className="text-muted-foreground text-lg leading-relaxed">{challenge}</p>
                 </div>
@@ -133,7 +133,7 @@ export function ProjectDetail({ project, related }: ProjectDetailProps) {
                 <div>
                   <h2 className="text-2xl font-bold mb-3 flex items-center gap-3">
                     <span className="w-8 h-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center text-sm font-black">02</span>
-                    The Solution
+                    {t('projectDetail.solution')}
                   </h2>
                   <p className="text-muted-foreground text-lg leading-relaxed">{solution}</p>
                 </div>
@@ -144,7 +144,7 @@ export function ProjectDetail({ project, related }: ProjectDetailProps) {
                 <div className="p-8 rounded-2xl bg-gradient-to-br from-primary/5 to-accent/5 border border-primary/10">
                   <h2 className="text-2xl font-bold mb-3 flex items-center gap-3">
                     <span className="w-8 h-8 rounded-lg bg-green-500/10 text-green-500 flex items-center justify-center text-sm font-black">03</span>
-                    The Impact
+                    {t('projectDetail.impact')}
                   </h2>
                   <p className="text-foreground text-lg leading-relaxed font-medium">{impactStatement}</p>
                 </div>
@@ -154,11 +154,10 @@ export function ProjectDetail({ project, related }: ProjectDetailProps) {
         </section>
       )}
 
-      {/* Tech Stack */}
       <section className="px-4 sm:px-6 lg:px-8 mb-20">
         <div className="max-w-6xl mx-auto">
           <ScrollReveal>
-            <h2 className="text-2xl font-bold mb-6 text-center">Tech Stack</h2>
+            <h2 className="text-2xl font-bold mb-6 text-center">{t('projectDetail.techStack')}</h2>
             <div className="flex flex-wrap gap-3 justify-center">
               {tags.map((tag) => (
                 <Badge
@@ -173,7 +172,6 @@ export function ProjectDetail({ project, related }: ProjectDetailProps) {
         </div>
       </section>
 
-      {/* Links */}
       <section className="px-4 sm:px-6 lg:px-8 mb-20">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -181,7 +179,7 @@ export function ProjectDetail({ project, related }: ProjectDetailProps) {
               <Button asChild size="lg" className="rounded-full px-8">
                 <Link href={demo} target="_blank" rel="noopener noreferrer">
                   <ExternalLink className="mr-2 w-4 h-4" />
-                  View Live Site
+                  {t('projectDetail.viewLiveSite')}
                 </Link>
               </Button>
             )}
@@ -189,7 +187,7 @@ export function ProjectDetail({ project, related }: ProjectDetailProps) {
               <Button asChild variant="outline" size="lg" className="rounded-full px-8">
                 <Link href={github} target="_blank" rel="noopener noreferrer">
                   <Github className="mr-2 w-4 h-4" />
-                  View Source Code
+                  {t('projectDetail.viewSource')}
                 </Link>
               </Button>
             )}
@@ -197,11 +195,10 @@ export function ProjectDetail({ project, related }: ProjectDetailProps) {
         </div>
       </section>
 
-      {/* Related Projects */}
       {related.length > 0 && (
         <section className="px-4 sm:px-6 lg:px-8 py-24 relative overflow-hidden bg-primary/[0.03]">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-12">Related Projects</h2>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-12">{t('projectDetail.relatedProjects')}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
               {related.map((project, index) => (
                 <div key={project.slug} className="group">
@@ -230,7 +227,7 @@ export function ProjectDetail({ project, related }: ProjectDetailProps) {
                         {project.description}
                       </p>
                       <span className="inline-flex items-center gap-1 text-sm font-medium text-primary">
-                        View Project <ArrowRight className="w-3.5 h-3.5" />
+                        {common.viewProject} <ArrowRight className="w-3.5 h-3.5" />
                       </span>
                     </div>
                   </Link>
@@ -242,10 +239,10 @@ export function ProjectDetail({ project, related }: ProjectDetailProps) {
       )}
 
       <CTABanner
-        badge="Let&apos;s Build Something Great"
-        title="Have a similar project in mind?"
-        description="Let&apos;s talk about how we can bring your vision to life."
-        buttonText="Start a Project"
+        badge={t('projectDetail.startProject')}
+        title={t('projectDetail.startProject')}
+        description={t('projectDetail.startProject')}
+        buttonText={t('projectDetail.startProject')}
         buttonHref="/contact"
       />
     </main>

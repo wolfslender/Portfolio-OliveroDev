@@ -1,6 +1,9 @@
 "use client"
 
+import { useTranslation } from "react-i18next"
+
 export function AvailabilityBadge() {
+  const { t } = useTranslation()
   const isAvailable = true
 
   return (
@@ -12,7 +15,9 @@ export function AvailabilityBadge() {
             className={`absolute inset-0 w-3 h-3 rounded-full ${isAvailable ? "bg-green-500" : "bg-red-500"} animate-ping`}
           />
         </div>
-        <span className="text-sm font-medium">{isAvailable ? "Available for work" : "Currently unavailable"}</span>
+        <span className="text-sm font-medium">
+          {isAvailable ? t('availabilityBadge.available') : t('availabilityBadge.unavailable')}
+        </span>
       </div>
     </div>
   )

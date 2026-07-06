@@ -8,6 +8,7 @@ import { SocialLinks } from "@/components/social-links"
 import { useSearchParams } from "next/navigation"
 import { toast } from "sonner"
 import dynamic from "next/dynamic"
+import { useTranslation } from "react-i18next"
 
 const PopupModal = dynamic(
   () => import("react-calendly").then((mod) => mod.PopupModal),
@@ -17,6 +18,7 @@ const PopupModal = dynamic(
 export function ContactSection() {
   const contact = useContact()
   const contactPage = useContactPage()
+  const { t } = useTranslation()
   const [isCalendlyOpen, setIsCalendlyOpen] = useState(false)
   const [mounted, setMounted] = useState(false)
   const [copied, setCopied] = useState(false)
@@ -36,7 +38,6 @@ export function ContactSection() {
     setTimeout(() => setCopied(false), 2000)
   }
 
-  // Construct WhatsApp URL securely
   const getWhatsappUrl = () => {
     const whatsappNumber = contact.phone.replace(/\D/g, "")
     const finalWhatsappNumber = whatsappNumber.length === 10 ? `1${whatsappNumber}` : whatsappNumber
@@ -45,7 +46,6 @@ export function ContactSection() {
 
   return (
     <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 bg-muted/30 relative overflow-hidden min-h-[80vh] flex items-center">
-      {/* Decorative background elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl" />
       </div>
@@ -57,12 +57,11 @@ export function ContactSection() {
               {contactPage.title}
             </h2>
             <p className="text-muted-foreground text-xl leading-relaxed max-w-lg mx-auto italic">
-              "Turning complex challenges into high-performance digital experiences."
+              {t('contactPage.quote')}
             </p>
           </div>
 
           <div className="flex flex-col gap-6 max-w-md mx-auto">
-            {/* Calendly Button - Primary Action */}
             <button
               onClick={() => setIsCalendlyOpen(true)}
               className="group flex items-center justify-between p-6 bg-primary text-primary-foreground rounded-2xl hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300 cursor-pointer w-full border-none"
@@ -72,14 +71,13 @@ export function ContactSection() {
                   <Calendar className="w-6 h-6" />
                 </div>
                 <div className="text-left">
-                  <span className="block font-semibold text-lg">Book a Strategy Call</span>
-                  <span className="text-sm opacity-80">Free 30-min UI/UX consultation</span>
+                  <span className="block font-semibold text-lg">{t('contactPage.bookCall')}</span>
+                  <span className="text-sm opacity-80">{t('contactPage.freeConsultation')}</span>
                 </div>
               </div>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-all" />
             </button>
 
-            {/* Email Action */}
             <div className="group relative">
               <a
                 href={`mailto:${contact.email}`}
@@ -90,7 +88,7 @@ export function ContactSection() {
                     <Mail className="w-6 h-6" />
                   </div>
                   <div className="text-left">
-                    <span className="block font-semibold text-lg">Send an Email</span>
+                    <span className="block font-semibold text-lg">{t('contactPage.sendEmail')}</span>
                     <span className="text-sm text-muted-foreground">{contact.email}</span>
                   </div>
                 </div>
@@ -99,13 +97,12 @@ export function ContactSection() {
               <button
                 onClick={(e) => { e.preventDefault(); copyEmail(); }}
                 className="absolute right-14 top-1/2 -translate-y-1/2 p-2 hover:bg-muted rounded-lg transition-colors text-muted-foreground hover:text-foreground"
-                title="Copy email address"
+                title={t('contactPage.copyEmail')}
               >
                 {copied ? <Check className="w-4 h-4 text-green-500" /> : <Copy className="w-4 h-4" />}
               </button>
             </div>
 
-            {/* WhatsApp Action */}
             <a
               href={getWhatsappUrl()}
               target="_blank"
@@ -125,7 +122,7 @@ export function ContactSection() {
           </div>
 
           <div className="pt-16 text-center border-t border-border/50 mt-12">
-            <p className="text-muted-foreground mb-6 font-medium">Connect on Professional Networks</p>
+            <p className="text-muted-foreground mb-6 font-medium">{contactPage.socialConnect}</p>
             <div className="flex justify-center">
               <SocialLinks variant="boxed" />
             </div>

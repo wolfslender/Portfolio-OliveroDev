@@ -8,6 +8,8 @@ export const metadata: Metadata = {
   alternates: { canonical: `${siteConfig.url}/plugins/` },
 }
 
+// Note: metadata is static across languages since Next.js export doesn't support dynamic metadata with i18n
+
 export default function PluginsPage() {
   return (
     <>

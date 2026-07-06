@@ -7,15 +7,16 @@ import { useCommon } from "@/hooks/use-common"
 import { ArrowRight, Clock, Target, TrendingUp } from "lucide-react"
 import Link from "next/link"
 import { cn } from "@/lib/utils"
+import { useTranslation } from "react-i18next"
 
 export default function ServicesContent() {
   const services = useServices()
   const servicesPage = useServicesPage()
   const common = useCommon()
+  const { t } = useTranslation()
 
   return (
     <div className="pt-24">
-      {/* Hero */}
       <section className="px-4 sm:px-6 lg:px-8 mb-8 relative">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-gradient-to-b from-primary/[0.07] to-transparent -z-10" />
         <div className="max-w-7xl mx-auto">
@@ -30,14 +31,12 @@ export default function ServicesContent() {
         </div>
       </section>
 
-      {/* Service Sections — Editorial Full-Bleed */}
       {services.map((service, index) => (
         <div key={index}>
           <section className={cn(
             "px-4 sm:px-6 lg:px-8 py-24 md:py-32 relative overflow-hidden",
             index % 2 === 0 ? "bg-primary/[0.03]" : "bg-secondary/[0.03]"
           )}>
-            {/* Watermark Number */}
             <div className="absolute inset-y-0 right-0 flex items-center pointer-events-none select-none">
               <span className="text-[22vw] md:text-[18vw] font-black text-foreground/[0.02] leading-none">
                 {String(index + 1).padStart(2, "0")}
@@ -46,7 +45,6 @@ export default function ServicesContent() {
 
             <div className="max-w-7xl mx-auto relative z-10">
               <div className="grid lg:grid-cols-12 gap-8 lg:gap-20">
-                {/* Left Column — Service Label */}
                 <div className="lg:col-span-3">
                   <div className="lg:sticky lg:top-32">
                     <div className={cn(
@@ -62,12 +60,11 @@ export default function ServicesContent() {
                       "text-xs font-bold tracking-[0.3em] uppercase",
                       index % 2 === 0 ? "text-primary" : "text-secondary"
                     )}>
-                      Service {String(index + 1).padStart(2, "0")}
+                      {t('servicesContent.serviceLabel', { number: String(index + 1).padStart(2, "0") })}
                     </span>
                   </div>
                 </div>
 
-                {/* Right Column — Content */}
                 <div className="lg:col-span-9">
                   <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 leading-[1.1]">
                     {service.title}
@@ -76,7 +73,6 @@ export default function ServicesContent() {
                     {service.description}
                   </p>
 
-                  {/* Features as Pills */}
                   <div className="flex flex-wrap gap-2 mb-10">
                     {service.features.map((feature, fIdx) => (
                       <span
@@ -88,13 +84,12 @@ export default function ServicesContent() {
                     ))}
                   </div>
 
-                  {/* Details Grid */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
                     {service.startingPrice && (
                       <div className="rounded-xl border border-border/30 bg-background/50 p-4">
                         <div className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-muted-foreground mb-1.5">
                           <Target className="w-3 h-3" />
-                          Starting at
+                          {t('servicesContent.startingAt')}
                         </div>
                         <p className="text-sm font-bold text-primary leading-snug">{service.startingPrice}</p>
                       </div>
@@ -122,7 +117,6 @@ export default function ServicesContent() {
                     </div>
                   </div>
 
-                  {/* Deliverables */}
                   {service.deliverables?.length > 0 && (
                     <div className="mb-10">
                       <p className="text-xs font-bold uppercase tracking-[0.25em] text-muted-foreground mb-3">
@@ -151,7 +145,6 @@ export default function ServicesContent() {
             </div>
           </section>
 
-          {/* Decorative Separator */}
           {index < services.length - 1 && (
             <div className="relative flex items-center justify-center py-10 md:py-14">
               <div className="h-px w-full max-w-2xl bg-gradient-to-r from-transparent via-border/60 to-transparent" />

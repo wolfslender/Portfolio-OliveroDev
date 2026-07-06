@@ -1,15 +1,16 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { usePlugins } from "@/hooks/use-plugins"
+import { usePlugins, usePluginsPage } from "@/hooks/use-plugins"
 import { ScrollReveal } from "@/components/scroll-reveal"
-import { ArrowRight, CheckCircle2, Clock, ExternalLink, Shield, Star, TrendingUp, Users, Zap } from "lucide-react"
+import { ArrowRight, CheckCircle2, Clock, ExternalLink, Shield, Star, Zap } from "lucide-react"
 import Link from "next/link"
 import { Badge } from "@/components/ui/badge"
 import { cn } from "@/lib/utils"
 
 export default function PluginsContent() {
   const pluginsData = usePlugins()
+  const page = usePluginsPage()
 
   return (
     <div className="pt-24 pb-20 overflow-hidden">
@@ -19,7 +20,7 @@ export default function PluginsContent() {
         <div className="max-w-7xl mx-auto text-center space-y-8">
           <ScrollReveal>
             <Badge variant="outline" className="px-4 py-1.5 rounded-full border-violet-500/20 bg-violet-500/10 text-violet-600 dark:text-violet-400 text-sm font-semibold mb-6">
-              WordPress Plugins
+              {page.heroBadge}
             </Badge>
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-balance leading-[1.1]">
               {pluginsData.hero.title} <br />
@@ -61,7 +62,7 @@ export default function PluginsContent() {
                     {/* Free Features */}
                     <div>
                       <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-3">
-                        Free — Always
+                        {page.freeLabel}
                       </p>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                         {plugin.features.map((feature: string, fIdx: number) => (
@@ -76,13 +77,13 @@ export default function PluginsContent() {
                     <div className="flex flex-wrap gap-3 pt-1">
                       <Button asChild size="lg" className="rounded-full px-8">
                         <Link href={plugin.freemiusUrl} target="_blank">
-                          Start Free Trial
+                          {page.startTrial}
                           <ArrowRight className="ml-2 w-5 h-5" />
                         </Link>
                       </Button>
                       <Button asChild variant="outline" size="lg" className="rounded-full px-8">
                         <Link href={plugin.url} target="_blank">
-                          Free on WP.org
+                          {page.freeOnWp}
                           <ExternalLink className="ml-2 w-4 h-4" />
                         </Link>
                       </Button>
@@ -90,9 +91,9 @@ export default function PluginsContent() {
 
                     {/* Trust badges */}
                     <div className="flex items-center gap-4 text-xs text-muted-foreground pt-1">
-                      <span className="flex items-center gap-1"><Shield className="w-3 h-3" /> No credit card for trial</span>
-                      <span className="flex items-center gap-1"><Zap className="w-3 h-3" /> 3-day free trial</span>
-                      <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> Cancel anytime</span>
+                      <span className="flex items-center gap-1"><Shield className="w-3 h-3" /> {page.noCreditCard}</span>
+                      <span className="flex items-center gap-1"><Zap className="w-3 h-3" /> {page.threeDayTrial}</span>
+                      <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> {page.cancelAnytime}</span>
                     </div>
                   </div>
 
@@ -138,7 +139,7 @@ export default function PluginsContent() {
                               "text-xs font-semibold mt-2",
                               pIdx === 0 ? "text-violet-600 dark:text-violet-400" : "text-muted-foreground"
                             )}>
-                              {pIdx === 0 ? "Get started →" : "For agencies →"}
+                              {pIdx === 0 ? `${page.getStarted} →` : `${page.forAgencies} →`}
                             </p>
                           </Link>
                         ))}
@@ -157,30 +158,18 @@ export default function PluginsContent() {
         <div className="max-w-4xl mx-auto text-center">
           <ScrollReveal>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Why My Plugins?
+              {page.whyTitle}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="rounded-2xl border border-border/60 bg-card/40 p-6 backdrop-blur-sm">
-                <div className="w-12 h-12 bg-primary/10 flex items-center justify-center mb-4">
-                  <CheckCircle2 className="w-6 h-6 text-primary" />
+              {page.whyCards.map((card, idx) => (
+                <div key={idx} className="rounded-2xl border border-border/60 bg-card/40 p-6 backdrop-blur-sm">
+                  <div className="w-12 h-12 bg-primary/10 flex items-center justify-center mb-4">
+                    <CheckCircle2 className="w-6 h-6 text-primary" />
+                  </div>
+                  <h4 className="font-bold mb-2">{card.title}</h4>
+                  <p className="text-sm text-muted-foreground">{card.description}</p>
                 </div>
-                <h4 className="font-bold mb-2">Clean Code</h4>
-                <p className="text-sm text-muted-foreground">Well-documented, optimized, and following WordPress best practices.</p>
-              </div>
-              <div className="rounded-2xl border border-border/60 bg-card/40 p-6 backdrop-blur-sm">
-                <div className="w-12 h-12 rounded-xl bg-green-500/10 flex items-center justify-center mb-4">
-                  <TrendingUp className="w-6 h-6 text-green-500" />
-                </div>
-                <h4 className="font-bold mb-2">Regular Updates</h4>
-                <p className="text-sm text-muted-foreground">Continuous improvements, security patches, and new features.</p>
-              </div>
-              <div className="rounded-2xl border border-border/60 bg-card/40 p-6 backdrop-blur-sm">
-                <div className="w-12 h-12 rounded-xl bg-violet-500/10 flex items-center justify-center mb-4">
-                  <Users className="w-6 h-6 text-violet-500" />
-                </div>
-                <h4 className="font-bold mb-2">Dedicated Support</h4>
-                <p className="text-sm text-muted-foreground">Direct access to support for setup help and custom questions.</p>
-              </div>
+              ))}
             </div>
           </ScrollReveal>
         </div>
@@ -191,14 +180,14 @@ export default function PluginsContent() {
         <div className="max-w-4xl mx-auto">
           <div className="rounded-3xl bg-gradient-to-br from-violet-600 to-violet-800 p-8 md:p-12 text-white text-center">
             <h2 className="text-2xl md:text-4xl font-bold mb-4">
-              Need a Custom WordPress Solution?
+              {page.ctaTitle}
             </h2>
             <p className="text-white/80 text-lg mb-8 max-w-2xl mx-auto">
-              I also build custom WordPress plugins and themes tailored to your specific needs.
+              {page.ctaDescription}
             </p>
             <Button asChild size="lg" variant="secondary" className="rounded-full px-8 bg-white text-violet-700 hover:bg-white/90">
               <Link href="/contact">
-                Let's Discuss Your Project
+                {page.ctaButton}
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
             </Button>

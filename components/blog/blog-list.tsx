@@ -30,7 +30,7 @@ interface BlogListProps {
 }
 
 export function BlogList({ posts, tags }: BlogListProps) {
-  const { i18n } = useTranslation()
+  const { i18n, t } = useTranslation()
   const isSpanish = i18n.language.startsWith("es")
   const [searchQuery, setSearchQuery] = useState("")
   const [selectedTag, setSelectedTag] = useState<string | null>(null)
@@ -45,18 +45,15 @@ export function BlogList({ posts, tags }: BlogListProps) {
     return matchesSearch && matchesTag
   })
 
-  // Featured post (most recent)
   const featuredPost = filteredPosts[0]
   const regularPostsAll = filteredPosts.slice(1)
 
-  // Pagination
   const totalPages = Math.ceil(regularPostsAll.length / postsPerPage)
   const paginatedPosts = regularPostsAll.slice(
     (currentPage - 1) * postsPerPage,
     currentPage * postsPerPage
   )
 
-  // Reset to page 1 when filters change
   const handleSearchChange = (value: string) => {
     setSearchQuery(value)
     setCurrentPage(1)
@@ -68,12 +65,10 @@ export function BlogList({ posts, tags }: BlogListProps) {
 
   return (
     <div className="space-y-20">
-      {/* Featured Post Hero */}
       {featuredPost && (
         <ScrollReveal>
           <div className="relative overflow-hidden rounded-[3rem] bg-gradient-to-br from-slate-950 to-slate-900 border border-white/5 group">
             <div className="grid lg:grid-cols-2 gap-0">
-              {/* Image Side */}
               {featuredPost.mainImage && (
                 <div className="relative h-[400px] lg:h-[600px] overflow-hidden">
                   <Link href={`/blog/${featuredPost.slug?.current || '#'}`} className="block w-full h-full">
@@ -88,11 +83,10 @@ export function BlogList({ posts, tags }: BlogListProps) {
                 </div>
               )}
 
-              {/* Content Side */}
               <div className="relative p-8 md:p-12 lg:p-16 flex flex-col justify-center text-white">
                 <Badge className="bg-primary text-primary-foreground w-fit mb-6 px-4 py-1.5 text-sm font-bold">
                   <TrendingUp className="w-3 h-3 mr-2 inline" />
-                  Featured Article
+                  {t('blogList.featuredArticle')}
                 </Badge>
 
                 <h2 className="text-3xl md:text-5xl font-black mb-6 leading-tight">
@@ -126,7 +120,7 @@ export function BlogList({ posts, tags }: BlogListProps) {
                   href={`/blog/${featuredPost.slug?.current || '#'}`}
                   className="inline-flex items-center gap-2 bg-white text-slate-950 px-8 py-4 rounded-full font-bold hover:bg-slate-200 transition-all hover:scale-105 active:scale-95 w-fit group/btn shadow-xl"
                 >
-                  Read Article
+                  {t('blogList.readArticle')}
                   <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
                 </Link>
               </div>
@@ -135,9 +129,7 @@ export function BlogList({ posts, tags }: BlogListProps) {
         </ScrollReveal>
       )}
 
-      {/* Main Content Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
-        {/* Posts Grid */}
         <div className="lg:col-span-3">
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-2">
             {paginatedPosts.length > 0 ? (
@@ -161,7 +153,6 @@ export function BlogList({ posts, tags }: BlogListProps) {
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
 
-                            {/* Category Badge on Image */}
                             {post.categories && post.categories.length > 0 && (
                               <div className="absolute top-4 left-4">
                                 <Badge className="bg-primary/90 backdrop-blur-md text-primary-foreground border-primary/20 font-bold">
@@ -201,19 +192,18 @@ export function BlogList({ posts, tags }: BlogListProps) {
               })
             ) : (
               <div className="col-span-full text-center py-20 text-muted-foreground bg-muted/30 rounded-3xl border-2 border-dashed border-border">
-                <p className="text-xl font-bold mb-2">No posts found</p>
-                <p className="text-sm mb-6">Try adjusting your search or filters</p>
+                <p className="text-xl font-bold mb-2">{t('blogList.noPosts')}</p>
+                <p className="text-sm mb-6">{t('blogList.noPostsDescription')}</p>
                 <button
                   onClick={() => { setSearchQuery(""); setSelectedTag(null); }}
                   className="text-primary hover:underline text-sm font-semibold"
                 >
-                  Clear all filters
+                  {t('blogList.clearFilters')}
                 </button>
               </div>
             )}
           </div>
 
-          {/* Pagination */}
           {totalPages > 1 && (
             <div className="mt-12 flex items-center justify-center gap-2">
               <Button
@@ -250,7 +240,6 @@ export function BlogList({ posts, tags }: BlogListProps) {
           )}
         </div>
 
-        {/* Enhanced Sidebar */}
         <div className="lg:col-span-1">
           <div className="sticky top-24">
             <BlogSidebar

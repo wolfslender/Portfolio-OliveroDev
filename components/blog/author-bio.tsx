@@ -12,11 +12,7 @@ interface AuthorBioProps {
 }
 
 export function AuthorBio({ authorName, authorImage }: AuthorBioProps) {
-  const { i18n } = useTranslation()
-  const isSpanish = i18n.language.startsWith("es")
-
-  const bioEn = "IT & Frontend Developer specialized in building modern digital solutions with a strong focus on user experience, performance, and scalability. Experienced in WordPress, Webflow, and frontend technologies, applying product thinking and IT best practices to create efficient, secure, and business-oriented web platforms."
-  const bioEs = "Desarrollador Frontend e IT especializado en la creación de soluciones digitales modernas con un fuerte enfoque en la experiencia de usuario, el rendimiento y la escalabilidad. Con experiencia en WordPress, Webflow y tecnologías frontend, aplicando pensamiento de producto y mejores prácticas de TI para crear plataformas web eficientes, seguras y orientadas al negocio."
+  const { t } = useTranslation()
 
   const socialLinks = [
     {
@@ -42,7 +38,6 @@ export function AuthorBio({ authorName, authorImage }: AuthorBioProps) {
   return (
     <div className="mt-16 mb-8 p-8 rounded-2xl border bg-card/50 backdrop-blur-sm shadow-sm">
       <div className="flex flex-col md:flex-row gap-8 items-center md:items-start">
-        {/* Author Image */}
         <div className="shrink-0">
           <div className="relative w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-4 border-background shadow-md">
             {authorImage ? (
@@ -60,11 +55,10 @@ export function AuthorBio({ authorName, authorImage }: AuthorBioProps) {
           </div>
         </div>
 
-        {/* Bio Content */}
         <div className="flex-1 text-center md:text-left">
           <h3 className="text-2xl font-bold mb-2">{authorName}</h3>
           <p className="text-muted-foreground mb-6 leading-relaxed">
-            {isSpanish ? bioEs : bioEn}
+            {t('authorBio.bio')}
           </p>
           
           <div className="flex flex-wrap gap-3 justify-center md:justify-start">

@@ -1,9 +1,10 @@
 "use client"
 
-import { useAbout, useExperience, useEducation } from "@/hooks/use-about"
+import { useAbout, useAboutPage, useExperience, useEducation } from "@/hooks/use-about"
 
 export function AboutSection() {
   const about = useAbout()
+  const aboutPage = useAboutPage()
   const experience = useExperience()
   const education = useEducation()
 
@@ -14,16 +15,16 @@ export function AboutSection() {
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-gradient-to-b from-primary/[0.07] to-transparent -z-10" />
         <div className="max-w-7xl mx-auto">
           <div className="max-w-3xl">
-            <p className="text-xs font-bold tracking-[0.3em] uppercase text-primary mb-4">About</p>
+            <p className="text-xs font-bold tracking-[0.3em] uppercase text-primary mb-4">{aboutPage.aboutLabel}</p>
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-[1.1] mb-6">
-              Building websites and tools{" "}
-              <span className="text-primary">that actually work</span>
+              {aboutPage.heroTitle}{" "}
+              <span className="text-primary">{aboutPage.heroHighlight}</span>
             </h1>
             <p className="text-muted-foreground text-xl md:text-2xl leading-relaxed mb-6">
-              10+ years building for government, enterprise, and global platforms. I focus on speed, security, and making sure the site does what it's supposed to do — bring in results.
+              {aboutPage.heroDescription}
             </p>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              No project managers, no junior devs, no handoffs. From discovery to deployment, I handle your project end-to-end. Government portals, global EdTech platforms, healthcare systems — I've shipped across industries and I know what works.
+              {aboutPage.heroDescription2}
             </p>
           </div>
         </div>
@@ -33,7 +34,7 @@ export function AboutSection() {
       <section className="px-4 sm:px-6 lg:px-8 py-24 md:py-28">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-16">
-            Where <span className="text-primary">I've worked</span>
+            {aboutPage.workedTitle} <span className="text-primary">{aboutPage.workedHighlight}</span>
           </h2>
 
           <div className="grid md:grid-cols-2 gap-x-16 gap-y-12">

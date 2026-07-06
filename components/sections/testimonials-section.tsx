@@ -1,5 +1,6 @@
 "use client"
 
+import { useTranslation } from "react-i18next"
 import { siteConfig } from "@/lib/config"
 import { ScrollReveal } from "@/components/scroll-reveal"
 import { Star } from "lucide-react"
@@ -20,6 +21,7 @@ const cardStyles = [
 ]
 
 export function TestimonialsSection() {
+    const { t } = useTranslation()
     const { testimonials } = siteConfig
 
     return (
@@ -30,11 +32,11 @@ export function TestimonialsSection() {
                 <ScrollReveal>
                     <div className="text-center mb-16 space-y-4">
                         <h2 className="text-4xl md:text-6xl font-black tracking-tight">
-                            What clients{" "}
-                            <span className="text-primary">say</span>
+                            {t('testimonialsSection.title', "What clients")}{" "}
+                            <span className="text-primary">{t('testimonialsSection.highlight', "say")}</span>
                         </h2>
                         <p className="text-muted-foreground text-xl max-w-2xl mx-auto leading-relaxed">
-                            Real feedback from people I have worked with.
+                            {t('testimonialsSection.subtitle', "Real feedback from people I have worked with.")}
                         </p>
                     </div>
                 </ScrollReveal>
