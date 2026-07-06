@@ -15,16 +15,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }
 
   const routes: SitemapRoute[] = [
-    { path: '', changeFrequency: 'weekly', priority: 1.0 },
-    { path: '/services', changeFrequency: 'monthly', priority: 0.9 },
-    { path: '/blog', changeFrequency: 'weekly', priority: 0.9 },
-    { path: '/work', changeFrequency: 'monthly', priority: 0.8 },
-    { path: '/plugins', changeFrequency: 'monthly', priority: 0.8 },
-    { path: '/about', changeFrequency: 'monthly', priority: 0.7 },
-    { path: '/contact', changeFrequency: 'monthly', priority: 0.7 },
-    { path: '/glossary', changeFrequency: 'monthly', priority: 0.6 },
-    { path: '/privacy', changeFrequency: 'yearly', priority: 0.3 },
-    { path: '/terms', changeFrequency: 'yearly', priority: 0.3 },
+    { path: '/', changeFrequency: 'weekly', priority: 1.0 },
+    { path: '/services/', changeFrequency: 'monthly', priority: 0.9 },
+    { path: '/blog/', changeFrequency: 'weekly', priority: 0.9 },
+    { path: '/work/', changeFrequency: 'monthly', priority: 0.8 },
+    { path: '/plugins/', changeFrequency: 'monthly', priority: 0.8 },
+    { path: '/about/', changeFrequency: 'monthly', priority: 0.7 },
+    { path: '/contact/', changeFrequency: 'monthly', priority: 0.7 },
+    { path: '/glossary/', changeFrequency: 'monthly', priority: 0.6 },
+    { path: '/privacy/', changeFrequency: 'yearly', priority: 0.3 },
+    { path: '/terms/', changeFrequency: 'yearly', priority: 0.3 },
   ]
 
   const staticEntries = routes.map((route) => ({
@@ -48,7 +48,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     if (process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) {
       const posts = await client.fetch(query)
       blogEntries = posts.map((post: any) => ({
-        url: `${siteConfig.url}/blog/${post.slug}`,
+        url: `${siteConfig.url}/blog/${post.slug}/`,
         lastModified: post._updatedAt || post.publishedAt || currentDate,
         changeFrequency: 'weekly' as const,
         priority: 0.7,
