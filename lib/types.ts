@@ -23,6 +23,23 @@ export interface ProjectMetrics {
   impact?: string
 }
 
+export interface PriceTier {
+  label: string
+  min: number
+  max: number
+}
+
+export interface QuoteOption {
+  id: string
+  name: string
+  description: string
+}
+
+export interface RegionPrices {
+  latam: PriceTier[]
+  usa: PriceTier[]
+}
+
 export interface Service {
   title: string
   description: string
@@ -37,6 +54,9 @@ export interface Service {
   outcome: string
   deliverables: string[]
   startingPrice?: string
+  pricingNote?: string
+  quoteOptions?: QuoteOption[]
+  regionPrices?: RegionPrices
 }
 
 export interface Skill {

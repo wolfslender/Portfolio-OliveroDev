@@ -161,3 +161,49 @@ export function getBreadcrumbSchema(items: { name: string; item: string }[]) {
     })),
   }
 }
+
+interface ServiceSchemaItem {
+  name: string
+  description: string
+  serviceType: string
+  position: number
+  offers?: {
+    priceCurrency: string
+    minPrice: number
+    maxPrice: number
+  }
+}
+
+export function getServiceListSchema(services: ServiceSchemaItem[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    itemListElement: services.map((svc) => ({
+      "@type": "ListItem",
+      position: svc.position,
+      item: {
+        "@type": "Service",
+        name: svc.name,
+        description: svc.description,
+        provider: {
+          "@type": "Person",
+          name: siteConfig.author,
+          url: siteConfig.url,
+        },
+        areaServed: "Worldwide",
+        serviceType: svc.serviceType,
+        ...(svc.offers && {
+          offers: {
+            "@type": "Offer",
+            priceSpecification: {
+              "@type": "PriceSpecification",
+              minPrice: svc.offers.minPrice,
+              maxPrice: svc.offers.maxPrice,
+              priceCurrency: svc.offers.priceCurrency,
+            },
+          },
+        }),
+      },
+    })),
+  }
+}

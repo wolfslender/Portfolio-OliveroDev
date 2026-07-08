@@ -425,30 +425,53 @@
   "services": [
     {
       "title": "Websites y MVPs",
-      "description": "Un website o MVP funcional en semanas, no meses. Estrategia, UX y desarrollo en un solo paquete. Incluye migraciones a Webflow si estás cansado de WordPress.",
-      "features": ["Prototipado Rápido", "UX orientada a conversión", "Build CMS o App", "Estrategia de Lanzamiento", "Migraciones a Webflow"],
+      "description": "Un website o MVP funcional en semanas, no meses. Estrategia, UX y desarrollo en un solo paquete. Desde el concepto hasta el lanzamiento, me encargo de todo para que tú te enfoques en hacer crecer tu negocio.",
+      "features": ["Prototipado Rápido", "UX orientada a conversión", "Build CMS o App", "Estrategia de Lanzamiento"],
       "bestFor": "Founders y negocios en crecimiento que necesitan un sitio nuevo o MVP rápido.",
       "timeline": "4-6 semanas",
       "outcome": "Un website o MVP rápido, premium y preparado para ganar confianza, captar leads y soportar crecimiento.",
-      "deliverables": ["Sprint Estratégico", "Dirección UX/UI", "Build CMS o Producto", "Soporte de Lanzamiento"]
+      "deliverables": ["Sprint Estratégico", "Dirección UX/UI", "Build CMS o Producto", "Soporte de Lanzamiento"],
+      "quoteOptions": [
+        { "id": "landing-wordpress", "name": "Landing Page / CMS WordPress", "description": "Ideal para sitios corporativos, blogs y proyectos basados en contenido. Construido sobre un CMS probado para que puedas gestionar el contenido tú mismo." },
+        { "id": "mvp-framework", "name": "MVP con Framework", "description": "App web personalizada con React, Next.js o Node. Perfecto para productos SaaS, plataformas interactivas y proyectos escalables." }
+      ]
     },
     {
-      "title": "Escalado de Plataforma",
-      "description": "Tu sitio es lento, está desactualizado o es difícil de mantener. Lo limpio, lo acelero, refuerzo la seguridad y puedo quedarme como tu partner técnico. Sin intermediarios, sin desapariciones.",
-      "features": ["Auditoría y Refactor", "Optimización de Rendimiento", "Refuerzo de Seguridad", "Retainer Continuo", "Infraestructura"],
-      "bestFor": "Empresas con plataformas legacy, cuellos de botella técnicos o fugas de conversión.",
-      "timeline": "3-8 semanas (retainer continuo disponible)",
-      "outcome": "Una plataforma más rápida, segura y mantenible — con un partner que se queda en tu equipo.",
-      "deliverables": ["Auditoría Técnica", "Roadmap Prioritario", "Refactor y Optimización", "Soporte Retainer"]
+      "title": "Optimización de Rendimiento Web",
+      "description": "Los sitios lentos matan las conversiones. Audito, optimizo y ajusto cada capa — desde la configuración del servidor hasta los assets del frontend — para que tu sitio cargue en menos de 2 segundos y obtenga 90+ en Core Web Vitals.",
+      "features": ["Auditoría de Rendimiento", "Optimización Core Web Vitals", "Optimización de Imágenes y Assets", "Estrategia de Caché", "Configuración CDN"],
+      "bestFor": "Sitios lentos, con alta tasa de rebote o que pierden conversiones por tiempo de carga.",
+      "timeline": "2-4 semanas",
+      "outcome": "Un sitio web rápido que carga en menos de 2 segundos, obtiene 90+ en Core Web Vitals y mantiene a los visitantes engaged.",
+      "deliverables": ["Reporte de Auditoría", "Roadmap de Optimización", "Implementación", "Métricas Antes/Después"]
     },
     {
-      "title": "Plugins WordPress",
-      "description": "¿Necesitas algo que WordPress no puede hacer por defecto? Construyo plugins personalizados — desde utilidades simples hasta soluciones completas que se adaptan a tu flujo de trabajo.",
-      "features": ["Desarrollo de Plugins", "Integración Freemius", "Desarrollo de APIs", "Auditorías de Seguridad"],
-      "bestFor": "Negocios que necesitan funcionalidad WordPress personalizada.",
-      "timeline": "2-6 semanas",
-      "outcome": "Un plugin personalizado construido exactamente para tus necesidades.",
-      "deliverables": ["Análisis de Requisitos", "Desarrollo", "Pruebas y Documentación", "Despliegue"]
+      "title": "Seguridad Web",
+      "description": "Protege tu sitio web y tus usuarios. Implemento medidas de seguridad integrales — desde firewalls y escaneo de malware hasta autenticación segura y auditorías regulares — para que puedas dormir tranquilo.",
+      "features": ["Auditoría de Seguridad", "Escaneo y Eliminación de Malware", "Configuración de Firewall", "Configuración SSL/TLS", "Monitoreo Continuo"],
+      "bestFor": "Negocios que manejan datos sensibles, procesan pagos o quieren prevenir costosas brechas de seguridad.",
+      "timeline": "1-3 semanas",
+      "outcome": "Un sitio web fortificado y seguro, protegido contra vulnerabilidades y amenazas comunes.",
+      "deliverables": ["Reporte de Auditoría de Seguridad", "Implementación de Hardening", "Configuración de Monitoreo", "Plan de Respuesta a Incidentes"],
+      "pricingNote": "El alcance varía según el tamaño del sitio, la cantidad de usuarios y los niveles de acceso requeridos. Evaluamos tu caso y te damos una cotización justa."
+    },
+    {
+      "title": "Recuperación de Sitios Hackeados",
+      "description": "Hackearon tu sitio. No entres en pánico. Limpio el malware, cierro las vulnerabilidades, restauro tu contenido e implemento protecciones para evitar que vuelva a suceder. Respuesta rápida, mínimo tiempo de inactividad.",
+      "features": ["Limpieza de Malware de Emergencia", "Parcheo de Vulnerabilidades", "Restauración de Contenido", "Hardening de Seguridad", "Monitoreo Post-Recuperación"],
+      "bestFor": "Dueños de sitios cuyo sitio web ha sido comprometido, defaceado o infectado con malware.",
+      "timeline": "24-72 horas (emergencia)",
+      "outcome": "Un sitio web limpio y restaurado con seguridad reforzada para prevenir futuros ataques.",
+      "deliverables": ["Limpieza de Malware", "Reporte de Vulnerabilidades", "Hardening de Seguridad", "Documentación de Recuperación"]
+    },
+    {
+      "title": "Migración de Plataformas",
+      "description": "Migrar de una plataforma a otra sin perder SEO, contenido ni funcionalidad. Ya sea que cambies de CMS o reconstruyas en un stack moderno, manejo la migración para que tu negocio no se detenga.",
+      "features": ["Preservación de SEO", "Migración de Contenido", "Garantía de Integridad de Datos", "Migración Sin Tiempo de Inactividad", "Soporte Post-Migración"],
+      "bestFor": "Empresas atascadas en plataformas obsoletas que buscan mejor rendimiento, usabilidad y mantenibilidad.",
+      "timeline": "3-8 semanas",
+      "outcome": "Una plataforma moderna, rápida y mantenible con cero pérdida de datos y rankings SEO preservados.",
+      "deliverables": ["Estrategia de Migración", "Migración de Datos", "Preservación SEO", "Soporte Post-Lanzamiento"]
     }
   ],
   "problemSection": {
@@ -558,7 +581,15 @@
   },
   "servicesContent": {
     "serviceLabel": "Servicio {number}",
-    "startingAt": "Desde"
+    "startingAt": "Desde",
+    "customQuote": "Cotización Personalizada",
+    "requestQuote": "Solicitar Cotización",
+    "everyProjectIsDifferent": "Cada proyecto es distinto — cotizamos según el alcance.",
+    "selectOption": "Selecciona el tipo de proyecto:",
+    "continueToContact": "Continuar al Contacto",
+    "taxNote": "Precios en USD. Clientes fuera de República Dominicana: servicios exentos de impuestos locales (exportación de servicios).",
+    "latam": "LATAM",
+    "usa": "USA y Europa"
   },
   "blogList": {
     "featuredArticle": "Artículo Destacado",

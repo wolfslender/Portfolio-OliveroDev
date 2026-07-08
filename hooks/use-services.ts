@@ -14,7 +14,9 @@ export function useServices() {
       bestFor: servicesData[index]?.bestFor || service.bestFor,
       timeline: servicesData[index]?.timeline || service.timeline,
       outcome: servicesData[index]?.outcome || service.outcome,
-      deliverables: servicesData[index]?.deliverables || service.deliverables
+      deliverables: servicesData[index]?.deliverables || service.deliverables,
+      pricingNote: servicesData[index]?.pricingNote || service.pricingNote,
+      quoteOptions: servicesData[index]?.quoteOptions || service.quoteOptions,
     }))
   }, [t])
 }
