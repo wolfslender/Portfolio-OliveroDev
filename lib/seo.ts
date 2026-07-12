@@ -60,10 +60,19 @@ export function getProfessionalServiceSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
+    "@id": `${siteConfig.url}/#professional-service`,
     name: siteConfig.name,
     url: siteConfig.url,
     areaServed: "Remote",
-    serviceType: "Web Development",
+    serviceType: [
+      "Website Audit",
+      "Web Performance Optimization",
+      "Web Security",
+      "Hacked Site Recovery",
+      "Platform Migration",
+      "Website Maintenance",
+      "Web Development",
+    ],
     provider: {
       "@type": "Person",
       name: siteConfig.author,
@@ -77,6 +86,7 @@ export function getProfessionalServiceSchema() {
       "@type": "ContactPoint",
       email: siteConfig.links.email,
       contactType: "customer service",
+      availableLanguage: ["English", "Spanish"],
     },
   }
 }
@@ -100,7 +110,7 @@ export function getBlogPostingSchema({
   dateModified?: string
   slug: string
 }) {
-  const postUrl = `${siteConfig.url}/blog/${slug}`
+  const postUrl = `${siteConfig.url}/blog/${slug}/`
   return {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -140,6 +150,7 @@ export function getBlogPostingSchema({
     isPartOf: {
       "@type": "Blog",
       "@id": `${siteConfig.url}/blog`,
+      url: `${siteConfig.url}/blog/`,
       name: "OliveroDev Blog",
       publisher: {
         "@type": "Person",

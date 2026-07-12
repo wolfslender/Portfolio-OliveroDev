@@ -65,6 +65,7 @@ export interface Service {
   pricingNote?: string
   quoteOptions?: QuoteOption[]
   regionPrices?: RegionPrices
+  landingPageHref?: string
 }
 
 export interface Skill {

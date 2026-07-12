@@ -2,6 +2,8 @@ import { MetadataRoute } from 'next'
 import { siteConfig } from '@/lib/config'
 import { client } from '@/lib/sanity/client'
 import { groq } from 'next-sanity'
+import { projects } from '@/lib/data'
+import { landingPageSlugs } from '@/lib/landing-pages'
 
 export const dynamic = 'force-static'
 
@@ -27,7 +29,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { path: '/terms/', changeFrequency: 'yearly', priority: 0.3 },
   ]
 
-  const staticEntries = routes.map((route) => ({
+  const landingPageRoutes: SitemapRoute[] = landingPageSlugs.map((slug) => ({
+    path: `/${slug}/`,
+    changeFrequency: 'monthly' as const,
+    priority: 0.85,
+  }))
+
+  const allRoutes = [...routes, ...landingPageRoutes]
+
+  const staticEntries = allRoutes.map((route) => ({
     url: `${siteConfig.url}${route.path}`,
     lastModified: currentDate,
     changeFrequency: route.changeFrequency,
@@ -40,7 +50,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
   }))
 
-  const spanishEntries = routes.map((route) => ({
+  const spanishEntries = allRoutes.map((route) => ({
     url: `${siteConfig.url}${route.path === "/" ? "/es/" : `/es${route.path}`}`,
     lastModified: currentDate,
     changeFrequency: route.changeFrequency,
@@ -51,6 +61,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         es: `${siteConfig.url}${route.path === "/" ? "/es/" : `/es${route.path}`}`,
       },
     },
+  }))
+
+  const projectEntries = projects.map((project) => ({
+    url: `${siteConfig.url}/work/${project.slug}/`,
+    lastModified: currentDate,
+    changeFrequency: 'monthly' as const,
+    priority: project.featured ? 0.75 : 0.65,
   }))
 
   // Fetch blog posts
@@ -77,5 +94,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     console.error('Error fetching blog posts for sitemap:', error)
   }
 
-  return [...staticEntries, ...spanishEntries, ...blogEntries]
+  return [...staticEntries, ...spanishEntries, ...projectEntries, ...blogEntries]
 }

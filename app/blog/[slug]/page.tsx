@@ -65,7 +65,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       ? urlFor(post.mainImage).width(1200).height(630).url()
       : `${siteConfig.url}/opengraph-image`
 
-    const postUrl = `${siteConfig.url}/blog/${slug}`
+    const postUrl = `${siteConfig.url}/blog/${slug}/`
 
     return {
       title: post.title,

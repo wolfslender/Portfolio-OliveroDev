@@ -12,6 +12,12 @@ const localizedRoutes = new Set([
   "/services",
   "/terms",
   "/work",
+  "/website-audit",
+  "/wordpress-speed-optimization",
+  "/wordpress-security",
+  "/hacked-wordpress-recovery",
+  "/website-migration",
+  "/wordpress-maintenance",
 ])
 
 export function stripSpanishPrefix(pathname: string) {

@@ -35,13 +35,18 @@ export const metadata: Metadata = {
     "typescript guide", "web performance", "blog desarrollo web",
   ],
   alternates: {
-    canonical: `${siteConfig.url}/blog`,
+    canonical: `${siteConfig.url}/blog/`,
+    languages: {
+      en: `${siteConfig.url}/blog/`,
+      es: `${siteConfig.url}/es/blog/`,
+      "x-default": `${siteConfig.url}/blog/`,
+    },
   },
   openGraph: {
     type: "website",
     title: "OliveroDev Blog — Web Dev, SEO & Tech Insights",
     description: "Practical tutorials, coding guides, and deep dives on React, Next.js, WordPress, Webflow, SEO, and modern web development.",
-    url: `${siteConfig.url}/blog`,
+    url: `${siteConfig.url}/blog/`,
     siteName: siteConfig.name,
     images: [
       {
@@ -63,10 +68,10 @@ export const metadata: Metadata = {
 const blogListSchema = {
   "@context": "https://schema.org",
   "@type": "Blog",
-  "@id": `${siteConfig.url}/blog`,
+  "@id": `${siteConfig.url}/blog/`,
   name: "OliveroDev Blog",
   description: "Practical tutorials, coding guides, and deep dives on React, Next.js, WordPress, Webflow, SEO, and modern web development.",
-  url: `${siteConfig.url}/blog`,
+  url: `${siteConfig.url}/blog/`,
   publisher: {
     "@type": "Person",
     name: siteConfig.author,

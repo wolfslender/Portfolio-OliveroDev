@@ -8,7 +8,9 @@ import { Button } from "@/components/ui/button"
 import { useTheme } from "next-themes"
 import { siteConfig } from "@/lib/config"
 import { useNav } from "@/hooks/use-nav"
-import { localizePath, stripSpanishPrefix } from "@/lib/i18n-routing"
+import { localizePath, stripSpanishPrefix, isSpanishPath } from "@/lib/i18n-routing"
+import { landingPages } from "@/lib/landing-pages"
+import { landingPagesEs } from "@/lib/landing-pages-es"
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
@@ -17,6 +19,10 @@ export function Navigation() {
   const [mounted, setMounted] = useState(false)
   const pathname = usePathname()
   const navLinks = useNav()
+  const serviceLinks = (isSpanishPath(pathname || "/") ? landingPagesEs : landingPages).map((page) => ({
+    href: localizePath(pathname || "/", `/${page.slug}`),
+    label: page.hero.eyebrow,
+  }))
 
   useEffect(() => {
     setMounted(true)
@@ -54,6 +60,36 @@ export function Navigation() {
             {navLinks.map((link) => {
               const href = localizePath(pathname || "/", link.href)
               const isActive = stripSpanishPrefix(pathname || "/") === link.href
+              if (link.href === "/services") {
+                return (
+                  <div key={link.href} className="relative group">
+                    <Link
+                      href={href}
+                      className={`relative px-4 py-2 text-sm font-medium rounded-lg transition-colors duration-300 inline-flex ${
+                        isActive ? "text-primary" : "text-muted-foreground hover:text-foreground"
+                      }`}
+                    >
+                      <span className="relative z-10">{link.label}</span>
+                      {isActive && (
+                        <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary" />
+                      )}
+                    </Link>
+                    <div className="invisible opacity-0 translate-y-2 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 focus-within:visible focus-within:opacity-100 focus-within:translate-y-0 absolute left-0 top-full pt-3 transition-all duration-200">
+                      <div className="w-72 rounded-xl border border-border bg-background/95 p-2 shadow-xl backdrop-blur-xl">
+                        {serviceLinks.map((service) => (
+                          <Link
+                            key={service.href}
+                            href={service.href}
+                            className="block rounded-lg px-3 py-2.5 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+                          >
+                            {service.label}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                )
+              }
               return (
                 <Link
                   key={link.href}
@@ -111,18 +147,33 @@ export function Navigation() {
               const href = localizePath(pathname || "/", link.href)
               const isActive = stripSpanishPrefix(pathname || "/") === link.href
               return (
-                <Link
-                  key={link.href}
-                  href={href}
-                  onClick={() => setIsOpen(false)}
-                  className={`block w-full text-left px-4 py-3 rounded-lg font-medium transition-all duration-300 ${
-                    isActive
-                      ? "bg-primary/10 text-foreground"
-                      : "text-muted-foreground hover:text-foreground hover:bg-muted"
-                  }`}
-                >
-                  {link.label}
-                </Link>
+                <div key={link.href}>
+                  <Link
+                    href={href}
+                    onClick={() => setIsOpen(false)}
+                    className={`block w-full text-left px-4 py-3 rounded-lg font-medium transition-all duration-300 ${
+                      isActive
+                        ? "bg-primary/10 text-foreground"
+                        : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                  {link.href === "/services" && (
+                    <div className="ml-4 mt-1 space-y-1 border-l border-border pl-3">
+                      {serviceLinks.map((service) => (
+                        <Link
+                          key={service.href}
+                          href={service.href}
+                          onClick={() => setIsOpen(false)}
+                          className="block rounded-lg px-4 py-2 text-sm text-muted-foreground hover:bg-muted hover:text-foreground"
+                        >
+                          {service.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
               )
             })}
           </div>

@@ -3,6 +3,7 @@ import { Code, Users, Award, Coffee, Code2, Server, Database, GitBranch, Palette
 export const services = [
   {
     id: "audit-action-plan",
+    landingPageHref: "/website-audit",
     title: "Website Audit & Action Plan",
     description: "A focused technical and conversion audit for business owners who know their website has problems, but do not know what to fix first. I review speed, security, SEO basics, UX friction, plugins, hosting, and maintenance risks, then give you a prioritized plan.",
     icon: Search,
@@ -28,6 +29,7 @@ export const services = [
   },
   {
     id: "optimize-protect",
+    landingPageHref: "/wordpress-speed-optimization",
     title: "Optimize & Protect Your Website",
     description: "For websites that already exist but feel slow, fragile, outdated, or risky. I improve performance, clean technical debt, update risky pieces, harden the site, and make the platform easier to maintain.",
     icon: Shield,
@@ -46,6 +48,7 @@ export const services = [
   },
   {
     id: "hacked-site-recovery",
+    landingPageHref: "/hacked-wordpress-recovery",
     title: "Hacked Site Recovery",
     description: "Your site's been hacked. Don't panic. I'll clean the malware, close the vulnerabilities, restore your content, and implement protections to prevent it from happening again. Fast response, minimal downtime.",
     icon: Server,
@@ -71,6 +74,7 @@ export const services = [
   },
   {
     id: "rebuild-migrate",
+    landingPageHref: "/website-migration",
     title: "Rebuild & Platform Migration",
     description: "When the current platform is holding the business back, I rebuild or migrate the site with a plan for content, SEO, redirects, integrations, performance, and maintainability.",
     icon: Globe,
@@ -98,6 +102,7 @@ export const services = [
   },
   {
     id: "websites-mvps",
+    landingPageHref: "/website-audit",
     title: "Websites & MVPs",
     description: "A new website, landing page, CMS build, or MVP for businesses that need something clear, fast, maintainable, and credible. I handle strategy, UX direction, development, launch, and the technical setup behind it.",
     icon: Layout,
@@ -119,6 +124,7 @@ export const services = [
   },
   {
     id: "ongoing-partner",
+    landingPageHref: "/wordpress-maintenance",
     title: "Ongoing Website Partner",
     description: "Monthly technical support for businesses that need someone to keep the site healthy: updates, fixes, security checks, performance improvements, small feature work, and technical coordination.",
     icon: Clock,

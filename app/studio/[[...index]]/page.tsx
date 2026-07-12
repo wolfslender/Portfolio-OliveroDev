@@ -5,6 +5,10 @@ export const dynamic = 'force-static'
 
 export const metadata = {
   title: 'Sanity Studio',
+  robots: {
+    index: false,
+    follow: false,
+  },
 }
 
 export const viewport = {

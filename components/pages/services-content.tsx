@@ -7,7 +7,9 @@ import { useServicesPage } from "@/hooks/use-services-page"
 import { useCommon } from "@/hooks/use-common"
 import { AlertTriangle, ArrowRight, CheckCircle2, Clock, MessageSquare, Target, TrendingUp } from "lucide-react"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
+import { localizePath } from "@/lib/i18n-routing"
 import { useTranslation } from "react-i18next"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
 import type { Service } from "@/lib/types"
@@ -17,6 +19,7 @@ export default function ServicesContent() {
   const servicesPage = useServicesPage()
   const common = useCommon()
   const { t, i18n } = useTranslation()
+  const pathname = usePathname()
 
   const [region, setRegion] = useState<"latam" | "usa">("latam")
   const [mounted, setMounted] = useState(false)
@@ -284,16 +287,25 @@ export default function ServicesContent() {
                     )}
 
                     {isQuote ? (
-                      <Button
-                        size="lg"
-                        className="rounded-full h-14 px-8 text-lg font-bold group shadow-xl hover:shadow-primary/20 transition-all cursor-pointer"
-                        onClick={() => { setQuoteService(service); setSelectedOption("") }}
-                      >
-                        {t('servicesContent.requestQuote')} <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                      </Button>
+                      <div className="flex flex-col sm:flex-row gap-3">
+                        {service.landingPageHref && (
+                          <Button asChild size="lg" variant="outline" className="rounded-full h-14 px-8 text-lg font-bold group">
+                            <Link href={localizePath(pathname || "/", service.landingPageHref)}>
+                              {t('servicesContent.exploreService')} <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                            </Link>
+                          </Button>
+                        )}
+                        <Button
+                          size="lg"
+                          className="rounded-full h-14 px-8 text-lg font-bold group shadow-xl hover:shadow-primary/20 transition-all cursor-pointer"
+                          onClick={() => { setQuoteService(service); setSelectedOption("") }}
+                        >
+                          {t('servicesContent.requestQuote')} <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                        </Button>
+                      </div>
                     ) : (
                       <Button asChild size="lg" className="rounded-full h-14 px-8 text-lg font-bold group shadow-xl hover:shadow-primary/20 transition-all">
-                        <Link href="/contact?audit=true">
+                        <Link href={localizePath(pathname || "/", service.landingPageHref || "/contact?audit=true")}>
                           {common.getStarted} <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                         </Link>
                       </Button>
