@@ -364,7 +364,7 @@ export const projects = [
   {
     title: "D.Med Healthcare Group",
     slug: "dmed-healthcare-group",
-    description: "Developed a drag-and-drop task management app with real-time updates, team collaboration, and authentication features.",
+    description: "Corporate website for an international healthcare group, built to present its services clearly across devices and give its team a reliable content platform.",
     image: "/projects/dmed.jpg",
     tags: ["WordPress", "PHP", "CSS", "JavaScript"],
     category: "fullstack",

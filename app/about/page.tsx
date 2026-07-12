@@ -5,7 +5,7 @@ import { siteConfig } from "@/lib/config"
 
 export const metadata: Metadata = {
   title: "About Me",
-  description: "Senior Frontend Engineer specializing in React, Next.js, WordPress, and Webflow. Certified in Google Analytics, cybersecurity, and SEO. Based in Santo Domingo.",
+  description: "Meet Alexis Olivero, a senior web specialist helping established businesses improve website performance, security, maintainability, and digital delivery.",
   alternates: { canonical: `${siteConfig.url}/about/` },
 }
 

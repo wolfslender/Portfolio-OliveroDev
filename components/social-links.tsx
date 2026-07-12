@@ -11,11 +11,6 @@ interface SocialLinksProps {
 }
 
 export function SocialLinks({ className, iconClassName, variant = "simple" }: SocialLinksProps) {
-  const handleEmailClick = (e: React.MouseEvent) => {
-    e.preventDefault()
-    window.location.href = `mailto:${contact.email}`
-  }
-
   const socialLinks = [
     { 
       icon: Github, 
@@ -37,9 +32,8 @@ export function SocialLinks({ className, iconClassName, variant = "simple" }: So
     },
     { 
       icon: Mail, 
-      href: "#", 
+      href: `mailto:${contact.email}`,
       label: "Email", 
-      onClick: handleEmailClick, 
       colorClass: "hover:bg-orange-500 hover:text-white"
     },
   ]
@@ -50,10 +44,9 @@ export function SocialLinks({ className, iconClassName, variant = "simple" }: So
         <a
           key={social.label}
           href={social.href}
-          target={social.href.startsWith("#") ? undefined : "_blank"}
-          rel={social.href.startsWith("#") ? undefined : "noopener noreferrer"}
+          target={social.href.startsWith("mailto:") ? undefined : "_blank"}
+          rel={social.href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
           aria-label={social.label}
-          onClick={social.onClick}
           className={cn(
             "transition-all duration-300 cursor-pointer",
             variant === "simple" && "text-muted-foreground hover:text-foreground",

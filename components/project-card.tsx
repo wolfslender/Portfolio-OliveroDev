@@ -139,14 +139,17 @@ export function ProjectCard({
           >
             {common.viewProject} <ArrowUpRight className="h-4 w-4" />
           </Link>
-          <Link
-            href={github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center rounded-full border border-input bg-background/50 backdrop-blur-sm p-2.5 text-foreground shadow-sm transition-all hover:bg-accent hover:text-accent-foreground hover:scale-105 hover:border-accent"
-          >
-            <Github className="h-5 w-5" />
-          </Link>
+          {github && github !== "#" && (
+            <Link
+              href={github}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${t('projectCard.viewSource', 'View source code')}: ${title}`}
+              className="inline-flex items-center justify-center rounded-full border border-input bg-background/50 backdrop-blur-sm p-2.5 text-foreground shadow-sm transition-all hover:bg-accent hover:text-accent-foreground hover:scale-105 hover:border-accent"
+            >
+              <Github className="h-5 w-5" />
+            </Link>
+          )}
         </div>
       </div>
     </Card>

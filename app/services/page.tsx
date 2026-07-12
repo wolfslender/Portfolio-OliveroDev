@@ -3,8 +3,8 @@ import { siteConfig } from "@/lib/config"
 import { getServiceListSchema } from "@/lib/seo"
 
 export const metadata: Metadata = {
-  title: "Web Development Services — Websites, Performance, Security & Migration",
-  description: "Professional web services: custom websites & MVPs, performance optimization, web security audits, hacked site recovery, and platform migration. Based in Santo Domingo, serving clients worldwide.",
+  title: "Website Performance, Security, Recovery & Migration Services",
+  description: "Performance, security, recovery, and modernization services for established businesses with slow, vulnerable, or hard-to-manage websites.",
   keywords: [
     "web development services",
     "desarrollador web freelance",

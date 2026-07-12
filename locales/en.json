@@ -1,12 +1,12 @@
 {
   "hero": {
     "title": {
-      "prefix": "Websites that actually",
-      "highlight": "bring in business."
+      "prefix": "Turn your underperforming website into a",
+      "highlight": "fast, secure growth platform."
     },
-    "roles": ["UI/UX that converts", "SEO + Speed", "Webflow / WordPress / Next.js", "I do the work myself"],
-    "description": "I build and fix websites for businesses that need them to load fast, look legit, and turn visitors into paying customers. No fluff, no agencies — just me.",
-    "proof": ["I reply within 24h", "Built for SEO from day one", "Launch support included"],
+    "roles": ["Performance + conversion", "Security + recovery", "Migration + rebuilds", "Direct senior involvement"],
+    "description": "I help established businesses fix websites that are slow, vulnerable, hard to manage, or not generating qualified opportunities. You work directly with me from audit to launch.",
+    "proof": ["Personal reply within 24 hours", "Clear scope and measurable priorities", "Launch support included"],
     "location": "Based in Santo Domingo · Working worldwide",
     "buttons": {
       "primary": "Book a Strategy Call",
@@ -29,16 +29,16 @@
   "pluginsNav": "Plugins",
   "about": {
     "title": "Why Work With Me",
-    "description": "When you hire an agency, the senior person sells you the project and a junior builds it. When you work with me, you get me — 10+ years of experience, directly on your project. No handoffs, no surprises.",
+    "description": "You work directly with the senior developer responsible for the audit, strategy, implementation, and launch. More than 10 years of experience, one accountable technical partner, and no handoffs.",
     "experience": "Where I've worked",
     "education": "Education",
     "softSkills": "How I work"
   },
   "aboutPage": {
     "aboutLabel": "About",
-    "heroTitle": "Building websites and tools",
-    "heroHighlight": "that actually work",
-    "heroDescription": "10+ years building for government, enterprise, and global platforms. I focus on speed, security, and making sure the site does what it's supposed to do — bring in results.",
+    "heroTitle": "I turn complex website problems into",
+    "heroHighlight": "clear, reliable solutions",
+    "heroDescription": "For more than 10 years, I have helped government, healthcare, enterprise, and global platforms improve performance, security, maintainability, and digital delivery.",
     "heroDescription2": "No project managers, no junior devs, no handoffs. From discovery to deployment, I handle your project end-to-end. Government portals, global EdTech platforms, healthcare systems — I've shipped across industries and I know what works.",
     "workedTitle": "Where",
     "workedHighlight": "I've worked"
@@ -348,8 +348,8 @@
   },
   "servicesPage": {
     "hero": {
-      "title": "What I can do for you",
-      "description": "From MVPs to full-scale platforms. I handle the tech so you can focus on the business."
+      "title": "Fix what is holding your website back",
+      "description": "Performance, security, recovery, and modernization for established businesses that need a website they can trust and grow with."
     },
     "methodology": {
       "title": "How I work",
@@ -370,55 +370,70 @@
       }
     },
     "cta": {
-      "title": "Ready to get started?",
-      "description": "Tell me what you're building. I'll reply with a plan and timeline within 24 hours.",
+      "title": "Not sure which service you need?",
+      "description": "Send me your website and the main problem. I will reply personally with the clearest next step within 24 hours.",
       "button": "Book a Strategy Call"
     }
   },
   "contactPage": {
-    "title": "Let's Talk",
-    "description": "Got a project in mind? Just want to say hi? I'm always open to a conversation.",
+    "title": "Tell me what is holding your website back",
+    "description": "Share your website, the main problem, and the result you need. I will reply personally with the clearest next step.",
     "emailMe": "Email Me",
     "whatsappMe": "WhatsApp Me",
     "socialConnect": "Or find me on social media",
-    "quote": "\"Turning complex challenges into high-performance digital experiences.\"",
+    "quote": "A clear first conversation. No pressure, no agency handoff, and no generic sales pitch.",
     "bookCall": "Book a Strategy Call",
-    "freeConsultation": "Free 30-min UI/UX consultation",
+    "freeConsultation": "Free 30-minute website strategy call",
     "sendEmail": "Send an Email",
     "copyEmail": "Copy email address"
   },
   "projects": [
     {
+      "slug": "media-audit",
+      "description": "WordPress plugin that finds unused media files, helps recover storage space, and reduces cleanup risk with smart detection and a safe trash workflow."
+    },
+    {
+      "slug": "cybernetips",
       "description": "Global cybersecurity company — the go-to for digital asset recovery and incident response."
     },
     {
+      "slug": "co-active-training-institute",
       "description": "Fullstack dev for a leadership platform with 150k+ users. Boosted organic traffic 40% and cut server response time 25%."
     },
     {
+      "slug": "departamento-de-educacion-pr",
       "description": "Led the digital transformation of Puerto Rico's government portal. 99.9% uptime, full WCAG 2.1 AA compliance, 3M+ citizens served."
     },
     {
-      "description": "Task management SaaS with drag-and-drop and real-time WebSocket collaboration. Cut onboarding time by 40%."
+      "slug": "dmed-healthcare-group",
+      "description": "Corporate website for an international healthcare group, built to present its services clearly across devices and give its team a reliable content platform."
     },
     {
+      "slug": "acuastock",
       "description": "Niche e-commerce for ornamental fish and aquarium supplies. Product catalog, import services, the works."
     },
     {
+      "slug": "keitel-de-luna-cybersecurity-analyst",
       "description": "Certified professional with credentials from IBM and Google. Focus on secure systems and vulnerability management."
     },
     {
+      "slug": "cst-puerto-rico-website",
       "description": "Traffic safety platform — processed 50k+ incident reports in year one with real-time mapping."
     },
     {
+      "slug": "truenorth-corporation",
       "description": "Migrated from WordPress to Webflow. Page speed went from 45 to 95. Custom API integrations for automated updates."
     },
     {
+      "slug": "govvalue",
       "description": "Blog engine built for SEO. Auto-generated schema and pillar content structures that actually moved keyword rankings."
     },
     {
+      "slug": "aesan-website",
       "description": "Public health portal for Puerto Rico Government. Handled 1M+ monthly visitors during peak with zero downtime."
     },
     {
+      "slug": "centro-de-sonografia-pre-vue",
       "description": "Medical imaging platform with AI diagnostics. Increased appointment bookings 60% with a cleaner UX."
     }
   ],
@@ -474,9 +489,9 @@
     }
   ],
   "problemSection": {
-    "titlePrefix": "Is your website",
-    "titleHighlight": "working for you?",
-    "description": "Most sites I see have the same problems. Here is how I fix them.",
+    "titlePrefix": "Your website should support growth,",
+    "titleHighlight": "not slow it down.",
+    "description": "I focus on the technical and conversion problems that cost established businesses trust, time, and qualified opportunities.",
     "cta": "See how I solve these",
     "problems": [
       { "title": "Your site is slow", "description": "Every second of load time costs you visitors. I build for speed from the ground up." },
@@ -579,7 +594,7 @@
     "startProject": "Start a Project"
   },
   "servicesContent": {
-    "serviceLabel": "Service {number}",
+    "serviceLabel": "Service {{number}}",
     "startingAt": "Starting at",
     "customQuote": "Custom Quote",
     "requestQuote": "Request a Quote",

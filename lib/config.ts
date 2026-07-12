@@ -1,8 +1,8 @@
 export const siteConfig = {
   name: "Alexis Olivero",
-  title: "Full-Stack Developer — Webflow, WordPress & Next.js",
+  title: "Website Performance, Security & Modernization Specialist",
   description:
-    "I build websites that load fast, look professional, and actually bring in business. Based in Santo Domingo, working with clients worldwide.",
+    "I help established businesses turn slow, vulnerable, hard-to-manage websites into fast, secure platforms built to earn trust and generate qualified opportunities.",
   url: "https://oliverodev.com",
   ogImage: "https://oliverodev.com/opengraph-image",
   links: {

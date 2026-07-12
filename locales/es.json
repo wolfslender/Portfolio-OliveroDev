@@ -1,12 +1,12 @@
 {
   "hero": {
     "title": {
-      "prefix": "Websites que de verdad",
-      "highlight": "traen clientes."
+      "prefix": "Convierte una web que no rinde en una plataforma",
+      "highlight": "rápida, segura y lista para crecer."
     },
-    "roles": ["UX que convierte", "SEO + Velocidad", "Webflow / WordPress / Next.js", "Yo mismo hago el trabajo"],
-    "description": "Construyo y arreglo websites para negocios que necesitan cargar rápido, verse profesionales y convertir visitantes en clientes reales. Sin agencias, sin vueltas — solo yo.",
-    "proof": ["Respondo en menos de 24h", "Construido para SEO desde el día 1", "Soporte de lanzamiento incluido"],
+    "roles": ["Rendimiento + conversión", "Seguridad + recuperación", "Migraciones + reconstrucción", "Atención senior directa"],
+    "description": "Ayudo a empresas establecidas a corregir webs lentas, vulnerables, difíciles de administrar o que no generan oportunidades calificadas. Trabajas directamente conmigo desde la auditoría hasta el lanzamiento.",
+    "proof": ["Respuesta personal en menos de 24 horas", "Alcance claro y prioridades medibles", "Soporte de lanzamiento incluido"],
     "location": "Basado en Santo Domingo · Trabajo con clientes globales",
     "buttons": {
       "primary": "Agendar Llamada Estratégica",
@@ -29,16 +29,16 @@
   "pluginsNav": "Plugins",
   "about": {
     "title": "Por Qué Trabajar Conmigo",
-    "description": "Cuando contratas una agencia, el socio senior te vende el proyecto y un becario lo construye. Cuando trabajas conmigo, recibes directamente mis más de 10 años de experiencia. Sin intermediarios, sin sorpresas.",
+    "description": "Trabajas directamente con el desarrollador senior responsable de la auditoría, estrategia, implementación y lanzamiento. Más de 10 años de experiencia, un solo responsable técnico y sin traspasos.",
     "experience": "Dónde he trabajado",
     "education": "Educación",
     "softSkills": "Cómo trabajo"
   },
   "aboutPage": {
     "aboutLabel": "Sobre mí",
-    "heroTitle": "Construyo websites y herramientas",
-    "heroHighlight": "que sí funcionan",
-    "heroDescription": "Más de 10 años construyendo para gobierno, empresas y plataformas globales. Me enfoco en velocidad, seguridad y asegurarme de que el sitio haga lo que debe hacer — traer resultados.",
+    "heroTitle": "Convierto problemas web complejos en",
+    "heroHighlight": "soluciones claras y confiables",
+    "heroDescription": "Durante más de 10 años he ayudado a plataformas gubernamentales, de salud, empresariales y globales a mejorar rendimiento, seguridad, mantenimiento y entrega digital.",
     "heroDescription2": "Sin project managers, sin juniors, sin traspasos. Desde el descubrimiento hasta el despliegue, manejo tu proyecto de principio a fin. Portales gubernamentales, plataformas globales EdTech, sistemas de salud — he trabajado en múltiples industrias y sé lo que funciona.",
     "workedTitle": "Dónde",
     "workedHighlight": "he trabajado"
@@ -348,8 +348,8 @@
   },
   "servicesPage": {
     "hero": {
-      "title": "Lo que puedo hacer por ti",
-      "description": "Desde MVPs hasta plataformas completas. Yo manejo la tecnología para que tú te enfoques en el negocio."
+      "title": "Corrige lo que está frenando tu web",
+      "description": "Rendimiento, seguridad, recuperación y modernización para empresas establecidas que necesitan una web confiable y preparada para crecer."
     },
     "methodology": {
       "title": "Cómo trabajo",
@@ -370,55 +370,70 @@
       }
     },
     "cta": {
-      "title": "¿Listo para empezar?",
-      "description": "Cuéntame qué vas a construir. Te respondo con un plan y timeline en menos de 24 horas.",
+      "title": "¿No sabes qué servicio necesitas?",
+      "description": "Envíame tu web y el problema principal. Te responderé personalmente con el próximo paso más claro en menos de 24 horas.",
       "button": "Agendar Llamada Estratégica"
     }
   },
   "contactPage": {
-    "title": "Hablemos",
-    "description": "¿Tienes un proyecto en mente? ¿O solo quieres saludar? Siempre estoy abierto a conversar.",
+    "title": "Cuéntame qué está frenando tu web",
+    "description": "Comparte tu web, el problema principal y el resultado que necesitas. Te responderé personalmente con el próximo paso más claro.",
     "emailMe": "Envíame un Email",
     "whatsappMe": "WhatsApp",
     "socialConnect": "O búscame en redes sociales",
-    "quote": "\"Convirtiendo desafíos complejos en experiencias digitales de alto rendimiento.\"",
+    "quote": "Una primera conversación clara, sin presión, sin traspasos de agencia y sin un discurso de ventas genérico.",
     "bookCall": "Agendar Llamada Estratégica",
-    "freeConsultation": "Consultoría UI/UX gratuita de 30 min",
+    "freeConsultation": "Llamada estratégica gratuita de 30 minutos",
     "sendEmail": "Enviar un Email",
     "copyEmail": "Copiar dirección de correo"
   },
   "projects": [
     {
+      "slug": "media-audit",
+      "description": "Plugin de WordPress que encuentra archivos multimedia sin uso, ayuda a recuperar almacenamiento y reduce el riesgo de limpieza mediante detección inteligente y una papelera segura."
+    },
+    {
+      "slug": "cybernetips",
       "description": "Empresa global de ciberseguridad — líder en recuperación de activos digitales y respuesta a incidentes."
     },
     {
+      "slug": "co-active-training-institute",
       "description": "Desarrollo fullstack para plataforma de liderazgo con 150k+ usuarios. Aumenté tráfico orgánico 40% y reduje respuesta del servidor 25%."
     },
     {
+      "slug": "departamento-de-educacion-pr",
       "description": "Lideré la transformación digital del portal de gobierno de Puerto Rico. 99.9% uptime, WCAG 2.1 AA, 3M+ ciudadanos servidos."
     },
     {
-      "description": "SaaS de gestión de tareas con drag-and-drop y colaboración en tiempo real. Reduje el onboarding 40%."
+      "slug": "dmed-healthcare-group",
+      "description": "Sitio corporativo para un grupo internacional de salud, construido para presentar sus servicios claramente en cualquier dispositivo y ofrecer al equipo una plataforma de contenido confiable."
     },
     {
+      "slug": "acuastock",
       "description": "E-commerce especializado en peces ornamentales y accesorios de acuario. Catálogo, importaciones, todo."
     },
     {
+      "slug": "keitel-de-luna-cybersecurity-analyst",
       "description": "Profesional certificado por IBM y Google. Enfoque en sistemas seguros y gestión de vulnerabilidades."
     },
     {
+      "slug": "cst-puerto-rico-website",
       "description": "Plataforma de seguridad vial — procesó 50k+ reportes de incidentes en su primer año con mapas en tiempo real."
     },
     {
+      "slug": "truenorth-corporation",
       "description": "Migración de WordPress a Webflow. Velocidad pasó de 45 a 95. APIs personalizadas para actualizaciones automáticas."
     },
     {
+      "slug": "govvalue",
       "description": "Motor de blog construido para SEO. Esquemas automáticos y contenido pilar que mejoraron rankings."
     },
     {
+      "slug": "aesan-website",
       "description": "Portal de salud pública para el Gobierno de Puerto Rico. 1M+ visitas mensuales en pico con cero caídas."
     },
     {
+      "slug": "centro-de-sonografia-pre-vue",
       "description": "Plataforma de imágenes médicas con IA. Aumenté reservas de citas 60% con una UX más limpia."
     }
   ],
@@ -475,9 +490,9 @@
     }
   ],
   "problemSection": {
-    "titlePrefix": "¿Tu sitio web",
-    "titleHighlight": "está trabajando para ti?",
-    "description": "La mayoría de los sitios que veo tienen los mismos problemas. Así es como los resuelvo.",
+    "titlePrefix": "Tu web debe impulsar el crecimiento,",
+    "titleHighlight": "no frenarlo.",
+    "description": "Me enfoco en los problemas técnicos y de conversión que cuestan confianza, tiempo y oportunidades calificadas a empresas establecidas.",
     "cta": "Mira cómo resuelvo esto",
     "problems": [
       { "title": "Tu sitio es lento", "description": "Cada segundo de carga te cuesta visitantes. Construyo pensando en velocidad desde el inicio." },
@@ -580,7 +595,7 @@
     "startProject": "Iniciar un Proyecto"
   },
   "servicesContent": {
-    "serviceLabel": "Servicio {number}",
+    "serviceLabel": "Servicio {{number}}",
     "startingAt": "Desde",
     "customQuote": "Cotización Personalizada",
     "requestQuote": "Solicitar Cotización",
