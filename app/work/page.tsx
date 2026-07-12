@@ -37,15 +37,15 @@ export default function WorkPage() {
                 {
                   "@type": "CreativeWork",
                   position: 2,
-                  name: "Puerto Rico Government Portal",
-                  description: "Digital transformation for Puerto Rico's government portal. Achieved 99.9% uptime and WCAG 2.1 AA compliance.",
+                  name: "Puerto Rico Department of Education",
+                  description: "Public-sector WordPress platform built from scratch with custom development and government file integrations.",
                   creator: { "@type": "Person", name: siteConfig.author }
                 },
                 {
                   "@type": "CreativeWork",
                   position: 3,
                   name: "Traffic Safety Platform",
-                  description: "Traffic safety platform that processed 50k+ incident reports. Integrated real-time mapping systems.",
+                  description: "Traffic-safety platform with accident-statistics API integrations, built in WordPress and later migrated to Webflow.",
                   creator: { "@type": "Person", name: siteConfig.author }
                 }
               ]

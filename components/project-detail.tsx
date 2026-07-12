@@ -1,6 +1,6 @@
 "use client"
 
-import { ArrowLeft, ArrowRight, ExternalLink, Github, TrendingUp, Users, Zap, Target } from "lucide-react"
+import { ArrowLeft, ArrowRight, CheckCircle2, ExternalLink, Github, TrendingUp, Users, Zap, Target } from "lucide-react"
 import Link from "next/link"
 import ExportedImage from "next-image-export-optimizer"
 import { Badge } from "@/components/ui/badge"
@@ -25,7 +25,7 @@ const metricIcons: Record<string, React.ComponentType<{ className?: string }>> =
 export function ProjectDetail({ project, related }: ProjectDetailProps) {
   const { t } = useTranslation()
   const common = useCommon()
-  const { title, description, image, tags, github, demo, industry, projectType, metrics, challenge, solution, impactStatement } = project
+  const { title, description, image, tags, github, demo, industry, projectType, metrics, challenge, solution, impactStatement, role, engagement, responsibilities } = project
 
   return (
     <main className="pt-24 pb-20">
@@ -82,6 +82,12 @@ export function ProjectDetail({ project, related }: ProjectDetailProps) {
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl">
               {description}
             </p>
+            {(role || engagement) && (
+              <div className="flex flex-wrap gap-3 mt-6">
+                {role && <Badge className="rounded-full px-4 py-2 bg-muted text-foreground border-border">{t('projectDetail.role')}: {role}</Badge>}
+                {engagement && <Badge className="rounded-full px-4 py-2 bg-muted text-foreground border-border">{t('projectDetail.engagement')}: {engagement}</Badge>}
+              </div>
+            )}
           </div>
         </div>
       </section>
@@ -150,6 +156,22 @@ export function ProjectDetail({ project, related }: ProjectDetailProps) {
                 </div>
               </ScrollReveal>
             )}
+          </div>
+        </section>
+      )}
+
+      {responsibilities && responsibilities.length > 0 && (
+        <section className="px-4 sm:px-6 lg:px-8 mb-20">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-2xl font-bold mb-6">{t('projectDetail.responsibilities')}</h2>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {responsibilities.map((responsibility) => (
+                <div key={responsibility} className="flex gap-3 p-4 border border-border/50 bg-card">
+                  <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                  <p className="text-muted-foreground leading-relaxed">{responsibility}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
       )}

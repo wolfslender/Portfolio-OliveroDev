@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 import { useServices } from "@/hooks/use-services"
 import { useServicesPage } from "@/hooks/use-services-page"
 import { useCommon } from "@/hooks/use-common"
-import { ArrowRight, Clock, Target, TrendingUp, MessageSquare } from "lucide-react"
+import { AlertTriangle, ArrowRight, CheckCircle2, Clock, MessageSquare, Target, TrendingUp } from "lucide-react"
 import Link from "next/link"
 import { cn } from "@/lib/utils"
 import { useTranslation } from "react-i18next"
@@ -45,6 +45,19 @@ export default function ServicesContent() {
             <p className="text-muted-foreground text-xl md:text-2xl leading-relaxed">
               {servicesPage.hero.description}
             </p>
+            <div className="mt-8 flex flex-col sm:flex-row gap-3">
+              <Button asChild size="lg" className="rounded-full h-12 px-7 font-bold group">
+                <Link href="/contact?audit=true">
+                  {t('servicesContent.primaryCta')}
+                  <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="rounded-full h-12 px-7 font-bold">
+                <Link href="/work">
+                  {common.seeWork}
+                </Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
@@ -61,7 +74,7 @@ export default function ServicesContent() {
                   : "text-muted-foreground hover:text-foreground"
               )}
             >
-              🌎 {t('servicesContent.latam')}
+              {t('servicesContent.latam')}
             </button>
             <button
               onClick={() => setRegion("usa")}
@@ -72,7 +85,7 @@ export default function ServicesContent() {
                   : "text-muted-foreground hover:text-foreground"
               )}
             >
-              🌍 {t('servicesContent.usa')}
+              {t('servicesContent.usa')}
             </button>
           </div>
         </div>
@@ -84,7 +97,7 @@ export default function ServicesContent() {
         const isQuoteWithOptions = !!service.quoteOptions
 
         return (
-          <div key={index}>
+          <div key={service.id}>
             <section className={cn(
               "px-4 sm:px-6 lg:px-8 py-24 md:py-32 relative overflow-hidden",
               index % 2 === 0 ? "bg-primary/[0.03]" : "bg-secondary/[0.03]"
@@ -124,12 +137,27 @@ export default function ServicesContent() {
                     <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6 max-w-3xl">
                       {service.description}
                     </p>
-                    <Link
-                      href="/work"
-                      className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:text-primary/80 transition-colors mb-10"
-                    >
-                      {common.seeWork} <ArrowRight className="w-3.5 h-3.5" />
-                    </Link>
+
+                    <div className="grid md:grid-cols-2 gap-4 mb-10 max-w-5xl">
+                      <div className="rounded-xl border border-border/40 bg-background/70 p-5">
+                        <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-muted-foreground mb-3">
+                          <AlertTriangle className="w-4 h-4 text-primary" />
+                          {t('servicesContent.problemSolved')}
+                        </div>
+                        <p className="text-sm md:text-base leading-relaxed text-foreground">
+                          {service.painPoint}
+                        </p>
+                      </div>
+                      <div className="rounded-xl border border-border/40 bg-background/70 p-5">
+                        <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-muted-foreground mb-3">
+                          <CheckCircle2 className="w-4 h-4 text-primary" />
+                          {t('servicesContent.proofPoint')}
+                        </div>
+                        <p className="text-sm md:text-base leading-relaxed text-muted-foreground">
+                          {service.evidence}
+                        </p>
+                      </div>
+                    </div>
 
                     <div className="flex flex-wrap gap-2 mb-10">
                       {service.features.map((feature, fIdx) => (
@@ -344,7 +372,7 @@ export default function ServicesContent() {
               className="flex-1 cursor-pointer"
               onClick={() => setQuoteService(null)}
             >
-              Cancel
+              {t('servicesContent.cancel')}
             </Button>
             <Button
               asChild

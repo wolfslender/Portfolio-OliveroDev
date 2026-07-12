@@ -2,69 +2,58 @@ import { Code, Users, Award, Coffee, Code2, Server, Database, GitBranch, Palette
 
 export const services = [
   {
-    title: "Websites & MVPs",
-    description: "A working website or MVP in weeks — not months. Strategy, UX, and build all in one package. From concept to launch, I handle everything so you can focus on growing your business.",
-    icon: Layout,
-    features: ["Rapid Prototyping", "Conversion-Focused UX", "CMS or App Build", "Launch Strategy"],
-    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
-    caseStudyTitle: "Cybernetips",
-    color: "text-pink-500",
-    bgColor: "bg-pink-500/10",
-    bestFor: "Founders and growing businesses that need a new site or MVP fast.",
-    timeline: "4-6 weeks",
-    outcome: "A fast, premium website or MVP built to win trust, capture leads, and support growth.",
-    deliverables: ["Strategy Sprint", "UX/UI Direction", "CMS or Product Build", "Launch Support"],
-    quoteOptions: [
-      { id: "landing-wordpress", name: "Landing Page / CMS Website", description: "Ideal for business sites, blogs, and content-driven projects. Built on a proven CMS so you can manage content yourself." },
-      { id: "mvp-framework", name: "MVP with Framework", description: "Custom-built web app with React, Next.js, or Node. Perfect for SaaS products, interactive platforms, and scalable projects." },
-    ],
-  },
-  {
-    title: "Web Performance Optimization",
-    description: "Slow sites kill conversions. I audit, optimize, and fine-tune every layer — from server config to frontend assets — so your site loads in under 2 seconds and scores 90+ on Core Web Vitals.",
-    icon: Zap,
-    features: ["Performance Audit", "Core Web Vitals Optimization", "Image & Asset Optimization", "Caching Strategy", "CDN Setup"],
-    technologies: ["Lighthouse", "PageSpeed Insights", "CDN", "Caching"],
+    id: "audit-action-plan",
+    title: "Website Audit & Action Plan",
+    description: "A focused technical and conversion audit for business owners who know their website has problems, but do not know what to fix first. I review speed, security, SEO basics, UX friction, plugins, hosting, and maintenance risks, then give you a prioritized plan.",
+    icon: Search,
+    features: ["Performance Review", "Security Review", "SEO Basics", "UX Friction", "Technical Roadmap"],
+    technologies: ["PageSpeed Insights", "Lighthouse", "WordPress", "Webflow", "Analytics"],
     caseStudyTitle: "Co-Active Training Institute",
-    color: "text-yellow-500",
-    bgColor: "bg-yellow-500/10",
-    bestFor: "Sites that are slow, have high bounce rates, or are losing conversions due to load time.",
-    timeline: "2-4 weeks",
-    outcome: "A fast website that loads in under 2 seconds, scores 90+ on Core Web Vitals, and keeps visitors engaged.",
-    deliverables: ["Performance Audit Report", "Optimization Roadmap", "Implementation", "Before/After Metrics"],
+    painPoint: "You are unsure whether to optimize, rebuild, migrate, or secure the site first.",
+    evidence: "Based on the same type of review work used across WordPress, Webflow, and public-sector projects.",
+    color: "text-cyan-500",
+    bgColor: "bg-cyan-500/10",
+    bestFor: "Established websites with performance, security, SEO, or maintenance doubts.",
+    timeline: "3-5 business days",
+    outcome: "A clear action plan that separates urgent fixes from nice-to-have improvements.",
+    deliverables: ["Audit Summary", "Priority Fix List", "Risk Notes", "Recommended Next Step"],
     regionPrices: {
       latam: [
-        { label: "Auditoría", min: 200, max: 350 },
-        { label: "Implementación de fixes", min: 400, max: 1200 },
+        { label: "Audit", min: 200, max: 350 },
       ],
       usa: [
         { label: "Audit", min: 400, max: 600 },
-        { label: "Fix Implementation", min: 1000, max: 3000 },
       ],
     },
   },
   {
-    title: "Web Security",
-    description: "Protect your website and your users. I implement comprehensive security measures — from firewalls and malware scanning to secure authentication and regular audits — so you can sleep at night.",
+    id: "optimize-protect",
+    title: "Optimize & Protect Your Website",
+    description: "For websites that already exist but feel slow, fragile, outdated, or risky. I improve performance, clean technical debt, update risky pieces, harden the site, and make the platform easier to maintain.",
     icon: Shield,
-    features: ["Security Audit", "Malware Scanning & Removal", "Firewall Setup", "SSL/TLS Configuration", "Ongoing Monitoring"],
-    technologies: ["Security Headers", "SSL/TLS", "WAF", "Malware Detection"],
-    caseStudyTitle: "Cybernetips",
+    features: ["Core Web Vitals", "Security Hardening", "Plugin Cleanup", "Access Review", "Technical SEO"],
+    technologies: ["WordPress", "PHP", "JavaScript", "Caching", "Security Headers"],
+    caseStudyTitle: "Co-Active Training Institute",
+    painPoint: "Your site works, but it is slow, exposed, hard to maintain, or quietly costing trust.",
+    evidence: "Ongoing contractor work supporting performance, security, maintenance, SEO, and visual fixes for a global training platform with 150K+ users.",
     color: "text-green-500",
     bgColor: "bg-green-500/10",
-    bestFor: "Businesses that handle sensitive data, process payments, or want to prevent costly security breaches.",
-    timeline: "1-3 weeks",
-    outcome: "A hardened, secure website protected against common vulnerabilities and threats.",
-    deliverables: ["Security Audit Report", "Hardening Implementation", "Monitoring Setup", "Incident Response Plan"],
-    pricingNote: "El alcance varía según el tamaño del sitio, la cantidad de usuarios y los niveles de acceso requeridos. Evaluamos tu caso y te damos una cotización justa.",
+    bestFor: "Businesses that want to improve the current website without rebuilding everything.",
+    timeline: "2-4 weeks",
+    outcome: "A faster, safer, cleaner website with fewer hidden risks and a stronger technical base.",
+    deliverables: ["Performance Fixes", "Security Hardening", "Plugin and Access Cleanup", "Before/After Notes"],
+    pricingNote: "Scope depends on site size, platform, user roles, plugin risk, hosting setup, and how much implementation is needed after the audit.",
   },
   {
+    id: "hacked-site-recovery",
     title: "Hacked Site Recovery",
     description: "Your site's been hacked. Don't panic. I'll clean the malware, close the vulnerabilities, restore your content, and implement protections to prevent it from happening again. Fast response, minimal downtime.",
     icon: Server,
     features: ["Emergency Malware Cleanup", "Vulnerability Patching", "Content Restoration", "Security Hardening", "Post-Recovery Monitoring"],
     technologies: ["Malware Detection", "Backup Recovery", "File Integrity Monitoring", "Security Scanning"],
     caseStudyTitle: "Cybernetips",
+    painPoint: "Your website is infected, redirecting users, showing warnings, or has suspicious access.",
+    evidence: "Security and cleanup experience across WordPress environments with outdated plugins, exposed endpoints, and abandoned user access.",
     color: "text-red-500",
     bgColor: "bg-red-500/10",
     bestFor: "Site owners whose website has been compromised, defaced, or infected with malware.",
@@ -81,12 +70,15 @@ export const services = [
     },
   },
   {
-    title: "Platform Migration",
-    description: "Moving from one platform to another without losing SEO, content, or functionality. Whether you're switching CMS platforms or rebuilding on a modern stack, I handle the migration so your business doesn't skip a beat.",
+    id: "rebuild-migrate",
+    title: "Rebuild & Platform Migration",
+    description: "When the current platform is holding the business back, I rebuild or migrate the site with a plan for content, SEO, redirects, integrations, performance, and maintainability.",
     icon: Globe,
-    features: ["SEO Preservation", "Content Migration", "Data Integrity Assurance", "Zero-Downtime Migration", "Post-Migration Support"],
-    technologies: ["Next.js", "Webflow", "Sanity", "API Integration"],
+    features: ["SEO Preservation", "Content Migration", "Redirect Planning", "CMS Strategy", "Post-Launch QA"],
+    technologies: ["WordPress", "Webflow", "Next.js", "Sanity", "API Integration"],
     caseStudyTitle: "Truenorth Corporation",
+    painPoint: "Your site is trapped in an old setup, difficult CMS, heavy theme, or fragile builder.",
+    evidence: "Migration work across Truenorth, Puerto Rico traffic-safety, and other public-sector/corporate websites.",
     color: "text-blue-500",
     bgColor: "bg-blue-500/10",
     bestFor: "Companies stuck on outdated platforms who want better performance, usability, and maintainability.",
@@ -103,6 +95,45 @@ export const services = [
         { label: "Cross-CMS Migration", min: 2500, max: 6000 },
       ],
     },
+  },
+  {
+    id: "websites-mvps",
+    title: "Websites & MVPs",
+    description: "A new website, landing page, CMS build, or MVP for businesses that need something clear, fast, maintainable, and credible. I handle strategy, UX direction, development, launch, and the technical setup behind it.",
+    icon: Layout,
+    features: ["Conversion-Focused UX", "CMS or App Build", "Responsive Development", "Technical SEO", "Launch Support"],
+    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "WordPress"],
+    caseStudyTitle: "Departamento de Educación PR",
+    painPoint: "You need a professional website or MVP, but you do not want a bloated build that becomes hard to maintain.",
+    evidence: "Includes from-scratch WordPress builds, public-sector websites, corporate sites, and custom web platforms.",
+    color: "text-pink-500",
+    bgColor: "bg-pink-500/10",
+    bestFor: "Founders, service businesses, and teams that need a new site or MVP with a real launch path.",
+    timeline: "4-8 weeks",
+    outcome: "A fast, credible website or MVP built to explain the offer, support SEO, and capture qualified leads.",
+    deliverables: ["Strategy Sprint", "UX/UI Direction", "CMS or Product Build", "Analytics and Launch Support"],
+    quoteOptions: [
+      { id: "landing-wordpress", name: "Landing Page / CMS Website", description: "Ideal for business sites, blogs, and content-driven projects. Built on a CMS or modern frontend depending on the use case." },
+      { id: "mvp-framework", name: "MVP with Framework", description: "Custom-built web app with React, Next.js, or Node. Useful for SaaS products, internal tools, and interactive platforms." },
+    ],
+  },
+  {
+    id: "ongoing-partner",
+    title: "Ongoing Website Partner",
+    description: "Monthly technical support for businesses that need someone to keep the site healthy: updates, fixes, security checks, performance improvements, small feature work, and technical coordination.",
+    icon: Clock,
+    features: ["Monthly Maintenance", "Small Feature Work", "Security Checks", "Performance Monitoring", "Technical Support"],
+    technologies: ["WordPress", "Webflow", "PHP", "JavaScript", "Hosting"],
+    caseStudyTitle: "Co-Active Training Institute",
+    painPoint: "Your website keeps needing technical decisions, fixes, or support, but hiring a full-time developer is not the right move.",
+    evidence: "Current long-term contractor support across WordPress, PHP, SEO, servers, security, layout fixes, and maintenance.",
+    color: "text-violet-500",
+    bgColor: "bg-violet-500/10",
+    bestFor: "Teams with an active website that needs steady technical ownership.",
+    timeline: "Monthly retainer",
+    outcome: "A more stable website with a reliable technical partner who understands the business over time.",
+    deliverables: ["Monthly Priority List", "Maintenance Tasks", "Security and Access Review", "Technical Recommendations"],
+    pricingNote: "Retainers depend on response time, monthly hours, platform complexity, and whether server support is included.",
   },
 ]
 
@@ -281,7 +312,7 @@ export const projects = [
   {
     title: "Media Audit",
     slug: "media-audit",
-    description: "WordPress plugin that scans your media library to identify unused files, helping you recover storage space and improve site performance. Features smart detection, storage analysis, and an intelligent trash system.",
+    description: "A WordPress media cleanup product I created after encountering years of accumulated uploads on a large public-sector website. It helps teams find unused files while reducing the risk of deleting media that is still in use.",
     image: "/projects/media-audit-pro.png",
     tags: ["WordPress", "PHP", "MySQL", "AJAX", "Freemius"],
     category: "fullstack",
@@ -291,19 +322,37 @@ export const projects = [
     size: "medium",
     industry: "WordPress Plugins",
     projectType: "Plugin Development",
+    role: "Creator and developer",
+    engagement: "Independent product · Ongoing",
     metrics: {
       users: {
-        value: "WordPress.org published",
-        label: "Status"
+        value: "Official directory",
+        label: "Published on WordPress.org"
       },
-      performance: "Reduces storage by up to 40%",
-      impact: "10GB+ media cleaned"
-    }
+      performance: {
+        value: "Version 3.4.8",
+        label: "Active product"
+      },
+      impact: {
+        value: "Free + PRO",
+        label: "Product model"
+      }
+    },
+    challenge: "A large WordPress installation had accumulated years of media uploads. Existing cleanup workflows made it difficult to distinguish genuinely unused files from assets referenced in page builders, metadata, widgets, or theme settings.",
+    solution: "I built a scanning engine that checks multiple WordPress content locations, processes large libraries in batches, shows where files are used, and keeps deletion under the administrator's control. The PRO version adds deeper builder integrations, storage analysis, bulk cleanup, and a recoverable trash workflow.",
+    impactStatement: "The tool evolved from an internal solution into a publicly available product with free and premium versions, published in the official WordPress plugin directory and supported by public user reviews.",
+    responsibilities: [
+      "Product strategy, architecture, and full plugin development",
+      "Media reference detection across WordPress content and metadata",
+      "Batch scanning, background schedules, filters, and CSV export",
+      "PRO integrations, storage analysis, and recoverable trash workflow",
+      "Ongoing maintenance, releases, support, and product improvements"
+    ]
   },
   {
     title: "Cybernetips",
     slug: "cybernetips",
-    description: "The #1 company globally specialized in immediate response to cybersecurity incidents. Leaders in digital asset recovery and protection.",
+    description: "Cybersecurity company focused on incident response, digital asset recovery, and protection services.",
     image: "/projects/cybernetips.png",
     tags: ["Cybersecurity", "Incident Response", "Digital Recovery", "Fullstack"],
     category: "fullstack",
@@ -316,7 +365,7 @@ export const projects = [
     metrics: {
       users: "Global enterprise clients",
       performance: "24/7 incident response",
-      impact: "#1 in digital asset recovery"
+      impact: "Digital asset recovery services"
     }
   },
   {
@@ -326,20 +375,38 @@ export const projects = [
     image: "/projects/coactive.jpg",
     tags: ["Wordpress", "JS", "PHP", "Arlo", "Moodle", "SEO", "Performance"],
     category: "fullstack",
-    github: "https://github.com/wolfslender",
+    github: "#",
     demo: "https://coactive.com/",
     featured: true,
     size: "large",
     industry: "EdTech",
     projectType: "Technical Partnership",
+    role: "Web development contractor",
+    engagement: "11 months and ongoing · Contract through March 2027",
     metrics: {
-      users: "150,000+",
-      performance: "40% faster load times",
-      impact: "Global reach across 60+ countries"
+      users: {
+        value: "150,000+",
+        label: "Platform users"
+      },
+      performance: {
+        value: "Ongoing",
+        label: "Technical partnership"
+      },
+      impact: {
+        value: "60+ countries",
+        label: "Global platform reach"
+      }
     },
-    challenge: "Managing a high-traffic platform serving a global audience of leadership professionals while maintaining 99.9% uptime and implementing continuous feature improvements.",
-    solution: "Implemented strategic performance optimizations, advanced SEO strategies, and seamless integration with Arlo and Moodle LMS platforms. Established robust monitoring and deployment pipelines.",
-    impactStatement: "Enabled Co-Active to scale their digital presence to serve 150K+ professionals worldwide with zero downtime during critical training periods."
+    challenge: "The WordPress platform had performance issues, visual inconsistencies, outdated and inactive plugins, publicly exposed endpoints, and former team members who still retained access.",
+    solution: "My work has focused on security hardening, access reviews, plugin maintenance, performance optimization, new functionality, visual fixes, technical SEO, and a clearer mega menu. I collaborate with the specialists responsible for Arlo, Moodle, and server operations when cross-system support is needed.",
+    impactStatement: "The ongoing engagement has strengthened the security, maintainability, performance, and visual consistency of a global training platform serving more than 150,000 users across approximately 60 countries.",
+    responsibilities: [
+      "WordPress, PHP, JavaScript, HTML, and CSS development",
+      "Security hardening and user access reviews",
+      "Plugin updates, removal audits, and ongoing maintenance",
+      "Performance optimization and technical SEO support",
+      "Visual corrections and mega-menu usability improvements"
+    ]
   },
   {
     title: "Departamento de Educación PR",
@@ -349,15 +416,20 @@ export const projects = [
     image: "/projects/departamento-educacion.jpg",
     tags: ["WordPress", "PHP", "CSS", "JavaScript"],
     category: "fullstack",
-    github: "https://github.com/wolfslender",
+    github: "#",
     demo: "https://de.pr.gov/",
     industry: "Government",
     projectType: "Custom Development",
+    role: "Employee developer at Truenorth",
+    engagement: "Built from scratch during a 3-year employment",
     metrics: {
-      users: "Public sector platform",
-      performance: "WCAG 2.1 AA compliant",
-      impact: "Serving Puerto Rico's education system"
+      users: "Public-sector platform",
+      performance: "PageSpeed up to 98",
+      impact: "Puerto Rico education services"
     },
+    challenge: "The project required a new public-facing website capable of organizing and delivering educational information and government files through a maintainable WordPress platform.",
+    solution: "I built the website from the ground up in WordPress using PHP, JavaScript, HTML, and CSS, and integrated APIs used to manage educational government files.",
+    impactStatement: "The result is a production WordPress platform supporting public access to information from Puerto Rico's Department of Education.",
     featured: true,
     size: "medium",
   },
@@ -404,11 +476,21 @@ export const projects = [
     image: "/projects/cst-puerto-rico.jpg",
     tags: ["Webflow", "JS", "Tailwind CSS"],
     category: "fullstack",
-    github: "https://github.com/wolfslender",
+    github: "#",
     demo: "https://www.cst.pr.gov/",
     featured: true,
     industry: "Government",
     projectType: "Custom Development",
+    role: "Employee developer at Truenorth",
+    engagement: "WordPress build and later Webflow migration",
+    metrics: {
+      users: "Public-sector platform",
+      performance: "PageSpeed up to 98",
+      impact: "Traffic-safety data access"
+    },
+    challenge: "The traffic-safety website needed a stable public experience and a reliable way to present accident counts and related government information.",
+    solution: "I worked on the original WordPress implementation, integrated APIs for accident statistics, and later migrated the website to Webflow as part of the Truenorth team.",
+    impactStatement: "The project provides a clearer, faster public channel for traffic-safety information in Puerto Rico.",
     size: "large",
   },
   {
@@ -416,20 +498,38 @@ export const projects = [
     slug: "truenorth-corporation",
     description: "Migrated corporate website from WordPress to Webflow, rebuilding the frontend and integrating custom API functionalities for better performance.",
     image: "/projects/truenorth.jpg",
-    tags: ["Webflow", "React", "Node.js"],
+    tags: ["Webflow", "WordPress", "HTML", "CSS", "JavaScript", "PHP", "Azure"],
     category: "frontend",
-    github: "https://github.com/wolfslender",
+    github: "#",
     demo: "https://www.truenorth.pr/",
     industry: "Enterprise",
     projectType: "Migration",
+    role: "Employee developer",
+    engagement: "3 years · Small 3-person delivery team",
     metrics: {
-      users: "Marketing team autonomy",
-      performance: "45 → 95 speed score",
-      impact: "Faster updates with cleaner CMS"
+      users: {
+        value: "3 years",
+        label: "Employment"
+      },
+      performance: {
+        value: "Up to 98",
+        label: "PageSpeed score"
+      },
+      impact: {
+        value: "3 major platforms",
+        label: "Corporate and public sector"
+      }
     },
-    challenge: "The old marketing site was difficult to update, slower than it should be, and created unnecessary dependency on developers for routine content changes.",
-    solution: "Rebuilt the experience in Webflow, preserved SEO-critical structure, and added integrations that made updates easier for the internal team.",
-    impactStatement: "The final result gave the brand more control over content, better performance, and a more polished digital presence for enterprise audiences.",
+    challenge: "The corporate WordPress installation used a poorly configured Avada setup, suffered from severe performance and stability problems, and contained outdated plugins and years of accumulated data.",
+    solution: "As an employee on a three-person delivery team, I worked across development, maintenance, security, Azure operations, and migration. I created a custom cleanup plugin, hardened the WordPress installation, and helped migrate the corporate website to Webflow.",
+    impactStatement: "The engagement improved platform stability and security, produced PageSpeed scores of up to 98 on selected projects, and led to continued responsibility across major corporate and Puerto Rico public-sector websites.",
+    responsibilities: [
+      "WordPress maintenance, security hardening, and custom PHP development",
+      "Custom cleanup plugin for years of accumulated WordPress data",
+      "Corporate website migration from WordPress to Webflow",
+      "Azure-related technical operations and troubleshooting",
+      "Delivery support for education and traffic-safety government projects"
+    ],
     featured: false,
     size: "medium",
   },

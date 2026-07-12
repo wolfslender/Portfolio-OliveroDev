@@ -41,7 +41,7 @@ export function TestimonialsSection() {
                     </div>
                 </ScrollReveal>
 
-                <div className="grid md:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 gap-6 max-w-2xl mx-auto">
                     {testimonials.map((testimonial, index) => {
                         const style = cardStyles[index % cardStyles.length]
                         return (
@@ -77,6 +77,11 @@ export function TestimonialsSection() {
                                                 <p className="text-xs text-muted-foreground truncate">
                                                     {testimonial.role}
                                                 </p>
+                                                {'sourceUrl' in testimonial && testimonial.sourceUrl && (
+                                                    <a href={testimonial.sourceUrl} target="_blank" rel="noopener noreferrer" className="text-xs text-primary hover:underline">
+                                                        {t('testimonialsSection.verifiedSource')}
+                                                    </a>
+                                                )}
                                             </div>
                                         </div>
                                     </div>

@@ -6,17 +6,23 @@ export function useServices() {
   const { t } = useTranslation()
   return useMemo(() => {
     const servicesData = t('services', { returnObjects: true, defaultValue: defaultServices }) as typeof defaultServices
-    return defaultServices.map((service, index) => ({
+    return defaultServices.map((service, index) => {
+      const translated = servicesData.find((item) => item.id === service.id) || servicesData[index]
+
+      return {
       ...service,
-      title: servicesData[index]?.title || service.title,
-      description: servicesData[index]?.description || service.description,
-      features: servicesData[index]?.features || service.features,
-      bestFor: servicesData[index]?.bestFor || service.bestFor,
-      timeline: servicesData[index]?.timeline || service.timeline,
-      outcome: servicesData[index]?.outcome || service.outcome,
-      deliverables: servicesData[index]?.deliverables || service.deliverables,
-      pricingNote: servicesData[index]?.pricingNote || service.pricingNote,
-      quoteOptions: servicesData[index]?.quoteOptions || service.quoteOptions,
-    }))
+      title: translated?.title || service.title,
+      description: translated?.description || service.description,
+      features: translated?.features || service.features,
+      bestFor: translated?.bestFor || service.bestFor,
+      timeline: translated?.timeline || service.timeline,
+      outcome: translated?.outcome || service.outcome,
+      deliverables: translated?.deliverables || service.deliverables,
+      pricingNote: translated?.pricingNote || service.pricingNote,
+      quoteOptions: translated?.quoteOptions || service.quoteOptions,
+      painPoint: translated?.painPoint || service.painPoint,
+      evidence: translated?.evidence || service.evidence,
+      }
+    })
   }, [t])
 }

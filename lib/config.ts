@@ -55,21 +55,10 @@ export const siteConfig = {
   pluginsNavItem: { label: "Plugins", href: "/plugins" },
   testimonials: [
     {
-      quote: "Alexis rebuilt our entire site from scratch. Finally, a dev who actually listens to what you need instead of pushing their own agenda. Page speed went from awful to 95, and our team can finally update content without calling him every time.",
-      author: "Antonio Gonzales",
-      role: "CEO, Cybernetips",
-      image: "/logos/logo_cybernetips.png"
-    },
-    {
-      quote: "I was tired of agencies that overpromise and underdeliver. Alexis just... did the work. No drama, no delays. Our organic traffic jumped 40% in three months after the SEO overhaul.",
-      author: "Maria Arentz",
-      role: "Founder, GovValue",
-      image: "/logos/GovValue-Logo.png"
-    },
-    {
-      quote: "We needed a government portal that worked for 3 million people — accessibility, uptime, the whole deal. Alexis delivered ahead of schedule and under budget. Would hire again without hesitation.",
-      author: "Sergio de los Santos",
-      role: "Former Manager, Truenorth Corp",
+      quote: "Limpió archivos basura y optimizó mi sitio de WordPress rápidamente sin afectar nada importante.",
+      author: "farahalmn",
+      role: "Verified WordPress.org reviewer",
+      sourceUrl: "https://wordpress.org/plugins/oliverodev-media-audit/#reviews",
     }
   ],
 }

@@ -3,10 +3,11 @@ import { siteConfig } from "@/lib/config"
 import { getServiceListSchema } from "@/lib/seo"
 
 export const metadata: Metadata = {
-  title: "Website Performance, Security, Recovery & Migration Services",
-  description: "Performance, security, recovery, and modernization services for established businesses with slow, vulnerable, or hard-to-manage websites.",
+  title: "Website Audit, Optimization, Security & Migration Services",
+  description: "Website audits, performance optimization, security hardening, hacked-site recovery, migrations, builds, and ongoing technical support for established businesses.",
   keywords: [
     "web development services",
+    "website audit",
     "desarrollador web freelance",
     "website optimization",
     "web security audit",
@@ -26,13 +27,13 @@ export const metadata: Metadata = {
     "software developer",
   ],
   openGraph: {
-    title: "Web Development Services — Alexis Olivero",
-    description: "Websites & MVPs, performance optimization, security, hacked site recovery, and platform migration. I build and fix websites that actually bring in business.",
+    title: "Website Audit, Optimization & Security Services — Alexis Olivero",
+    description: "Audits, optimization, security, recovery, migrations, new builds, and ongoing website support for businesses that need a website they can trust.",
     url: `${siteConfig.url}/services/`,
   },
   twitter: {
-    title: "Web Development Services — Alexis Olivero",
-    description: "Websites & MVPs, performance optimization, security, hacked site recovery, and platform migration.",
+    title: "Website Audit, Optimization & Security Services — Alexis Olivero",
+    description: "Audits, optimization, security, recovery, migrations, builds, and ongoing website support.",
   },
   alternates: {
     canonical: `${siteConfig.url}/services/`,
@@ -51,36 +52,42 @@ import { BreadcrumbSchema } from "@/components/breadcrumb-schema"
 const serviceSchemaItems = [
   {
     position: 1,
-    name: "Websites & MVPs",
-    description: "Custom website or MVP development. From landing pages and CMS sites to full-stack web applications built with React, Next.js, and Node.",
-    serviceType: "Web Development",
-  },
-  {
-    position: 2,
-    name: "Web Performance Optimization",
-    description: "Performance audit and optimization to achieve 90+ Core Web Vitals scores, under 2-second load times, and faster conversion rates.",
-    serviceType: "Web Optimization",
+    name: "Website Audit & Action Plan",
+    description: "Technical and conversion audit covering performance, security, SEO basics, UX friction, plugins, hosting, and maintenance risks.",
+    serviceType: "Website Audit",
     offers: { priceCurrency: "USD", minPrice: 200, maxPrice: 350 },
   },
   {
-    position: 3,
-    name: "Web Security",
-    description: "Comprehensive security audit, malware scanning and removal, firewall configuration, SSL/TLS hardening, and ongoing threat monitoring.",
-    serviceType: "Web Security",
+    position: 2,
+    name: "Optimize & Protect Your Website",
+    description: "Performance optimization, security hardening, plugin cleanup, access review, and technical SEO for existing websites.",
+    serviceType: "Web Optimization and Security",
   },
   {
-    position: 4,
+    position: 3,
     name: "Hacked Site Recovery",
     description: "Emergency malware cleanup, vulnerability patching, content restoration, and post-recovery security hardening for compromised websites.",
     serviceType: "Web Security",
     offers: { priceCurrency: "USD", minPrice: 120, maxPrice: 300 },
   },
   {
-    position: 5,
-    name: "Platform Migration",
-    description: "Zero-downtime migration between CMS platforms or frameworks. SEO preservation, content migration, data integrity, and post-launch support included.",
+    position: 4,
+    name: "Rebuild & Platform Migration",
+    description: "Website rebuilds and CMS migrations with content planning, SEO preservation, redirects, integrations, performance, and post-launch QA.",
     serviceType: "Web Development",
     offers: { priceCurrency: "USD", minPrice: 250, maxPrice: 700 },
+  },
+  {
+    position: 5,
+    name: "Websites & MVPs",
+    description: "New websites, landing pages, CMS builds, and MVPs with strategy, UX direction, development, analytics, and launch support.",
+    serviceType: "Web Development",
+  },
+  {
+    position: 6,
+    name: "Ongoing Website Partner",
+    description: "Monthly technical support for website maintenance, updates, small feature work, security checks, performance improvements, and technical coordination.",
+    serviceType: "Website Maintenance",
   },
 ]
 
@@ -106,7 +113,7 @@ export default function ServicesPage() {
                 "name": "How fast can you optimize my site?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Most performance projects show measurable improvement within 2-4 weeks. I start with an audit to identify the biggest wins — often seeing 50%+ improvement in load times.",
+                  "text": "Most optimization projects start with an audit and a prioritized fix list. Implementation timelines are usually 2-4 weeks depending on the platform, hosting, plugin risk, and how much technical debt needs to be cleaned up.",
                 },
               },
               {
@@ -130,7 +137,7 @@ export default function ServicesPage() {
                 "name": "Can you migrate my site without downtime or SEO loss?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Absolutely. Zero-downtime migration is standard. I preserve all SEO rankings, meta data, content, and functionality throughout the process, with full post-launch monitoring.",
+                  "text": "I plan migrations to reduce downtime risk and protect SEO fundamentals: content, metadata, redirects, analytics, technical checks, and post-launch QA. Rankings can never be guaranteed, but the migration should be handled carefully and measured.",
                 },
               },
               {
@@ -146,7 +153,7 @@ export default function ServicesPage() {
                 "name": "How much does a website cost?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Every project is different. Websites & MVPs start from $2,500 depending on scope. I offer free 30-minute strategy calls to understand your needs and provide a detailed quote. No commitment required.",
+                  "text": "Every project is different. Smaller audits have defined ranges, while builds, migrations, retainers, and security work are quoted based on scope, platform complexity, timeline, and risk.",
                 },
               },
               {

@@ -22,31 +22,31 @@ const partners: {
     name: "Co-Active",
     logo: "/logos/CTI_Logo_Primary-1-png.webp",
     industry: "Global EdTech",
-    context: "Fullstack platform rebuild serving 150K+ users across 60 countries.",
+    context: "Ongoing WordPress development, security, performance, and maintenance support.",
   },
   {
     name: "Dmed Health Care",
     logo: "/logos/dmedhealthcare-logo-blue-166x64.webp",
     industry: "Healthcare",
-    context: "Custom patient management portal with secure data handling.",
+    context: "Corporate WordPress development and ongoing technical maintenance.",
   },
   {
     name: "Gov PR",
     logo: "/logos/DEPR-Logo-2025-1.svg",
     industry: "Government",
-    context: "Digital transformation for PR government portal — 99.9% uptime, WCAG 2.1 AA.",
+    context: "Public-sector WordPress development and government file integrations for Puerto Rico education services.",
   },
   {
     name: "AESAN",
     logo: "/logos/aesan-espanol-logo.svg",
     industry: "Public Health",
-    context: "Public-facing platform for Spain's food safety agency.",
+    context: "Public-sector WordPress website for a Puerto Rico education program.",
   },
   {
     name: "CST",
     logo: "/logos/cst-logo-white-2025.svg",
     industry: "GovTech",
-    context: "Built a custom LMS portal for government employee training.",
+    context: "Traffic-safety platform with accident-statistics API integrations and Webflow migration.",
   },
 ]
 

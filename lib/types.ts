@@ -1,3 +1,5 @@
+import type { MetricField } from "@/lib/utils"
+
 export interface Project {
   title: string
   slug: string
@@ -15,12 +17,15 @@ export interface Project {
   challenge?: string
   solution?: string
   impactStatement?: string
+  role?: string
+  engagement?: string
+  responsibilities?: string[]
 }
 
 export interface ProjectMetrics {
-  users?: string
-  performance?: string
-  impact?: string
+  users?: MetricField
+  performance?: MetricField
+  impact?: MetricField
 }
 
 export interface PriceTier {
@@ -41,12 +46,15 @@ export interface RegionPrices {
 }
 
 export interface Service {
+  id: string
   title: string
   description: string
   icon: React.ComponentType<{ className?: string }>
   features: string[]
   technologies: string[]
   caseStudyTitle: string
+  painPoint: string
+  evidence: string
   color: string
   bgColor: string
   bestFor: string

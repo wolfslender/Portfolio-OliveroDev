@@ -86,9 +86,10 @@
     }
   },
   "testimonialsSection": {
-    "title": "Lo que los clientes",
+    "title": "Lo que los usuarios",
     "highlight": "dicen",
-    "subtitle": "Comentarios reales de personas con las que he trabajado."
+    "subtitle": "Comentarios públicos que puedes verificar en su fuente original.",
+    "verifiedSource": "Ver fuente verificada"
   },
   "glossaryPage": {
     "metaTitle": "Glosario y FAQ de Desarrollo Web - Alexis Olivero",
@@ -394,15 +395,15 @@
     },
     {
       "slug": "cybernetips",
-      "description": "Empresa global de ciberseguridad — líder en recuperación de activos digitales y respuesta a incidentes."
+      "description": "Empresa de ciberseguridad enfocada en respuesta a incidentes, recuperación de activos digitales y servicios de protección."
     },
     {
       "slug": "co-active-training-institute",
-      "description": "Desarrollo fullstack para plataforma de liderazgo con 150k+ usuarios. Aumenté tráfico orgánico 40% y reduje respuesta del servidor 25%."
+      "description": "Desarrollo WordPress, seguridad, mantenimiento, rendimiento y soporte de SEO técnico continuo para una plataforma global de liderazgo con más de 150 mil usuarios."
     },
     {
       "slug": "departamento-de-educacion-pr",
-      "description": "Lideré la transformación digital del portal de gobierno de Puerto Rico. 99.9% uptime, WCAG 2.1 AA, 3M+ ciudadanos servidos."
+      "description": "Construí desde cero un sitio WordPress para el Departamento de Educación de Puerto Rico, incluyendo desarrollo personalizado e integraciones de archivos gubernamentales."
     },
     {
       "slug": "dmed-healthcare-group",
@@ -418,11 +419,11 @@
     },
     {
       "slug": "cst-puerto-rico-website",
-      "description": "Plataforma de seguridad vial — procesó 50k+ reportes de incidentes en su primer año con mapas en tiempo real."
+      "description": "Plataforma de seguridad vial de Puerto Rico con APIs de estadísticas de accidentes, construida inicialmente en WordPress y migrada posteriormente a Webflow."
     },
     {
       "slug": "truenorth-corporation",
-      "description": "Migración de WordPress a Webflow. Velocidad pasó de 45 a 95. APIs personalizadas para actualizaciones automáticas."
+      "description": "Tres años como empleado trabajando en seguridad WordPress, operaciones en Azure, desarrollo personalizado y migración de la web corporativa a Webflow."
     },
     {
       "slug": "govvalue",
@@ -430,7 +431,7 @@
     },
     {
       "slug": "aesan-website",
-      "description": "Portal de salud pública para el Gobierno de Puerto Rico. 1M+ visitas mensuales en pico con cero caídas."
+      "description": "Plataforma pública en WordPress diseñada para presentar información gubernamental claramente en cualquier dispositivo."
     },
     {
       "slug": "centro-de-sonografia-pre-vue",
@@ -439,54 +440,82 @@
   ],
   "services": [
     {
-      "title": "Websites y MVPs",
-      "description": "Un website o MVP funcional en semanas, no meses. Estrategia, UX y desarrollo en un solo paquete. Desde el concepto hasta el lanzamiento, me encargo de todo para que tú te enfoques en hacer crecer tu negocio.",
-      "features": ["Prototipado Rápido", "UX orientada a conversión", "Build CMS o App", "Estrategia de Lanzamiento"],
-      "bestFor": "Founders y negocios en crecimiento que necesitan un sitio nuevo o MVP rápido.",
-      "timeline": "4-6 semanas",
-      "outcome": "Un website o MVP rápido, premium y preparado para ganar confianza, captar leads y soportar crecimiento.",
-      "deliverables": ["Sprint Estratégico", "Dirección UX/UI", "Build CMS o Producto", "Soporte de Lanzamiento"],
-      "quoteOptions": [
-        { "id": "landing-wordpress", "name": "Landing Page / CMS WordPress", "description": "Ideal para sitios corporativos, blogs y proyectos basados en contenido. Construido sobre un CMS probado para que puedas gestionar el contenido tú mismo." },
-        { "id": "mvp-framework", "name": "MVP con Framework", "description": "App web personalizada con React, Next.js o Node. Perfecto para productos SaaS, plataformas interactivas y proyectos escalables." }
-      ]
+      "id": "audit-action-plan",
+      "title": "Auditoría web y plan de acción",
+      "description": "Una auditoría técnica y de conversión para negocios que saben que su web tiene problemas, pero no saben qué arreglar primero. Reviso velocidad, seguridad, SEO base, fricción de UX, plugins, hosting y riesgos de mantenimiento, y te entrego un plan priorizado.",
+      "features": ["Revisión de rendimiento", "Revisión de seguridad", "SEO base", "Fricción de UX", "Roadmap técnico"],
+      "painPoint": "No tienes claro si debes optimizar, reconstruir, migrar o asegurar la web primero.",
+      "evidence": "Basado en el mismo tipo de revisión que uso en proyectos WordPress, Webflow y sitios de sector público.",
+      "bestFor": "Webs establecidas con dudas de rendimiento, seguridad, SEO o mantenimiento.",
+      "timeline": "3-5 días laborables",
+      "outcome": "Un plan de acción claro que separa arreglos urgentes de mejoras secundarias.",
+      "deliverables": ["Resumen de auditoría", "Lista de prioridades", "Notas de riesgo", "Siguiente paso recomendado"]
     },
     {
-      "title": "Optimización de Rendimiento Web",
-      "description": "Los sitios lentos matan las conversiones. Audito, optimizo y ajusto cada capa — desde la configuración del servidor hasta los assets del frontend — para que tu sitio cargue en menos de 2 segundos y obtenga 90+ en Core Web Vitals.",
-      "features": ["Auditoría de Rendimiento", "Optimización Core Web Vitals", "Optimización de Imágenes y Assets", "Estrategia de Caché", "Configuración CDN"],
-      "bestFor": "Sitios lentos, con alta tasa de rebote o que pierden conversiones por tiempo de carga.",
+      "id": "optimize-protect",
+      "title": "Optimizar y proteger tu web",
+      "description": "Para webs existentes que se sienten lentas, frágiles, desactualizadas o riesgosas. Mejoro rendimiento, limpio deuda técnica, actualizo piezas críticas, refuerzo seguridad y dejo la plataforma más fácil de mantener.",
+      "features": ["Core Web Vitals", "Hardening de seguridad", "Limpieza de plugins", "Revisión de accesos", "SEO técnico"],
+      "painPoint": "Tu web funciona, pero es lenta, está expuesta, cuesta mantenerla o está perdiendo confianza en silencio.",
+      "evidence": "Trabajo activo como contratista apoyando rendimiento, seguridad, mantenimiento, SEO y correcciones visuales para una plataforma global con 150K+ usuarios.",
+      "bestFor": "Negocios que quieren mejorar la web actual sin reconstruir todo innecesariamente.",
       "timeline": "2-4 semanas",
-      "outcome": "Un sitio web rápido que carga en menos de 2 segundos, obtiene 90+ en Core Web Vitals y mantiene a los visitantes engaged.",
-      "deliverables": ["Reporte de Auditoría", "Roadmap de Optimización", "Implementación", "Métricas Antes/Después"]
+      "outcome": "Una web más rápida, segura y limpia, con menos riesgos ocultos y mejor base técnica.",
+      "deliverables": ["Fixes de rendimiento", "Hardening de seguridad", "Limpieza de plugins y accesos", "Notas antes/después"],
+      "pricingNote": "El alcance depende del tamaño del sitio, plataforma, roles de usuario, riesgo de plugins, hosting y cuánta implementación sea necesaria luego de la auditoría."
     },
     {
-      "title": "Seguridad Web",
-      "description": "Protege tu sitio web y tus usuarios. Implemento medidas de seguridad integrales — desde firewalls y escaneo de malware hasta autenticación segura y auditorías regulares — para que puedas dormir tranquilo.",
-      "features": ["Auditoría de Seguridad", "Escaneo y Eliminación de Malware", "Configuración de Firewall", "Configuración SSL/TLS", "Monitoreo Continuo"],
-      "bestFor": "Negocios que manejan datos sensibles, procesan pagos o quieren prevenir costosas brechas de seguridad.",
-      "timeline": "1-3 semanas",
-      "outcome": "Un sitio web fortificado y seguro, protegido contra vulnerabilidades y amenazas comunes.",
-      "deliverables": ["Reporte de Auditoría de Seguridad", "Implementación de Hardening", "Configuración de Monitoreo", "Plan de Respuesta a Incidentes"],
-      "pricingNote": "El alcance varía según el tamaño del sitio, la cantidad de usuarios y los niveles de acceso requeridos. Evaluamos tu caso y te damos una cotización justa."
-    },
-    {
-      "title": "Recuperación de Sitios Hackeados",
+      "id": "hacked-site-recovery",
+      "title": "Recuperación de sitios hackeados",
       "description": "Hackearon tu sitio. No entres en pánico. Limpio el malware, cierro las vulnerabilidades, restauro tu contenido e implemento protecciones para evitar que vuelva a suceder. Respuesta rápida, mínimo tiempo de inactividad.",
       "features": ["Limpieza de Malware de Emergencia", "Parcheo de Vulnerabilidades", "Restauración de Contenido", "Hardening de Seguridad", "Monitoreo Post-Recuperación"],
+      "painPoint": "Tu web está infectada, redirige usuarios, muestra advertencias o tiene accesos sospechosos.",
+      "evidence": "Experiencia de seguridad y limpieza en entornos WordPress con plugins desactualizados, endpoints expuestos y accesos abandonados.",
       "bestFor": "Dueños de sitios cuyo sitio web ha sido comprometido, defaceado o infectado con malware.",
       "timeline": "24-72 horas (emergencia)",
       "outcome": "Un sitio web limpio y restaurado con seguridad reforzada para prevenir futuros ataques.",
       "deliverables": ["Limpieza de Malware", "Reporte de Vulnerabilidades", "Hardening de Seguridad", "Documentación de Recuperación"]
     },
     {
-      "title": "Migración de Plataformas",
-      "description": "Migrar de una plataforma a otra sin perder SEO, contenido ni funcionalidad. Ya sea que cambies de CMS o reconstruyas en un stack moderno, manejo la migración para que tu negocio no se detenga.",
-      "features": ["Preservación de SEO", "Migración de Contenido", "Garantía de Integridad de Datos", "Migración Sin Tiempo de Inactividad", "Soporte Post-Migración"],
+      "id": "rebuild-migrate",
+      "title": "Reconstrucción y migración de plataforma",
+      "description": "Cuando la plataforma actual frena el negocio, reconstruyo o migro la web con un plan para contenido, SEO, redirecciones, integraciones, rendimiento y mantenimiento.",
+      "features": ["Preservación SEO", "Migración de contenido", "Plan de redirecciones", "Estrategia CMS", "QA post-lanzamiento"],
+      "painPoint": "Tu web está atrapada en una configuración vieja, CMS difícil, tema pesado o constructor frágil.",
+      "evidence": "Trabajo de migración en Truenorth, Seguridad en el Tránsito de Puerto Rico y otros sitios corporativos y públicos.",
       "bestFor": "Empresas atascadas en plataformas obsoletas que buscan mejor rendimiento, usabilidad y mantenibilidad.",
       "timeline": "3-8 semanas",
       "outcome": "Una plataforma moderna, rápida y mantenible con cero pérdida de datos y rankings SEO preservados.",
       "deliverables": ["Estrategia de Migración", "Migración de Datos", "Preservación SEO", "Soporte Post-Lanzamiento"]
+    },
+    {
+      "id": "websites-mvps",
+      "title": "Websites y MVPs",
+      "description": "Una web nueva, landing page, CMS o MVP para negocios que necesitan algo claro, rápido, mantenible y confiable. Me encargo de estrategia, dirección UX, desarrollo, lanzamiento y configuración técnica.",
+      "features": ["UX orientada a conversión", "Build CMS o app", "Desarrollo responsive", "SEO técnico", "Soporte de lanzamiento"],
+      "painPoint": "Necesitas una web profesional o MVP, pero no quieres un build inflado que luego sea difícil de mantener.",
+      "evidence": "Incluye builds WordPress desde cero, sitios de sector público, webs corporativas y plataformas web personalizadas.",
+      "bestFor": "Founders, negocios de servicio y equipos que necesitan una web o MVP con ruta real de lanzamiento.",
+      "timeline": "4-8 semanas",
+      "outcome": "Una web o MVP rápido y creíble, construido para explicar la oferta, apoyar SEO y captar leads calificados.",
+      "deliverables": ["Sprint estratégico", "Dirección UX/UI", "Build CMS o producto", "Analítica y soporte de lanzamiento"],
+      "quoteOptions": [
+        { "id": "landing-wordpress", "name": "Landing Page / CMS", "description": "Ideal para sitios corporativos, blogs y proyectos basados en contenido. Construido en CMS o frontend moderno según el caso." },
+        { "id": "mvp-framework", "name": "MVP con framework", "description": "App web personalizada con React, Next.js o Node. Útil para SaaS, herramientas internas y plataformas interactivas." }
+      ]
+    },
+    {
+      "id": "ongoing-partner",
+      "title": "Partner técnico mensual",
+      "description": "Soporte técnico mensual para negocios que necesitan mantener su web saludable: updates, fixes, seguridad, rendimiento, mejoras pequeñas y coordinación técnica.",
+      "features": ["Mantenimiento mensual", "Features pequeñas", "Chequeos de seguridad", "Monitoreo de rendimiento", "Soporte técnico"],
+      "painPoint": "Tu web necesita decisiones, fixes o soporte técnico constante, pero contratar un developer full-time no es la mejor opción.",
+      "evidence": "Soporte actual a largo plazo en WordPress, PHP, SEO, servidores, seguridad, correcciones visuales y mantenimiento.",
+      "bestFor": "Equipos con una web activa que necesita ownership técnico constante.",
+      "timeline": "Retainer mensual",
+      "outcome": "Una web más estable con un partner técnico confiable que entiende el negocio con el tiempo.",
+      "deliverables": ["Lista mensual de prioridades", "Tareas de mantenimiento", "Revisión de seguridad y accesos", "Recomendaciones técnicas"],
+      "pricingNote": "Los retainers dependen del tiempo de respuesta, horas mensuales, complejidad de plataforma y si incluye soporte de servidor."
     }
   ],
   "problemSection": {
@@ -500,6 +529,28 @@
       { "title": "No está convirtiendo", "description": "Hermoso pero roto. Me enfoco en lo que realmente genera resultados, no solo estética." },
       { "title": "La experiencia móvil es secundaria", "description": "Más del 60% del tráfico viene de celulares. Diseño mobile-first, no mobile-last." }
     ]
+  },
+  "homeOffers": {
+    "eyebrow": "Un próximo paso claro",
+    "title": "Comienza por el problema que tu web tiene hoy",
+    "description": "No necesitas elegir una tecnología antes de entender qué le está costando confianza, tiempo u oportunidades calificadas a tu negocio.",
+    "items": {
+      "audit": {
+        "title": "Auditoría y plan de acción",
+        "description": "Identifica los problemas prioritarios de rendimiento, seguridad, SEO, usabilidad y mantenimiento antes de comprometerte con un proyecto mayor.",
+        "cta": "Solicitar revisión de mi web"
+      },
+      "optimize": {
+        "title": "Optimizar y proteger",
+        "description": "Mejora la velocidad, estabilidad, seguridad y base técnica de tu web actual sin reconstruir todo innecesariamente.",
+        "cta": "Explorar optimización"
+      },
+      "modernize": {
+        "title": "Reconstruir y migrar",
+        "description": "Reemplaza una plataforma obsoleta o difícil de administrar preservando contenido, integraciones y fundamentos SEO importantes.",
+        "cta": "Explorar modernización"
+      }
+    }
   },
   "processSection": {
     "titlePrefix": "Cómo",
@@ -592,16 +643,23 @@
     "viewLiveSite": "Ver Sitio en Vivo",
     "viewSource": "Ver Código Fuente",
     "relatedProjects": "Proyectos Relacionados",
-    "startProject": "Iniciar un Proyecto"
+    "startProject": "Iniciar un Proyecto",
+    "role": "Mi rol",
+    "engagement": "Relación",
+    "responsibilities": "De qué fui responsable"
   },
   "servicesContent": {
     "serviceLabel": "Servicio {{number}}",
+    "primaryCta": "Solicitar auditoría",
+    "problemSolved": "Problema que resuelve",
+    "proofPoint": "Evidencia relacionada",
     "startingAt": "Desde",
     "customQuote": "Cotización Personalizada",
     "requestQuote": "Solicitar Cotización",
     "everyProjectIsDifferent": "Cada proyecto es distinto — cotizamos según el alcance.",
     "selectOption": "Selecciona el tipo de proyecto:",
     "continueToContact": "Continuar al Contacto",
+    "cancel": "Cancelar",
     "taxNote": "Precios en USD. Clientes fuera de República Dominicana: servicios exentos de impuestos locales (exportación de servicios).",
     "latam": "LATAM",
     "usa": "USA y Europa"
