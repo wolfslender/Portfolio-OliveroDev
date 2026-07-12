@@ -4,7 +4,10 @@ import { siteConfig } from "@/lib/config"
 export const metadata: Metadata = {
   title: "Portfolio & Case Studies",
   description: "Featured web development projects and case studies. React, Next.js, WordPress, Webflow — performance-focused builds for real businesses.",
-  alternates: { canonical: `${siteConfig.url}/work/` },
+  alternates: {
+    canonical: `${siteConfig.url}/work/`,
+    languages: { en: `${siteConfig.url}/work/`, es: `${siteConfig.url}/es/work/`, "x-default": `${siteConfig.url}/work/` },
+  },
 }
 
 import WorkContent from "@/components/pages/work-content"

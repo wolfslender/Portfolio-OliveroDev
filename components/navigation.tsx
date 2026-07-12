@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button"
 import { useTheme } from "next-themes"
 import { siteConfig } from "@/lib/config"
 import { useNav } from "@/hooks/use-nav"
-import { useCommon } from "@/hooks/use-common"
+import { localizePath, stripSpanishPrefix } from "@/lib/i18n-routing"
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
@@ -43,7 +43,7 @@ export function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link
-            href="/"
+            href={localizePath(pathname || "/", "/")}
             className="text-xl font-bold text-foreground hover:text-primary transition-colors"
           >
             OliveroDev
@@ -52,11 +52,12 @@ export function Navigation() {
           {/* Desktop Navigation - Modern design with active indicators */}
           <div className="hidden md:flex items-center gap-1">
             {navLinks.map((link) => {
-              const isActive = pathname === link.href
+              const href = localizePath(pathname || "/", link.href)
+              const isActive = stripSpanishPrefix(pathname || "/") === link.href
               return (
                 <Link
                   key={link.href}
-                  href={link.href}
+                  href={href}
                   className={`relative px-4 py-2 text-sm font-medium rounded-lg transition-colors duration-300 ${
                     isActive ? "text-primary" : "text-muted-foreground hover:text-foreground"
                   }`}
@@ -107,11 +108,12 @@ export function Navigation() {
         <div className="md:hidden bg-background/95 backdrop-blur-xl border-b border-border animate-in slide-in-from-top duration-300">
           <div className="px-4 py-4 space-y-1">
             {navLinks.map((link) => {
-              const isActive = pathname === link.href
+              const href = localizePath(pathname || "/", link.href)
+              const isActive = stripSpanishPrefix(pathname || "/") === link.href
               return (
                 <Link
                   key={link.href}
-                  href={link.href}
+                  href={href}
                   onClick={() => setIsOpen(false)}
                   className={`block w-full text-left px-4 py-3 rounded-lg font-medium transition-all duration-300 ${
                     isActive

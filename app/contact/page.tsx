@@ -4,9 +4,12 @@ import type { Metadata } from "next"
 import { siteConfig } from "@/lib/config"
 
 export const metadata: Metadata = {
-  title: "Get in Touch",
-  description: "Let's work together. Email, LinkedIn, GitHub, and WhatsApp — reach out to start your next project.",
-  alternates: { canonical: `${siteConfig.url}/contact/` },
+  title: "Request a Website Audit or Technical Consultation",
+  description: "Share your website, platform, main problem, timeline, and budget so I can recommend the clearest next step for your site.",
+  alternates: {
+    canonical: `${siteConfig.url}/contact/`,
+    languages: { en: `${siteConfig.url}/contact/`, es: `${siteConfig.url}/es/contact/`, "x-default": `${siteConfig.url}/contact/` },
+  },
 }
 
 import { ContactSection } from "@/components/sections/contact-section"
@@ -25,8 +28,8 @@ export default function ContactPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "ContactPage",
-            name: "Contact",
-            description: "Get in touch to start your project. Email, LinkedIn, GitHub, and WhatsApp available.",
+            name: "Request a Website Audit or Technical Consultation",
+            description: "Contact Alexis Olivero for website audits, performance optimization, security hardening, recovery, migrations, builds, and ongoing technical support.",
             url: `${siteConfig.url}/contact/`,
           }),
         }}

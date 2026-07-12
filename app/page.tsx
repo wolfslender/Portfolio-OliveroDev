@@ -15,7 +15,14 @@ const CTASection = dynamic(() => import("@/components/sections/cta-section").the
 export const metadata: Metadata = {
   title: "Alexis Olivero — Website Performance, Security & Modernization",
   description: siteConfig.description,
-  alternates: { canonical: `${siteConfig.url}/` },
+  alternates: {
+    canonical: `${siteConfig.url}/`,
+    languages: {
+      en: `${siteConfig.url}/`,
+      es: `${siteConfig.url}/es/`,
+      "x-default": `${siteConfig.url}/`,
+    },
+  },
 }
 
 export default function Home() {

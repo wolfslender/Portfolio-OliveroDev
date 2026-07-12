@@ -386,7 +386,57 @@
     "bookCall": "Book a Strategy Call",
     "freeConsultation": "Free 30-minute website strategy call",
     "sendEmail": "Send an Email",
-    "copyEmail": "Copy email address"
+    "copyEmail": "Copy email address",
+    "form": {
+      "eyebrow": "Quick brief",
+      "title": "Prepare your request in 2 minutes",
+      "description": "The more context I have from the first message, the faster I can tell you whether to audit, optimize, migrate, recover, or build.",
+      "serviceLabel": "Service",
+      "websiteLabel": "Website URL",
+      "platformLabel": "Platform",
+      "timelineLabel": "Timeline",
+      "budgetLabel": "Approximate budget",
+      "problemLabel": "Main problem",
+      "problemPlaceholder": "Example: my WordPress site is slow, I have outdated plugins, I want to migrate without losing SEO, I need a security audit...",
+      "selectPlaceholder": "Select an option",
+      "sendPreparedEmail": "Send prepared email",
+      "sendWhatsapp": "Send via WhatsApp",
+      "messageIntro": "Hi Alexis, I saw your portfolio and want to talk about my website.",
+      "notSpecified": "Not specified",
+      "emailSubject": "Request from OliveroDev",
+      "emailSubjectPrefix": "Request",
+      "services": {
+        "audit": "Website audit and action plan",
+        "optimize": "Optimize and protect my website",
+        "recovery": "Recover hacked site",
+        "migration": "Rebuild or migration",
+        "build": "New website or MVP",
+        "partner": "Ongoing technical partner"
+      },
+      "platforms": {
+        "notSure": "Not sure",
+        "other": "Other platform"
+      },
+      "timelines": {
+        "urgent": "Urgent / this week",
+        "month": "This month",
+        "quarter": "In 1-3 months",
+        "exploring": "I am exploring options"
+      },
+      "budgets": {
+        "audit": "$200-$600",
+        "small": "$600-$1,500",
+        "medium": "$1,500-$3,000",
+        "large": "$3,000+",
+        "notSure": "Not sure"
+      }
+    },
+    "response": {
+      "title": "What happens next",
+      "item1": "I review your context and reply with the clearest next step.",
+      "item2": "If needed, I ask for access or evidence before quoting.",
+      "item3": "If I am not the best fit, I will tell you directly."
+    }
   },
   "projects": [
     {

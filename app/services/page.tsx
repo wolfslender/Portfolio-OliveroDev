@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     canonical: `${siteConfig.url}/services/`,
     languages: {
       "en": `${siteConfig.url}/services/`,
-      "es": `${siteConfig.url}/services/`,
+      "es": `${siteConfig.url}/es/services/`,
       "x-default": `${siteConfig.url}/services/`,
     },
   },

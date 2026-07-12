@@ -6,21 +6,24 @@ import { useNav } from "@/hooks/use-nav"
 import { useServices } from "@/hooks/use-services"
 import { useFooter } from "@/hooks/use-footer"
 import { useHero } from "@/hooks/use-hero"
+import { usePathname } from "next/navigation"
+import { localizePath } from "@/lib/i18n-routing"
 
 export function Footer() {
   const navLinks = useNav()
   const services = useServices()
   const footer = useFooter()
   const hero = useHero()
+  const pathname = usePathname()
   
   const quickLinks = navLinks.map((item) => ({
     name: item.label,
-    href: item.href,
+    href: localizePath(pathname || "/", item.href),
   }))
 
   const serviceLinks = services.slice(0, 4).map((service) => ({
     name: service.title,
-    href: "/services",
+    href: localizePath(pathname || "/", "/services"),
   }))
 
   return (
@@ -94,10 +97,10 @@ export function Footer() {
             </p>
 
             <div className="flex items-center gap-6 text-sm">
-              <a href="/privacy" className="text-muted-foreground hover:text-foreground transition-colors">
+              <a href={localizePath(pathname || "/", "/privacy")} className="text-muted-foreground hover:text-foreground transition-colors">
                 {footer.privacy}
               </a>
-              <a href="/terms" className="text-muted-foreground hover:text-foreground transition-colors">
+              <a href={localizePath(pathname || "/", "/terms")} className="text-muted-foreground hover:text-foreground transition-colors">
                 {footer.terms}
               </a>
             </div>

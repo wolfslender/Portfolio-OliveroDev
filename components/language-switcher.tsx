@@ -3,10 +3,14 @@
 import { useTranslation } from "react-i18next"
 import { Button } from "@/components/ui/button"
 import { useEffect, useState } from "react"
+import { usePathname, useRouter } from "next/navigation"
+import { isSpanishPath, toEnglishPath, toSpanishPath } from "@/lib/i18n-routing"
 
 export function LanguageSwitcher() {
   const { i18n } = useTranslation()
   const [mounted, setMounted] = useState(false)
+  const pathname = usePathname()
+  const router = useRouter()
 
   useEffect(() => {
     setMounted(true)
@@ -15,11 +19,13 @@ export function LanguageSwitcher() {
   if (!mounted) return null
 
   const toggleLanguage = () => {
-    const newLang = i18n.language.startsWith("es") ? "en" : "es"
-    i18n.changeLanguage(newLang)
+    const nextPath = isSpanishPath(pathname || "/")
+      ? toEnglishPath(pathname || "/")
+      : toSpanishPath(pathname || "/")
+    router.push(nextPath)
   }
 
-  const isSpanish = i18n.language.startsWith("es")
+  const isSpanish = isSpanishPath(pathname || "/") || i18n.language.startsWith("es")
 
   return (
     <div

@@ -32,6 +32,25 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     lastModified: currentDate,
     changeFrequency: route.changeFrequency,
     priority: route.priority,
+    alternates: {
+      languages: {
+        en: `${siteConfig.url}${route.path}`,
+        es: `${siteConfig.url}${route.path === "/" ? "/es/" : `/es${route.path}`}`,
+      },
+    },
+  }))
+
+  const spanishEntries = routes.map((route) => ({
+    url: `${siteConfig.url}${route.path === "/" ? "/es/" : `/es${route.path}`}`,
+    lastModified: currentDate,
+    changeFrequency: route.changeFrequency,
+    priority: Math.max(route.priority - 0.05, 0.3),
+    alternates: {
+      languages: {
+        en: `${siteConfig.url}${route.path}`,
+        es: `${siteConfig.url}${route.path === "/" ? "/es/" : `/es${route.path}`}`,
+      },
+    },
   }))
 
   // Fetch blog posts
@@ -58,5 +77,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     console.error('Error fetching blog posts for sitemap:', error)
   }
 
-  return [...staticEntries, ...blogEntries]
+  return [...staticEntries, ...spanishEntries, ...blogEntries]
 }

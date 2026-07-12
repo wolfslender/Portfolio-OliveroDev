@@ -4,7 +4,10 @@ import { siteConfig } from "@/lib/config"
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description: "Privacy Policy for the developer portfolio. Learn how your data is handled and protected.",
-  alternates: { canonical: `${siteConfig.url}/privacy/` },
+  alternates: {
+    canonical: `${siteConfig.url}/privacy/`,
+    languages: { en: `${siteConfig.url}/privacy/`, es: `${siteConfig.url}/es/privacy/`, "x-default": `${siteConfig.url}/privacy/` },
+  },
 }
 
 import PrivacyContent from "@/components/pages/privacy-content"

@@ -3,6 +3,8 @@
 import React, { useEffect } from "react"
 import i18next from "i18next"
 import { I18nextProvider, initReactI18next } from "react-i18next"
+import { usePathname } from "next/navigation"
+import { isSpanishPath } from "@/lib/i18n-routing"
 import en from "@/locales/en.json"
 import es from "@/locales/es.json"
 
@@ -22,21 +24,21 @@ i18next
   })
 
 export function I18nProvider({ children }: { children: React.ReactNode }) {
-  useEffect(() => {
-    const isSupported = (lng: string | null): lng is "en" | "es" => lng === "en" || lng === "es"
+  const pathname = usePathname()
 
+  useEffect(() => {
+    const routeLanguage = isSpanishPath(pathname || "/") ? "es" : "en"
+    if (i18next.language !== routeLanguage) {
+      i18next.changeLanguage(routeLanguage)
+    }
+  }, [pathname])
+
+  useEffect(() => {
     const storage = (globalThis as any).localStorage
     const canUseStorage =
       storage &&
       typeof storage.getItem === "function" &&
       typeof storage.setItem === "function"
-
-    if (canUseStorage) {
-      const savedLng = storage.getItem("i18nextLng")
-      if (isSupported(savedLng) && savedLng !== i18next.language) {
-        i18next.changeLanguage(savedLng)
-      }
-    }
 
     const onLanguageChanged = (lng: string) => {
       if (!canUseStorage) return
@@ -47,7 +49,7 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
     return () => {
       i18next.off("languageChanged", onLanguageChanged)
     }
-  }, [])
+  }, [pathname])
 
   return <I18nextProvider i18n={i18next}>{children}</I18nextProvider>
 }

@@ -5,7 +5,10 @@ import PluginsContent from "@/components/pages/plugins-content"
 export const metadata: Metadata = {
   title: "WordPress Plugins - Built to Scale",
   description: "Premium WordPress plugins designed to solve real problems. Clean code, regular updates, and dedicated support.",
-  alternates: { canonical: `${siteConfig.url}/plugins/` },
+  alternates: {
+    canonical: `${siteConfig.url}/plugins/`,
+    languages: { en: `${siteConfig.url}/plugins/`, es: `${siteConfig.url}/es/plugins/`, "x-default": `${siteConfig.url}/plugins/` },
+  },
 }
 
 // Note: metadata is static across languages since Next.js export doesn't support dynamic metadata with i18n

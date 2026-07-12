@@ -386,7 +386,57 @@
     "bookCall": "Agendar Llamada Estratégica",
     "freeConsultation": "Llamada estratégica gratuita de 30 minutos",
     "sendEmail": "Enviar un Email",
-    "copyEmail": "Copiar dirección de correo"
+    "copyEmail": "Copiar dirección de correo",
+    "form": {
+      "eyebrow": "Brief rápido",
+      "title": "Prepara tu solicitud en 2 minutos",
+      "description": "Mientras más contexto tenga desde el primer mensaje, más rápido puedo decirte si conviene auditar, optimizar, migrar, recuperar o construir.",
+      "serviceLabel": "Servicio",
+      "websiteLabel": "URL de tu web",
+      "platformLabel": "Plataforma",
+      "timelineLabel": "Timeline",
+      "budgetLabel": "Presupuesto aproximado",
+      "problemLabel": "Problema principal",
+      "problemPlaceholder": "Ej: mi WordPress está lento, tengo plugins desactualizados, quiero migrar sin perder SEO, necesito una auditoría de seguridad...",
+      "selectPlaceholder": "Selecciona una opción",
+      "sendPreparedEmail": "Enviar email preparado",
+      "sendWhatsapp": "Enviar por WhatsApp",
+      "messageIntro": "Hola Alexis, vi tu portafolio y quiero hablar sobre mi web.",
+      "notSpecified": "No especificado",
+      "emailSubject": "Solicitud desde OliveroDev",
+      "emailSubjectPrefix": "Solicitud",
+      "services": {
+        "audit": "Auditoría web y plan de acción",
+        "optimize": "Optimizar y proteger mi web",
+        "recovery": "Recuperar sitio hackeado",
+        "migration": "Reconstrucción o migración",
+        "build": "Website o MVP nuevo",
+        "partner": "Partner técnico mensual"
+      },
+      "platforms": {
+        "notSure": "No estoy seguro",
+        "other": "Otra plataforma"
+      },
+      "timelines": {
+        "urgent": "Urgente / esta semana",
+        "month": "Este mes",
+        "quarter": "En 1-3 meses",
+        "exploring": "Estoy explorando opciones"
+      },
+      "budgets": {
+        "audit": "$200-$600",
+        "small": "$600-$1,500",
+        "medium": "$1,500-$3,000",
+        "large": "$3,000+",
+        "notSure": "No estoy seguro"
+      }
+    },
+    "response": {
+      "title": "Qué pasa después",
+      "item1": "Reviso tu contexto y te respondo con el próximo paso más claro.",
+      "item2": "Si hace falta, te pido acceso o evidencia antes de cotizar.",
+      "item3": "Si no soy la mejor opción, te lo digo directo."
+    }
   },
   "projects": [
     {

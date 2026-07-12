@@ -4,7 +4,10 @@ import { siteConfig } from "@/lib/config"
 export const metadata: Metadata = {
   title: "Terms of Service",
   description: "Terms of Service for the developer portfolio. Rules and regulations for using this website.",
-  alternates: { canonical: `${siteConfig.url}/terms/` },
+  alternates: {
+    canonical: `${siteConfig.url}/terms/`,
+    languages: { en: `${siteConfig.url}/terms/`, es: `${siteConfig.url}/es/terms/`, "x-default": `${siteConfig.url}/terms/` },
+  },
 }
 
 import TermsContent from "@/components/pages/terms-content"

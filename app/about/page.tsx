@@ -6,7 +6,10 @@ import { siteConfig } from "@/lib/config"
 export const metadata: Metadata = {
   title: "About Me",
   description: "Meet Alexis Olivero, a senior web specialist helping established businesses improve website performance, security, maintainability, and digital delivery.",
-  alternates: { canonical: `${siteConfig.url}/about/` },
+  alternates: {
+    canonical: `${siteConfig.url}/about/`,
+    languages: { en: `${siteConfig.url}/about/`, es: `${siteConfig.url}/es/about/`, "x-default": `${siteConfig.url}/about/` },
+  },
 }
 
 import { AboutSection } from "@/components/sections/about-section"
