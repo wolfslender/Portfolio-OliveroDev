@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import { siteConfig } from "@/lib/config"
 import { getLandingPageBySlug } from "@/lib/landing-pages"
-import ServiceLandingContent from "@/components/pages/service-landing-content"
+import { ServiceLandingContent } from "@/components/pages/service-landing-content"
 import { BreadcrumbSchema } from "@/components/breadcrumb-schema"
 
 export const metadata: Metadata = {

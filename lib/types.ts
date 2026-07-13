@@ -68,14 +68,6 @@ export interface Service {
   landingPageHref?: string
 }
 
-export interface Skill {
-  icon: React.ComponentType<{ className?: string }>
-  title: string
-  color: string
-  bgColor: string
-  skills: string[]
-}
-
 export interface Experience {
   company: string
   position: string
@@ -92,25 +84,6 @@ export interface Education {
   period: string
   location: string
   description: string
-}
-
-export interface Certification {
-  title: string
-  issuer: string
-  date: string
-  credentialId: string
-  credentialUrl: string
-  icon: React.ComponentType<{ className?: string }>
-  color: string
-  bgColor: string
-}
-
-export interface Stat {
-  icon: React.ComponentType<{ className?: string }>
-  value: number
-  label: string
-  suffix: string
-  prefix: string
 }
 
 export interface Plugin {

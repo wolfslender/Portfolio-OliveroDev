@@ -11,12 +11,12 @@ import { FeaturedCaseStudy } from "@/components/sections/featured-case-study"
 import { ProcessSection } from "@/components/sections/process-section"
 import { TestimonialsSection } from "@/components/sections/testimonials-section"
 import { CTASection } from "@/components/sections/cta-section"
-import ServicesContent from "@/components/pages/services-content"
+import { ServicesContent } from "@/components/pages/services-content"
 import WorkContent from "@/components/pages/work-content"
 import PluginsContent from "@/components/pages/plugins-content"
 import PrivacyContent from "@/components/pages/privacy-content"
 import TermsContent from "@/components/pages/terms-content"
-import ServiceLandingContent from "@/components/pages/service-landing-content"
+import { ServiceLandingContent } from "@/components/pages/service-landing-content"
 import { ContactSection } from "@/components/sections/contact-section"
 import { AboutSection } from "@/components/sections/about-section"
 import GlossaryPage from "@/app/glossary/page"
@@ -122,14 +122,14 @@ function SpanishHome() {
 
   return (
     <main className="overflow-x-hidden">
-      <HeroSection />
-      <TrustedBySection />
-      <ProblemSection />
-      <HomeOffersSection />
-      <FeaturedCaseStudy project={featuredProject} />
-      <ProcessSection />
-      <TestimonialsSection />
-      <CTASection />
+      <HeroSection locale="es" />
+      <TrustedBySection locale="es" />
+      <ProblemSection locale="es" />
+      <HomeOffersSection locale="es" />
+      <FeaturedCaseStudy project={featuredProject} locale="es" />
+      <ProcessSection locale="es" />
+      <TestimonialsSection locale="es" />
+      <CTASection locale="es" />
     </main>
   )
 }
@@ -169,7 +169,7 @@ export default async function SpanishPage({ params }: PageProps) {
             }),
           }}
         />
-        <ServiceLandingContent data={landingPageEs} />
+        <ServiceLandingContent data={landingPageEs} locale="es" />
       </>
     )
   }

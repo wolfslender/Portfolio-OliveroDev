@@ -30,14 +30,14 @@ export default function Home() {
 
   return (
     <main className="overflow-x-hidden">
-      <HeroSection />
-      <TrustedBySection />
-      <ProblemSection />
-      <HomeOffersSection />
-      <FeaturedCaseStudy project={featuredProject} />
-      <ProcessSection />
-      <TestimonialsSection />
-      <CTASection />
+      <HeroSection locale="en" />
+      <TrustedBySection locale="en" />
+      <ProblemSection locale="en" />
+      <HomeOffersSection locale="en" />
+      <FeaturedCaseStudy project={featuredProject} locale="en" />
+      <ProcessSection locale="en" />
+      <TestimonialsSection locale="en" />
+      <CTASection locale="en" />
     </main>
   )
 }

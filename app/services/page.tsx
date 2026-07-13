@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   },
 }
 
-import ServicesContent from "@/components/pages/services-content"
+import { ServicesContent } from "@/components/pages/services-content"
 
 import { BreadcrumbSchema } from "@/components/breadcrumb-schema"
 

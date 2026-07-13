@@ -1,137 +1,130 @@
 "use client"
 
 import { ScrollReveal } from "@/components/scroll-reveal"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { ArrowRight, TrendingUp } from "lucide-react"
+import { useTranslation } from "react-i18next"
+import { MetricBar } from "@/components/visuals/metric-bar"
 import Link from "next/link"
 import ExportedImage from "next-image-export-optimizer"
-import { useCommon } from "@/hooks/use-common"
-import { getMetricValue, type MetricField } from "@/lib/utils"
-import { useTranslation } from "react-i18next"
+import { ArrowRight } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import en from "@/locales/en.json"
+import es from "@/locales/es.json"
 
 interface FeaturedCaseStudyProps {
-    project: {
-        title: string
-        description: string
-        image: string
-        tags: string[]
-        slug?: string
-        demo: string
-        industry?: string
-        metrics?: {
-            users?: MetricField
-            performance?: MetricField
-            impact?: MetricField
-        }
-        challenge?: string
-        solution?: string
-        impactStatement?: string
+  locale?: "en" | "es"
+  project: {
+    title: string
+    description: string
+    image: string
+    tags: string[]
+    slug?: string
+    demo: string
+    industry?: string
+    metrics?: {
+      users?: string | { value: string; label: string }
+      performance?: string | { value: string; label: string }
+      impact?: string | { value: string; label: string }
     }
+    challenge?: string
+    solution?: string
+    impactStatement?: string
+  }
 }
 
-export function FeaturedCaseStudy({ project }: FeaturedCaseStudyProps) {
-    const common = useCommon()
-    const { t } = useTranslation()
+export function FeaturedCaseStudy({ project, locale }: FeaturedCaseStudyProps) {
+  const { t } = useTranslation()
+  const copy = locale === "es" ? es.featuredCaseStudy : locale === "en" ? en.featuredCaseStudy : undefined
+  const common = locale === "es" ? es.common : locale === "en" ? en.common : undefined
 
-    return (
-        <section className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-muted/20">
-            <div className="max-w-7xl mx-auto">
-                <ScrollReveal>
-                    <div className="text-center mb-12 space-y-4">
-                        <Badge className="px-4 py-1.5 bg-primary/5 text-primary border-primary/20 text-sm font-semibold">
-                            {t('featuredCaseStudy.badge')}
-                        </Badge>
-                        <h2 className="text-4xl md:text-6xl font-black tracking-tight">
-                            {t('featuredCaseStudy.titlePrefix')} {project.title.split("scaled to")[0]}{" "}
-                            <span className="text-primary">{t('featuredCaseStudy.titleHighlight')}</span>
-                        </h2>
+  return (
+    <section className="py-20 md:py-28 bg-background">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <ScrollReveal>
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <p className="text-sm font-bold uppercase tracking-widest text-primary mb-4">
+              {copy?.badge || t('featuredCaseStudy.badge', "Featured Case Study")}
+            </p>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-6 text-balance">
+              {copy?.titlePrefix || t('featuredCaseStudy.titlePrefix', "Proof that the work")}{" "}
+              <span className="text-primary">{copy?.titleHighlight || t('featuredCaseStudy.titleHighlight', "can scale")}</span>
+            </h2>
+          </div>
+        </ScrollReveal>
+
+        <ScrollReveal delay={100}>
+          <div className="bg-card border border-border/60 rounded-2xl overflow-hidden shadow-xl shadow-primary/5">
+            <div className="grid lg:grid-cols-2">
+              <div className="p-8 md:p-12 flex flex-col">
+                <p className="text-sm font-semibold text-secondary mb-4">{project.industry || copy?.caseStudy || t("featuredCaseStudy.caseStudy", "Case study")}</p>
+                <h3 className="text-2xl md:text-3xl font-bold tracking-tight mb-4 text-balance">
+                  {project.title}
+                </h3>
+                <p className="text-muted-foreground leading-relaxed mb-8">
+                  {project.description}
+                </p>
+                {project.metrics && (
+                  <div className="space-y-3">
+                    <p className="text-sm font-bold uppercase tracking-widest text-muted-foreground mb-4">
+                      {copy?.results || t("featuredCaseStudy.results", "Results")}
+                    </p>
+                    <div className="grid sm:grid-cols-3 gap-3">
+                      {Object.values(project.metrics).map((metric, i) => {
+                        const m = typeof metric === "string" ? { value: metric, label: `${t("common.impact", "Impact")} ${i + 1}` } : metric
+                        return (
+                          <div key={m.label} className="rounded-xl border border-border/50 bg-background/60 p-4">
+                            <span className="block text-2xl font-bold text-primary">{m.value}</span>
+                            <span className="text-xs text-muted-foreground leading-tight">{m.label}</span>
+                          </div>
+                        )
+                      })}
                     </div>
-                </ScrollReveal>
-
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    <ScrollReveal delay={100}>
-                        <div className="relative aspect-[4/3] overflow-hidden group">
-                            <ExportedImage
-                                src={project.image}
-                                alt={project.title}
-                                fill
-                                sizes="(max-width: 1024px) 100vw, 50vw"
-                                className="object-cover transition-transform duration-700 group-hover:scale-105"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
-                            <div className="absolute bottom-4 left-4 right-4 flex flex-wrap gap-2">
-                                {project.tags.slice(0, 4).map(tag => (
-                                    <Badge key={tag} variant="secondary" className="bg-background/80 border-border/60 font-mono text-xs">
-                                        {tag}
-                                    </Badge>
-                                ))}
-                            </div>
-                        </div>
-                    </ScrollReveal>
-
-                    <ScrollReveal delay={200}>
-                        <div className="space-y-6">
-                            <div className="space-y-3">
-                                {project.industry && (
-                                    <Badge className="bg-secondary/10 text-secondary border-secondary/20">
-                                        {project.industry}
-                                    </Badge>
-                                )}
-                                <h3 className="text-3xl md:text-4xl font-bold">
-                                    {project.slug ? (
-                                        <Link href={`/work/${project.slug}`} className="hover:text-primary transition-colors">
-                                            {project.title}
-                                        </Link>
-                                    ) : project.title}
-                                </h3>
-                                <p className="text-muted-foreground text-lg leading-relaxed">
-                                    {project.description}
-                                </p>
-                            </div>
-
-                            {project.metrics && (
-                                <div className="grid grid-cols-3 gap-4">
-                                    {project.metrics.users && (
-                                        <div className="text-center space-y-1">
-                                            <TrendingUp className="w-5 h-5 mx-auto text-primary" />
-                                            <div className="font-bold text-lg">{getMetricValue(project.metrics.users)}</div>
-                                            <div className="text-xs text-muted-foreground">{common.users}</div>
-                                        </div>
-                                    )}
-                                    {project.metrics.performance && (
-                                        <div className="text-center space-y-1">
-                                            <TrendingUp className="w-5 h-5 mx-auto text-secondary" />
-                                            <div className="font-bold text-lg">{getMetricValue(project.metrics.performance)}</div>
-                                            <div className="text-xs text-muted-foreground">{common.speed}</div>
-                                        </div>
-                                    )}
-                                    {project.metrics.impact && (
-                                        <div className="text-center space-y-1">
-                                            <TrendingUp className="w-5 h-5 mx-auto text-primary" />
-                                            <div className="font-bold text-lg line-clamp-2">{getMetricValue(project.metrics.impact)}</div>
-                                            <div className="text-xs text-muted-foreground">{common.impact}</div>
-                                        </div>
-                                    )}
-                                </div>
-                            )}
-
-                            <div className="flex flex-col sm:flex-row gap-4 pt-2">
-                                <Button asChild className="h-12 px-8 font-bold group">
-                                    <Link href={project.slug ? `/work/${project.slug}` : project.demo} target={project.slug ? undefined : "_blank"} rel={project.slug ? undefined : "noopener noreferrer"}>
-                                        {common.viewProject} <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                                    </Link>
-                                </Button>
-                                <Button asChild variant="outline" className="h-12 px-8 font-bold border-2">
-                                    <Link href="/contact?audit=true">
-                                        {common.freeAudit}
-                                    </Link>
-                                </Button>
-                            </div>
-                        </div>
-                    </ScrollReveal>
+                  </div>
+                )}
+                <div className="mt-auto pt-8">
+                  <Button asChild className="h-11 px-6 font-bold group">
+                    <Link href={project.slug ? `/work/${project.slug}` : project.demo} target={project.slug ? undefined : "_blank"} rel={project.slug ? undefined : "noopener noreferrer"}>
+                      {common?.viewProject || t("common.viewProject", "View Project")}
+                      <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                    </Link>
+                  </Button>
                 </div>
+              </div>
+
+              <div className="bg-muted/40 p-8 md:p-12 border-t lg:border-t-0 lg:border-l border-border/40">
+                <div className="relative aspect-[4/3] overflow-hidden rounded-xl border border-border/50 mb-8 bg-background">
+                  <ExportedImage
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/50 via-transparent to-transparent" />
+                </div>
+                <h4 className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-6">
+                  {copy?.performanceImpact || t("featuredCaseStudy.performanceImpact", "Performance impact")}
+                </h4>
+                <div className="space-y-5">
+                  {project.metrics && Object.values(project.metrics).map((metric, i) => {
+                    const m = typeof metric === "string" ? { value: metric, label: "" } : metric
+                    const val = parseInt(m?.value?.replace(/[^0-9]/g, "") || "0", 10)
+                    const color = (i === 0 ? "primary" : i === 1 ? "secondary" : "emerald") as "primary" | "secondary" | "emerald"
+                    return (
+                      <MetricBar
+                        key={m?.label || i}
+                        label={m?.label || ""}
+                        value={Math.min(val, 100)}
+                        max={100}
+                        color={color}
+                      />
+                    )
+                  })}
+                </div>
+              </div>
             </div>
-        </section>
-    )
+          </div>
+        </ScrollReveal>
+      </div>
+    </section>
+  )
 }

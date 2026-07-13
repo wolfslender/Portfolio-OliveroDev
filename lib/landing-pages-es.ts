@@ -241,6 +241,7 @@ export const landingPagesEs: LandingPageData[] = [
     proof: {
       title: "Basado en trabajo real de recuperación",
       items: [
+        { company: "GovValue", description: "Recuperé un WordPress después de un backdoor en base de datos que inyectaba páginas spam y redirecciones externas; limpié la infección, reforcé el sitio y gestioné la remediación en Google Search Console." },
         { company: "Co-Active Training Institute", description: "Limpieza de seguridad en entornos WordPress con plugins desactualizados, endpoints expuestos y accesos de usuario abandonados." },
         { company: "Cybernetips", description: "Trabajo de respuesta a incidentes y recuperación digital en entornos WordPress y de servidores." },
       ],

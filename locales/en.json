@@ -15,6 +15,7 @@
     }
   },
   "trustedBy": {
+    "eyebrow": "Selected work",
     "title": "Some folks I've worked with",
     "description": "Organizations I have worked with throughout my career."
   },
@@ -86,6 +87,7 @@
     }
   },
   "testimonialsSection": {
+    "eyebrow": "Verified feedback",
     "title": "What users",
     "highlight": "say",
     "subtitle": "Public feedback that can be verified at its original source.",
@@ -376,6 +378,18 @@
       "button": "Book a Strategy Call"
     }
   },
+  "visuals": {
+    "healthReport": {
+      "title": "Website Health Report",
+      "rows": {
+        "performance": { "label": "Performance", "detail": "Needs attention" },
+        "security": { "label": "Security", "detail": "Public endpoints found" },
+        "wordpress": { "label": "WordPress", "detail": "Outdated plugins" },
+        "layout": { "label": "Layout", "detail": "Visual issues found" },
+        "plan": { "label": "Action Plan", "detail": "Ready" }
+      }
+    }
+  },
   "contactPage": {
     "title": "Tell me what is holding your website back",
     "description": "Share your website, the main problem, and the result you need. I will reply personally with the clearest next step.",
@@ -477,7 +491,7 @@
     },
     {
       "slug": "govvalue",
-      "description": "Blog engine built for SEO. Auto-generated schema and pillar content structures that actually moved keyword rankings."
+      "description": "WordPress security recovery and SEO cleanup after a database backdoor injected spam pages and external redirects."
     },
     {
       "slug": "aesan-website",
@@ -569,10 +583,14 @@
     }
   ],
   "problemSection": {
+    "eyebrow": "What is costing you",
+    "title": "Your website should support growth, not slow it down.",
     "titlePrefix": "Your website should support growth,",
     "titleHighlight": "not slow it down.",
     "description": "I focus on the technical and conversion problems that cost established businesses trust, time, and qualified opportunities.",
     "cta": "See how I solve these",
+    "riskLabel": "Risk: lost trust, slower decisions, and fewer qualified leads.",
+    "bottomCTA": "The goal is not more design noise. The goal is a website that feels trustworthy, loads fast, and makes the next step obvious.",
     "problems": [
       { "title": "Your site is slow", "description": "Every second of load time costs you visitors. I build for speed from the ground up." },
       { "title": "Security keeps you up at night", "description": "Outdated plugins, vulnerable dependencies, no backup plan. I fix that." },
@@ -603,6 +621,8 @@
     }
   },
   "processSection": {
+    "eyebrow": "How it works",
+    "title": "How I deliver",
     "titlePrefix": "How",
     "titleHighlight": "I deliver",
     "description": "A transparent process built around communication and results.",
@@ -681,8 +701,11 @@
   },
   "featuredCaseStudy": {
     "badge": "Featured Case Study",
-    "titlePrefix": "How",
-    "titleHighlight": "150K+ users across 60 countries"
+    "titlePrefix": "Proof that the work",
+    "titleHighlight": "can scale",
+    "caseStudy": "Case study",
+    "results": "Results",
+    "performanceImpact": "Performance impact"
   },
   "projectDetail": {
     "backToWork": "Back to Work",

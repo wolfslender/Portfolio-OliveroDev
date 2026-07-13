@@ -1,4 +1,4 @@
-import { Code, Users, Award, Coffee, Code2, Server, Database, GitBranch, Palette, Smartphone, Zap, Rocket, Search, Globe, Layout, Shield, Brain, MessageSquare, Clock, Users2, Cloud, FileCode } from "lucide-react"
+import { Server, Palette, Rocket, Search, Globe, Layout, Shield, Brain, MessageSquare, Clock, Users2 } from "lucide-react"
 
 export const services = [
   {
@@ -159,58 +159,6 @@ export const hero = {
   },
 }
 
-export const stats = [
-  { icon: Code, value: 10, label: "Years Experience", suffix: "+", prefix: "" },
-  { icon: Users, value: 50, label: "Projects Delivered", suffix: "+", prefix: "" },
-  { icon: Award, value: 100, label: "Client Satisfaction", suffix: "%", prefix: "" },
-  { icon: Zap, value: 30, label: "Faster Load Times", suffix: "%", prefix: "" },
-]
-
-export const skills = [
-  {
-    icon: Code2,
-    title: "Frontend",
-    color: "text-blue-500",
-    bgColor: "bg-blue-500/10",
-    skills: ["HTML5", "CSS3", "JavaScript (ES6+)", "React.js", "Next.js", "Tailwind CSS", "Sass/LESS"],
-  },
-  {
-    icon: Globe,
-    title: "CMS & Platforms",
-    color: "text-cyan-500",
-    bgColor: "bg-cyan-500/10",
-    skills: ["WordPress", "Webflow", "WooCommerce", "Shopify", "CPanel"],
-  },
-  {
-    icon: Zap,
-    title: "Performance",
-    color: "text-yellow-500",
-    bgColor: "bg-yellow-500/10",
-    skills: ["SEO", "Core Web Vitals", "Accessibility (WCAG)", "Responsive Design", "Optimization"],
-  },
-  {
-    icon: GitBranch,
-    title: "Tools & DevOps",
-    color: "text-purple-500",
-    bgColor: "bg-purple-500/10",
-    skills: ["Git", "GitHub", "Azure", "Docker", "VS Code", "Chrome DevTools"],
-  },
-  {
-    icon: Palette,
-    title: "Design",
-    color: "text-pink-500",
-    bgColor: "bg-pink-500/10",
-    skills: ["UI/UX Principles", "Figma", "Wireframing", "Prototyping", "User-Centered Design"],
-  },
-  {
-    icon: Shield,
-    title: "Security",
-    color: "text-green-500",
-    bgColor: "bg-green-500/10",
-    skills: ["Web Security", "Data Protection", "Secure Coding", "Server Hardening", "OWASP Top 10"],
-  },
-]
-
 export const softSkills = [
   { icon: MessageSquare, label: "Communication" },
   { icon: Brain, label: "Problem Solving" },
@@ -218,100 +166,6 @@ export const softSkills = [
   { icon: Clock, label: "Time Management" },
   { icon: Rocket, label: "Adaptability" },
   { icon: Palette, label: "Creativity" },
-]
-
-export const certifications = [
-  {
-    title: "Scrum Fundamentals Certified (SFC)",
-    issuer: "VMEdu Inc.",
-    date: "Feb 2025",
-    credentialId: "1066047",
-    credentialUrl: "#",
-    icon: Users2,
-    color: "text-orange-500",
-    bgColor: "bg-orange-500/10",
-  },
-  {
-    title: "Webflow 101 Certification",
-    issuer: "Webflow",
-    date: "Nov 2023",
-    credentialId: "Alexis Olivero Canario",
-    credentialUrl: "#",
-    icon: Layout,
-    color: "text-blue-500",
-    bgColor: "bg-blue-500/10",
-  },
-
-  {
-    title: "Information Technology Fundamentals",
-    issuer: "IBM",
-    date: "May 2025",
-    credentialId: "IBM-2025",
-    credentialUrl: "#",
-    icon: Server,
-    color: "text-indigo-500",
-    bgColor: "bg-indigo-500/10",
-  },
-  {
-    title: "Hacking Ético en Acción",
-    issuer: "Desafío Latam",
-    date: "Mar 2025",
-    credentialId: "5m77bnugwj",
-    credentialUrl: "#",
-    icon: Shield,
-    color: "text-red-500",
-    bgColor: "bg-red-500/10",
-  },
-  {
-    title: "Fundamentos de AWS Cloud Services",
-    issuer: "LinkedIn",
-    date: "Sep 2022",
-    credentialId: "AWS-LI",
-    credentialUrl: "#",
-    icon: Cloud,
-    color: "text-yellow-500",
-    bgColor: "bg-yellow-500/10",
-  },
-  {
-    title: "Azure: Bases de datos SQL",
-    issuer: "LinkedIn",
-    date: "Sep 2023",
-    credentialId: "AZURE-SQL",
-    credentialUrl: "#",
-    icon: Database,
-    color: "text-cyan-500",
-    bgColor: "bg-cyan-500/10",
-  },
-  {
-    title: "React Esencial",
-    issuer: "LinkedIn",
-    date: "Sep 2023",
-    credentialId: "REACT-LI",
-    credentialUrl: "#",
-    icon: Code2,
-    color: "text-sky-500",
-    bgColor: "bg-sky-500/10",
-  },
-  {
-    title: "Domina JavaScript",
-    issuer: "LinkedIn",
-    date: "Sep 2023",
-    credentialId: "JS-LI",
-    credentialUrl: "#",
-    icon: FileCode,
-    color: "text-yellow-400",
-    bgColor: "bg-yellow-400/10",
-  },
-  {
-    title: "GitHub para Programadores",
-    issuer: "LinkedIn",
-    date: "Jun 2023",
-    credentialId: "GH-LI",
-    credentialUrl: "#",
-    icon: GitBranch,
-    color: "text-purple-500",
-    bgColor: "bg-purple-500/10",
-  },
 ]
 
 export const projects = [
@@ -542,12 +396,24 @@ export const projects = [
   {
     title: "GovValue",
     slug: "govvalue",
-    description: "Dynamic blog system with SEO optimization, author management, and custom call-to-action banners to attract new users.",
+    description: "WordPress recovery and SEO cleanup after a severe hack involving a database backdoor, spam-page injection, and redirects to suspicious external pages.",
     image: "/projects/govvalue.jpg",
-    tags: ["React", "JavaScript", "CSS Grid", "SEO"],
-    category: "frontend",
+    tags: ["WordPress", "Security", "Malware Cleanup", "SEO Recovery"],
+    category: "fullstack",
     github: "https://github.com/wolfslender",
     demo: "https://govvalue.com/",
+    industry: "Government Services",
+    projectType: "Security Recovery & SEO Cleanup",
+    challenge: "The site had been fully compromised. A database-level backdoor was injecting spam pages that redirected visitors and search crawlers to suspicious Chinese-language destinations, creating both security and SEO damage.",
+    solution: "I investigated the infection, cleaned the backdoor and injected content, hardened the WordPress environment, optimized the site, improved SEO foundations, and handled the Google Search Console cleanup process so the harmful indexed URLs could be reviewed and removed.",
+    impactStatement: "After nearly two weeks of technical cleanup, verification, and search-console remediation, the site was restored to a clean, stable state with stronger security and a healthier SEO foundation.",
+    responsibilities: [
+      "Backdoor investigation and database cleanup",
+      "Malware and injected spam-page removal",
+      "WordPress hardening and post-recovery security checks",
+      "SEO optimization and Google Search Console remediation",
+      "Post-cleanup verification to confirm the site was stable"
+    ],
     featured: false,
     size: "medium",
   },

@@ -17,14 +17,3 @@ export function useProjects() {
     }))
   }, [t])
 }
-
-export function useFeaturedProjectsSection() {
-  const { t } = useTranslation()
-  return useMemo(() => ({
-    badge: t('featuredProjects.badge', "Selected Work"),
-    titlePrefix: t('featuredProjects.titlePrefix', "Featured"),
-    titleHighlight: t('featuredProjects.titleHighlight', "Projects"),
-    description: t('featuredProjects.description', "A selection of my most recent and significant work, showcasing my expertise in building scalable web applications."),
-    viewAll: t('featuredProjects.viewAll', "View All Projects")
-  }), [t])
-}

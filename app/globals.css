@@ -79,6 +79,45 @@
   .glass {
     @apply bg-background/80 backdrop-blur-sm border border-border/50;
   }
+  .report-card {
+    @apply bg-card border border-border/60 rounded-xl;
+  }
+  .report-row {
+    @apply flex items-center justify-between py-2.5 border-b border-border/30 last:border-b-0;
+  }
+  .report-label {
+    @apply text-sm font-medium text-muted-foreground;
+  }
+  .metric-bar {
+    @apply h-1.5 rounded-full bg-muted overflow-hidden;
+  }
+  .metric-bar-fill {
+    @apply h-full rounded-full transition-all duration-700;
+  }
+  .status-dot {
+    @apply w-2 h-2 rounded-full shrink-0;
+  }
+  .status-good {
+    @apply bg-emerald-500;
+  }
+  .status-warn {
+    @apply bg-amber-500;
+  }
+  .status-bad {
+    @apply bg-red-500;
+  }
+  .checklist-item {
+    @apply flex items-start gap-3 py-3 border-b border-border/30 last:border-b-0;
+  }
+  .eyebrow {
+    @apply text-xs font-bold uppercase tracking-[0.2em] text-primary;
+  }
+  .section-heading {
+    @apply text-3xl md:text-4xl font-bold tracking-tight leading-[1.15];
+  }
+  .section-subheading {
+    @apply text-lg text-muted-foreground leading-relaxed;
+  }
 }
 
 @theme inline {

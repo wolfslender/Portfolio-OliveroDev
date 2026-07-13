@@ -15,6 +15,7 @@
     }
   },
   "trustedBy": {
+    "eyebrow": "Trabajo seleccionado",
     "title": "Algunas marcas con las que he trabajado",
     "description": "Organizaciones con las que he trabajado a lo largo de mi carrera."
   },
@@ -86,6 +87,7 @@
     }
   },
   "testimonialsSection": {
+    "eyebrow": "Feedback verificado",
     "title": "Lo que los usuarios",
     "highlight": "dicen",
     "subtitle": "Comentarios públicos que puedes verificar en su fuente original.",
@@ -376,6 +378,18 @@
       "button": "Agendar Llamada Estratégica"
     }
   },
+  "visuals": {
+    "healthReport": {
+      "title": "Reporte de Salud Web",
+      "rows": {
+        "performance": { "label": "Rendimiento", "detail": "Requiere atención" },
+        "security": { "label": "Seguridad", "detail": "Endpoints públicos encontrados" },
+        "wordpress": { "label": "WordPress", "detail": "Plugins desactualizados" },
+        "layout": { "label": "Layout", "detail": "Errores visuales detectados" },
+        "plan": { "label": "Plan de acción", "detail": "Listo" }
+      }
+    }
+  },
   "contactPage": {
     "title": "Cuéntame qué está frenando tu web",
     "description": "Comparte tu web, el problema principal y el resultado que necesitas. Te responderé personalmente con el próximo paso más claro.",
@@ -477,7 +491,7 @@
     },
     {
       "slug": "govvalue",
-      "description": "Motor de blog construido para SEO. Esquemas automáticos y contenido pilar que mejoraron rankings."
+      "description": "Recuperación de seguridad WordPress y limpieza SEO después de un backdoor en base de datos que inyectaba páginas spam y redirecciones externas."
     },
     {
       "slug": "aesan-website",
@@ -569,10 +583,14 @@
     }
   ],
   "problemSection": {
+    "eyebrow": "Lo que te está costando",
+    "title": "Tu web debe impulsar el crecimiento, no frenarlo.",
     "titlePrefix": "Tu web debe impulsar el crecimiento,",
     "titleHighlight": "no frenarlo.",
     "description": "Me enfoco en los problemas técnicos y de conversión que cuestan confianza, tiempo y oportunidades calificadas a empresas establecidas.",
     "cta": "Mira cómo resuelvo esto",
+    "riskLabel": "Riesgo: menos confianza, decisiones más lentas y menos leads calificados.",
+    "bottomCTA": "La meta no es más ruido visual. La meta es una web confiable, rápida y con un próximo paso obvio.",
     "problems": [
       { "title": "Tu sitio es lento", "description": "Cada segundo de carga te cuesta visitantes. Construyo pensando en velocidad desde el inicio." },
       { "title": "La seguridad no te deja dormir", "description": "Plugins desactualizados, dependencias vulnerables, sin respaldo. Yo lo arreglo." },
@@ -603,6 +621,8 @@
     }
   },
   "processSection": {
+    "eyebrow": "Cómo funciona",
+    "title": "Cómo entrego",
     "titlePrefix": "Cómo",
     "titleHighlight": "entrego",
     "description": "Un proceso transparente construido alrededor de la comunicación y los resultados.",
@@ -681,8 +701,11 @@
   },
   "featuredCaseStudy": {
     "badge": "Caso de Estudio Destacado",
-    "titlePrefix": "Cómo",
-    "titleHighlight": "150K+ usuarios en 60 países"
+    "titlePrefix": "Prueba de que el trabajo",
+    "titleHighlight": "puede escalar",
+    "caseStudy": "Caso de estudio",
+    "results": "Resultados",
+    "performanceImpact": "Impacto en rendimiento"
   },
   "projectDetail": {
     "backToWork": "Volver a Trabajos",

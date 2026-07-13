@@ -1,110 +1,103 @@
 "use client"
 
-import { siteConfig } from "@/lib/config"
-import { SocialLinks } from "@/components/social-links"
-import { useNav } from "@/hooks/use-nav"
-import { useServices } from "@/hooks/use-services"
-import { useFooter } from "@/hooks/use-footer"
-import { useHero } from "@/hooks/use-hero"
+import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { localizePath } from "@/lib/i18n-routing"
+import { useFooter } from "@/hooks/use-footer"
+import { useNav } from "@/hooks/use-nav"
+import { SocialLinks } from "@/components/social-links"
+import { localizePath, isSpanishPath } from "@/lib/i18n-routing"
+import { landingPages } from "@/lib/landing-pages"
+import { landingPagesEs } from "@/lib/landing-pages-es"
 
 export function Footer() {
-  const navLinks = useNav()
-  const services = useServices()
   const footer = useFooter()
-  const hero = useHero()
+  const nav = useNav()
   const pathname = usePathname()
-  
-  const quickLinks = navLinks.map((item) => ({
-    name: item.label,
-    href: localizePath(pathname || "/", item.href),
+  const isSpanish = isSpanishPath(pathname || "/")
+  const serviceLinks = (isSpanish ? landingPagesEs : landingPages).map((page) => ({
+    href: localizePath(pathname || "/", `/${page.slug}`),
+    label: page.hero.eyebrow,
   }))
-
-  const serviceLinks = services.slice(0, 4).map((service) => ({
-    name: service.title,
-    href: localizePath(pathname || "/", "/services"),
-  }))
+  const quickLinks = nav.filter((item) => ["/", "/about", "/work", "/contact"].includes(item.href))
 
   return (
-    <footer className="relative border-t border-border bg-background/50 backdrop-blur-sm">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background/80 pointer-events-none" />
-
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid md:grid-cols-3 gap-12 mb-12">
-          {/* Brand Section */}
-          <div className="space-y-4">
-            <h3 className="text-2xl font-bold text-foreground">
-              {siteConfig.name}
-            </h3>
-            <p className="text-muted-foreground leading-relaxed">
+    <footer className="border-t border-border/60 bg-background">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+          <div className="col-span-2 md:col-span-1">
+            <Link
+              href={localizePath(pathname || "/", "/")}
+              className="text-lg font-bold text-foreground hover:text-primary transition-colors tracking-tight"
+            >
+              OliveroDev
+            </Link>
+            <p className="mt-4 text-sm text-muted-foreground leading-relaxed max-w-xs">
               {footer.description}
             </p>
-            <div className="pt-2">
-              <SocialLinks variant="boxed" className="gap-3" />
+            <div className="mt-6">
+              <SocialLinks variant="boxed" />
             </div>
           </div>
 
-          {/* Quick Links */}
           <div>
-            <h4 className="font-bold mb-6 text-lg">{footer.quickLinks}</h4>
-            <div className="space-y-3">
-              {quickLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className="block text-muted-foreground hover:text-foreground hover:translate-x-1 transition-all duration-200"
-                >
-                  {link.name}
-                </a>
+            <h3 className="text-sm font-bold uppercase tracking-widest text-foreground mb-4">
+              {footer.quickLinks}
+            </h3>
+            <ul className="space-y-2.5">
+              {quickLinks.map((item) => (
+                <li key={item.href}>
+                  <Link href={localizePath(pathname || "/", item.href)} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                    {item.label}
+                  </Link>
+                </li>
               ))}
-              <a
-                href="/resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                download
-                className="block text-muted-foreground hover:text-foreground hover:translate-x-1 transition-all duration-200"
-              >
-                {hero.buttons.downloadCv}
-              </a>
-            </div>
+            </ul>
           </div>
 
-          {/* Services */}
           <div>
-            <h4 className="font-bold mb-6 text-lg">{footer.services}</h4>
-            <div className="space-y-3">
-              {serviceLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className="block text-muted-foreground hover:text-foreground hover:translate-x-1 transition-all duration-200"
-                >
-                  {link.name}
-                </a>
+            <h3 className="text-sm font-bold uppercase tracking-widest text-foreground mb-4">
+              {footer.services}
+            </h3>
+            <ul className="space-y-2.5">
+              {serviceLinks.map((item) => (
+                <li key={item.href}>
+                  <Link href={item.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                    {item.label}
+                  </Link>
+                </li>
               ))}
-            </div>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-sm font-bold uppercase tracking-widest text-foreground mb-4">
+              {isSpanish ? "Legal" : "Legal"}
+            </h3>
+            <ul className="space-y-2.5">
+              <li>
+                <Link href={localizePath(pathname || "/", "/privacy")} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  {footer.privacy}
+                </Link>
+              </li>
+              <li>
+                <Link href={localizePath(pathname || "/", "/terms")} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  {footer.terms}
+                </Link>
+              </li>
+            </ul>
+            <p className="mt-6 text-xs text-muted-foreground/60 leading-relaxed">
+              {footer.builtWith}
+            </p>
           </div>
         </div>
 
-        <div className="pt-8 border-t border-border">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-sm text-muted-foreground text-center md:text-left">
-              © {new Date().getFullYear()} {siteConfig.name}. {footer.builtWith}
-            </p>
-            <p className="text-xs text-muted-foreground/60 text-center md:text-left max-w-2xl">
-              {footer.disclaimer}
-            </p>
-
-            <div className="flex items-center gap-6 text-sm">
-              <a href={localizePath(pathname || "/", "/privacy")} className="text-muted-foreground hover:text-foreground transition-colors">
-                {footer.privacy}
-              </a>
-              <a href={localizePath(pathname || "/", "/terms")} className="text-muted-foreground hover:text-foreground transition-colors">
-                {footer.terms}
-              </a>
-            </div>
-          </div>
+        <div className="mt-16 pt-8 border-t border-border/40 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-xs text-muted-foreground">
+            &copy; {new Date().getFullYear()} OliveroDev. {isSpanish ? "Todos los derechos reservados." : "All rights reserved."}
+          </p>
+          <p className="text-xs text-muted-foreground/60 max-w-md text-center md:text-right">
+            {footer.disclaimer}
+          </p>
         </div>
       </div>
     </footer>
