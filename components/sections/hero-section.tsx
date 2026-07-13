@@ -51,7 +51,7 @@ export function HeroSection({ locale }: HeroSectionProps = {}) {
                   asChild
                   variant="outline"
                   size="lg"
-                  className="h-12 px-8 font-bold border-border hover:bg-muted/50 transition-all active:scale-[0.98]"
+                  className="h-12 px-8 font-bold border-border bg-background/80 text-foreground hover:bg-muted/60 hover:text-foreground dark:bg-background/40 dark:hover:bg-muted/30 dark:hover:text-foreground transition-all active:scale-[0.98]"
                 >
                   <Link href={localizePath(pathname || "/", "/contact")}>
                     {hero.buttons.primary}
