@@ -110,13 +110,14 @@ export function BlogSidebar({
         {showSearch && (
           <div className="bg-card text-card-foreground rounded-3xl border-2 border-border/50 shadow-lg p-6 hover:border-primary/30 transition-all duration-300">
             <div className="flex items-center gap-2 mb-4">
-              <Search className="w-5 h-5 text-primary" />
-              <h3 className="font-bold text-lg">{t('blogSidebar.searchArticles')}</h3>
+              <Search aria-hidden="true" className="w-5 h-5 text-primary" />
+              <h3 id="blog-search-heading" className="font-bold text-lg">{t('blogSidebar.searchArticles')}</h3>
             </div>
             <div className="relative">
-              <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
+              <Search aria-hidden="true" className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
               <input
                 type="text"
+                aria-labelledby="blog-search-heading"
                 placeholder={t('blogSidebar.searchPlaceholder')}
                 className="flex h-11 w-full rounded-xl border-2 border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:border-primary disabled:cursor-not-allowed disabled:opacity-50 pl-9 transition-all font-medium"
                 value={searchQuery}
@@ -134,7 +135,7 @@ export function BlogSidebar({
         <div className="bg-card text-card-foreground rounded-3xl border-2 border-border/50 shadow-lg p-6 hover:border-primary/30 transition-all duration-300">
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-2">
-              <Tag className="w-5 h-5 text-primary" />
+              <Tag aria-hidden="true" className="w-5 h-5 text-primary" />
               <h3 className="font-bold text-lg">{t('blogSidebar.topics')}</h3>
             </div>
             {selectedTag && (
@@ -153,21 +154,23 @@ export function BlogSidebar({
                 const colorClass = getTagColor(tag)
 
                 return (
-                  <div
+                  <button
                     key={tag}
-                    className="transition-transform duration-300 hover:scale-105 active:scale-95"
+                    type="button"
+                    aria-pressed={isSelected}
+                    onClick={() => onTagSelect?.(isSelected ? null : tag)}
+                    className="transition-transform duration-300 hover:scale-105 active:scale-95 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                   >
                     <Badge
                       variant="outline"
-                      className={`cursor-pointer px-4 py-2 text-sm font-semibold transition-all duration-300 border-2 ${isSelected
+                      className={`pointer-events-none px-4 py-2 text-sm font-semibold transition-all duration-300 border-2 ${isSelected
                           ? "bg-primary text-primary-foreground border-primary shadow-lg scale-105"
                           : `${colorClass} hover:shadow-sm`
                         }`}
-                      onClick={() => onTagSelect?.(isSelected ? null : tag)}
                     >
                       {tag}
                     </Badge>
-                  </div>
+                  </button>
                 )
               })
             ) : (
@@ -177,9 +180,9 @@ export function BlogSidebar({
         </div>
 
         <div className="relative overflow-hidden bg-gradient-to-br from-primary to-primary/80 rounded-3xl p-8 text-white shadow-xl">
-          <div className="absolute -top-12 -right-12 w-32 h-32 bg-white/10 rounded-full blur-2xl" />
+          <div aria-hidden="true" className="absolute -top-12 -right-12 w-32 h-32 bg-white/10 rounded-full blur-2xl" />
           <div className="relative z-10">
-            <Sparkles className="w-8 h-8 mb-4" />
+            <Sparkles aria-hidden="true" className="w-8 h-8 mb-4" />
             <h3 className="font-black text-xl mb-2">{t('blogSidebar.stayUpdated')}</h3>
             <p className="text-sm text-white/90 mb-4 leading-relaxed">
               {t('blogSidebar.newsletterDescription')}
@@ -196,20 +199,21 @@ export function BlogSidebar({
 
       {showModal && (
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-in fade-in duration-200">
-          <div className="bg-card rounded-3xl max-w-md w-full p-8 shadow-2xl animate-in zoom-in duration-200 relative">
+          <div className="bg-card rounded-3xl max-w-md w-full p-8 shadow-2xl animate-in zoom-in duration-200 relative" role="dialog" aria-modal="true" aria-labelledby="newsletter-dialog-title">
             <button
               onClick={() => setShowModal(false)}
               className="absolute top-4 right-4 p-2 rounded-full hover:bg-muted transition-colors"
               disabled={isSubmitting}
+              aria-label={t('blogSidebar.close', 'Close')}
             >
-              <X className="w-5 h-5" />
+              <X aria-hidden="true" className="w-5 h-5" />
             </button>
 
             <div className="text-center mb-6">
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
-                <Mail className="w-8 h-8 text-primary" />
+                <Mail aria-hidden="true" className="w-8 h-8 text-primary" />
               </div>
-              <h3 className="text-2xl font-black mb-2">{t('blogSidebar.subscribeTitle')}</h3>
+              <h3 id="newsletter-dialog-title" className="text-2xl font-black mb-2">{t('blogSidebar.subscribeTitle')}</h3>
               <p className="text-muted-foreground">
                 {t('blogSidebar.newsletterBody')}
               </p>
@@ -240,7 +244,7 @@ export function BlogSidebar({
               >
                 {isSubmitting ? (
                   <>
-                    <Loader2 className="w-5 h-5 animate-spin" />
+                    <Loader2 aria-hidden="true" className="w-5 h-5 animate-spin" />
                     {t('blogSidebar.subscribing')}
                   </>
                 ) : (

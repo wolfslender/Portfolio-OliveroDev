@@ -25,7 +25,6 @@ import "./globals.css"
 const dmSans = DM_Sans({
   subsets: ["latin"],
   variable: "--font-sans",
-  weight: ["400", "500", "600", "700", "800"],
 })
 const geistMono = Geist_Mono({
   subsets: ["latin"],
@@ -123,6 +122,10 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className="scroll-smooth">
       <body className={`${dmSans.variable} ${geistMono.variable} font-sans antialiased selection:bg-primary/30 selection:text-primary`}>
+        <a href="#main-content" className="skip-link">
+          Skip to main content
+        </a>
+
         {/* Google Analytics (conditional on consent) */}
         <GoogleAnalytics />
 
@@ -161,7 +164,9 @@ export default function RootLayout({
             <BackToTop />
             <AvailabilityBadge />
 
-            {children}
+            <div id="main-content" tabIndex={-1}>
+              {children}
+            </div>
 
             <Footer />
             <LanguageSwitcher />

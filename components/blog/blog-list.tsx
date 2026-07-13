@@ -212,8 +212,9 @@ export function BlogList({ posts, tags }: BlogListProps) {
                 className="rounded-full"
                 disabled={currentPage <= 1}
                 onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
+                aria-label={t('blogList.previousPage', 'Previous page')}
               >
-                <ChevronLeft className="w-4 h-4" />
+                <ChevronLeft aria-hidden="true" className="w-4 h-4" />
               </Button>
 
               {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
@@ -222,6 +223,8 @@ export function BlogList({ posts, tags }: BlogListProps) {
                   variant={currentPage === page ? "default" : "outline"}
                   className="rounded-full w-10 h-10"
                   onClick={() => setCurrentPage(page)}
+                  aria-label={t('blogList.goToPage', { page, defaultValue: `Go to page ${page}` })}
+                  aria-current={currentPage === page ? "page" : undefined}
                 >
                   {page}
                 </Button>
@@ -233,8 +236,9 @@ export function BlogList({ posts, tags }: BlogListProps) {
                 className="rounded-full"
                 disabled={currentPage >= totalPages}
                 onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
+                aria-label={t('blogList.nextPage', 'Next page')}
               >
-                <ChevronRight className="w-4 h-4" />
+                <ChevronRight aria-hidden="true" className="w-4 h-4" />
               </Button>
             </div>
           )}

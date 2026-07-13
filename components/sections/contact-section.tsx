@@ -88,7 +88,7 @@ export function ContactSection() {
   return (
     <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 bg-muted/30 relative overflow-hidden min-h-[80vh] flex items-center">
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl" />
+        <div aria-hidden="true" className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl" />
       </div>
 
       <div className="max-w-6xl mx-auto relative z-10 w-full">
@@ -140,7 +140,7 @@ export function ContactSection() {
                 <label className="space-y-2">
                   <span className="text-sm font-medium">{t('contactPage.form.websiteLabel')}</span>
                   <div className="relative">
-                    <Globe2 className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+                    <Globe2 aria-hidden="true" className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
                     <input
                       value={form.website}
                       onChange={(event) => updateField("website", event.target.value)}
@@ -215,7 +215,7 @@ export function ContactSection() {
                   href={getMailtoUrl()}
                   className="inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 font-bold text-primary-foreground transition-all hover:shadow-xl hover:shadow-primary/20"
                 >
-                  <Send className="mr-2 w-4 h-4" />
+                  <Send aria-hidden="true" className="mr-2 w-4 h-4" />
                   {t('contactPage.form.sendPreparedEmail')}
                 </a>
                 <a
@@ -236,14 +236,14 @@ export function ContactSection() {
               >
                 <div className="flex items-center gap-4">
                   <div className="p-3 bg-white/20 rounded-xl">
-                    <Calendar className="w-6 h-6" />
+                    <Calendar aria-hidden="true" className="w-6 h-6" />
                   </div>
                   <div className="text-left">
                     <span className="block font-semibold text-lg">{t('contactPage.bookCall')}</span>
                     <span className="text-sm opacity-80">{t('contactPage.freeConsultation')}</span>
                   </div>
                 </div>
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-all" />
+                <ArrowRight aria-hidden="true" className="w-5 h-5 group-hover:translate-x-1 transition-all" />
               </button>
 
               <div className="group relative">
@@ -253,21 +253,22 @@ export function ContactSection() {
                 >
                   <div className="flex items-center gap-4">
                     <div className="p-3 bg-primary/10 rounded-xl text-primary group-hover:scale-110 transition-transform">
-                      <Mail className="w-6 h-6" />
+                      <Mail aria-hidden="true" className="w-6 h-6" />
                     </div>
                     <div className="text-left">
                       <span className="block font-semibold text-lg">{t('contactPage.sendEmail')}</span>
                       <span className="text-sm text-muted-foreground">{contact.email}</span>
                     </div>
                   </div>
-                  <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
+                  <ArrowRight aria-hidden="true" className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
                 </a>
                 <button
                   onClick={(e) => { e.preventDefault(); copyEmail(); }}
                   className="absolute right-14 top-1/2 -translate-y-1/2 p-2 hover:bg-muted rounded-lg transition-colors text-muted-foreground hover:text-foreground"
                   title={t('contactPage.copyEmail')}
+                  aria-label={t('contactPage.copyEmail')}
                 >
-                  {copied ? <Check className="w-4 h-4 text-green-500" /> : <Copy className="w-4 h-4" />}
+                  {copied ? <Check aria-hidden="true" className="w-4 h-4 text-green-500" /> : <Copy aria-hidden="true" className="w-4 h-4" />}
                 </button>
               </div>
 
