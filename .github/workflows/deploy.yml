@@ -37,7 +37,18 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local_path: './out/'
+          local_path: './out/*'
+          remote_path: './'
+          sftp_only: true
+          port: 22
+
+      - name: 📄 Sync Apache config to IONOS (SFTP)
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local_path: './out/.htaccess'
           remote_path: './'
           sftp_only: true
           port: 22
