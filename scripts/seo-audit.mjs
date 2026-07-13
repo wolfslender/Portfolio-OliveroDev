@@ -36,6 +36,9 @@ if (exists("robots.txt")) {
   if (!robots.includes("Disallow: /studio/")) {
     warnings.push("robots.txt should disallow /studio/")
   }
+  if (!robots.includes("Disallow: /out/")) {
+    errors.push("robots.txt should disallow accidental /out/ duplicate export paths")
+  }
 }
 
 const htmlFiles = []
@@ -98,6 +101,9 @@ if (exists("sitemap.xml")) {
 
   if (!sitemap.includes('hreflang="es"') || !sitemap.includes('hreflang="en"')) {
     errors.push("Sitemap is missing bilingual hreflang alternates")
+  }
+  if (!sitemap.includes('hreflang="x-default"')) {
+    errors.push("Sitemap is missing x-default hreflang alternates")
   }
 }
 

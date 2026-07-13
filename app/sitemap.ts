@@ -46,6 +46,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       languages: {
         en: `${siteConfig.url}${route.path}`,
         es: `${siteConfig.url}${route.path === "/" ? "/es/" : `/es${route.path}`}`,
+        "x-default": `${siteConfig.url}${route.path}`,
       },
     },
   }))
@@ -59,6 +60,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       languages: {
         en: `${siteConfig.url}${route.path}`,
         es: `${siteConfig.url}${route.path === "/" ? "/es/" : `/es${route.path}`}`,
+        "x-default": `${siteConfig.url}${route.path}`,
       },
     },
   }))
