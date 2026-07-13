@@ -1,6 +1,3 @@
-"use client"
-
-import { useTranslation } from "react-i18next"
 import { ScrollReveal } from "@/components/scroll-reveal"
 import { Star } from "lucide-react"
 import { siteConfig } from "@/lib/config"
@@ -21,9 +18,8 @@ interface TestimonialsSectionProps {
 }
 
 export function TestimonialsSection({ locale }: TestimonialsSectionProps = {}) {
-  const { t } = useTranslation()
   const reviews = siteConfig.testimonials
-  const copy = locale === "es" ? es.testimonialsSection : locale === "en" ? en.testimonialsSection : undefined
+  const copy = locale === "es" ? es.testimonialsSection : en.testimonialsSection
 
   return (
     <section className="py-20 md:py-28 bg-background">
@@ -31,14 +27,14 @@ export function TestimonialsSection({ locale }: TestimonialsSectionProps = {}) {
         <ScrollReveal>
           <div className="max-w-3xl mx-auto text-center mb-16">
             <p className="text-sm font-bold uppercase tracking-widest text-primary mb-4">
-              {copy?.eyebrow || t('testimonialsSection.eyebrow', "Testimonials")}
+              {copy.eyebrow}
             </p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-6 text-balance">
-              {copy?.title || t('testimonialsSection.title', "What clients")}{" "}
-              <span className="text-primary">{copy?.highlight || t('testimonialsSection.highlight', "say")}</span>
+              {copy.title}{" "}
+              <span className="text-primary">{copy.highlight}</span>
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              {copy?.subtitle || t('testimonialsSection.subtitle', "Real feedback from people I have worked with.")}
+              {copy.subtitle}
             </p>
           </div>
         </ScrollReveal>
@@ -64,7 +60,7 @@ export function TestimonialsSection({ locale }: TestimonialsSectionProps = {}) {
                     <p className="text-xs text-muted-foreground">{review.role}</p>
                     {"sourceUrl" in review && review.sourceUrl && (
                       <a href={review.sourceUrl} target="_blank" rel="noopener noreferrer" className="text-xs font-semibold text-primary hover:underline">
-                        {copy?.verifiedSource || t("testimonialsSection.verifiedSource")}
+                        {copy.verifiedSource}
                       </a>
                     )}
                   </div>

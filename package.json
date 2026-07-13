@@ -11,6 +11,15 @@
     "test": "vitest run",
     "start": "next start"
   },
+  "browserslist": [
+    "Chrome >= 111",
+    "Edge >= 111",
+    "Firefox >= 115",
+    "Safari >= 16.4",
+    "iOS >= 16.4",
+    "not dead",
+    "not op_mini all"
+  ],
   "dependencies": {
     "@portabletext/react": "^6.0.0",
     "@radix-ui/react-accordion": "^1.2.2",

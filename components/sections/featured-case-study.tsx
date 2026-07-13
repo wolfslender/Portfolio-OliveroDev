@@ -1,7 +1,4 @@
-"use client"
-
 import { ScrollReveal } from "@/components/scroll-reveal"
-import { useTranslation } from "react-i18next"
 import { MetricBar } from "@/components/visuals/metric-bar"
 import Link from "next/link"
 import ExportedImage from "next-image-export-optimizer"
@@ -32,9 +29,9 @@ interface FeaturedCaseStudyProps {
 }
 
 export function FeaturedCaseStudy({ project, locale }: FeaturedCaseStudyProps) {
-  const { t } = useTranslation()
-  const copy = locale === "es" ? es.featuredCaseStudy : locale === "en" ? en.featuredCaseStudy : undefined
-  const common = locale === "es" ? es.common : locale === "en" ? en.common : undefined
+  const isSpanish = locale === "es"
+  const copy = isSpanish ? es.featuredCaseStudy : en.featuredCaseStudy
+  const common = isSpanish ? es.common : en.common
 
   return (
     <section className="py-20 md:py-28 bg-background">
@@ -42,11 +39,11 @@ export function FeaturedCaseStudy({ project, locale }: FeaturedCaseStudyProps) {
         <ScrollReveal>
           <div className="max-w-3xl mx-auto text-center mb-12">
             <p className="text-sm font-bold uppercase tracking-widest text-primary mb-4">
-              {copy?.badge || t('featuredCaseStudy.badge', "Featured Case Study")}
+              {copy.badge}
             </p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-6 text-balance">
-              {copy?.titlePrefix || t('featuredCaseStudy.titlePrefix', "Proof that the work")}{" "}
-              <span className="text-primary">{copy?.titleHighlight || t('featuredCaseStudy.titleHighlight', "can scale")}</span>
+              {copy.titlePrefix}{" "}
+              <span className="text-primary">{copy.titleHighlight}</span>
             </h2>
           </div>
         </ScrollReveal>
@@ -55,7 +52,7 @@ export function FeaturedCaseStudy({ project, locale }: FeaturedCaseStudyProps) {
           <div className="bg-card border border-border/60 rounded-2xl overflow-hidden shadow-xl shadow-primary/5">
             <div className="grid lg:grid-cols-2">
               <div className="p-8 md:p-12 flex flex-col">
-                <p className="text-sm font-semibold text-secondary mb-4">{project.industry || copy?.caseStudy || t("featuredCaseStudy.caseStudy", "Case study")}</p>
+                <p className="text-sm font-semibold text-secondary mb-4">{project.industry || copy.caseStudy}</p>
                 <h3 className="text-2xl md:text-3xl font-bold tracking-tight mb-4 text-balance">
                   {project.title}
                 </h3>
@@ -65,11 +62,11 @@ export function FeaturedCaseStudy({ project, locale }: FeaturedCaseStudyProps) {
                 {project.metrics && (
                   <div className="space-y-3">
                     <p className="text-sm font-bold uppercase tracking-widest text-muted-foreground mb-4">
-                      {copy?.results || t("featuredCaseStudy.results", "Results")}
+                      {copy.results}
                     </p>
                     <div className="grid sm:grid-cols-3 gap-3">
                       {Object.values(project.metrics).map((metric, i) => {
-                        const m = typeof metric === "string" ? { value: metric, label: `${t("common.impact", "Impact")} ${i + 1}` } : metric
+                        const m = typeof metric === "string" ? { value: metric, label: `${common.impact} ${i + 1}` } : metric
                         return (
                           <div key={m.label} className="rounded-xl border border-border/50 bg-background/60 p-4">
                             <span className="block text-2xl font-bold text-primary">{m.value}</span>
@@ -83,7 +80,7 @@ export function FeaturedCaseStudy({ project, locale }: FeaturedCaseStudyProps) {
                 <div className="mt-auto pt-8">
                   <Button asChild className="h-11 px-6 font-bold group">
                     <Link href={project.slug ? `/work/${project.slug}` : project.demo} target={project.slug ? undefined : "_blank"} rel={project.slug ? undefined : "noopener noreferrer"}>
-                      {common?.viewProject || t("common.viewProject", "View Project")}
+                      {common.viewProject}
                       <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                     </Link>
                   </Button>
@@ -102,7 +99,7 @@ export function FeaturedCaseStudy({ project, locale }: FeaturedCaseStudyProps) {
                   <div className="absolute inset-0 bg-gradient-to-t from-background/50 via-transparent to-transparent" />
                 </div>
                 <h4 className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-6">
-                  {copy?.performanceImpact || t("featuredCaseStudy.performanceImpact", "Performance impact")}
+                  {copy.performanceImpact}
                 </h4>
                 <div className="space-y-5">
                   {project.metrics && Object.values(project.metrics).map((metric, i) => {

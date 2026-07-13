@@ -5,12 +5,10 @@ import { HeroSection } from "@/components/sections/hero-section"
 import { ProblemSection } from "@/components/sections/problem-section"
 import { TestimonialsSection } from "@/components/sections/testimonials-section"
 import { HomeOffersSection } from "@/components/sections/home-offers-section"
-import dynamic from 'next/dynamic'
-
-const FeaturedCaseStudy = dynamic(() => import("@/components/sections/featured-case-study").then(mod => mod.FeaturedCaseStudy))
-const ProcessSection = dynamic(() => import("@/components/sections/process-section").then(mod => mod.ProcessSection))
-const TrustedBySection = dynamic(() => import("@/components/sections/trusted-by-section").then(mod => mod.TrustedBySection))
-const CTASection = dynamic(() => import("@/components/sections/cta-section").then(mod => mod.CTASection))
+import { FeaturedCaseStudy } from "@/components/sections/featured-case-study"
+import { ProcessSection } from "@/components/sections/process-section"
+import { TrustedBySection } from "@/components/sections/trusted-by-section"
+import { CTASection } from "@/components/sections/cta-section"
 
 export const metadata: Metadata = {
   title: "Alexis Olivero — Website Performance, Security & Modernization",

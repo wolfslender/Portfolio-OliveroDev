@@ -1,12 +1,7 @@
-"use client"
-
 import Link from "next/link"
-import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
-import { useHero } from "@/hooks/use-hero"
 import { ScrollReveal } from "@/components/scroll-reveal"
 import { WebsiteHealthReport } from "@/components/visuals/website-health-report"
-import { localizePath } from "@/lib/i18n-routing"
 import en from "@/locales/en.json"
 import es from "@/locales/es.json"
 
@@ -15,9 +10,10 @@ interface HeroSectionProps {
 }
 
 export function HeroSection({ locale }: HeroSectionProps = {}) {
-  const translatedHero = useHero()
-  const pathname = usePathname()
-  const hero = locale === "es" ? es.hero : locale === "en" ? en.hero : translatedHero
+  const isSpanish = locale === "es"
+  const hero = isSpanish ? es.hero : en.hero
+  const contactHref = isSpanish ? "/es/contact/" : "/contact/"
+  const auditHref = isSpanish ? "/es/contact/?audit=true" : "/contact/?audit=true"
 
   return (
     <section className="relative min-h-[92svh] flex items-center overflow-hidden bg-background antialiased">
@@ -43,7 +39,7 @@ export function HeroSection({ locale }: HeroSectionProps = {}) {
                   size="lg"
                   className="h-12 px-8 bg-primary hover:bg-primary/90 text-primary-foreground font-bold transition-all hover:shadow-lg hover:shadow-primary/15 active:scale-[0.98]"
                 >
-                  <Link href={localizePath(pathname || "/", "/contact?audit=true")}>
+                  <Link href={auditHref}>
                     {hero.buttons.secondary}
                   </Link>
                 </Button>
@@ -53,7 +49,7 @@ export function HeroSection({ locale }: HeroSectionProps = {}) {
                   size="lg"
                   className="h-12 px-8 font-bold border-border bg-background/80 text-foreground hover:bg-muted/60 hover:text-foreground dark:bg-background/40 dark:hover:bg-muted/30 dark:hover:text-foreground transition-all active:scale-[0.98]"
                 >
-                  <Link href={localizePath(pathname || "/", "/contact")}>
+                  <Link href={contactHref}>
                     {hero.buttons.primary}
                   </Link>
                 </Button>

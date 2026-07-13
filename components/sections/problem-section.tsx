@@ -1,6 +1,3 @@
-"use client"
-
-import { useTranslation } from "react-i18next"
 import { ScrollReveal } from "@/components/scroll-reveal"
 import { AlertTriangle, TrendingDown, ShieldAlert, Smartphone } from "lucide-react"
 import en from "@/locales/en.json"
@@ -13,8 +10,7 @@ interface ProblemSectionProps {
 }
 
 export function ProblemSection({ locale }: ProblemSectionProps = {}) {
-  const { t } = useTranslation()
-  const copy = locale === "es" ? es.problemSection : locale === "en" ? en.problemSection : undefined
+  const copy = locale === "es" ? es.problemSection : en.problemSection
 
   const problems = [
     { icon: painIcons[0], key: "slow" },
@@ -29,13 +25,13 @@ export function ProblemSection({ locale }: ProblemSectionProps = {}) {
         <ScrollReveal>
           <div className="max-w-3xl mx-auto text-center mb-16">
             <p className="text-sm font-bold uppercase tracking-widest text-primary mb-4">
-              {copy?.eyebrow || t('problemSection.eyebrow', "What is costing you")}
+              {copy.eyebrow}
             </p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-6 text-balance">
-              {copy?.title || t('problemSection.title', `${t('problemSection.titlePrefix')} ${t('problemSection.titleHighlight')}`)}
+              {copy.title}
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              {copy?.description || t('problemSection.description')}
+              {copy.description}
             </p>
           </div>
         </ScrollReveal>
@@ -43,7 +39,7 @@ export function ProblemSection({ locale }: ProblemSectionProps = {}) {
         <div className="grid md:grid-cols-2 gap-4 md:gap-6">
           {problems.map((problem, i) => {
             const Icon = problem.icon
-            const localizedProblem = copy?.problems[i] as { title: string; description: string; negativeOutcome?: string } | undefined
+            const localizedProblem = copy.problems[i] as { title: string; description: string; negativeOutcome?: string }
             return (
               <ScrollReveal key={problem.key} delay={i * 100}>
                 <div className="group h-full rounded-2xl border border-border/60 bg-card p-6 md:p-8 transition-all duration-300 hover:border-primary/20 hover:shadow-lg hover:shadow-primary/5">
@@ -52,10 +48,10 @@ export function ProblemSection({ locale }: ProblemSectionProps = {}) {
                       <Icon className="w-5 h-5 text-red-500 dark:text-red-400" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold mb-2">{localizedProblem?.title || t(`problemSection.problems.${i}.title`)}</h3>
-                      <p className="text-muted-foreground leading-relaxed text-sm">{localizedProblem?.description || t(`problemSection.problems.${i}.description`)}</p>
+                      <h3 className="text-lg font-bold mb-2">{localizedProblem.title}</h3>
+                      <p className="text-muted-foreground leading-relaxed text-sm">{localizedProblem.description}</p>
                       <p className="mt-3 text-xs font-semibold text-red-600 dark:text-red-400">
-                        {localizedProblem?.negativeOutcome || copy?.riskLabel || t(`problemSection.problems.${i}.negativeOutcome`, t("problemSection.riskLabel", "Risk: lost trust, slower decisions, and fewer qualified leads."))}
+                        {localizedProblem.negativeOutcome || copy.riskLabel}
                       </p>
                     </div>
                   </div>
@@ -68,7 +64,7 @@ export function ProblemSection({ locale }: ProblemSectionProps = {}) {
         <ScrollReveal delay={300}>
           <div className="mt-12 text-center">
             <p className="text-muted-foreground">
-              {copy?.bottomCTA || t('problemSection.bottomCTA', "The goal is not more design noise. The goal is a website that feels trustworthy, loads fast, and makes the next step obvious.")}{" "}
+              {copy.bottomCTA}{" "}
               <span className="font-bold text-foreground">OliveroDev</span>
             </p>
           </div>

@@ -1,7 +1,4 @@
-"use client"
-
 import { ScrollReveal } from "@/components/scroll-reveal"
-import { useTranslation } from "react-i18next"
 import { Search, Route, Code, Rocket } from "lucide-react"
 import en from "@/locales/en.json"
 import es from "@/locales/es.json"
@@ -11,41 +8,40 @@ interface ProcessSectionProps {
 }
 
 export function ProcessSection({ locale }: ProcessSectionProps = {}) {
-  const { t } = useTranslation()
-  const copy = locale === "es" ? es.processSection : locale === "en" ? en.processSection : undefined
+  const copy = locale === "es" ? es.processSection : en.processSection
 
   const steps = [
     {
       step: 1,
       icon: Search,
-      title: copy?.steps[0].title || t('processSection.steps.0.title'),
-      description: copy?.steps[0].description || t('processSection.steps.0.description'),
-      duration: copy?.steps[0].duration || t('processSection.steps.0.duration'),
-      deliverable: copy?.steps[0].deliverable || t('processSection.steps.0.deliverable'),
+      title: copy.steps[0].title,
+      description: copy.steps[0].description,
+      duration: copy.steps[0].duration,
+      deliverable: copy.steps[0].deliverable,
     },
     {
       step: 2,
       icon: Route,
-      title: copy?.steps[1].title || t('processSection.steps.1.title'),
-      description: copy?.steps[1].description || t('processSection.steps.1.description'),
-      duration: copy?.steps[1].duration || t('processSection.steps.1.duration'),
-      deliverable: copy?.steps[1].deliverable || t('processSection.steps.1.deliverable'),
+      title: copy.steps[1].title,
+      description: copy.steps[1].description,
+      duration: copy.steps[1].duration,
+      deliverable: copy.steps[1].deliverable,
     },
     {
       step: 3,
       icon: Code,
-      title: copy?.steps[2].title || t('processSection.steps.2.title'),
-      description: copy?.steps[2].description || t('processSection.steps.2.description'),
-      duration: copy?.steps[2].duration || t('processSection.steps.2.duration'),
-      deliverable: copy?.steps[2].deliverable || t('processSection.steps.2.deliverable'),
+      title: copy.steps[2].title,
+      description: copy.steps[2].description,
+      duration: copy.steps[2].duration,
+      deliverable: copy.steps[2].deliverable,
     },
     {
       step: 4,
       icon: Rocket,
-      title: copy?.steps[3].title || t('processSection.steps.3.title'),
-      description: copy?.steps[3].description || t('processSection.steps.3.description'),
-      duration: copy?.steps[3].duration || t('processSection.steps.3.duration'),
-      deliverable: copy?.steps[3].deliverable || t('processSection.steps.3.deliverable'),
+      title: copy.steps[3].title,
+      description: copy.steps[3].description,
+      duration: copy.steps[3].duration,
+      deliverable: copy.steps[3].deliverable,
     },
   ]
 
@@ -55,13 +51,13 @@ export function ProcessSection({ locale }: ProcessSectionProps = {}) {
         <ScrollReveal>
           <div className="max-w-3xl mx-auto text-center mb-16">
             <p className="text-sm font-bold uppercase tracking-widest text-primary mb-4">
-              {copy?.eyebrow || t('processSection.eyebrow', "How it works")}
+              {copy.eyebrow}
             </p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-6 text-balance">
-              {copy?.title || t('processSection.title', `${t('processSection.titlePrefix')} ${t('processSection.titleHighlight')}`)}
+              {copy.title}
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              {copy?.description || t('processSection.description')}
+              {copy.description}
             </p>
           </div>
         </ScrollReveal>
@@ -88,10 +84,10 @@ export function ProcessSection({ locale }: ProcessSectionProps = {}) {
                       <p className="text-sm text-muted-foreground leading-relaxed">{step.description}</p>
                       <div className="mt-5 space-y-2 border-t border-border/40 pt-4">
                         <p className="text-xs font-bold uppercase tracking-widest text-primary">
-                          {copy?.duration || t("processSection.duration")}{step.duration}
+                          {copy.duration}{step.duration}
                         </p>
                         <p className="text-xs font-bold uppercase tracking-widest text-secondary">
-                          {copy?.deliverable || t("processSection.deliverable")}{step.deliverable}
+                          {copy.deliverable}{step.deliverable}
                         </p>
                       </div>
                     </div>

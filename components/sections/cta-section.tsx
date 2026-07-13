@@ -1,12 +1,7 @@
-"use client"
-
 import { Button } from "@/components/ui/button"
 import { ArrowRight, MessageSquare } from "lucide-react"
 import Link from "next/link"
-import { usePathname } from "next/navigation"
 import { ScrollReveal } from "@/components/scroll-reveal"
-import { useCTASection } from "@/hooks/use-cta-section"
-import { localizePath } from "@/lib/i18n-routing"
 import en from "@/locales/en.json"
 import es from "@/locales/es.json"
 
@@ -15,9 +10,10 @@ interface CTASectionProps {
 }
 
 export function CTASection({ locale }: CTASectionProps = {}) {
-  const translatedCtaSection = useCTASection()
-  const pathname = usePathname()
-  const ctaSection = locale === "es" ? es.cta : locale === "en" ? en.cta : translatedCtaSection
+  const isSpanish = locale === "es"
+  const ctaSection = isSpanish ? es.cta : en.cta
+  const contactHref = isSpanish ? "/es/contact/" : "/contact/"
+  const auditHref = isSpanish ? "/es/contact/?audit=true" : "/contact/?audit=true"
 
   return (
     <section className="py-20 md:py-28 bg-muted/30">
@@ -39,7 +35,7 @@ export function CTASection({ locale }: CTASectionProps = {}) {
                   size="lg"
                   className="h-12 px-8 bg-primary hover:bg-primary/90 text-primary-foreground font-bold transition-all hover:shadow-lg hover:shadow-primary/15 active:scale-[0.98]"
                 >
-                  <Link href={localizePath(pathname || "/", "/contact")}>
+                  <Link href={contactHref}>
                     {ctaSection.primaryButton}
                     <MessageSquare className="ml-2 w-4 h-4" />
                   </Link>
@@ -50,7 +46,7 @@ export function CTASection({ locale }: CTASectionProps = {}) {
                   size="lg"
                   className="h-12 px-8 font-bold border-border hover:bg-muted/50 transition-all active:scale-[0.98]"
                 >
-                  <Link href={localizePath(pathname || "/", "/contact?audit=true")}>
+                  <Link href={auditHref}>
                     {ctaSection.secondaryButton}
                     <ArrowRight className="ml-2 w-4 h-4" />
                   </Link>
