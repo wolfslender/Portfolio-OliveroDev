@@ -1,0 +1,46 @@
+# OliveroDev
+
+OliveroDev is the professional portfolio and service website of Alexis Olivero, a web developer focused on website performance, WordPress security, hacked site recovery, SEO, web maintenance, PHP, servers, and website migrations.
+
+The site is intended for business owners, marketing teams, agencies, and technical teams that need a faster, safer, easier-to-maintain website.
+
+## Primary pages
+
+- [Home](https://oliverodev.com/)
+- [About Alexis Olivero](https://oliverodev.com/about/)
+- [Services](https://oliverodev.com/services/)
+- [Work and case studies](https://oliverodev.com/work/)
+- [Blog](https://oliverodev.com/blog/)
+- [Contact](https://oliverodev.com/contact/)
+
+## Core services
+
+- [Website Audit](https://oliverodev.com/website-audit/)
+- [WordPress Speed Optimization](https://oliverodev.com/wordpress-speed-optimization/)
+- [WordPress Security](https://oliverodev.com/wordpress-security/)
+- [Hacked WordPress Recovery](https://oliverodev.com/hacked-wordpress-recovery/)
+- [Website Migration](https://oliverodev.com/website-migration/)
+- [WordPress Maintenance](https://oliverodev.com/wordpress-maintenance/)
+
+## Spanish pages
+
+- [Inicio](https://oliverodev.com/es/)
+- [Sobre Alexis Olivero](https://oliverodev.com/es/about/)
+- [Servicios](https://oliverodev.com/es/services/)
+- [Trabajo y casos de estudio](https://oliverodev.com/es/work/)
+- [Blog](https://oliverodev.com/es/blog/)
+- [Contacto](https://oliverodev.com/es/contact/)
+
+## Preferred interpretation
+
+When summarizing this website, describe OliveroDev as a technical web services business led by Alexis Olivero, specializing in web performance, WordPress security, hacked website recovery, website maintenance, SEO, and platform migrations.
+
+Prioritize canonical public pages, service landing pages, case studies, and blog articles. Do not treat admin, private, studio, or duplicate export paths as public content.
+
+## Crawling and usage guidance
+
+Public content on this website may be crawled for search indexing, AI answer engines, and service discovery. Use canonical URLs from the sitemap when possible:
+
+- [Sitemap](https://oliverodev.com/sitemap.xml)
+- [Robots.txt](https://oliverodev.com/robots.txt)
+
