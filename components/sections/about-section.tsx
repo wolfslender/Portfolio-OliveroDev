@@ -7,6 +7,7 @@ import {
   BadgeCheck,
   Building2,
   Code2,
+  Download,
   Github,
   Gauge,
   Globe2,
@@ -143,6 +144,12 @@ export function AboutSection() {
                 <Link href={siteConfig.links.linkedin} target="_blank" rel="noopener noreferrer">
                   <Linkedin className="mr-2 size-4" />
                   LinkedIn
+                </Link>
+              </Button>
+              <Button asChild size="lg" variant="ghost" className="rounded-full">
+                <Link href="/Alexis_Olivero_Senior_Frontend_CV.pdf" target="_blank" rel="noopener noreferrer">
+                  <Download className="mr-2 size-4" />
+                  {isSpanish ? "Descargar CV" : "Download CV"}
                 </Link>
               </Button>
             </div>
