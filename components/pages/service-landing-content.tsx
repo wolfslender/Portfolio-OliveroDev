@@ -221,7 +221,7 @@ export function ServiceLandingContent({ data, locale = "en" }: ServiceLandingCon
             </div>
           </ScrollReveal>
           <ScrollReveal delay={100}>
-            <div className="grid md:grid-cols-3 gap-4 md:gap-6 max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-4 md:gap-6 max-w-3xl mx-auto justify-center">
               {proof.items.map((item) => (
                 <div key={item.company} className="bg-card border border-border/60 p-6 rounded-xl">
                   <p className="text-sm font-bold mb-2">{item.company}</p>
