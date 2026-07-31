@@ -132,9 +132,9 @@ export function HomePluginsSection({ locale }: HomePluginsSectionProps = {}) {
                 </div>
 
                 {/* Floating: 15 deletions */}
-                <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 md:-bottom-6 animate-float rounded-2xl border border-violet-400/30 bg-violet-500/20 backdrop-blur px-5 py-3 text-center shadow-lg shadow-violet-900/40">
-                  <p className="text-[11px] uppercase tracking-widest text-violet-300 font-bold">{copy.floatingFree}</p>
-                  <p className="text-sm font-bold text-white">{copy.floatingPro}</p>
+                <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 md:-bottom-6 animate-float rounded-2xl bg-white text-zinc-900 shadow-xl shadow-black/30 px-5 py-3 text-center">
+                  <p className="text-[11px] uppercase tracking-widest text-violet-600 font-bold">{copy.floatingFree}</p>
+                  <p className="text-sm font-bold text-zinc-900">{copy.floatingPro}</p>
                 </div>
               </div>
             </div>
