@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button"
 import { CheckCircle2, ExternalLink, Star, Zap } from "lucide-react"
 import { ScrollReveal } from "@/components/scroll-reveal"
 import { plugins } from "@/lib/data"
+import { siteConfig } from "@/lib/config"
 import en from "@/locales/en.json"
 import es from "@/locales/es.json"
 
@@ -81,6 +82,35 @@ export function HomePluginsSection({ locale }: HomePluginsSectionProps = {}) {
                     <CheckCircle2 className="w-3 h-3 text-green-500" /> {isSpanish ? es.pluginsPage.noCreditCard : en.pluginsPage.noCreditCard}
                   </span>
                 </div>
+
+                <figure className="rounded-2xl border border-border/60 bg-background/60 p-5">
+                  <div className="flex items-center gap-1 mb-2">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 text-yellow-500 fill-yellow-500" />
+                    ))}
+                  </div>
+                  <blockquote className="text-sm text-foreground leading-relaxed italic">
+                    &ldquo;{isSpanish ? es.pluginsPage.testimonialQuote : en.pluginsPage.testimonialQuote}&rdquo;
+                  </blockquote>
+                  <figcaption className="mt-4 flex items-center gap-3 border-t border-border/40 pt-4">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-violet-600 to-violet-800 text-sm font-bold text-white">
+                      F
+                    </div>
+                    <div>
+                      <p className="text-sm font-bold">farahalmn</p>
+                      <a
+                        href={siteConfig.testimonials[0]?.sourceUrl ?? "https://wordpress.org/plugins/oliverodev-media-audit/#reviews"}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs font-semibold text-primary hover:underline"
+                      >
+                        {isSpanish ? es.pluginsPage.testimonialRole : en.pluginsPage.testimonialRole}
+                        <span className="mx-1">·</span>
+                        {isSpanish ? es.pluginsPage.testimonialLink : en.pluginsPage.testimonialLink}
+                      </a>
+                    </div>
+                  </figcaption>
+                </figure>
               </div>
 
               <div className="rounded-2xl bg-gradient-to-br from-violet-600 to-violet-800 p-6 md:p-8 text-white">

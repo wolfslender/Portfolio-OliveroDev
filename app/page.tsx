@@ -3,7 +3,6 @@ import { siteConfig } from "@/lib/config"
 import { projects } from "@/lib/data"
 import { HeroSection } from "@/components/sections/hero-section"
 import { ProblemSection } from "@/components/sections/problem-section"
-import { TestimonialsSection } from "@/components/sections/testimonials-section"
 import { HomeOffersSection } from "@/components/sections/home-offers-section"
 import { FeaturedCaseStudy } from "@/components/sections/featured-case-study"
 import { ProcessSection } from "@/components/sections/process-section"
@@ -36,7 +35,6 @@ export default function Home() {
       <FeaturedCaseStudy project={featuredProject} locale="en" />
       <ProcessSection locale="en" />
       <HomePluginsSection locale="en" />
-      <TestimonialsSection locale="en" />
       <CTASection locale="en" />
     </main>
   )

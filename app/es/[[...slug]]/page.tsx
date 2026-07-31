@@ -10,7 +10,6 @@ import { HomeOffersSection } from "@/components/sections/home-offers-section"
 import { FeaturedCaseStudy } from "@/components/sections/featured-case-study"
 import { ProcessSection } from "@/components/sections/process-section"
 import { HomePluginsSection } from "@/components/sections/home-plugins-section"
-import { TestimonialsSection } from "@/components/sections/testimonials-section"
 import { CTASection } from "@/components/sections/cta-section"
 import { ServicesContent } from "@/components/pages/services-content"
 import WorkContent from "@/components/pages/work-content"
@@ -130,7 +129,6 @@ function SpanishHome() {
       <FeaturedCaseStudy project={featuredProject} locale="es" />
       <ProcessSection locale="es" />
       <HomePluginsSection locale="es" />
-      <TestimonialsSection locale="es" />
       <CTASection locale="es" />
     </main>
   )
