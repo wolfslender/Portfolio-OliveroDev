@@ -152,7 +152,21 @@
     "productTitle": "Media Audit",
     "productTagline": "Limpia archivos multimedia no usados de forma segura",
     "viewAll": "Ver Todos los Plugins",
-    "tryFree": "Obtén PRO — $19/año"
+    "tryFree": "Obtén PRO — $19/año",
+    "badge": "Plugin WordPress destacado",
+    "headline": "Tu librería de medios esconde",
+    "headlineHighlight": "almacenamiento que estás pagando.",
+    "subheadline": "Media Audit encuentra cada archivo no usado, te muestra exactamente qué es seguro borrar y recupera espacio en minutos.",
+    "mockupUrl": "tu-sitio.com/wp-admin · Media Audit",
+    "floatingFree": "15 borrados gratis — para siempre",
+    "floatingPro": "Ilimitado con PRO",
+    "riskChip": "Puntuación de riesgo antes de cada borrado",
+    "proChips": [
+      "Puntuación de riesgo (0–100)",
+      "Papelera PRO: restaura archivos",
+      "Elementor · ACF · Divi · WooCommerce",
+      "Reportes automáticos por email"
+    ]
   },
   "pluginsPage": {
     "metaTitle": "Plugins WordPress - Construidos para Escalar",

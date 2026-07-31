@@ -152,7 +152,21 @@
     "productTitle": "Media Audit",
     "productTagline": "Clean unused media files safely",
     "viewAll": "View All Plugins",
-    "tryFree": "Get PRO — $19/year"
+    "tryFree": "Get PRO — $19/year",
+    "badge": "Featured WordPress plugin",
+    "headline": "Your media library is hiding",
+    "headlineHighlight": "storage you're paying for.",
+    "subheadline": "Media Audit finds every unused file, shows you exactly what's safe to delete, and recovers space in minutes.",
+    "mockupUrl": "your-site.com/wp-admin · Media Audit",
+    "floatingFree": "15 free deletions — forever",
+    "floatingPro": "Unlimited with PRO",
+    "riskChip": "Risk score before every delete",
+    "proChips": [
+      "Risk Scoring (0–100)",
+      "PRO Trash: restore files",
+      "Elementor · ACF · Divi · WooCommerce",
+      "Automated email reports"
+    ]
   },
   "pluginsPage": {
     "metaTitle": "WordPress Plugins - Built to Scale",
