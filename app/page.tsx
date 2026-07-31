@@ -7,6 +7,7 @@ import { TestimonialsSection } from "@/components/sections/testimonials-section"
 import { HomeOffersSection } from "@/components/sections/home-offers-section"
 import { FeaturedCaseStudy } from "@/components/sections/featured-case-study"
 import { ProcessSection } from "@/components/sections/process-section"
+import { HomePluginsSection } from "@/components/sections/home-plugins-section"
 import { TrustedBySection } from "@/components/sections/trusted-by-section"
 import { CTASection } from "@/components/sections/cta-section"
 
@@ -34,6 +35,7 @@ export default function Home() {
       <HomeOffersSection locale="en" />
       <FeaturedCaseStudy project={featuredProject} locale="en" />
       <ProcessSection locale="en" />
+      <HomePluginsSection locale="en" />
       <TestimonialsSection locale="en" />
       <CTASection locale="en" />
     </main>

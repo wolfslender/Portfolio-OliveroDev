@@ -28,7 +28,7 @@ export default function PluginsPage() {
           }),
         }}
       />
-      <PluginsContent />
+      <PluginsContent locale="en" />
     </>
   )
 }

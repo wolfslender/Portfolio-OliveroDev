@@ -9,6 +9,7 @@ import { ProblemSection } from "@/components/sections/problem-section"
 import { HomeOffersSection } from "@/components/sections/home-offers-section"
 import { FeaturedCaseStudy } from "@/components/sections/featured-case-study"
 import { ProcessSection } from "@/components/sections/process-section"
+import { HomePluginsSection } from "@/components/sections/home-plugins-section"
 import { TestimonialsSection } from "@/components/sections/testimonials-section"
 import { CTASection } from "@/components/sections/cta-section"
 import { ServicesContent } from "@/components/pages/services-content"
@@ -128,6 +129,7 @@ function SpanishHome() {
       <HomeOffersSection locale="es" />
       <FeaturedCaseStudy project={featuredProject} locale="es" />
       <ProcessSection locale="es" />
+      <HomePluginsSection locale="es" />
       <TestimonialsSection locale="es" />
       <CTASection locale="es" />
     </main>
@@ -144,7 +146,7 @@ export default async function SpanishPage({ params }: PageProps) {
   if (route === "about") return <AboutSection />
   if (route === "services") return <ServicesContent />
   if (route === "work") return <WorkContent />
-  if (route === "plugins") return <PluginsContent />
+  if (route === "plugins") return <PluginsContent locale="es" />
   if (route === "privacy") return <PrivacyContent />
   if (route === "terms") return <TermsContent />
   if (route === "glossary") return <GlossaryPage />

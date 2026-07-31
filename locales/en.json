@@ -4,9 +4,18 @@
       "prefix": "Turn your underperforming website into a",
       "highlight": "fast, secure growth platform."
     },
-    "roles": ["Performance + conversion", "Security + recovery", "Migration + rebuilds", "Direct senior involvement"],
+    "roles": [
+      "Performance + conversion",
+      "Security + recovery",
+      "Migration + rebuilds",
+      "Direct senior involvement"
+    ],
     "description": "I help established businesses fix websites that are slow, vulnerable, hard to manage, or not generating qualified opportunities. You work directly with me from audit to launch.",
-    "proof": ["Personal reply within 24 hours", "Clear scope and measurable priorities", "Launch support included"],
+    "proof": [
+      "Personal reply within 24 hours",
+      "Clear scope and measurable priorities",
+      "Launch support included"
+    ],
     "location": "Based in Santo Domingo · Working worldwide",
     "buttons": {
       "primary": "Book a Strategy Call",
@@ -23,6 +32,7 @@
     "home": "Home",
     "services": "Services",
     "work": "Work",
+    "plugins": "Plugins",
     "blog": "Blog",
     "about": "About",
     "contact": "Contact"
@@ -45,10 +55,18 @@
     "workedHighlight": "I've worked"
   },
   "stats": [
-    { "label": "Years in the game" },
-    { "label": "Projects shipped" },
-    { "label": "Happy clients" },
-    { "label": "Faster load times" }
+    {
+      "label": "Years in the game"
+    },
+    {
+      "label": "Projects shipped"
+    },
+    {
+      "label": "Happy clients"
+    },
+    {
+      "label": "Faster load times"
+    }
   ],
   "featuredProjects": {
     "badge": "Recent work",
@@ -125,24 +143,29 @@
     "title": "Need a",
     "titleHighlight": "WordPress Plugin?",
     "description": "I also build premium WordPress plugins for storage optimization, media management, and more.",
-    "features": ["Smart detection", "Storage analysis", "Trash system", "Premium support"],
+    "features": [
+      "Smart detection",
+      "Storage analysis",
+      "Trash system",
+      "Premium support"
+    ],
     "productTitle": "Media Audit",
     "productTagline": "Clean unused media files safely",
     "viewAll": "View All Plugins",
-    "tryFree": "Try Free Version"
+    "tryFree": "Get PRO — $19/year"
   },
   "pluginsPage": {
     "metaTitle": "WordPress Plugins - Built to Scale",
     "metaDescription": "Premium WordPress plugins designed to solve real problems. Clean code, regular updates, and dedicated support.",
     "heroBadge": "WordPress Plugins",
-    "heroTitle": "WordPress Plugins",
-    "heroHighlight": "Built to Scale",
-    "heroDescription": "Premium WordPress plugins designed to solve real problems. Clean code, regular updates, and dedicated support.",
+    "heroTitle": "Stop paying to store files",
+    "heroHighlight": "nobody uses.",
+    "heroDescription": "Your media library hides orphaned files that eat storage and slow down backups. Media Audit finds them, shows you exactly what is safe to delete, and lets you clean up in minutes.",
     "freeLabel": "Free — Always",
-    "startTrial": "Start Free Trial",
+    "startTrial": "Get PRO",
     "freeOnWp": "Free on WP.org",
-    "noCreditCard": "No credit card for trial",
-    "threeDayTrial": "3-day free trial",
+    "noCreditCard": "Instant activation after checkout",
+    "threeDayTrial": "14-day money-back guarantee",
     "cancelAnytime": "Cancel anytime",
     "getStarted": "Get started",
     "forAgencies": "For agencies",
@@ -163,7 +186,54 @@
     ],
     "ctaTitle": "Need a Custom WordPress Solution?",
     "ctaDescription": "I also build custom WordPress plugins and themes tailored to your specific needs.",
-    "ctaButton": "Let's Discuss Your Project"
+    "ctaButton": "Let's Discuss Your Project",
+    "heroCtaPrimary": "Scan my library — free",
+    "heroCtaSecondary": "See PRO plans",
+    "ratingLine": "Rated 5.0 by verified WordPress.org reviewers",
+    "trustLine": "Free version forever · Tested up to WordPress 7.0",
+    "shotsEyebrow": "See it in action",
+    "shotsTitle": "Know exactly what is safe to delete",
+    "shotsDescription": "No blind deletions. Every file gets a used/unused status, and PRO adds risk scoring plus a Trash so nothing is lost forever.",
+    "shots": [
+      "Dashboard with total library size, files in use, and storage to recover.",
+      "Unused Files tab — full list of unreferenced media ready for cleanup.",
+      "Media Library tab — full library view with used/unused status.",
+      "Settings — batch size, scan frequency, and file filters."
+    ],
+    "comparisonTitle": "Free vs PRO — see what unlocks",
+    "comparisonSubtitle": "Start free with 15 deletions. Upgrade when you need unlimited cleanup.",
+    "freeTitle": "FREE — forever",
+    "freeLimit": "15 deletions included",
+    "proTitle": "PRO — $19/year",
+    "proLimit": "Unlimited deletions",
+    "valueAnchor": "Less than $1.60/month — less than one hour of developer time, and it recovers gigabytes of hosting storage.",
+    "faqTitle": "Common questions",
+    "faq": [
+      {
+        "q": "Is it safe to delete files?",
+        "a": "Yes. Media Audit shows exactly where every file is used before you delete, and PRO adds a risk score (0–100) so you always know what you are removing. PRO also keeps every deletion recoverable for 30 days in the Trash."
+      },
+      {
+        "q": "Can I restore files I deleted by mistake?",
+        "a": "With PRO, yes. Every deletion goes to the PRO Trash first and can be restored before permanent removal."
+      },
+      {
+        "q": "Does it detect files used by page builders?",
+        "a": "The free version covers posts, pages, widgets, and theme mods. PRO adds deep detection for Elementor, ACF, Divi, and WooCommerce."
+      },
+      {
+        "q": "What happens after the 15 free deletions?",
+        "a": "The scanner and dashboard stay free forever. When you need more, PRO unlocks unlimited deletions, risk scoring, bulk cleanup, and automatic reports."
+      }
+    ],
+    "finalCtaTitle": "Clean your library today",
+    "finalCtaDescription": "Get PRO and recover storage in the next 10 minutes.",
+    "finalCtaButton": "Get PRO — $19/year",
+    "finalCtaNote": "14-day money-back guarantee · Instant activation",
+    "testimonialQuote": "Limpió archivos basura y optimizó mi sitio de WordPress rápidamente sin afectar nada importante.",
+    "testimonialRole": "Verified WordPress.org reviewer",
+    "testimonialLink": "View verified source",
+    "whyDescription": "Built like production code — because these plugins run on production sites."
   },
   "pluginsData": {
     "hero": {
@@ -192,10 +262,9 @@
           "Bulk Cleanup by risk level (Low / Medium / All)",
           "Storage Analytics with visual charts",
           "Automated email reports (daily / weekly)",
-          "Advanced exclusion rules (folder, size, author, MIME)",
-          "3-day free trial — no credit card required"
+          "Advanced exclusion rules (folder, size, author, MIME)"
         ],
-        "price": "From $29/year"
+        "price": "From $19/year"
       }
     ]
   },
@@ -382,11 +451,26 @@
     "healthReport": {
       "title": "Website Health Report",
       "rows": {
-        "performance": { "label": "Performance", "detail": "Needs attention" },
-        "security": { "label": "Security", "detail": "Public endpoints found" },
-        "wordpress": { "label": "WordPress", "detail": "Outdated plugins" },
-        "layout": { "label": "Layout", "detail": "Visual issues found" },
-        "plan": { "label": "Action Plan", "detail": "Ready" }
+        "performance": {
+          "label": "Performance",
+          "detail": "Needs attention"
+        },
+        "security": {
+          "label": "Security",
+          "detail": "Public endpoints found"
+        },
+        "wordpress": {
+          "label": "WordPress",
+          "detail": "Outdated plugins"
+        },
+        "layout": {
+          "label": "Layout",
+          "detail": "Visual issues found"
+        },
+        "plan": {
+          "label": "Action Plan",
+          "detail": "Ready"
+        }
       }
     }
   },
@@ -507,78 +591,152 @@
       "id": "audit-action-plan",
       "title": "Website Audit & Action Plan",
       "description": "A focused technical and conversion audit for business owners who know their website has problems, but do not know what to fix first. I review speed, security, SEO basics, UX friction, plugins, hosting, and maintenance risks, then give you a prioritized plan.",
-      "features": ["Performance Review", "Security Review", "SEO Basics", "UX Friction", "Technical Roadmap"],
+      "features": [
+        "Performance Review",
+        "Security Review",
+        "SEO Basics",
+        "UX Friction",
+        "Technical Roadmap"
+      ],
       "painPoint": "You are unsure whether to optimize, rebuild, migrate, or secure the site first.",
       "evidence": "Based on the same type of review work used across WordPress, Webflow, and public-sector projects.",
       "bestFor": "Established websites with performance, security, SEO, or maintenance doubts.",
       "timeline": "3-5 business days",
       "outcome": "A clear action plan that separates urgent fixes from nice-to-have improvements.",
-      "deliverables": ["Audit Summary", "Priority Fix List", "Risk Notes", "Recommended Next Step"]
+      "deliverables": [
+        "Audit Summary",
+        "Priority Fix List",
+        "Risk Notes",
+        "Recommended Next Step"
+      ]
     },
     {
       "id": "optimize-protect",
       "title": "Optimize & Protect Your Website",
       "description": "For websites that already exist but feel slow, fragile, outdated, or risky. I improve performance, clean technical debt, update risky pieces, harden the site, and make the platform easier to maintain.",
-      "features": ["Core Web Vitals", "Security Hardening", "Plugin Cleanup", "Access Review", "Technical SEO"],
+      "features": [
+        "Core Web Vitals",
+        "Security Hardening",
+        "Plugin Cleanup",
+        "Access Review",
+        "Technical SEO"
+      ],
       "painPoint": "Your site works, but it is slow, exposed, hard to maintain, or quietly costing trust.",
       "evidence": "Ongoing contractor work supporting performance, security, maintenance, SEO, and visual fixes for a global training platform with 150K+ users.",
       "bestFor": "Businesses that want to improve the current website without rebuilding everything.",
       "timeline": "2-4 weeks",
       "outcome": "A faster, safer, cleaner website with fewer hidden risks and a stronger technical base.",
-      "deliverables": ["Performance Fixes", "Security Hardening", "Plugin and Access Cleanup", "Before/After Notes"],
+      "deliverables": [
+        "Performance Fixes",
+        "Security Hardening",
+        "Plugin and Access Cleanup",
+        "Before/After Notes"
+      ],
       "pricingNote": "Scope depends on site size, platform, user roles, plugin risk, hosting setup, and how much implementation is needed after the audit."
     },
     {
       "id": "hacked-site-recovery",
       "title": "Hacked Site Recovery",
       "description": "Your site's been hacked. Don't panic. I'll clean the malware, close the vulnerabilities, restore your content, and implement protections to prevent it from happening again. Fast response, minimal downtime.",
-      "features": ["Emergency Malware Cleanup", "Vulnerability Patching", "Content Restoration", "Security Hardening", "Post-Recovery Monitoring"],
+      "features": [
+        "Emergency Malware Cleanup",
+        "Vulnerability Patching",
+        "Content Restoration",
+        "Security Hardening",
+        "Post-Recovery Monitoring"
+      ],
       "painPoint": "Your website is infected, redirecting users, showing warnings, or has suspicious access.",
       "evidence": "Security and cleanup experience across WordPress environments with outdated plugins, exposed endpoints, and abandoned user access.",
       "bestFor": "Site owners whose website has been compromised, defaced, or infected with malware.",
       "timeline": "24-72 hours (emergency)",
       "outcome": "A clean, restored website with strengthened security to prevent future attacks.",
-      "deliverables": ["Malware Cleanup", "Vulnerability Report", "Security Hardening", "Recovery Documentation"]
+      "deliverables": [
+        "Malware Cleanup",
+        "Vulnerability Report",
+        "Security Hardening",
+        "Recovery Documentation"
+      ]
     },
     {
       "id": "rebuild-migrate",
       "title": "Rebuild & Platform Migration",
       "description": "When the current platform is holding the business back, I rebuild or migrate the site with a plan for content, SEO, redirects, integrations, performance, and maintainability.",
-      "features": ["SEO Preservation", "Content Migration", "Redirect Planning", "CMS Strategy", "Post-Launch QA"],
+      "features": [
+        "SEO Preservation",
+        "Content Migration",
+        "Redirect Planning",
+        "CMS Strategy",
+        "Post-Launch QA"
+      ],
       "painPoint": "Your site is trapped in an old setup, difficult CMS, heavy theme, or fragile builder.",
       "evidence": "Migration work across Truenorth, Puerto Rico traffic-safety, and other public-sector/corporate websites.",
       "bestFor": "Companies stuck on outdated platforms who want better performance, usability, and maintainability.",
       "timeline": "3-8 weeks",
       "outcome": "A modern, faster, more maintainable platform with zero data loss and preserved SEO rankings.",
-      "deliverables": ["Migration Strategy", "Data Migration", "SEO Preservation", "Post-Launch Support"]
+      "deliverables": [
+        "Migration Strategy",
+        "Data Migration",
+        "SEO Preservation",
+        "Post-Launch Support"
+      ]
     },
     {
       "id": "websites-mvps",
       "title": "Websites & MVPs",
       "description": "A new website, landing page, CMS build, or MVP for businesses that need something clear, fast, maintainable, and credible. I handle strategy, UX direction, development, launch, and the technical setup behind it.",
-      "features": ["Conversion-Focused UX", "CMS or App Build", "Responsive Development", "Technical SEO", "Launch Support"],
+      "features": [
+        "Conversion-Focused UX",
+        "CMS or App Build",
+        "Responsive Development",
+        "Technical SEO",
+        "Launch Support"
+      ],
       "painPoint": "You need a professional website or MVP, but you do not want a bloated build that becomes hard to maintain.",
       "evidence": "Includes from-scratch WordPress builds, public-sector websites, corporate sites, and custom web platforms.",
       "bestFor": "Founders, service businesses, and teams that need a new site or MVP with a real launch path.",
       "timeline": "4-8 weeks",
       "outcome": "A fast, credible website or MVP built to explain the offer, support SEO, and capture qualified leads.",
-      "deliverables": ["Strategy Sprint", "UX/UI Direction", "CMS or Product Build", "Analytics and Launch Support"],
+      "deliverables": [
+        "Strategy Sprint",
+        "UX/UI Direction",
+        "CMS or Product Build",
+        "Analytics and Launch Support"
+      ],
       "quoteOptions": [
-        { "id": "landing-wordpress", "name": "Landing Page / CMS Website", "description": "Ideal for business sites, blogs, and content-driven projects. Built on a CMS or modern frontend depending on the use case." },
-        { "id": "mvp-framework", "name": "MVP with Framework", "description": "Custom-built web app with React, Next.js, or Node. Useful for SaaS products, internal tools, and interactive platforms." }
+        {
+          "id": "landing-wordpress",
+          "name": "Landing Page / CMS Website",
+          "description": "Ideal for business sites, blogs, and content-driven projects. Built on a CMS or modern frontend depending on the use case."
+        },
+        {
+          "id": "mvp-framework",
+          "name": "MVP with Framework",
+          "description": "Custom-built web app with React, Next.js, or Node. Useful for SaaS products, internal tools, and interactive platforms."
+        }
       ]
     },
     {
       "id": "ongoing-partner",
       "title": "Ongoing Website Partner",
       "description": "Monthly technical support for businesses that need someone to keep the site healthy: updates, fixes, security checks, performance improvements, small feature work, and technical coordination.",
-      "features": ["Monthly Maintenance", "Small Feature Work", "Security Checks", "Performance Monitoring", "Technical Support"],
+      "features": [
+        "Monthly Maintenance",
+        "Small Feature Work",
+        "Security Checks",
+        "Performance Monitoring",
+        "Technical Support"
+      ],
       "painPoint": "Your website keeps needing technical decisions, fixes, or support, but hiring a full-time developer is not the right move.",
       "evidence": "Current long-term contractor support across WordPress, PHP, SEO, servers, security, layout fixes, and maintenance.",
       "bestFor": "Teams with an active website that needs steady technical ownership.",
       "timeline": "Monthly retainer",
       "outcome": "A more stable website with a reliable technical partner who understands the business over time.",
-      "deliverables": ["Monthly Priority List", "Maintenance Tasks", "Security and Access Review", "Technical Recommendations"],
+      "deliverables": [
+        "Monthly Priority List",
+        "Maintenance Tasks",
+        "Security and Access Review",
+        "Technical Recommendations"
+      ],
       "pricingNote": "Retainers depend on response time, monthly hours, platform complexity, and whether server support is included."
     }
   ],
@@ -592,10 +750,22 @@
     "riskLabel": "Risk: lost trust, slower decisions, and fewer qualified leads.",
     "bottomCTA": "The goal is not more design noise. The goal is a website that feels trustworthy, loads fast, and makes the next step obvious.",
     "problems": [
-      { "title": "Your site is slow", "description": "Every second of load time costs you visitors. I build for speed from the ground up." },
-      { "title": "Security keeps you up at night", "description": "Outdated plugins, vulnerable dependencies, no backup plan. I fix that." },
-      { "title": "It's not converting", "description": "Beautiful but broken. I focus on what actually drives results — not just aesthetics." },
-      { "title": "The mobile experience is an afterthought", "description": "Over 60% of traffic comes from phones. I design mobile-first, not mobile-last." }
+      {
+        "title": "Your site is slow",
+        "description": "Every second of load time costs you visitors. I build for speed from the ground up."
+      },
+      {
+        "title": "Security keeps you up at night",
+        "description": "Outdated plugins, vulnerable dependencies, no backup plan. I fix that."
+      },
+      {
+        "title": "It's not converting",
+        "description": "Beautiful but broken. I focus on what actually drives results — not just aesthetics."
+      },
+      {
+        "title": "The mobile experience is an afterthought",
+        "description": "Over 60% of traffic comes from phones. I design mobile-first, not mobile-last."
+      }
     ]
   },
   "homeOffers": {
@@ -632,28 +802,44 @@
       {
         "title": "Discovery",
         "description": "We talk about your goals, your current setup, and what success looks like for you. No jargon, no pitch.",
-        "details": ["Current state audit", "Goal alignment", "Scope definition"],
+        "details": [
+          "Current state audit",
+          "Goal alignment",
+          "Scope definition"
+        ],
         "duration": "1–2 weeks",
         "deliverable": "Discovery report"
       },
       {
         "title": "Strategy",
         "description": "I map out the architecture, tech stack, and timeline before writing a single line of code.",
-        "details": ["Architecture design", "Tech selection", "Milestone plan"],
+        "details": [
+          "Architecture design",
+          "Tech selection",
+          "Milestone plan"
+        ],
         "duration": "1–2 weeks",
         "deliverable": "Architecture blueprint"
       },
       {
         "title": "Build & Iterate",
         "description": "Development in stages with regular check-ins. You see progress as it happens, not just at the end.",
-        "details": ["Sprint-based delivery", "Regular demos", "Feedback loops"],
+        "details": [
+          "Sprint-based delivery",
+          "Regular demos",
+          "Feedback loops"
+        ],
         "duration": "4–8 weeks",
         "deliverable": "Production-ready codebase"
       },
       {
         "title": "Launch & Beyond",
         "description": "Deploy with confidence, monitor performance, and I stay around for support. No ghosting after launch.",
-        "details": ["Production deployment", "Performance monitoring", "Ongoing support"],
+        "details": [
+          "Production deployment",
+          "Performance monitoring",
+          "Ongoing support"
+        ],
         "duration": "1–2 weeks",
         "deliverable": "Live deployed site"
       }
@@ -667,12 +853,36 @@
     "fullTechStack": "Full tech stack",
     "everythingUse": "Everything I use to build and ship",
     "categories": [
-      { "title": "Frontend & Performance", "outcome": "Fast, responsive interfaces that users actually enjoy", "impact": "Optimized apps serving 150K+ concurrent users" },
-      { "title": "Backend & Architecture", "outcome": "APIs and systems that scale without constant fixes", "impact": "Zero-downtime deployments for critical systems" },
-      { "title": "Security & Accessibility", "outcome": "Sites that are secure and usable by everyone", "impact": "WCAG 2.1 AA compliance & security best practices" },
-      { "title": "Full Stack", "outcome": "End-to-end delivery from database to UI", "impact": "Seamless integration across the whole stack" },
-      { "title": "CMS & Platforms", "outcome": "Content management that non-devs can actually use", "impact": "Custom WordPress & Webflow for enterprise clients" },
-      { "title": "SEO & Analytics", "outcome": "More organic traffic, better rankings", "impact": "SEO implementations that actually move the needle" }
+      {
+        "title": "Frontend & Performance",
+        "outcome": "Fast, responsive interfaces that users actually enjoy",
+        "impact": "Optimized apps serving 150K+ concurrent users"
+      },
+      {
+        "title": "Backend & Architecture",
+        "outcome": "APIs and systems that scale without constant fixes",
+        "impact": "Zero-downtime deployments for critical systems"
+      },
+      {
+        "title": "Security & Accessibility",
+        "outcome": "Sites that are secure and usable by everyone",
+        "impact": "WCAG 2.1 AA compliance & security best practices"
+      },
+      {
+        "title": "Full Stack",
+        "outcome": "End-to-end delivery from database to UI",
+        "impact": "Seamless integration across the whole stack"
+      },
+      {
+        "title": "CMS & Platforms",
+        "outcome": "Content management that non-devs can actually use",
+        "impact": "Custom WordPress & Webflow for enterprise clients"
+      },
+      {
+        "title": "SEO & Analytics",
+        "outcome": "More organic traffic, better rankings",
+        "impact": "SEO implementations that actually move the needle"
+      }
     ]
   },
   "cookieConsent": {
