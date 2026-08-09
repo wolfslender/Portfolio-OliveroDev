@@ -100,6 +100,11 @@ export function getBlogPostingSchema({
   datePublished,
   dateModified,
   slug,
+  inLanguage = "en-US",
+  url,
+  wordCount,
+  timeRequired,
+  articleSection,
 }: {
   title: string
   description?: string
@@ -109,8 +114,13 @@ export function getBlogPostingSchema({
   datePublished?: string
   dateModified?: string
   slug: string
+  inLanguage?: string
+  url?: string
+  wordCount?: number
+  timeRequired?: string
+  articleSection?: string[]
 }) {
-  const postUrl = `${siteConfig.url}/blog/${slug}/`
+  const postUrl = url || `${siteConfig.url}/blog/${slug}/`
   return {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -130,6 +140,9 @@ export function getBlogPostingSchema({
       },
     }),
     ...(keywords && keywords.length > 0 && { keywords: keywords.join(", ") }),
+    ...(wordCount && wordCount > 0 && { wordCount }),
+    ...(timeRequired && { timeRequired }),
+    ...(articleSection && articleSection.length > 0 && { articleSection }),
     author: {
       "@type": "Person",
       name: authorName || siteConfig.author,
@@ -146,7 +159,7 @@ export function getBlogPostingSchema({
     },
     datePublished: datePublished,
     dateModified: dateModified || datePublished,
-    inLanguage: "en-US",
+    inLanguage,
     isPartOf: {
       "@type": "Blog",
       "@id": `${siteConfig.url}/blog`,
@@ -157,6 +170,44 @@ export function getBlogPostingSchema({
         name: siteConfig.author,
       },
     },
+  }
+}
+
+export function getBlogItemListSchema(
+  posts: { name: string; url: string }[],
+  url = `${siteConfig.url}/blog/`
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    url,
+    itemListElement: posts.slice(0, 10).map((post, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: post.name,
+      url: post.url,
+    })),
+  }
+}
+
+export function getCollectionPageSchema({
+  name,
+  description,
+  url,
+  items,
+}: {
+  name: string
+  description?: string
+  url: string
+  items: { name: string; url: string }[]
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name,
+    ...(description && { description }),
+    url,
+    mainEntity: getBlogItemListSchema(items, url),
   }
 }
 

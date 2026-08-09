@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @plugin "tailwindcss-animate";
+@plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -224,4 +225,86 @@
 
 .animate-pulse-slow {
   animation: pulse-slow 6s ease-in-out infinite;
+}
+
+/* Blog prose — branded typography */
+.prose {
+  --tw-prose-body: var(--foreground);
+  --tw-prose-headings: var(--foreground);
+  --tw-prose-lead: var(--foreground);
+  --tw-prose-links: var(--primary);
+  --tw-prose-bold: var(--foreground);
+  --tw-prose-counters: var(--muted-foreground);
+  --tw-prose-bullets: var(--muted-foreground);
+  --tw-prose-hr: var(--border);
+  --tw-prose-quotes: var(--foreground);
+  --tw-prose-quote-borders: var(--primary);
+  --tw-prose-captions: var(--muted-foreground);
+  --tw-prose-code: var(--primary);
+  --tw-prose-pre-code: oklch(0.92 0.01 65);
+  --tw-prose-pre-bg: oklch(0.16 0.015 55);
+  --tw-prose-th-borders: var(--border);
+  --tw-prose-td-borders: var(--border);
+}
+
+.prose :where(a):not(:where(pre *):not(:where([class~="not-prose"] *))) {
+  text-decoration: underline;
+  text-decoration-color: color-mix(in oklab, var(--primary) 35%, transparent);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+  font-weight: 600;
+}
+
+.prose :where(a):not(:where(pre *):not(:where([class~="not-prose"] *))):hover {
+  text-decoration-color: var(--primary);
+}
+
+.prose :where(code):not(:where(pre *):not(:where([class~="not-prose"] *))) {
+  border-radius: 0.375rem;
+  background: var(--muted);
+  padding: 0.15rem 0.4rem;
+  font-size: 0.85em;
+  font-weight: 600;
+}
+
+.prose pre {
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  background: var(--tw-prose-pre-bg);
+  color: var(--tw-prose-pre-code);
+  overflow-x: auto;
+}
+
+.prose pre code {
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+  font-weight: 400;
+  color: inherit;
+}
+
+.prose blockquote {
+  border-left-width: 4px;
+  border-left-color: var(--primary);
+  border-radius: 0 1rem 1rem 0;
+  background: color-mix(in oklab, var(--primary) 6%, transparent);
+  padding: 1rem 1.5rem;
+  font-style: normal;
+}
+
+.prose table {
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.prose th {
+  font-weight: 700;
+}
+
+.prose :where(ul):not(:where(pre *)) {
+  list-style: disc;
+}
+
+.prose :where(ol):not(:where(pre *)) {
+  list-style: decimal;
 }

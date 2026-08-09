@@ -967,7 +967,8 @@
     "readArticle": "Read Article",
     "noPosts": "No posts found",
     "noPostsDescription": "Try adjusting your search or filters",
-    "clearFilters": "Clear all filters"
+    "clearFilters": "Clear all filters",
+    "readTime": "{{minutes}} min read"
   },
   "blogPost": {
     "backToBlog": "Back to Blog",
@@ -976,7 +977,19 @@
     "nextStep": "Next Step",
     "ctaTitle": "Need your website to convert better too?",
     "ctaDescription": "I can review your site, find the biggest friction points, and map clear improvements for performance, SEO, UX, and sales.",
-    "shareArticle": "Share this article"
+    "shareArticle": "Share this article",
+    "readTime": "{{minutes}} min read",
+    "relatedTitle": "Related Articles",
+    "articleNavigation": "Article navigation",
+    "newerArticle": "Newer",
+    "olderArticle": "Older",
+    "authorCredential": "Alexis Olivero — Senior Frontend Engineer · Web security & performance",
+    "updatedOn": "Updated",
+    "inlineCtaTitle": "Need this for your website?",
+    "inlineCtaDescription": "I audit your site and reply with a clear performance, SEO, and security plan.",
+    "calloutTip": "Tip",
+    "calloutImportant": "Important",
+    "calloutWarning": "Warning"
   },
   "blogSidebar": {
     "validEmail": "Please enter a valid email address",
@@ -988,7 +1001,11 @@
     "topics": "Topics",
     "clear": "Clear",
     "noTopics": "No topics available.",
+    "popularTitle": "Popular Posts",
+    "helpTitle": "Need help with your website?",
+    "helpDescription": "I audit your site and reply with a clear plan in under 24 hours.",
     "stayUpdated": "Stay Updated",
+    "stayUpdatedTopic": "{{topic}} guides in your inbox",
     "newsletterDescription": "Get notified when I publish new insights on web development and performance.",
     "subscribe": "Subscribe",
     "subscribeTitle": "Subscribe to Newsletter",

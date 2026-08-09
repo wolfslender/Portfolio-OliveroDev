@@ -9,10 +9,13 @@ import { urlFor } from "@/lib/sanity/client"
 interface AuthorBioProps {
   authorName: string
   authorImage: any
+  bio?: string
 }
 
-export function AuthorBio({ authorName, authorImage }: AuthorBioProps) {
+export function AuthorBio({ authorName, authorImage, bio }: AuthorBioProps) {
   const { t } = useTranslation()
+
+  const authorBio = bio && bio.trim() ? bio : t('authorBio.bio')
 
   const socialLinks = [
     {
@@ -58,7 +61,7 @@ export function AuthorBio({ authorName, authorImage }: AuthorBioProps) {
         <div className="flex-1 text-center md:text-left">
           <h3 className="text-2xl font-bold mb-2">{authorName}</h3>
           <p className="text-muted-foreground mb-6 leading-relaxed">
-            {t('authorBio.bio')}
+            {authorBio}
           </p>
           
           <div className="flex flex-wrap gap-3 justify-center md:justify-start">

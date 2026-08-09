@@ -35,8 +35,11 @@ export function isSpanishPath(pathname: string) {
 
 export function toSpanishPath(pathname: string) {
   const path = stripSpanishPrefix(pathname).replace(/\/$/, "") || "/"
-  if (!localizedRoutes.has(path)) return spanishPrefix
-  return path === "/" ? spanishPrefix : `${spanishPrefix}${path}`
+  // Dynamic blog routes (posts, categories) are localized too
+  if (path === "/" || localizedRoutes.has(path) || path.startsWith("/blog/")) {
+    return path === "/" ? spanishPrefix : `${spanishPrefix}${path}`
+  }
+  return spanishPrefix
 }
 
 export function toEnglishPath(pathname: string) {

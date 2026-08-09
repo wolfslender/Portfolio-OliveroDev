@@ -36,6 +36,11 @@ const metadataByRoute: Record<string, Metadata> = {
   blog: {
     title: "Blog",
     description: "Guias practicas sobre desarrollo web, rendimiento, SEO tecnico, WordPress y mantenimiento web.",
+    alternates: {
+      types: {
+        "application/rss+xml": `${siteConfig.url}/rss.xml`,
+      },
+    },
   },
   contact: {
     title: "Solicita una auditoria web o consulta tecnica",

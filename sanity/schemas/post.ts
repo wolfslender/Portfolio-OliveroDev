@@ -1,3 +1,99 @@
+const bodyBlocks = [
+  {
+    title: 'Block',
+    type: 'block',
+    styles: [
+      { title: 'Normal', value: 'normal' },
+      { title: 'H1', value: 'h1' },
+      { title: 'H2', value: 'h2' },
+      { title: 'H3', value: 'h3' },
+      { title: 'H4', value: 'h4' },
+      { title: 'Quote', value: 'blockquote' },
+    ],
+    lists: [
+      { title: 'Bullet', value: 'bullet' },
+      { title: 'Numbered', value: 'number' },
+    ],
+    marks: {
+      decorators: [
+        { title: 'Strong', value: 'strong' },
+        { title: 'Emphasis', value: 'em' },
+        { title: 'Code', value: 'code' },
+      ],
+      annotations: [
+        {
+          title: 'Link',
+          name: 'link',
+          type: 'object',
+          fields: [
+            { name: 'href', title: 'URL', type: 'url' },
+            { name: 'openInNewTab', title: 'Open in new tab', type: 'boolean', initialValue: true },
+          ],
+        },
+      ],
+    },
+  },
+  {
+    type: 'image',
+    options: { hotspot: true },
+  },
+  {
+    title: 'Code block',
+    name: 'codeBlock',
+    type: 'object',
+    fields: [
+      {
+        name: 'language',
+        title: 'Language',
+        type: 'string',
+        options: {
+          list: ['javascript', 'typescript', 'bash', 'css', 'html', 'json', 'jsx', 'tsx', 'python', 'php'],
+        },
+      },
+      { name: 'code', title: 'Code', type: 'text', rows: 14 },
+    ],
+  },
+  {
+    title: 'Callout',
+    name: 'callout',
+    type: 'object',
+    fields: [
+      {
+        name: 'tone',
+        title: 'Tone',
+        type: 'string',
+        initialValue: 'tip',
+        options: {
+          list: [
+            { title: 'Tip', value: 'tip' },
+            { title: 'Important', value: 'important' },
+            { title: 'Warning', value: 'warning' },
+          ],
+        },
+      },
+      { name: 'title', title: 'Title', type: 'string' },
+      {
+        name: 'body',
+        title: 'Body',
+        type: 'array',
+        of: [
+          {
+            type: 'block',
+            styles: [{ title: 'Normal', value: 'normal' }],
+            marks: {
+              decorators: [
+                { title: 'Strong', value: 'strong' },
+                { title: 'Emphasis', value: 'em' },
+                { title: 'Code', value: 'code' },
+              ],
+            },
+          },
+        ],
+      },
+    ],
+  },
+]
+
 export default {
   name: 'post',
   title: 'Post',
@@ -59,62 +155,23 @@ export default {
       type: 'datetime',
     },
     {
+      name: 'featured',
+      title: 'Featured article',
+      type: 'boolean',
+      description: 'Pin this post as the featured article on the blog listing.',
+      initialValue: false,
+    },
+    {
       name: 'body',
       title: 'Body (English)',
       type: 'array',
-      of: [
-        {
-          title: 'Block',
-          type: 'block',
-          styles: [
-            { title: 'Normal', value: 'normal' },
-            { title: 'H1', value: 'h1' },
-            { title: 'H2', value: 'h2' },
-            { title: 'H3', value: 'h3' },
-            { title: 'Quote', value: 'blockquote' },
-          ],
-          lists: [{ title: 'Bullet', value: 'bullet' }],
-          marks: {
-            decorators: [
-              { title: 'Strong', value: 'strong' },
-              { title: 'Emphasis', value: 'em' },
-            ],
-          },
-        },
-        {
-          type: 'image',
-          options: { hotspot: true },
-        },
-      ],
+      of: bodyBlocks,
     },
     {
       name: 'body_es',
       title: 'Body (Spanish)',
       type: 'array',
-      of: [
-        {
-          title: 'Block',
-          type: 'block',
-          styles: [
-            { title: 'Normal', value: 'normal' },
-            { title: 'H1', value: 'h1' },
-            { title: 'H2', value: 'h2' },
-            { title: 'H3', value: 'h3' },
-            { title: 'Quote', value: 'blockquote' },
-          ],
-          lists: [{ title: 'Bullet', value: 'bullet' }],
-          marks: {
-            decorators: [
-              { title: 'Strong', value: 'strong' },
-              { title: 'Emphasis', value: 'em' },
-            ],
-          },
-        },
-        {
-          type: 'image',
-          options: { hotspot: true },
-        },
-      ],
+      of: bodyBlocks,
     },
   ],
 

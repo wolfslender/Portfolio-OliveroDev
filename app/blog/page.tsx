@@ -2,6 +2,7 @@ import { client } from "@/lib/sanity/client"
 import { groq } from "next-sanity"
 import { BlogList } from "@/components/blog/blog-list"
 import { BlogPageHeader, BlogComingSoon } from "./blog-page-header"
+import { getBlogItemListSchema } from "@/lib/seo"
 
 const postsQuery = groq`
   *[_type == "post"] {
@@ -13,6 +14,10 @@ const postsQuery = groq`
     "authorName": author->name,
     "categories": categories[]->title,
     keywords,
+    description,
+    description_es,
+    featured,
+    "readingMinutes": round(length(pt::text(coalesce(body, []))) / 1100),
     mainImage
   }
 `
@@ -40,6 +45,9 @@ export const metadata: Metadata = {
       en: `${siteConfig.url}/blog/`,
       es: `${siteConfig.url}/es/blog/`,
       "x-default": `${siteConfig.url}/blog/`,
+    },
+    types: {
+      "application/rss+xml": `${siteConfig.url}/rss.xml`,
     },
   },
   openGraph: {
@@ -96,11 +104,22 @@ export default async function BlogPage() {
 
   const tags = categories.map((cat: any) => cat.title)
 
+  const itemListSchema = getBlogItemListSchema(
+    posts.map((post: any) => ({
+      name: post.title_es || post.title,
+      url: `${siteConfig.url}/blog/${post.slug?.current}/`,
+    }))
+  )
+
   return (
     <div className="py-24 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(blogListSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
       />
       <BlogPageHeader />
 

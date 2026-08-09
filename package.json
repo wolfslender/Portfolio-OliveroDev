@@ -44,13 +44,14 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
-    "baseline-browser-mapping": "^2.10.24",
     "@tailwindcss/postcss": "^4.1.9",
+    "@tailwindcss/typography": "^0.5.20",
     "@testing-library/react": "^16.3.1",
     "@types/node": "^22",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@vitejs/plugin-react": "^5.1.2",
+    "baseline-browser-mapping": "^2.10.24",
     "eslint": "^9.39.2",
     "eslint-config-next": "^16.1.0",
     "jsdom": "^26.1.0",

@@ -1,10 +1,23 @@
 "use client"
 
 import { Badge } from "@/components/ui/badge"
-import { Search, Tag, Sparkles, Mail, X, Loader2 } from "lucide-react"
+import { Search, Tag, Sparkles, Mail, X, Loader2, Clock, MessageCircle, ShieldCheck } from "lucide-react"
 import { useState } from "react"
 import { toast } from "sonner"
 import { useTranslation } from "react-i18next"
+import Link from "next/link"
+import { usePathname } from "next/navigation"
+import { localizePath } from "@/lib/i18n-routing"
+import { useContact } from "@/hooks/use-contact"
+
+interface SidebarPost {
+  _id?: string
+  title: string
+  title_es?: string
+  slug: { current: string }
+  publishedAt?: string
+  readingMinutes?: number
+}
 
 interface BlogSidebarProps {
   tags: string[]
@@ -12,8 +25,8 @@ interface BlogSidebarProps {
   searchQuery?: string
   onSearchChange?: (query: string) => void
   onSearchSubmit?: (query: string) => void
-  selectedTag?: string | null
-  onTagSelect?: (tag: string | null) => void
+  popularPosts?: SidebarPost[]
+  newsletterTopic?: string
   className?: string
 }
 
@@ -43,24 +56,36 @@ const getTagColor = (tag: string) => {
   return tagColors[Math.abs(hash) % tagColors.length]
 }
 
+const categorySlug = (title: string) =>
+  title.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, '')
+
 export function BlogSidebar({
   tags,
   showSearch = false,
   searchQuery = "",
   onSearchChange,
   onSearchSubmit,
-  selectedTag,
-  onTagSelect,
+  popularPosts = [],
+  newsletterTopic,
   className = "",
 }: BlogSidebarProps) {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
+  const pathname = usePathname()
+  const contact = useContact()
   const [showModal, setShowModal] = useState(false)
   const [email, setEmail] = useState("")
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const isSpanish = i18n.language.startsWith("es")
 
-  const U_VALUE = "d115a5e75b31c0484490081e3"
-  const ID_VALUE = "011f42ce9d"
-  const FID_VALUE = "00ba66e7f0"
+  const U_VALUE = process.env.NEXT_PUBLIC_MAILCHIMP_U || "d115a5e75b31c0484490081e3"
+  const ID_VALUE = process.env.NEXT_PUBLIC_MAILCHIMP_ID || "011f42ce9d"
+  const FID_VALUE = process.env.NEXT_PUBLIC_MAILCHIMP_FID || "00ba66e7f0"
+
+  const whatsappNumber = (() => {
+    const raw = (contact.phone || "").replace(/\D/g, "")
+    return raw.length === 10 ? `1${raw}` : raw
+  })()
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(t('common.whatsappMessage'))}`
 
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -78,21 +103,21 @@ export function BlogSidebar({
     const script = document.createElement('script')
     script.src = url
 
-      ; (window as any)[callbackName] = (data: any) => {
-        delete (window as any)[callbackName]
-        document.body.removeChild(script)
+    ;(window as any)[callbackName] = (data: any) => {
+      delete (window as any)[callbackName]
+      document.body.removeChild(script)
 
-        setIsSubmitting(false)
+      setIsSubmitting(false)
 
-        if (data.result === 'success') {
-          toast.success(data.msg || t('blogSidebar.subscribed'))
-          setEmail('')
-          setShowModal(false)
-        } else {
-          const errorMsg = data.msg?.replace(/<[^>]*>?/gm, '') || t('blogSidebar.somethingWrong')
-          toast.error(errorMsg)
-        }
+      if (data.result === 'success') {
+        toast.success(data.msg || t('blogSidebar.subscribed'))
+        setEmail('')
+        setShowModal(false)
+      } else {
+        const errorMsg = data.msg?.replace(/<[^>]*>?/gm, '') || t('blogSidebar.somethingWrong')
+        toast.error(errorMsg)
       }
+    }
 
     script.onerror = () => {
       delete (window as any)[callbackName]
@@ -103,6 +128,11 @@ export function BlogSidebar({
 
     document.body.appendChild(script)
   }
+
+  const uniqueTags = Array.from(new Set(tags || []))
+  const newsletterTitle = newsletterTopic
+    ? t('blogSidebar.stayUpdatedTopic', { topic: newsletterTopic })
+    : t('blogSidebar.stayUpdated')
 
   return (
     <>
@@ -133,49 +163,93 @@ export function BlogSidebar({
         )}
 
         <div className="bg-card text-card-foreground rounded-3xl border-2 border-border/50 shadow-lg p-6 hover:border-primary/30 transition-all duration-300">
-          <div className="flex items-center justify-between mb-4">
-            <div className="flex items-center gap-2">
-              <Tag aria-hidden="true" className="w-5 h-5 text-primary" />
-              <h3 className="font-bold text-lg">{t('blogSidebar.topics')}</h3>
-            </div>
-            {selectedTag && (
-              <button
-                onClick={() => onTagSelect?.(null)}
-                className="text-xs font-semibold text-primary hover:underline transition-all"
-              >
-                {t('blogSidebar.clear')}
-              </button>
-            )}
+          <div className="flex items-center gap-2 mb-4">
+            <Tag aria-hidden="true" className="w-5 h-5 text-primary" />
+            <h3 className="font-bold text-lg">{t('blogSidebar.topics')}</h3>
           </div>
-          <div className="flex flex-wrap gap-2">
-            {tags.length > 0 ? (
-              tags.map((tag, index) => {
-                const isSelected = selectedTag === tag
+          {uniqueTags.length > 0 ? (
+            <div className="flex flex-wrap gap-2">
+              {uniqueTags.map((tag) => {
                 const colorClass = getTagColor(tag)
-
                 return (
-                  <button
+                  <Link
                     key={tag}
-                    type="button"
-                    aria-pressed={isSelected}
-                    onClick={() => onTagSelect?.(isSelected ? null : tag)}
+                    href={localizePath(pathname || "/", `/blog/category/${categorySlug(tag)}`)}
                     className="transition-transform duration-300 hover:scale-105 active:scale-95 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                   >
                     <Badge
                       variant="outline"
-                      className={`pointer-events-none px-4 py-2 text-sm font-semibold transition-all duration-300 border-2 ${isSelected
-                          ? "bg-primary text-primary-foreground border-primary shadow-lg scale-105"
-                          : `${colorClass} hover:shadow-sm`
-                        }`}
+                      className={`pointer-events-none px-4 py-2 text-sm font-semibold transition-all duration-300 border-2 ${colorClass} hover:shadow-sm`}
                     >
                       {tag}
                     </Badge>
-                  </button>
+                  </Link>
                 )
-              })
-            ) : (
-              <p className="text-sm text-muted-foreground italic">{t('blogSidebar.noTopics')}</p>
-            )}
+              })}
+            </div>
+          ) : (
+            <p className="text-sm text-muted-foreground italic">{t('blogSidebar.noTopics')}</p>
+          )}
+        </div>
+
+        {popularPosts.length > 0 && (
+          <div className="bg-card text-card-foreground rounded-3xl border-2 border-border/50 shadow-lg p-6 hover:border-primary/30 transition-all duration-300">
+            <h3 className="font-bold text-lg mb-4">{t('blogSidebar.popularTitle')}</h3>
+            <ul className="flex flex-col gap-4">
+              {popularPosts.map((post, index) => {
+                const postTitle = isSpanish && post.title_es ? post.title_es : post.title
+                return (
+                  <li key={post._id || `${post.slug.current}-${index}`}>
+                    <Link
+                      href={localizePath(pathname || "/", `/blog/${post.slug.current}`)}
+                      className="group flex items-start gap-3"
+                    >
+                      <span className="mt-0.5 shrink-0 w-7 h-7 rounded-lg bg-primary/10 text-primary text-xs font-black flex items-center justify-center">
+                        {index + 1}
+                      </span>
+                      <span className="flex-1">
+                        <span className="block text-sm font-bold leading-snug group-hover:text-primary transition-colors line-clamp-2">
+                          {postTitle}
+                        </span>
+                        {post.readingMinutes ? (
+                          <span className="mt-1 flex items-center gap-1.5 text-xs text-muted-foreground">
+                            <Clock className="w-3.5 h-3.5" aria-hidden="true" />
+                            {t('blogList.readTime', { minutes: post.readingMinutes })}
+                          </span>
+                        ) : null}
+                      </span>
+                    </Link>
+                  </li>
+                )
+              })}
+            </ul>
+          </div>
+        )}
+
+        <div className="rounded-3xl border-2 border-border/50 shadow-lg p-6 bg-card text-card-foreground hover:border-primary/30 transition-all duration-300">
+          <div className="flex items-center gap-2 mb-3">
+            <ShieldCheck aria-hidden="true" className="w-5 h-5 text-primary" />
+            <h3 className="font-bold text-lg">{t('blogSidebar.helpTitle')}</h3>
+          </div>
+          <p className="text-sm text-muted-foreground leading-relaxed mb-5">
+            {t('blogSidebar.helpDescription')}
+          </p>
+          <div className="flex flex-col gap-3">
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 rounded-xl bg-[#25D366] text-white font-bold py-3 px-5 text-sm transition-all hover:scale-[1.03] active:scale-95 shadow-md"
+            >
+              <MessageCircle className="w-4 h-4 fill-current" aria-hidden="true" />
+              {t('common.whatsappChat')}
+            </a>
+            <Link
+              href={localizePath(pathname || "/", "/contact?audit=true")}
+              className="flex items-center justify-center gap-2 rounded-xl bg-primary text-primary-foreground font-bold py-3 px-5 text-sm transition-all hover:bg-primary/90 hover:scale-[1.03] active:scale-95 shadow-md"
+            >
+              {t('common.freeAudit')}
+            </Link>
           </div>
         </div>
 
@@ -183,7 +257,7 @@ export function BlogSidebar({
           <div aria-hidden="true" className="absolute -top-12 -right-12 w-32 h-32 bg-white/10 rounded-full blur-2xl" />
           <div className="relative z-10">
             <Sparkles aria-hidden="true" className="w-8 h-8 mb-4" />
-            <h3 className="font-black text-xl mb-2">{t('blogSidebar.stayUpdated')}</h3>
+            <h3 className="font-black text-xl mb-2">{newsletterTitle}</h3>
             <p className="text-sm text-white/90 mb-4 leading-relaxed">
               {t('blogSidebar.newsletterDescription')}
             </p>
@@ -213,7 +287,7 @@ export function BlogSidebar({
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
                 <Mail aria-hidden="true" className="w-8 h-8 text-primary" />
               </div>
-              <h3 id="newsletter-dialog-title" className="text-2xl font-black mb-2">{t('blogSidebar.subscribeTitle')}</h3>
+              <h3 id="newsletter-dialog-title" className="text-2xl font-black mb-2">{newsletterTitle}</h3>
               <p className="text-muted-foreground">
                 {t('blogSidebar.newsletterBody')}
               </p>

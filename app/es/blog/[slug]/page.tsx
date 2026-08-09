@@ -3,9 +3,7 @@ import { client, urlFor } from "@/lib/sanity/client"
 import { groq } from "next-sanity"
 import { siteConfig } from "@/lib/config"
 import { BlogPostContent } from "@/components/blog/blog-post-content"
-import { BlogWelcome } from "../blog-page-header"
 import type { Metadata } from "next"
-
 
 const postQuery = groq`
   *[_type == "post" && slug.current == $slug][0] {
@@ -48,69 +46,67 @@ const allPostsQuery = groq`
   }
 `
 
-// export const dynamicParams = false // Removed to fix build error with output: export
-// export const revalidate = 60 // Removed to fix build error with output: export
-
 export async function generateStaticParams() {
   try {
     if (process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) {
-       const query = groq`*[_type == "post"]{ "slug": slug.current }`
-       const slugs = await client.fetch(query)
-       if (slugs && Array.isArray(slugs) && slugs.length > 0) {
-         return slugs.map((slug: any) => ({ slug: slug.slug }))
-       }
+      const query = groq`*[_type == "post"]{ "slug": slug.current }`
+      const slugs = await client.fetch(query)
+      if (slugs && Array.isArray(slugs) && slugs.length > 0) {
+        return slugs.map((slug: any) => ({ slug: slug.slug }))
+      }
     }
   } catch (error) {
-    console.warn("Error fetching Sanity slugs:", error)
+    console.warn("Error fetching Sanity slugs (ES):", error)
   }
-  
-  return [{ slug: 'welcome' }]
+  return []
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params
-  if (slug === 'welcome') return { title: 'Welcome to Blog' }
   if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) return { title: 'Blog Post' }
 
   try {
     const post = await client.fetch(postQuery, { slug })
     if (!post) return { title: 'Not Found' }
 
+    const title = post.title_es || post.title
+    const description = post.description_es || post.description || siteConfig.description
+
     const ogImage = post.mainImage
       ? urlFor(post.mainImage).width(1200).height(630).url()
       : `${siteConfig.url}/opengraph-image`
 
-    const postUrl = `${siteConfig.url}/blog/${slug}/`
+    const postUrl = `${siteConfig.url}/es/blog/${slug}/`
 
     return {
-      title: post.title,
-      description: post.description || siteConfig.description,
+      title,
+      description,
       keywords: Array.isArray(post.keywords) && post.keywords.length > 0
         ? post.keywords
         : post.categories,
       alternates: {
         canonical: postUrl,
         languages: {
-          en: postUrl,
-          es: `${siteConfig.url}/es/blog/${slug}/`,
-          "x-default": postUrl,
+          en: `${siteConfig.url}/blog/${slug}/`,
+          es: postUrl,
+          "x-default": `${siteConfig.url}/blog/${slug}/`,
         },
       },
       openGraph: {
-        title: post.title,
-        description: post.description || siteConfig.description,
+        title,
+        description,
         type: "article",
         url: postUrl,
         siteName: siteConfig.name,
         publishedTime: post.publishedAt,
         modifiedTime: post._updatedAt || post.publishedAt,
         authors: [post.authorName || siteConfig.author],
-        images: [{ url: ogImage, width: 1200, height: 630, alt: post.title }],
+        images: [{ url: ogImage, width: 1200, height: 630, alt: title }],
       },
       twitter: {
         card: "summary_large_image",
-        title: post.title,
-        description: post.description || siteConfig.description,
+        title,
+        description,
         images: [ogImage],
       },
     }
@@ -122,10 +118,6 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
 
-  if (slug === 'welcome') {
-    return <BlogWelcome />
-  }
-
   if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) {
     return notFound()
   }
@@ -133,10 +125,10 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
   let post = null
   let categories = []
   let allPosts = []
-  
+
   try {
     const safeSlug = typeof slug === 'string' ? slug : Array.isArray(slug) ? slug[0] : ''
-    
+
     if (safeSlug) {
       const [postResult, categoriesResult, allPostsResult] = await Promise.all([
         client.fetch(postQuery, { slug: safeSlug }),
@@ -148,7 +140,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
       allPosts = allPostsResult || []
     }
   } catch (error) {
-    console.error("Error fetching post:", error)
+    console.error("Error fetching post (ES):", error)
   }
 
   if (!post) {

@@ -85,16 +85,85 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // Only attempt to fetch if project ID is available to avoid build errors
     if (process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) {
       const posts = await client.fetch(query)
-      blogEntries = posts.map((post: any) => ({
-        url: `${siteConfig.url}/blog/${post.slug}/`,
-        lastModified: post._updatedAt || post.publishedAt || currentDate,
-        changeFrequency: 'weekly' as const,
-        priority: 0.7,
-      }))
+      blogEntries = posts.flatMap((post: any) => {
+        const lastModified = post._updatedAt || post.publishedAt || currentDate
+        return [
+          {
+            url: `${siteConfig.url}/blog/${post.slug}/`,
+            lastModified,
+            changeFrequency: 'weekly' as const,
+            priority: 0.7,
+            alternates: {
+              languages: {
+                en: `${siteConfig.url}/blog/${post.slug}/`,
+                es: `${siteConfig.url}/es/blog/${post.slug}/`,
+                "x-default": `${siteConfig.url}/blog/${post.slug}/`,
+              },
+            },
+          },
+          {
+            url: `${siteConfig.url}/es/blog/${post.slug}/`,
+            lastModified,
+            changeFrequency: 'weekly' as const,
+            priority: 0.65,
+            alternates: {
+              languages: {
+                en: `${siteConfig.url}/blog/${post.slug}/`,
+                es: `${siteConfig.url}/es/blog/${post.slug}/`,
+                "x-default": `${siteConfig.url}/blog/${post.slug}/`,
+              },
+            },
+          },
+        ]
+      })
     }
   } catch (error) {
     console.error('Error fetching blog posts for sitemap:', error)
   }
 
-  return [...staticEntries, ...spanishEntries, ...projectEntries, ...blogEntries]
+  // Fetch blog categories
+  const categoriesQuery = groq`*[_type == "category"] | order(title asc) { title }`
+
+  let categoryEntries: MetadataRoute.Sitemap = []
+
+  try {
+    if (process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) {
+      const categories = await client.fetch(categoriesQuery)
+      categoryEntries = categories.flatMap((cat: any) => {
+        const slug = cat.title.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, '')
+        return [
+          {
+            url: `${siteConfig.url}/blog/category/${slug}/`,
+            lastModified: currentDate,
+            changeFrequency: 'weekly' as const,
+            priority: 0.6,
+            alternates: {
+              languages: {
+                en: `${siteConfig.url}/blog/category/${slug}/`,
+                es: `${siteConfig.url}/es/blog/category/${slug}/`,
+                "x-default": `${siteConfig.url}/blog/category/${slug}/`,
+              },
+            },
+          },
+          {
+            url: `${siteConfig.url}/es/blog/category/${slug}/`,
+            lastModified: currentDate,
+            changeFrequency: 'weekly' as const,
+            priority: 0.55,
+            alternates: {
+              languages: {
+                en: `${siteConfig.url}/blog/category/${slug}/`,
+                es: `${siteConfig.url}/es/blog/category/${slug}/`,
+                "x-default": `${siteConfig.url}/blog/category/${slug}/`,
+              },
+            },
+          },
+        ]
+      })
+    }
+  } catch (error) {
+    console.error('Error fetching blog categories for sitemap:', error)
+  }
+
+  return [...staticEntries, ...spanishEntries, ...projectEntries, ...blogEntries, ...categoryEntries]
 }

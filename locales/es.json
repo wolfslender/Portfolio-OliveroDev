@@ -967,7 +967,8 @@
     "readArticle": "Leer Artículo",
     "noPosts": "No se encontraron artículos",
     "noPostsDescription": "Ajusta la búsqueda o los filtros",
-    "clearFilters": "Limpiar filtros"
+    "clearFilters": "Limpiar filtros",
+    "readTime": "{{minutes}} min de lectura"
   },
   "blogPost": {
     "backToBlog": "Volver al Blog",
@@ -976,7 +977,19 @@
     "nextStep": "Siguiente paso",
     "ctaTitle": "¿Tu web también necesita más conversiones?",
     "ctaDescription": "Puedo revisar tu sitio, detectar los mayores puntos de fricción y trazarte mejoras claras para rendimiento, SEO, UX y ventas.",
-    "shareArticle": "Comparte este artículo"
+    "shareArticle": "Comparte este artículo",
+    "readTime": "{{minutes}} min de lectura",
+    "relatedTitle": "Artículos Relacionados",
+    "articleNavigation": "Navegación de artículos",
+    "newerArticle": "Más reciente",
+    "olderArticle": "Más antiguo",
+    "authorCredential": "Alexis Olivero — Ingeniero Frontend Senior · Seguridad web y rendimiento",
+    "updatedOn": "Actualizado",
+    "inlineCtaTitle": "¿Tu web necesita esto?",
+    "inlineCtaDescription": "Audito tu sitio y te respondo con un plan claro de rendimiento, SEO y seguridad.",
+    "calloutTip": "Consejo",
+    "calloutImportant": "Importante",
+    "calloutWarning": "Advertencia"
   },
   "blogSidebar": {
     "validEmail": "Por favor ingresa un correo válido",
@@ -988,7 +1001,11 @@
     "topics": "Temas",
     "clear": "Limpiar",
     "noTopics": "No hay temas disponibles.",
+    "popularTitle": "Artículos Populares",
+    "helpTitle": "¿Necesitas ayuda con tu web?",
+    "helpDescription": "Audito tu sitio y te respondo con un plan claro en menos de 24 horas.",
     "stayUpdated": "Mantente al Día",
+    "stayUpdatedTopic": "Guías de {{topic}} en tu correo",
     "newsletterDescription": "Recibe notificaciones cuando publique nuevos artículos sobre desarrollo web y rendimiento.",
     "subscribe": "Suscribirse",
     "subscribeTitle": "Suscríbete al Newsletter",
