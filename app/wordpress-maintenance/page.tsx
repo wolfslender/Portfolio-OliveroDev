@@ -5,7 +5,7 @@ import { ServiceLandingContent } from "@/components/pages/service-landing-conten
 import { BreadcrumbSchema } from "@/components/breadcrumb-schema"
 
 export const metadata: Metadata = {
-  title: "WordPress Maintenance Services — Alexis Olivero",
+  title: "WordPress Maintenance Services",
   description: "Keep your WordPress site healthy without hiring a full-time developer. Monthly maintenance, updates, security checks, small fixes, and technical recommendations.",
   keywords: [
     "wordpress maintenance",

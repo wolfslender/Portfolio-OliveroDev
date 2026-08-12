@@ -154,7 +154,7 @@ export const hero = {
   location: "Based in Santo Domingo · Working worldwide",
   buttons: {
     primary: "Book a Strategy Call",
-    secondary: "Get a Free Audit",
+    secondary: "Get a Free Website Review",
     downloadCv: "Download My Resume",
   },
 }
@@ -234,7 +234,7 @@ export const projects = [
     description: "Ongoing fullstack development and maintenance for a global leadership training platform. Responsible for SEO strategies, performance optimization, and implementing new features for a site serving over 150k professionals worldwide.",
     image: "/projects/coactive.jpg",
     tags: ["Wordpress", "JS", "PHP", "Arlo", "Moodle", "SEO", "Performance"],
-    category: "fullstack",
+    category: "frontend",
     github: "#",
     demo: "https://coactive.com/",
     featured: true,
@@ -299,7 +299,7 @@ export const projects = [
     description: "Corporate website for an international healthcare group, built to present its services clearly across devices and give its team a reliable content platform.",
     image: "/projects/dmed.jpg",
     tags: ["WordPress", "PHP", "CSS", "JavaScript"],
-    category: "fullstack",
+    category: "frontend",
     github: "https://github.com/wolfslender",
     demo: "https://dmed-healthcare.com/",
     featured: false,
@@ -323,7 +323,7 @@ export const projects = [
     description: "Certified professional with credentials from IBM and Google. Expert in building secure systems, vulnerability management, and fostering efficient technical environments.",
     image: "/projects/Keitel-De-Luna.png",
     tags: ["Cybersecurity", "IT Support", "Vulnerability Management"],
-    category: "fullstack",
+    category: "frontend",
     github: "#",
     demo: "https://keiteldeluna.com/",
     featured: false,
@@ -335,7 +335,7 @@ export const projects = [
     description: "Government project focused on traffic safety. Includes CMS, incident reports, interactive maps, and community feedback tools.",
     image: "/projects/cst-puerto-rico.jpg",
     tags: ["Webflow", "JS", "Tailwind CSS"],
-    category: "fullstack",
+    category: "frontend",
     github: "#",
     demo: "https://www.cst.pr.gov/",
     featured: true,
@@ -451,11 +451,11 @@ export const experience = [
     position: "Frontend Web Developer (Part-time)",
     period: "2025 - Present",
     location: "Remote",
-    description: "Managing and optimizing a high-traffic WordPress platform serving 150K+ weekly users across 60+ countries. Contract through March 2027.",
+    description: "Supporting and optimizing a global WordPress training platform with a reported community of 150K+ users across 60+ countries. Contract through March 2027.",
     technologies: ["WordPress", "React", "JavaScript", "PHP", "SEO", "Agile"],
     achievements: [
-      "Manage and optimize platform performance, security, and stability across 30+ plugins and custom theme configurations",
-      "Lead web security initiatives including firewall rules, access reviews, and proactive monitoring — maintained 99.9% uptime",
+      "Improve platform performance, security, and stability across a large plugin ecosystem and custom theme configurations",
+      "Contribute to security initiatives including access reviews, maintenance, monitoring, and technical risk reduction",
       "Collaborate cross-functionally with Arlo, Moodle, and server ops to deliver responsive, accessible features",
     ],
   },
@@ -467,8 +467,8 @@ export const experience = [
     description: "Designed and built user-centric clinical interfaces using HTML, CSS, JavaScript, and WordPress for a secure patient portal.",
     technologies: ["WordPress", "PHP", "JavaScript", "HTML", "CSS"],
     achievements: [
-      "Designed and built user-centric clinical interfaces for a secure patient portal serving 5,000+ monthly users",
-      "Led a full platform redesign achieving 95% user satisfaction, reducing task completion time by 30%",
+      "Designed and built user-centric clinical interfaces for a healthcare website and related digital experiences",
+      "Contributed to a platform redesign focused on clearer journeys, responsive behavior, and usability",
       "Integrated JavaScript-powered dynamic forms that reduced manual data entry and improved clinical workflow efficiency",
     ],
   },
@@ -480,9 +480,9 @@ export const experience = [
     description: "Specializing in web security, maintenance, SEO, and site management on Azure servers. Focused on performance optimization and usability.",
     technologies: ["WordPress", "WebFlow", "SEO", "Azure", "JavaScript", "CSS3"],
     achievements: [
-      "Achieved a 25% increase in user retention",
-      "Reduced loading times by 30% through optimization",
-      "Implemented custom CMS solutions boosting efficiency by 40%",
+      "Improved responsive behavior, performance, and maintainability across client websites",
+      "Built custom WordPress CMS solutions with reusable content structures",
+      "Supported security, SEO, maintenance, and Azure-hosted environments",
       "Developed 15+ web projects with WebFlow",
     ],
   },
@@ -504,7 +504,7 @@ export const experience = [
 export const education = [
   {
     school: "Liceo Minerva Mirabal",
-    degree: "Computer Science, Bachelor's Degree",
+    degree: "Technical secondary studies in Computer Science",
     period: "Jun 2012 - Sep 2015",
     location: "Santo Domingo",
     description: "Graduated with a strong foundation in programming, algorithms, and information systems.",
@@ -512,7 +512,7 @@ export const education = [
 ]
 
 export const contact = {
-  email: "contact@oliverodev.com",
+  email: "olivero_canario@hotmail.com",
   phone: "(829) 983-2502",
   location: "Santo Domingo, Dominican Republic",
   social: {

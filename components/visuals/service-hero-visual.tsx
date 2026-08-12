@@ -47,9 +47,9 @@ function AuditHeroVisual({ locale }: { locale?: string }) {
   return (
     <div className="space-y-4">
       <div className="report-card p-5">
-        <h4 className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-3">
+        <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-3">
           {labels.whatFirst}
-        </h4>
+        </p>
         <div className="space-y-2">
           {labels.auditItems.map((item) => (
             <div key={item} className="flex items-center gap-2.5 py-1.5">
@@ -60,9 +60,9 @@ function AuditHeroVisual({ locale }: { locale?: string }) {
         </div>
       </div>
       <div className="report-card p-5">
-        <h4 className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-3">
+        <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-3">
           {labels.priorityIssues}
-        </h4>
+        </p>
         <div className="space-y-2">
           {labels.priority.map((label, index) => ({ label, status: index === 1 ? "bad" as const : "warn" as const })).map((item) => (
             <div key={item.label} className="flex items-center justify-between py-1.5">
@@ -84,9 +84,9 @@ function SpeedHeroVisual({ locale }: { locale?: string }) {
   const labels = copy(locale)
   return (
     <div className="report-card p-5 space-y-4">
-      <h4 className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
+      <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
         {labels.vitals}
-      </h4>
+      </p>
       <MetricBar label="LCP" value={32} color="amber" />
       <MetricBar label="INP" value={280} max={500} color="red" />
       <MetricBar label="CLS" value={8} max={25} color="primary" />
@@ -113,9 +113,9 @@ function RecoveryHeroVisual({ locale }: { locale?: string }) {
   const steps = labels.recoverySteps
   return (
     <div className="report-card p-5">
-      <h4 className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-4">
+      <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-4">
         {labels.incident}
-      </h4>
+      </p>
       <div className="space-y-3">
         {steps.map((step, i) => (
           <div key={step} className="flex items-center gap-3">
@@ -142,9 +142,9 @@ function MigrationHeroVisual({ locale }: { locale?: string }) {
   const labels = copy(locale)
   return (
     <div className="report-card p-5">
-      <h4 className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-4">
+      <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-4">
         {labels.migration}
-      </h4>
+      </p>
       <div className="space-y-2">
         {labels.migrationSteps.map((step, i) => (
           <div key={step} className="flex items-center gap-3">
@@ -167,9 +167,9 @@ function MaintenanceHeroVisual({ locale }: { locale?: string }) {
   const labels = copy(locale)
   return (
     <div className="report-card p-5">
-      <h4 className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-4">
+      <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-4">
         {labels.monthly}
-      </h4>
+      </p>
       <div className="grid grid-cols-2 gap-3">
         {labels.maintenanceItems.map((label, index) => ({ label, status: index === 3 ? "warn" as const : "pass" as const })).map((item) => (
           <div key={item.label} className="flex items-center gap-2 py-1.5">

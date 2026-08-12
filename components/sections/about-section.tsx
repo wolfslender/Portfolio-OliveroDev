@@ -95,10 +95,10 @@ export function AboutSection() {
 
   const careerStats = useMemo(
     () => [
-      { value: "10+", label: isSpanish ? "años resolviendo problemas web" : "years solving web problems" },
+      { value: "8+", label: isSpanish ? "años de experiencia profesional" : "years of professional experience" },
       { value: "150K+", label: isSpanish ? "usuarios en una plataforma global" : "users on a global platform" },
       { value: "60", label: isSpanish ? "países tocados por trabajo real" : "countries touched by real work" },
-      { value: "98", label: isSpanish ? "PageSpeed alcanzado en proyectos" : "PageSpeed reached on projects" },
+      { value: "4", label: isSpanish ? "sectores con experiencia real" : "industries with hands-on experience" },
     ],
     [isSpanish],
   )
@@ -144,6 +144,12 @@ export function AboutSection() {
                 <Link href={siteConfig.links.linkedin} target="_blank" rel="noopener noreferrer">
                   <Linkedin className="mr-2 size-4" />
                   LinkedIn
+                </Link>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="rounded-full bg-background/60">
+                <Link href="/frontend-developer/">
+                  {isSpanish ? "Perfil frontend" : "Frontend profile"}
+                  <ArrowRight className="ml-2 size-4" />
                 </Link>
               </Button>
               <Button asChild size="lg" variant="ghost" className="rounded-full">

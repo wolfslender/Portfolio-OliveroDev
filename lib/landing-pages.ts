@@ -45,7 +45,7 @@ export const landingPages: LandingPageData[] = [
       eyebrow: "Website Audit",
       title: "Know exactly what is holding your website back",
       description:
-        "A focused technical and conversion audit for business owners who know their website has problems, but do not know what to fix first. I review speed, security, SEO basics, UX friction, plugins, hosting, and maintenance risks, then give you a prioritized plan.",
+        "A paid, in-depth technical and conversion audit for business owners who need more than a quick review. I assess speed, security, SEO basics, UX friction, plugins, hosting, and maintenance risks, then deliver a written, prioritized action plan.",
       primaryCta: { label: "Request an audit", href: "/contact?service=Website%20Audit%20and%20Action%20Plan" },
       secondaryCta: { label: "See my work", href: "/work" },
     },
@@ -94,6 +94,7 @@ export const landingPages: LandingPageData[] = [
     faq: {
       title: "Frequently asked questions",
       items: [
+        { question: "How is this different from the free website review?", answer: "The free review is a brief, high-level first look with a few observations. This professional audit is a paid engagement with deeper analysis, documented findings, risk notes, and a prioritized action plan." },
         { question: "What does the audit include?", answer: "Performance, security, SEO technical basics, plugin risk, user access, hosting, and UX friction review. Everything is documented in a prioritized action plan." },
         { question: "Do you implement the fixes too?", answer: "Yes. After the audit, you can decide whether to implement the fixes yourself or hire me to handle them." },
         { question: "How long does it take?", answer: "Most audits are delivered within 3-5 business days after I receive full access to your site and hosting." },

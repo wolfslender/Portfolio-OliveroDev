@@ -24,9 +24,9 @@ export function AuditChecklist({ title, items, className }: AuditChecklistProps)
   return (
     <div className={cn("report-card p-5", className)}>
       {title && (
-        <h4 className="text-sm font-bold uppercase tracking-widest text-muted-foreground mb-4 pb-3 border-b border-border/40">
+        <p className="text-sm font-bold uppercase tracking-widest text-muted-foreground mb-4 pb-3 border-b border-border/40">
           {title}
-        </h4>
+        </p>
       )}
       <div className="space-y-0">
         {items.map((item) => {

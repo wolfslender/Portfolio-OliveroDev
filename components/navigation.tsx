@@ -127,6 +127,7 @@ export function Navigation() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-1">
             {navLinks.map((link) => {
+              const isHireMe = link.href === "/frontend-developer"
               const href = localizePath(pathname || "/", link.href)
               const isActive = stripSpanishPrefix(pathname || "/") === link.href
 
@@ -255,8 +256,10 @@ export function Navigation() {
                   key={link.href}
                   href={href}
                   aria-current={isActive ? "page" : undefined}
-                  className={`relative px-4 py-2 text-sm font-medium rounded-lg transition-colors duration-200 ${
-                    isActive ? "text-primary" : "text-muted-foreground hover:text-foreground"
+                  className={`relative px-3 py-2 text-sm font-medium rounded-lg transition-colors duration-200 ${
+                    isHireMe
+                      ? "border border-primary/30 bg-primary/5 text-primary hover:bg-primary hover:text-primary-foreground"
+                      : isActive ? "text-primary" : "text-muted-foreground hover:text-foreground"
                   }`}
                 >
                   {link.label}
@@ -305,6 +308,7 @@ export function Navigation() {
         <div id="mobile-navigation-menu" className="md:hidden bg-background/95 backdrop-blur-xl border-b border-border animate-in slide-in-from-top duration-200">
           <div className="px-4 py-4 space-y-1">
             {navLinks.map((link) => {
+              const isHireMe = link.href === "/frontend-developer"
               const href = localizePath(pathname || "/", link.href)
               const isActive = stripSpanishPrefix(pathname || "/") === link.href
               return (
@@ -314,7 +318,9 @@ export function Navigation() {
                     onClick={() => setIsOpen(false)}
                     aria-current={isActive ? "page" : undefined}
                     className={`block w-full text-left px-4 py-3 rounded-lg font-medium transition-all ${
-                      isActive ? "bg-primary/10 text-foreground" : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                      isHireMe
+                        ? "bg-primary text-primary-foreground"
+                        : isActive ? "bg-primary/10 text-foreground" : "text-muted-foreground hover:text-foreground hover:bg-muted"
                     }`}
                   >
                     {link.label}

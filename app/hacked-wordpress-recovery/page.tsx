@@ -5,7 +5,7 @@ import { ServiceLandingContent } from "@/components/pages/service-landing-conten
 import { BreadcrumbSchema } from "@/components/breadcrumb-schema"
 
 export const metadata: Metadata = {
-  title: "Hacked WordPress Recovery — Alexis Olivero",
+  title: "Hacked WordPress Recovery",
   description: "Recover your hacked WordPress site and close the door behind the attacker. Malware cleanup, vulnerability patching, content restoration, and post-recovery hardening.",
   keywords: [
     "hacked wordpress recovery",

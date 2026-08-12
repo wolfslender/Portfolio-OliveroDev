@@ -6,7 +6,7 @@ export function useAbout() {
   const { t } = useTranslation()
   return useMemo(() => ({
     title: t('about.title', "About Me"),
-    description: t('about.description', "Passionate developer with 10+ years of experience building modern web applications. I love turning complex problems into simple, beautiful solutions."),
+    description: t('about.description', "Developer with 8+ years of professional experience building and improving web platforms."),
     experienceTitle: t('about.experience', "Experience"),
     educationTitle: t('about.education', "Education"),
     softSkillsTitle: t('about.softSkills', "Soft Skills")
@@ -19,7 +19,7 @@ export function useAboutPage() {
     aboutLabel: t('aboutPage.aboutLabel', "About"),
     heroTitle: t('aboutPage.heroTitle', "Building websites and tools"),
     heroHighlight: t('aboutPage.heroHighlight', "that actually work"),
-    heroDescription: t('aboutPage.heroDescription', "10+ years building for government, enterprise, and global platforms. I focus on speed, security, and making sure the site does what it's supposed to do — bring in results."),
+    heroDescription: t('aboutPage.heroDescription', "Since 2017, I have built for government, enterprise, healthcare, and global platforms with a focus on speed, security, and maintainability."),
     heroDescription2: t('aboutPage.heroDescription2', "No project managers, no junior devs, no handoffs. From discovery to deployment, I handle your project end-to-end. Government portals, global EdTech platforms, healthcare systems — I've shipped across industries and I know what works."),
     workedTitle: t('aboutPage.workedTitle', "Where"),
     workedHighlight: t('aboutPage.workedHighlight', "I've worked")

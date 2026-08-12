@@ -5,7 +5,7 @@ import { ServiceLandingContent } from "@/components/pages/service-landing-conten
 import { BreadcrumbSchema } from "@/components/breadcrumb-schema"
 
 export const metadata: Metadata = {
-  title: "WordPress Security Review & Hardening — Alexis Olivero",
+  title: "WordPress Security Review & Hardening",
   description: "Harden your WordPress site before a small risk becomes a real incident. Security review, user access cleanup, plugin risk assessment, and basic hardening.",
   keywords: [
     "wordpress security",

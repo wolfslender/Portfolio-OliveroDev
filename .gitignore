@@ -38,13 +38,13 @@ public/**/nextImageExportOptimizer/
 # empty api route
 app/api/
 
-# test files
-__tests__/
-vitest.config.ts
-
 # OS files
 .DS_Store
 
 # Loose marketing assets (use public/ instead)
 "OliveroDev Media PRO.png"
 OliveroDev*.png
+
+# Local generated artifacts
+/output/
+/tmp/

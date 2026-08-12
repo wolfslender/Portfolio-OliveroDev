@@ -10,6 +10,7 @@ export function useNav() {
     { label: t('nav.plugins', "Plugins"), href: "/plugins" },
     { label: t('nav.blog', "Blog"), href: "/blog" },
     { label: t('nav.about', "About"), href: "/about" },
+    { label: t('nav.hireMe', "Hire Me"), href: "/frontend-developer" },
     { label: t('nav.contact', "Contact"), href: "/contact" },
   ]), [t])
 }

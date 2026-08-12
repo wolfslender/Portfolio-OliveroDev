@@ -5,7 +5,7 @@ import { ServiceLandingContent } from "@/components/pages/service-landing-conten
 import { BreadcrumbSchema } from "@/components/breadcrumb-schema"
 
 export const metadata: Metadata = {
-  title: "Website Audit & Action Plan — Alexis Olivero",
+  title: "Website Audit & Action Plan",
   description: "A focused technical and conversion audit for business owners who know their website has problems, but do not know what to fix first. I review speed, security, SEO basics, UX friction, plugins, hosting, and maintenance risks.",
   keywords: [
     "website audit",

@@ -94,9 +94,9 @@ export function ContactSection() {
       <div className="max-w-6xl mx-auto relative z-10 w-full">
         <ScrollReveal>
           <div className="space-y-6 text-center mb-12 max-w-3xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground">
+            <h1 className="text-4xl md:text-5xl font-bold text-foreground">
               {contactPage.title}
-            </h2>
+            </h1>
             <p className="text-muted-foreground text-xl leading-relaxed max-w-2xl mx-auto">
               {t('contactPage.description')}
             </p>

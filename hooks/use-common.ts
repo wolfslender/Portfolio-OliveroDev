@@ -20,7 +20,7 @@ export function useCommon() {
     outcome: t('common.outcome', "Outcome"),
     included: t('common.included', "Included"),
     bookCall: t('common.bookCall', "Book a Strategy Call"),
-    freeAudit: t('common.freeAudit', "Get Free Website Audit"),
+    freeAudit: t('common.freeAudit', "Get a Free Website Review"),
     viewServices: t('common.viewServices', "View Services")
   }), [t])
 }

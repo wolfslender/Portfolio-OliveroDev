@@ -22,11 +22,11 @@ import { AboutSection } from "@/components/sections/about-section"
 import GlossaryPage from "@/app/glossary/page"
 import { getLandingPageEsBySlug } from "@/lib/landing-pages-es"
 
-const routes = ["", "about", "blog", "contact", "glossary", "plugins", "privacy", "services", "terms", "work", "website-audit", "wordpress-speed-optimization", "wordpress-security", "hacked-wordpress-recovery", "website-migration", "wordpress-maintenance"]
+const routes = ["", "about", "blog", "contact", "frontend-developer", "glossary", "plugins", "privacy", "services", "terms", "work", "website-audit", "wordpress-speed-optimization", "wordpress-security", "hacked-wordpress-recovery", "website-migration", "wordpress-maintenance"]
 
 const metadataByRoute: Record<string, Metadata> = {
   "": {
-    title: "Alexis Olivero - Rendimiento, seguridad y modernizacion web",
+    title: "Rendimiento, seguridad y modernizacion web",
     description: "Ayudo a empresas establecidas a convertir webs lentas, vulnerables o dificiles de administrar en plataformas rapidas, seguras y confiables.",
   },
   about: {
@@ -45,6 +45,10 @@ const metadataByRoute: Record<string, Metadata> = {
   contact: {
     title: "Solicita una auditoria web o consulta tecnica",
     description: "Comparte tu web, plataforma, problema principal, timeline y presupuesto para recibir el proximo paso mas claro.",
+  },
+  "frontend-developer": {
+    title: "Desarrollador Frontend Senior",
+    description: "Perfil frontend de Alexis Olivero: React, Next.js, TypeScript, interfaces accesibles, rendimiento, integraciones CMS y entrega web en producción.",
   },
   glossary: {
     title: "Glosario de desarrollo web",
@@ -71,27 +75,27 @@ const metadataByRoute: Record<string, Metadata> = {
     description: "Proyectos y casos reales de desarrollo web con React, Next.js, WordPress, Webflow y enfoque en rendimiento.",
   },
   "website-audit": {
-    title: "Auditoría web y plan de acción — Alexis Olivero",
+    title: "Auditoría web y plan de acción",
     description: "Auditoría técnica y de conversión para negocios que saben que su sitio tiene problemas pero no saben qué arreglar primero.",
   },
   "wordpress-speed-optimization": {
-    title: "Optimización de Velocidad WordPress — Alexis Olivero",
+    title: "Optimización de Velocidad WordPress",
     description: "Haz que tu sitio WordPress sea más rápido sin reconstruir todo. Auditoría de rendimiento, revisión de plugins, optimización de imágenes y mejoras Core Web Vitals.",
   },
   "wordpress-security": {
-    title: "Seguridad WordPress — Alexis Olivero",
+    title: "Seguridad WordPress",
     description: "Refuerza tu sitio WordPress antes de que un riesgo pequeño se convierta en un incidente real. Revisión de seguridad, limpieza de accesos y hardening básico.",
   },
   "hacked-wordpress-recovery": {
-    title: "Recuperación WordPress Hackeado — Alexis Olivero",
+    title: "Recuperación WordPress Hackeado",
     description: "Recupera tu WordPress hackeado y cierra la puerta detrás del atacante. Limpieza de malware, parcheo de vulnerabilidades y hardening post-recuperación.",
   },
   "website-migration": {
-    title: "Servicios de Migración Web — Alexis Olivero",
+    title: "Servicios de Migración Web",
     description: "Migra o reconstruye tu sitio web sin perder lo que importa. Estrategia de migración, transferencia de contenido, plan de redirecciones y soporte de lanzamiento.",
   },
   "wordpress-maintenance": {
-    title: "Servicios de Mantenimiento WordPress — Alexis Olivero",
+    title: "Servicios de Mantenimiento WordPress",
     description: "Mantén tu WordPress saludable sin contratar un desarrollador full-time. Mantenimiento mensual, actualizaciones, revisiones de seguridad y recomendaciones técnicas.",
   },
 }
@@ -149,6 +153,10 @@ export default async function SpanishPage({ params }: PageProps) {
   if (route === "about") return <AboutSection />
   if (route === "services") return <ServicesContent />
   if (route === "work") return <WorkContent />
+  if (route === "frontend-developer") {
+    const { FrontendDeveloperContent } = await import("@/app/frontend-developer/page")
+    return <FrontendDeveloperContent locale="es" />
+  }
   if (route === "plugins") return <PluginsContent locale="es" />
   if (route === "privacy") return <PrivacyContent />
   if (route === "terms") return <TermsContent />

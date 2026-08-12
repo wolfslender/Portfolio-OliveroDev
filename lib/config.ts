@@ -9,7 +9,7 @@ export const siteConfig = {
     instagram: "https://www.instagram.com/alexisfit97/",
     github: "https://github.com/wolfslender",
     linkedin: "https://linkedin.com/in/alexis-olivero",
-    email: "contact@oliverodev.com",
+    email: "olivero_canario@hotmail.com",
   },
   author: "Alexis Olivero",
   keywords: [
@@ -50,6 +50,7 @@ export const siteConfig = {
     { label: "Work", href: "/work" },
     { label: "Blog", href: "/blog" },
     { label: "About", href: "/about" },
+    { label: "Hire Me", href: "/frontend-developer" },
     { label: "Contact", href: "/contact" },
   ],
   pluginsNavItem: { label: "Plugins", href: "/plugins" },

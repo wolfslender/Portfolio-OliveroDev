@@ -106,9 +106,9 @@ export function ServiceLandingContent({ data, locale = "en" }: ServiceLandingCon
                   <div className="absolute -inset-4 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 rounded-2xl -z-10" />
                   <ServiceHeroVisual slug={data.slug} locale={locale} />
                   <div className="report-card p-6 mt-5">
-                    <h4 className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-4">
+                    <h2 className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-4">
                       {labels.covers}
-                    </h4>
+                    </h2>
                     <div className="space-y-2">
                       {whatICheck.items.slice(0, 5).map((item) => (
                         <div key={item} className="flex items-center gap-2.5 py-1.5">

@@ -19,7 +19,7 @@
     "location": "Based in Santo Domingo · Working worldwide",
     "buttons": {
       "primary": "Book a Strategy Call",
-      "secondary": "Get a Free Audit",
+      "secondary": "Get a Free Website Review",
       "downloadCv": "Download My Resume"
     }
   },
@@ -35,12 +35,13 @@
     "plugins": "Plugins",
     "blog": "Blog",
     "about": "About",
+    "hireMe": "Hire Me",
     "contact": "Contact"
   },
   "pluginsNav": "Plugins",
   "about": {
     "title": "Why Work With Me",
-    "description": "You work directly with the senior developer responsible for the audit, strategy, implementation, and launch. More than 10 years of experience, one accountable technical partner, and no handoffs.",
+    "description": "You work directly with the developer responsible for the audit, strategy, implementation, and launch. More than 8 years of professional experience, one accountable technical partner, and no handoffs.",
     "experience": "Where I've worked",
     "education": "Education",
     "softSkills": "How I work"
@@ -49,7 +50,7 @@
     "aboutLabel": "About",
     "heroTitle": "I turn complex website problems into",
     "heroHighlight": "clear, reliable solutions",
-    "heroDescription": "For more than 10 years, I have helped government, healthcare, enterprise, and global platforms improve performance, security, maintainability, and digital delivery.",
+    "heroDescription": "Since 2017, I have helped government, healthcare, enterprise, and global platforms improve performance, security, maintainability, and digital delivery.",
     "heroDescription2": "No project managers, no junior devs, no handoffs. From discovery to deployment, I handle your project end-to-end. Government portals, global EdTech platforms, healthcare systems — I've shipped across industries and I know what works. I also bring hands-on cybersecurity experience from government work (CompTIA Security+ certified), which means every site I build benefits from real security discipline — not just frontend best practices.",
     "workedTitle": "Where",
     "workedHighlight": "I've worked"
@@ -79,9 +80,9 @@
     "badge": "Not getting enough leads?",
     "titlePrefix": "Let's make your website",
     "titleHighlight": "work harder for you.",
-    "description": "Book a quick call or let me audit your site for free. I'll show you exactly what's slowing it down and what to fix.",
+    "description": "Book a quick call or request a free high-level website review. For a complete technical report and prioritized roadmap, choose the professional Website Audit & Action Plan.",
     "primaryButton": "Book a Strategy Call",
-    "secondaryButton": "Get a Free Video Audit"
+    "secondaryButton": "Get a Free Website Review"
   },
   "footer": {
     "description": "I'm Alexis, a full-stack developer based in Santo Domingo. I build websites that actually perform.",
@@ -372,10 +373,10 @@
       "description": "Web security, maintenance, SEO, and server management on Azure. Keeping sites fast and secure."
     },
     {
-      "description": "Managing a high-traffic WordPress platform serving 150K+ weekly users across 60+ countries."
+      "description": "Supporting a global WordPress training platform with a reported community of 150K+ users across 60+ countries."
     },
     {
-      "description": "Designed clinical interfaces for a secure patient portal serving 5,000+ monthly users."
+      "description": "Designed responsive clinical interfaces and content experiences for a healthcare organization."
     },
     {
       "description": "Backend development from scratch for high-traffic projects, plus server admin."
@@ -383,7 +384,7 @@
   ],
   "education": [
     {
-      "description": "Computer Science degree. Solid foundation in programming, algorithms, and information systems."
+      "description": "Technical secondary studies in Computer Science with a foundation in programming and information systems."
     }
   ],
   "common": {
@@ -405,7 +406,7 @@
     "outcome": "Outcome",
     "included": "Included",
     "bookCall": "Book a Strategy Call",
-    "freeAudit": "Get Free Website Audit",
+    "freeAudit": "Get a Free Website Review",
     "viewServices": "View Services",
     "whatsappChat": "Chat on WhatsApp",
     "whatsappMessage": "Hi Alexis! I saw your portfolio and would like to chat."
@@ -597,7 +598,7 @@
     },
     {
       "slug": "centro-de-sonografia-pre-vue",
-      "description": "Medical imaging platform with AI diagnostics. Increased appointment bookings 60% with a cleaner UX."
+      "description": "Medical imaging website focused on a clearer service journey, responsive presentation, and appointment discovery."
     }
   ],
   "services": [

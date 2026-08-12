@@ -51,6 +51,11 @@ export function Footer() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <Link href="/frontend-developer/" className="text-sm font-medium text-primary hover:text-foreground transition-colors">
+                  {isSpanish ? "Perfil frontend" : "Frontend résumé"}
+                </Link>
+              </li>
             </ul>
           </div>
 

@@ -29,13 +29,13 @@ export function LanguageSwitcher() {
 
   return (
     <div
-      className="fixed bottom-36 right-5 z-40 animate-in fade-in zoom-in duration-300"
+      className="fixed right-4 top-20 z-40 animate-in fade-in zoom-in duration-300"
     >
       <Button
         onClick={toggleLanguage}
         size="icon"
         variant="outline"
-        className="rounded-full w-12 h-12 bg-background/80 backdrop-blur-sm border-2 border-primary/20 hover:border-primary shadow-lg hover:shadow-xl transition-all duration-300"
+        className="rounded-full w-10 h-10 bg-background/90 backdrop-blur-sm border border-primary/20 hover:border-primary shadow-md transition-all duration-300"
         title={isSpanish ? "Switch to English" : "Cambiar a Español"}
       >
         <span className="font-bold text-sm">

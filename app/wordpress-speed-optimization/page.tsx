@@ -5,7 +5,7 @@ import { ServiceLandingContent } from "@/components/pages/service-landing-conten
 import { BreadcrumbSchema } from "@/components/breadcrumb-schema"
 
 export const metadata: Metadata = {
-  title: "WordPress Speed Optimization — Alexis Olivero",
+  title: "WordPress Speed Optimization",
   description: "Make your WordPress site faster without rebuilding everything. Performance audit, plugin review, image optimization, cache configuration, and Core Web Vitals improvements.",
   keywords: [
     "wordpress speed optimization",

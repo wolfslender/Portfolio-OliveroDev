@@ -5,7 +5,7 @@ import { ServiceLandingContent } from "@/components/pages/service-landing-conten
 import { BreadcrumbSchema } from "@/components/breadcrumb-schema"
 
 export const metadata: Metadata = {
-  title: "Website Migration Services — Alexis Olivero",
+  title: "Website Migration Services",
   description: "Migrate or rebuild your website without losing the things that matter. Migration strategy, content transfer, redirect planning, SEO preservation, and launch support.",
   keywords: [
     "website migration",

@@ -7,7 +7,7 @@ export const landingPagesEs: LandingPageData[] = [
       eyebrow: "Auditoría Web",
       title: "Sabe exactamente qué está frenando tu sitio web",
       description:
-        "Una auditoría técnica y de conversión para negocios que saben que su sitio tiene problemas, pero no saben qué arreglar primero. Reviso velocidad, seguridad, SEO base, fricción de UX, plugins, hosting y riesgos de mantenimiento, y te entrego un plan priorizado.",
+        "Una auditoría técnica y de conversión profesional y de pago para negocios que necesitan más que una revisión rápida. Analizo velocidad, seguridad, SEO base, fricción de UX, plugins, hosting y riesgos de mantenimiento, y entrego un plan escrito y priorizado.",
       primaryCta: { label: "Solicitar una auditoría", href: "/es/contact?service=Auditor%C3%ADa%20web%20y%20plan%20de%20acci%C3%B3n" },
       secondaryCta: { label: "Ver mi trabajo", href: "/es/work" },
     },
@@ -56,6 +56,7 @@ export const landingPagesEs: LandingPageData[] = [
     faq: {
       title: "Preguntas frecuentes",
       items: [
+        { question: "¿En qué se diferencia de la revisión web gratuita?", answer: "La revisión gratuita es una primera mirada breve y general con algunas observaciones. Esta auditoría profesional es un servicio de pago con análisis profundo, hallazgos documentados, notas de riesgo y un plan de acción priorizado." },
         { question: "¿Qué incluye la auditoría?", answer: "Rendimiento, seguridad, fundamentos técnicos de SEO, riesgo de plugins, accesos de usuario, hosting y fricción de UX. Todo se documenta en un plan de acción priorizado." },
         { question: "¿Tú implementas los fixes también?", answer: "Sí. Después de la auditoría, puedes elegir implementar los fixes tú mismo o contratarme para hacerlo." },
         { question: "¿Cuánto tiempo tarda?", answer: "La mayoría de las auditorías se entregan dentro de 3-5 días laborables después de recibir acceso completo a tu sitio y hosting." },

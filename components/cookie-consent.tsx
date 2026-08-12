@@ -33,15 +33,15 @@ export function CookieConsent() {
   if (!show) return null
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-[100] p-4 animate-in slide-in-from-bottom-5 fade-in duration-500">
-      <div className="max-w-3xl mx-auto bg-card border border-border/50 rounded-2xl shadow-2xl backdrop-blur-xl bg-background/95 p-6 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+    <div className="fixed bottom-3 left-3 right-3 z-[100] animate-in slide-in-from-bottom-5 fade-in duration-500 sm:bottom-4 sm:left-auto sm:right-4 sm:w-[min(430px,calc(100vw-2rem))]">
+      <div className="bg-card border border-border/60 rounded-2xl shadow-2xl backdrop-blur-xl bg-background/95 p-4 sm:p-5">
         <div className="flex-1 text-sm text-muted-foreground leading-relaxed">
           {t('cookieConsent.message')}{" "}
           <Link href="/privacy" className="text-primary hover:underline font-medium">
             {t('cookieConsent.privacyLink')}
           </Link>.
         </div>
-        <div className="flex items-center gap-3 shrink-0">
+        <div className="mt-4 flex items-center gap-2">
           <Button variant="outline" size="sm" onClick={reject} className="rounded-full">
             {t('cookieConsent.reject')}
           </Button>
@@ -50,8 +50,8 @@ export function CookieConsent() {
           </Button>
           <button
             onClick={reject}
-            className="p-2 text-muted-foreground hover:text-foreground transition-colors"
-            aria-label="Close"
+            className="ml-auto p-2 text-muted-foreground hover:text-foreground transition-colors"
+            aria-label={t('cookieConsent.reject')}
           >
             <X className="w-4 h-4" />
           </button>

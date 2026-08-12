@@ -19,7 +19,7 @@
     "location": "Basado en Santo Domingo · Trabajo con clientes globales",
     "buttons": {
       "primary": "Agendar Llamada Estratégica",
-      "secondary": "Obtén Auditoría Gratis",
+      "secondary": "Obtén una Revisión Web Gratis",
       "downloadCv": "Descargar Mi CV"
     }
   },
@@ -34,13 +34,14 @@
     "work": "Portafolio",
     "blog": "Blog",
     "about": "Sobre mí",
+    "hireMe": "Hire Me",
     "contact": "Contacto",
     "plugins": "Plugins"
   },
   "pluginsNav": "Plugins",
   "about": {
     "title": "Por Qué Trabajar Conmigo",
-    "description": "Trabajas directamente con el desarrollador senior responsable de la auditoría, estrategia, implementación y lanzamiento. Más de 10 años de experiencia, un solo responsable técnico y sin traspasos.",
+    "description": "Trabajas directamente con el desarrollador responsable de la auditoría, estrategia, implementación y lanzamiento. Más de 8 años de experiencia profesional, un solo responsable técnico y sin traspasos.",
     "experience": "Dónde he trabajado",
     "education": "Educación",
     "softSkills": "Cómo trabajo"
@@ -49,7 +50,7 @@
     "aboutLabel": "Sobre mí",
     "heroTitle": "Convierto problemas web complejos en",
     "heroHighlight": "soluciones claras y confiables",
-    "heroDescription": "Durante más de 10 años he ayudado a plataformas gubernamentales, de salud, empresariales y globales a mejorar rendimiento, seguridad, mantenimiento y entrega digital.",
+    "heroDescription": "Desde 2017 he ayudado a plataformas gubernamentales, de salud, empresariales y globales a mejorar rendimiento, seguridad, mantenimiento y entrega digital.",
     "heroDescription2": "Sin project managers, sin juniors, sin traspasos. Desde el descubrimiento hasta el despliegue, manejo tu proyecto de principio a fin. Portales gubernamentales, plataformas globales EdTech, sistemas de salud — he trabajado en múltiples industrias y sé lo que funciona. También aporto experiencia práctica en ciberseguridad desde el sector gubernamental (certificado CompTIA Security+), lo que significa que cada sitio que construyo se beneficia de una disciplina de seguridad real, no solo de buenas prácticas de frontend.",
     "workedTitle": "Dónde",
     "workedHighlight": "he trabajado"
@@ -79,9 +80,9 @@
     "badge": "¿No estás recibiendo suficientes clientes?",
     "titlePrefix": "Hagamos que tu web",
     "titleHighlight": "trabaje más para ti.",
-    "description": "Agenda una llamada rápida o pide una auditoría gratis. Te muestro exactamente qué está frenando tu sitio y cómo arreglarlo.",
+    "description": "Agenda una llamada rápida o solicita una revisión web general gratis. Para recibir un informe técnico completo y un plan priorizado, elige la Auditoría Web y Plan de Acción profesional.",
     "primaryButton": "Agendar Llamada Estratégica",
-    "secondaryButton": "Obtener Auditoría en Video Gratis"
+    "secondaryButton": "Obtener Revisión Web Gratis"
   },
   "footer": {
     "description": "Soy Alexis, desarrollador full stack en Santo Domingo. Construyo websites que realmente funcionan.",
@@ -372,10 +373,10 @@
       "description": "Seguridad web, mantenimiento, SEO y administración de servidores en Azure. Manteniendo sitios rápidos y seguros."
     },
     {
-      "description": "Gestionando una plataforma WordPress de alto tráfico con 150K+ usuarios semanales en 60+ países."
+      "description": "Soporte a una plataforma WordPress global con una comunidad reportada de 150K+ usuarios en 60+ países."
     },
     {
-      "description": "Diseñé interfaces clínicas para un portal de pacientes seguro con 5,000+ usuarios mensuales."
+      "description": "Diseñé interfaces clínicas responsivas y experiencias de contenido para una organización de salud."
     },
     {
       "description": "Desarrollo backend desde cero para proyectos de alto tráfico, más administración de servidores."
@@ -383,7 +384,7 @@
   ],
   "education": [
     {
-      "description": "Carrera en Ciencias de la Computación. Base sólida en programación, algoritmos y sistemas de información."
+      "description": "Estudios secundarios técnicos en Informática con base en programación y sistemas de información."
     }
   ],
   "common": {
@@ -405,7 +406,7 @@
     "outcome": "Resultado",
     "included": "Incluye",
     "bookCall": "Agendar Llamada Estratégica",
-    "freeAudit": "Obtener Auditoría Gratis",
+    "freeAudit": "Obtener una Revisión Web Gratis",
     "viewServices": "Ver Servicios",
     "whatsappChat": "Chatea en WhatsApp",
     "whatsappMessage": "¡Hola Alexis! Vi tu portafolio y me gustaría conversar."
@@ -597,7 +598,7 @@
     },
     {
       "slug": "centro-de-sonografia-pre-vue",
-      "description": "Plataforma de imágenes médicas con IA. Aumenté reservas de citas 60% con una UX más limpia."
+      "description": "Sitio de imágenes médicas enfocado en una experiencia de servicios más clara, responsiva y orientada a citas."
     }
   ],
   "services": [

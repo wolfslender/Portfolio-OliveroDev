@@ -1,5 +1,4 @@
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
 import { Gauge, SearchCheck, ShieldCheck } from "lucide-react"
 import { ScrollReveal } from "@/components/scroll-reveal"
 import { Zap, Shield, RefreshCw } from "lucide-react"
@@ -76,9 +75,9 @@ export function HomeOffersSection({ locale }: HomeOffersSectionProps = {}) {
                       {copy.items[key].description}
                     </p>
                     <div className="pt-4 border-t border-border/40">
-                      <Button variant="ghost" size="sm" className="p-0 h-auto font-bold text-primary hover:bg-transparent">
+                      <span className="inline-flex font-bold text-primary">
                         {copy.items[key].cta} →
-                      </Button>
+                      </span>
                     </div>
                   </article>
                 </Link>
