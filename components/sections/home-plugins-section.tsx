@@ -6,6 +6,7 @@ import { plugins } from "@/lib/data"
 import { siteConfig } from "@/lib/config"
 import en from "@/locales/en.json"
 import es from "@/locales/es.json"
+import ExportedImage from "next-image-export-optimizer"
 
 interface HomePluginsSectionProps {
   locale?: "en" | "es"
@@ -104,11 +105,12 @@ export function HomePluginsSection({ locale }: HomePluginsSectionProps = {}) {
                       {copy.mockupUrl}
                     </span>
                   </div>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
+                  <ExportedImage
                     src="/plugins/screenshot-1.jpg"
                     alt={copy.productTitle}
-                    loading="lazy"
+                    width={1200}
+                    height={867}
+                    sizes="(max-width: 1024px) 100vw, 50vw"
                     className="w-full h-auto block"
                   />
                 </div>

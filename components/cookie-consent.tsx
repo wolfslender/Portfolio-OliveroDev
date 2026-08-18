@@ -15,8 +15,14 @@ export function CookieConsent() {
   useEffect(() => {
     const consent = localStorage.getItem(COOKIE_CONSENT_KEY)
     if (!consent) {
-      const timer = setTimeout(() => setShow(true), 1000)
-      return () => clearTimeout(timer)
+      const showConsent = () => setShow(true)
+      const idleCallback = window.requestIdleCallback?.(showConsent, { timeout: 4000 })
+      const timer = idleCallback === undefined ? window.setTimeout(showConsent, 3500) : undefined
+
+      return () => {
+        if (idleCallback !== undefined) window.cancelIdleCallback?.(idleCallback)
+        if (timer !== undefined) window.clearTimeout(timer)
+      }
     }
   }, [])
 
@@ -37,7 +43,7 @@ export function CookieConsent() {
       <div className="bg-card border border-border/60 rounded-2xl shadow-2xl backdrop-blur-xl bg-background/95 p-4 sm:p-5">
         <div className="flex-1 text-sm text-muted-foreground leading-relaxed">
           {t('cookieConsent.message')}{" "}
-          <Link href="/privacy" className="text-primary hover:underline font-medium">
+          <Link href="/privacy" prefetch={false} className="text-primary hover:underline font-medium">
             {t('cookieConsent.privacyLink')}
           </Link>.
         </div>

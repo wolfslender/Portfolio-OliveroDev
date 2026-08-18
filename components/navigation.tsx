@@ -61,9 +61,20 @@ export function Navigation() {
   }, [])
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50)
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
+    let frame = 0
+    const handleScroll = () => {
+      if (frame) return
+      frame = window.requestAnimationFrame(() => {
+        frame = 0
+        const nextScrolled = window.scrollY > 50
+        setScrolled((current) => current === nextScrolled ? current : nextScrolled)
+      })
+    }
+    window.addEventListener("scroll", handleScroll, { passive: true })
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+      if (frame) window.cancelAnimationFrame(frame)
+    }
   }, [])
 
   useEffect(() => {
@@ -119,6 +130,7 @@ export function Navigation() {
         <div className="flex items-center justify-between h-16">
           <Link
             href={localizePath(pathname || "/", "/")}
+            prefetch={false}
             className="text-lg font-bold text-foreground hover:text-primary transition-colors tracking-tight"
           >
             OliveroDev
@@ -182,6 +194,7 @@ export function Navigation() {
                               <Link
                                 key={service.href}
                                 href={service.href}
+                                prefetch={false}
                                 onClick={() => setMegaOpen(false)}
                                 className="group relative flex min-h-28 items-start gap-4 rounded-2xl border border-transparent p-4 transition-all duration-200 hover:border-border/70 hover:bg-background/70 hover:shadow-lg hover:shadow-primary/5"
                               >
@@ -235,6 +248,7 @@ export function Navigation() {
                                 </div>
                                 <Link
                                   href={localizePath(pathname || "/", "/contact?audit=true")}
+                                  prefetch={false}
                                   onClick={() => setMegaOpen(false)}
                                   className="mt-7 inline-flex h-12 items-center justify-center gap-2 rounded-2xl bg-primary px-5 text-sm font-bold text-primary-foreground transition-all hover:-translate-y-0.5 hover:bg-primary/90 hover:shadow-xl hover:shadow-primary/20"
                                 >
@@ -255,6 +269,7 @@ export function Navigation() {
                 <Link
                   key={link.href}
                   href={href}
+                  prefetch={false}
                   aria-current={isActive ? "page" : undefined}
                   className={`relative px-3 py-2 text-sm font-medium rounded-lg transition-colors duration-200 ${
                     isHireMe
@@ -315,6 +330,7 @@ export function Navigation() {
                 <div key={link.href}>
                   <Link
                     href={href}
+                    prefetch={false}
                     onClick={() => setIsOpen(false)}
                     aria-current={isActive ? "page" : undefined}
                     className={`block w-full text-left px-4 py-3 rounded-lg font-medium transition-all ${
@@ -331,6 +347,7 @@ export function Navigation() {
                         <Link
                           key={service.href}
                           href={service.href}
+                          prefetch={false}
                           onClick={() => setIsOpen(false)}
                           className="block rounded-lg px-3 py-2.5 text-sm text-muted-foreground hover:bg-muted hover:text-foreground"
                         >
@@ -339,6 +356,7 @@ export function Navigation() {
                       ))}
                       <Link
                         href={localizePath(pathname || "/", "/contact?audit=true")}
+                        prefetch={false}
                         onClick={() => setIsOpen(false)}
                         className="block rounded-lg px-3 py-2.5 text-sm font-bold text-primary"
                       >

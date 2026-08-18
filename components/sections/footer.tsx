@@ -27,6 +27,7 @@ export function Footer() {
           <div className="col-span-2 md:col-span-1">
             <Link
               href={localizePath(pathname || "/", "/")}
+              prefetch={false}
               className="text-lg font-bold text-foreground hover:text-primary transition-colors tracking-tight"
             >
               OliveroDev
@@ -46,13 +47,13 @@ export function Footer() {
             <ul className="space-y-2.5">
               {quickLinks.map((item) => (
                 <li key={item.href}>
-                  <Link href={localizePath(pathname || "/", item.href)} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  <Link href={localizePath(pathname || "/", item.href)} prefetch={false} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                     {item.label}
                   </Link>
                 </li>
               ))}
               <li>
-                <Link href="/frontend-developer/" className="text-sm font-medium text-primary hover:text-foreground transition-colors">
+                <Link href="/frontend-developer/" prefetch={false} className="text-sm font-medium text-primary hover:text-foreground transition-colors">
                   {isSpanish ? "Perfil frontend" : "Frontend résumé"}
                 </Link>
               </li>
@@ -66,7 +67,7 @@ export function Footer() {
             <ul className="space-y-2.5">
               {serviceLinks.map((item) => (
                 <li key={item.href}>
-                  <Link href={item.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  <Link href={item.href} prefetch={false} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                     {item.label}
                   </Link>
                 </li>
@@ -80,17 +81,17 @@ export function Footer() {
             </h3>
             <ul className="space-y-2.5">
               <li>
-                <Link href={localizePath(pathname || "/", "/privacy")} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <Link href={localizePath(pathname || "/", "/privacy")} prefetch={false} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                   {footer.privacy}
                 </Link>
               </li>
               <li>
-                <Link href={localizePath(pathname || "/", "/terms")} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <Link href={localizePath(pathname || "/", "/terms")} prefetch={false} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                   {footer.terms}
                 </Link>
               </li>
             </ul>
-            <p className="mt-6 text-xs text-muted-foreground/60 leading-relaxed">
+            <p className="mt-6 text-xs text-muted-foreground leading-relaxed">
               {footer.builtWith}
             </p>
           </div>
@@ -100,7 +101,7 @@ export function Footer() {
           <p className="text-xs text-muted-foreground">
             &copy; {new Date().getFullYear()} OliveroDev. {isSpanish ? "Todos los derechos reservados." : "All rights reserved."}
           </p>
-          <p className="text-xs text-muted-foreground/60 max-w-md text-center md:text-right">
+          <p className="text-xs text-muted-foreground max-w-md text-center md:text-right">
             {footer.disclaimer}
           </p>
         </div>

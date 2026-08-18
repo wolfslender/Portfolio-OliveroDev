@@ -1,7 +1,6 @@
 "use client"
 
 import { ScrollReveal } from "@/components/scroll-reveal"
-import { useTranslation } from "react-i18next"
 import { ArrowRight, Building2, Gauge, ShieldCheck, Wrench } from "lucide-react"
 import Link from "next/link"
 import { useState } from "react"
@@ -82,8 +81,7 @@ interface TrustedBySectionProps {
 }
 
 export function TrustedBySection({ locale }: TrustedBySectionProps = {}) {
-  const { t } = useTranslation()
-  const copy = locale === "es" ? es.trustedBy : locale === "en" ? en.trustedBy : undefined
+  const copy = locale === "es" ? es.trustedBy : en.trustedBy
   const [activeIndex, setActiveIndex] = useState(0)
   const activePartner = partners[activeIndex]
   const isSpanish = locale === "es"
@@ -98,13 +96,13 @@ export function TrustedBySection({ locale }: TrustedBySectionProps = {}) {
         <ScrollReveal>
           <div className="max-w-3xl mx-auto text-center mb-16">
             <p className="text-sm font-bold uppercase tracking-widest text-primary mb-4">
-              {copy?.eyebrow || t('trustedBy.eyebrow', "Selected work")}
+              {copy.eyebrow}
             </p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-6 text-balance">
-              {copy?.title || t('trustedBy.title')}
+              {copy.title}
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              {copy?.description || t('trustedBy.description')}
+              {copy.description}
             </p>
           </div>
         </ScrollReveal>
@@ -138,7 +136,7 @@ export function TrustedBySection({ locale }: TrustedBySectionProps = {}) {
                       {brand.name}
                     </span>
                     <span className={`mt-1 block text-xs leading-relaxed ${
-                      isActive ? "text-primary-foreground/75" : "text-muted-foreground"
+                      isActive ? "text-primary-foreground" : "text-muted-foreground"
                     }`}>
                       {brand.industry}
                     </span>

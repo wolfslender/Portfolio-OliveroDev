@@ -1,7 +1,6 @@
-"use client"
-
 import { cn } from "@/lib/utils"
-import { useTranslation } from "react-i18next"
+import en from "@/locales/en.json"
+import es from "@/locales/es.json"
 
 interface HealthRow {
   label: string
@@ -11,12 +10,13 @@ interface HealthRow {
 
 interface WebsiteHealthReportProps {
   className?: string
+  locale?: "en" | "es"
 }
 
 const statusStyles = {
-  good: "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400",
-  warn: "bg-amber-500/10 text-amber-600 dark:text-amber-400",
-  bad: "bg-red-500/10 text-red-600 dark:text-red-400",
+  good: "bg-emerald-500/10 text-emerald-800 dark:text-emerald-300",
+  warn: "bg-amber-500/10 text-amber-800 dark:text-amber-300",
+  bad: "bg-red-500/10 text-red-800 dark:text-red-300",
 }
 
 const dotStyles = {
@@ -25,14 +25,14 @@ const dotStyles = {
   bad: "status-bad",
 }
 
-export function WebsiteHealthReport({ className }: WebsiteHealthReportProps) {
-  const { t } = useTranslation()
+export function WebsiteHealthReport({ className, locale = "en" }: WebsiteHealthReportProps) {
+  const copy = (locale === "es" ? es : en).visuals.healthReport
   const sampleRows: HealthRow[] = [
-    { label: t("visuals.healthReport.rows.performance.label", "Performance"), status: "warn", detail: t("visuals.healthReport.rows.performance.detail", "Needs attention") },
-    { label: t("visuals.healthReport.rows.security.label", "Security"), status: "bad", detail: t("visuals.healthReport.rows.security.detail", "Public endpoints found") },
-    { label: t("visuals.healthReport.rows.wordpress.label", "WordPress"), status: "warn", detail: t("visuals.healthReport.rows.wordpress.detail", "Outdated plugins") },
-    { label: t("visuals.healthReport.rows.layout.label", "Layout"), status: "warn", detail: t("visuals.healthReport.rows.layout.detail", "Visual issues found") },
-    { label: t("visuals.healthReport.rows.plan.label", "Action Plan"), status: "good", detail: t("visuals.healthReport.rows.plan.detail", "Ready") },
+    { ...copy.rows.performance, status: "warn" },
+    { ...copy.rows.security, status: "bad" },
+    { ...copy.rows.wordpress, status: "warn" },
+    { ...copy.rows.layout, status: "warn" },
+    { ...copy.rows.plan, status: "good" },
   ]
 
   return (
@@ -40,7 +40,7 @@ export function WebsiteHealthReport({ className }: WebsiteHealthReportProps) {
       <div className="flex items-center gap-2 mb-4 pb-3 border-b border-border/40">
         <div className="w-2.5 h-2.5 rounded-full bg-primary animate-pulse" />
         <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
-          {t("visuals.healthReport.title", "Website Health Report")}
+          {copy.title}
         </span>
       </div>
       <div className="space-y-0">

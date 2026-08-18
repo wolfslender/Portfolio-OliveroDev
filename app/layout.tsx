@@ -1,7 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
 import Script from "next/script"
-import { DM_Sans, Geist_Mono } from "next/font/google"
 import { siteConfig } from "@/lib/config"
 import { ThemeProvider } from "@/components/theme-provider"
 import { I18nProvider } from "@/components/i18n-provider"
@@ -21,15 +20,6 @@ import {
   getProfessionalServiceSchema
 } from "@/lib/seo"
 import "./globals.css"
-
-const dmSans = DM_Sans({
-  subsets: ["latin"],
-  variable: "--font-sans",
-})
-const geistMono = Geist_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
-})
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -120,8 +110,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className="scroll-smooth">
-      <body className={`${dmSans.variable} ${geistMono.variable} font-sans antialiased selection:bg-primary/30 selection:text-primary`}>
+    <html lang="en" suppressHydrationWarning data-scroll-behavior="smooth" className="scroll-smooth">
+      <body className="font-sans antialiased selection:bg-primary/30 selection:text-primary">
         <a href="#main-content" className="skip-link">
           Skip to main content
         </a>

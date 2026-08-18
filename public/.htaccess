@@ -22,6 +22,10 @@
   AddOutputFilterByType DEFLATE font/woff2
 </IfModule>
 
+<IfModule mod_brotli.c>
+  AddOutputFilterByType BROTLI_COMPRESS text/html text/css text/javascript application/javascript application/json application/manifest+json application/xml image/svg+xml font/woff2
+</IfModule>
+
 <IfModule mod_headers.c>
   # Force no-cache for HTML files
   <FilesMatch "\.(html|htm)$">
@@ -34,8 +38,8 @@
     Header set Pragma "no-cache"
   </FilesMatch>
 
-  <FilesMatch "\.(js|css|gif|png|jpeg|webp|svg|woff2)$">
-    Header set Cache-Control "max-age=31536000, public"
+  <FilesMatch "\.(js|css|gif|ico|png|jpe?g|webp|avif|svg|woff2)$">
+    Header set Cache-Control "max-age=31536000, public, immutable"
   </FilesMatch>
 </IfModule>
 
