@@ -5,7 +5,7 @@ import { siteConfig } from "@/lib/config"
 
 export const metadata: Metadata = {
   title: "About Me",
-  description: "Meet Alexis Olivero, a senior web specialist helping established businesses improve website performance, security, maintainability, and digital delivery.",
+  description: "Meet Alexis Olivero, a Senior Frontend Developer helping established businesses improve website performance, security, maintainability, and digital delivery.",
   alternates: {
     canonical: `${siteConfig.url}/about/`,
     languages: { en: `${siteConfig.url}/about/`, es: `${siteConfig.url}/es/about/`, "x-default": `${siteConfig.url}/about/` },
@@ -36,13 +36,13 @@ export default function AboutPage() {
                 siteConfig.links.linkedin,
                 siteConfig.links.instagram,
               ],
-              jobTitle: "Full Stack Developer",
+              jobTitle: "Senior Web Specialist and Frontend Developer",
               description: siteConfig.description,
             },
           }),
         }}
       />
-      <AboutSection />
+      <AboutSection locale="en" />
     </div>
   )
 }

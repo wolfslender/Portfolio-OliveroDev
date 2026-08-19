@@ -152,7 +152,7 @@ export default async function SpanishPage({ params }: PageProps) {
   if (slug.length > 1 || !routes.includes(route)) notFound()
 
   if (route === "") return <SpanishHome />
-  if (route === "about") return <AboutSection />
+  if (route === "about") return <AboutSection locale="es" />
   if (route === "services") return <ServicesContent />
   if (route === "work") return <WorkContent />
   if (route === "frontend-developer") {
