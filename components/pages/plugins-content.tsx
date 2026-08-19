@@ -87,7 +87,7 @@ export default function PluginsContent({ locale = "en" }: PluginsContentProps = 
                   <div className="flex items-center gap-4">
                     <span className="text-5xl">{plugin.icon}</span>
                     <div>
-                      <h3 className="text-2xl md:text-3xl font-bold">{plugin.title}</h3>
+                      <h2 className="text-2xl md:text-3xl font-bold">{plugin.title}</h2>
                       <p className="text-muted-foreground text-sm mt-1">{plugin.tagline}</p>
                     </div>
                   </div>
@@ -139,7 +139,7 @@ export default function PluginsContent({ locale = "en" }: PluginsContentProps = 
                   {/* PRO Features card */}
                   <div className="rounded-2xl bg-gradient-to-br from-violet-600 to-violet-800 p-6 text-white">
                     <div className="flex items-center justify-between mb-5">
-                      <h4 className="text-lg font-bold">PRO Features</h4>
+                      <h3 className="text-lg font-bold">PRO Features</h3>
                       <Badge className="bg-white/20 text-white rounded-full text-xs">
                         {plugin.price}
                       </Badge>
@@ -371,9 +371,9 @@ export default function PluginsContent({ locale = "en" }: PluginsContentProps = 
                     <div className="relative w-14 h-14 rounded-2xl bg-gradient-to-br from-violet-600 to-violet-800 flex items-center justify-center mb-6 shadow-lg shadow-violet-600/25 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
                       <Icon className="w-7 h-7 text-white" />
                     </div>
-                    <h4 className="relative font-bold text-xl mb-3 group-hover:text-primary transition-colors">
+                    <h3 className="relative font-bold text-xl mb-3 group-hover:text-primary transition-colors">
                       {card.title}
-                    </h4>
+                    </h3>
                     <p className="relative text-sm text-muted-foreground leading-relaxed">
                       {card.description}
                     </p>

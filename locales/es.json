@@ -1,8 +1,9 @@
 {
   "hero": {
+    "eyebrow": "Especialista web independiente · Ejecución senior",
     "title": {
-      "prefix": "Convierte una web que no rinde en una plataforma",
-      "highlight": "rápida, segura y lista para crecer."
+      "prefix": "Tu web no debería ser",
+      "highlight": "el cuello de botella."
     },
     "roles": [
       "Rendimiento + conversión",
@@ -10,23 +11,29 @@
       "Migraciones + reconstrucción",
       "Atención senior directa"
     ],
-    "description": "Ayudo a empresas establecidas a corregir webs lentas, vulnerables, difíciles de administrar o que no generan oportunidades calificadas. Trabajas directamente conmigo desde la auditoría hasta el lanzamiento.",
+    "description": "Convierto webs lentas y vulnerables en plataformas rápidas y seguras, diseñadas para generar confianza y oportunidades calificadas.",
     "proof": [
-      "Respuesta personal en menos de 24 horas",
-      "Alcance claro y prioridades medibles",
-      "Soporte de lanzamiento incluido"
+      { "value": "150K+", "label": "Usuarios de plataforma" },
+      { "value": "60", "label": "Países alcanzados" },
+      { "value": "1:1", "label": "Atención senior" }
     ],
     "location": "Basado en Santo Domingo · Trabajo con clientes globales",
     "buttons": {
       "primary": "Agendar Llamada Estratégica",
       "secondary": "Obtén una Revisión Web Gratis",
       "downloadCv": "Descargar Mi CV"
+    },
+    "visual": {
+      "browserLabel": "Trabajo real",
+      "selectedWork": "Trabajo seleccionado",
+      "caseLinkLabel": "Ver el caso de Co-Active Training Institute",
+      "users": "Usuarios"
     }
   },
   "trustedBy": {
-    "eyebrow": "Trabajo seleccionado",
-    "title": "Algunas marcas con las que he trabajado",
-    "description": "Organizaciones con las que he trabajado a lo largo de mi carrera."
+    "eyebrow": "Experiencia en plataformas reales",
+    "title": "Trabajo confiado en distintos sectores",
+    "description": "Educación, gobierno, ciberseguridad y formación global."
   },
   "nav": {
     "home": "Inicio",
@@ -76,13 +83,35 @@
     "description": "Algunos proyectos que he sacado adelante — desde portales gubernamentales hasta plugins de WordPress. Cada uno me enseñó algo.",
     "viewAll": "Ver todos los proyectos"
   },
+  "homeAuthority": {
+    "eyebrow": "La persona detrás de OliveroDev",
+    "titlePrefix": "Ejecución senior,",
+    "titleHighlight": "sin capas de agencia.",
+    "description": "Soy Alexis Olivero. Desde 2017 he trabajado en plataformas globales EdTech, gobierno, ciberseguridad y negocios, asumiendo directamente el diagnóstico, las decisiones y la implementación.",
+    "profileLocation": "Santo Domingo · Trabajo globalmente",
+    "availability": "Disponible",
+    "profileRole": "Desarrollador full stack y especialista web",
+    "stats": [
+      { "value": "8+", "label": "Años de experiencia profesional" },
+      { "value": "Security+", "label": "Disciplina de seguridad certificada" },
+      { "value": "1:1", "label": "Atención senior directa" }
+    ],
+    "expectations": [
+      "Contacto directo con la persona que hace el trabajo",
+      "Alcance, prioridades y decisiones técnicas claras",
+      "Progreso visible en lugar de entregas a ciegas",
+      "Soporte durante el lanzamiento y después"
+    ],
+    "aboutCta": "Más sobre Alexis"
+  },
   "cta": {
-    "badge": "¿No estás recibiendo suficientes clientes?",
-    "titlePrefix": "Hagamos que tu web",
-    "titleHighlight": "trabaje más para ti.",
-    "description": "Agenda una llamada rápida o solicita una revisión web general gratis. Para recibir un informe técnico completo y un plan priorizado, elige la Auditoría Web y Plan de Acción profesional.",
-    "primaryButton": "Agendar Llamada Estratégica",
-    "secondaryButton": "Obtener Revisión Web Gratis"
+    "badge": "Cuando tu web ya no puede esperar",
+    "titlePrefix": "Muéstrame la web que está",
+    "titleHighlight": "frenando al negocio.",
+    "description": "Comparte la URL y el problema que estás viendo. Revisaré el contexto y te diré el próximo paso más claro, sin forzar una reconstrucción.",
+    "primaryButton": "Solicitar revisión web",
+    "secondaryButton": "Agendar llamada estratégica",
+    "trust": ["Atención senior directa", "Alcance claro", "Progreso visible", "Soporte de lanzamiento"]
   },
   "footer": {
     "description": "Soy Alexis, desarrollador full stack en Santo Domingo. Construyo websites que realmente funcionan.",
@@ -175,7 +204,7 @@
     "heroBadge": "Plugins WordPress",
     "heroTitle": "Deja de pagar por almacenar archivos",
     "heroHighlight": "que nadie usa.",
-    "heroDescription": "Tu librería de medios esconde archivos huérfanos que ocupan espacio y hacen más lentos los backups. Media Audit los encuentra, te muestra exactamente qué es seguro borrar y te deja limpiar en minutos.",
+    "heroDescription": "Tu biblioteca multimedia esconde archivos huérfanos que ocupan espacio y hacen más lentas las copias de respaldo. Media Audit los encuentra, muestra exactamente qué es seguro borrar y permite limpiar en minutos.",
     "freeLabel": "Gratis — Siempre",
     "startTrial": "Obtén PRO",
     "freeOnWp": "Gratis en WP.org",
@@ -233,7 +262,7 @@
         "a": "Con PRO, sí. Cada borrado va primero a la Papelera PRO y puede restaurarse antes de la eliminación permanente."
       },
       {
-        "q": "¿Detecta archivos usados por page builders?",
+        "q": "¿Detecta archivos usados por constructores visuales?",
         "a": "La versión gratuita cubre posts, páginas, widgets y theme mods. PRO añade detección profunda para Elementor, ACF, Divi y WooCommerce."
       },
       {
@@ -260,7 +289,7 @@
       {
         "title": "OliveroDev Media Audit",
         "tagline": "Encuentra medios no usados. Recupera almacenamiento. Sin conjeturas.",
-        "description": "El limpiador de librería multimedia de WordPress que realmente funciona. El escaneo inteligente detecta archivos no usados en posts, page builders, campos ACF y WooCommerce — y luego te permite eliminarlos de forma segura con un sistema de puntuación de riesgo que evita errores costosos.",
+        "description": "El limpiador de la biblioteca multimedia de WordPress que realmente funciona. El escaneo inteligente detecta archivos no usados en entradas, constructores visuales, campos ACF y WooCommerce, y luego permite eliminarlos de forma segura con una puntuación de riesgo que evita errores costosos.",
         "features": [
           "Escaneo inteligente: posts, páginas, widgets, theme mods",
           "Dashboard de usados vs no usados con desglose de almacenamiento",
@@ -452,7 +481,7 @@
         },
         "security": {
           "title": "3. Lanzar y seguir mejorando",
-          "description": "QA, revisión de seguridad y un plan de despliegue que te prepare para el largo plazo."
+          "description": "Control de calidad, revisión de seguridad y un plan de despliegue preparado para el largo plazo."
         }
       }
     },
@@ -472,14 +501,14 @@
         },
         "security": {
           "label": "Seguridad",
-          "detail": "Endpoints públicos encontrados"
+          "detail": "Puntos de entrada públicos detectados"
         },
         "wordpress": {
           "label": "WordPress",
           "detail": "Plugins desactualizados"
         },
         "layout": {
-          "label": "Layout",
+          "label": "Diseño",
           "detail": "Errores visuales detectados"
         },
         "plan": {
@@ -523,7 +552,7 @@
         "optimize": "Optimizar y proteger mi web",
         "recovery": "Recuperar sitio hackeado",
         "migration": "Reconstrucción o migración",
-        "build": "Website o MVP nuevo",
+        "build": "Sitio web o MVP nuevo",
         "partner": "Partner técnico mensual"
       },
       "platforms": {
@@ -605,13 +634,13 @@
     {
       "id": "audit-action-plan",
       "title": "Auditoría web y plan de acción",
-      "description": "Una auditoría técnica y de conversión para negocios que saben que su web tiene problemas, pero no saben qué arreglar primero. Reviso velocidad, seguridad, SEO base, fricción de UX, plugins, hosting y riesgos de mantenimiento, y te entrego un plan priorizado.",
+      "description": "Una auditoría técnica y de conversión para negocios que saben que su web tiene problemas, pero no saben qué corregir primero. Reviso velocidad, seguridad, SEO básico, fricción de UX, plugins, alojamiento y riesgos de mantenimiento, y entrego un plan priorizado.",
       "features": [
         "Revisión de rendimiento",
         "Revisión de seguridad",
         "SEO base",
         "Fricción de UX",
-        "Roadmap técnico"
+        "Hoja de ruta técnica"
       ],
       "painPoint": "No tienes claro si debes optimizar, reconstruir, migrar o asegurar la web primero.",
       "evidence": "Basado en el mismo tipo de revisión que uso en proyectos WordPress, Webflow y sitios de sector público.",
@@ -631,7 +660,7 @@
       "description": "Para webs existentes que se sienten lentas, frágiles, desactualizadas o riesgosas. Mejoro rendimiento, limpio deuda técnica, actualizo piezas críticas, refuerzo seguridad y dejo la plataforma más fácil de mantener.",
       "features": [
         "Core Web Vitals",
-        "Hardening de seguridad",
+        "Refuerzo de seguridad",
         "Limpieza de plugins",
         "Revisión de accesos",
         "SEO técnico"
@@ -642,12 +671,12 @@
       "timeline": "2-4 semanas",
       "outcome": "Una web más rápida, segura y limpia, con menos riesgos ocultos y mejor base técnica.",
       "deliverables": [
-        "Fixes de rendimiento",
-        "Hardening de seguridad",
+        "Correcciones de rendimiento",
+        "Refuerzo de seguridad",
         "Limpieza de plugins y accesos",
         "Notas antes/después"
       ],
-      "pricingNote": "El alcance depende del tamaño del sitio, plataforma, roles de usuario, riesgo de plugins, hosting y cuánta implementación sea necesaria luego de la auditoría."
+      "pricingNote": "El alcance depende del tamaño del sitio, la plataforma, los roles de usuario, el riesgo de plugins, el alojamiento y la implementación necesaria después de la auditoría."
     },
     {
       "id": "hacked-site-recovery",
@@ -657,18 +686,18 @@
         "Limpieza de Malware de Emergencia",
         "Parcheo de Vulnerabilidades",
         "Restauración de Contenido",
-        "Hardening de Seguridad",
+        "Refuerzo de seguridad",
         "Monitoreo Post-Recuperación"
       ],
       "painPoint": "Tu web está infectada, redirige usuarios, muestra advertencias o tiene accesos sospechosos.",
-      "evidence": "Experiencia de seguridad y limpieza en entornos WordPress con plugins desactualizados, endpoints expuestos y accesos abandonados.",
+      "evidence": "Experiencia de seguridad y limpieza en entornos WordPress con plugins desactualizados, puntos de entrada expuestos y accesos abandonados.",
       "bestFor": "Dueños de sitios cuyo sitio web ha sido comprometido, defaceado o infectado con malware.",
       "timeline": "24-72 horas (emergencia)",
       "outcome": "Un sitio web limpio y restaurado con seguridad reforzada para prevenir futuros ataques.",
       "deliverables": [
         "Limpieza de Malware",
         "Reporte de Vulnerabilidades",
-        "Hardening de Seguridad",
+        "Refuerzo de seguridad",
         "Documentación de Recuperación"
       ]
     },
@@ -681,7 +710,7 @@
         "Migración de contenido",
         "Plan de redirecciones",
         "Estrategia CMS",
-        "QA post-lanzamiento"
+        "Control de calidad posterior al lanzamiento"
       ],
       "painPoint": "Tu web está atrapada en una configuración vieja, CMS difícil, tema pesado o constructor frágil.",
       "evidence": "Trabajo de migración en Truenorth, Seguridad en el Tránsito de Puerto Rico y otros sitios corporativos y públicos.",
@@ -701,20 +730,20 @@
       "description": "Una web nueva, landing page, CMS o MVP para negocios que necesitan algo claro, rápido, mantenible y confiable. Me encargo de estrategia, dirección UX, desarrollo, lanzamiento y configuración técnica.",
       "features": [
         "UX orientada a conversión",
-        "Build CMS o app",
+        "Desarrollo de CMS o aplicación",
         "Desarrollo responsive",
         "SEO técnico",
         "Soporte de lanzamiento"
       ],
-      "painPoint": "Necesitas una web profesional o MVP, pero no quieres un build inflado que luego sea difícil de mantener.",
-      "evidence": "Incluye builds WordPress desde cero, sitios de sector público, webs corporativas y plataformas web personalizadas.",
+      "painPoint": "Necesitas una web profesional o un MVP, pero no quieres un desarrollo sobredimensionado que luego sea difícil de mantener.",
+      "evidence": "Incluye desarrollos WordPress desde cero, sitios del sector público, webs corporativas y plataformas personalizadas.",
       "bestFor": "Founders, negocios de servicio y equipos que necesitan una web o MVP con ruta real de lanzamiento.",
       "timeline": "4-8 semanas",
       "outcome": "Una web o MVP rápido y creíble, construido para explicar la oferta, apoyar SEO y captar leads calificados.",
       "deliverables": [
         "Sprint estratégico",
         "Dirección UX/UI",
-        "Build CMS o producto",
+        "Desarrollo de CMS o producto",
         "Analítica y soporte de lanzamiento"
       ],
       "quoteOptions": [
@@ -733,7 +762,7 @@
     {
       "id": "ongoing-partner",
       "title": "Partner técnico mensual",
-      "description": "Soporte técnico mensual para negocios que necesitan mantener su web saludable: updates, fixes, seguridad, rendimiento, mejoras pequeñas y coordinación técnica.",
+      "description": "Soporte técnico mensual para negocios que necesitan mantener su web en buen estado: actualizaciones, correcciones, seguridad, rendimiento, pequeñas mejoras y coordinación técnica.",
       "features": [
         "Mantenimiento mensual",
         "Features pequeñas",
@@ -741,7 +770,7 @@
         "Monitoreo de rendimiento",
         "Soporte técnico"
       ],
-      "painPoint": "Tu web necesita decisiones, fixes o soporte técnico constante, pero contratar un developer full-time no es la mejor opción.",
+      "painPoint": "Tu web necesita decisiones, correcciones o soporte técnico constante, pero contratar un desarrollador a tiempo completo no es la mejor opción.",
       "evidence": "Soporte actual a largo plazo en WordPress, PHP, SEO, servidores, seguridad, correcciones visuales y mantenimiento.",
       "bestFor": "Equipos con una web activa que necesita ownership técnico constante.",
       "timeline": "Retainer mensual",
@@ -756,109 +785,41 @@
     }
   ],
   "problemSection": {
-    "eyebrow": "Lo que te está costando",
-    "title": "Tu web debe impulsar el crecimiento, no frenarlo.",
-    "titlePrefix": "Tu web debe impulsar el crecimiento,",
-    "titleHighlight": "no frenarlo.",
-    "description": "Me enfoco en los problemas técnicos y de conversión que cuestan confianza, tiempo y oportunidades calificadas a empresas establecidas.",
-    "cta": "Mira cómo resuelvo esto",
-    "riskLabel": "Riesgo: menos confianza, decisiones más lentas y menos leads calificados.",
-    "bottomCTA": "La meta no es más ruido visual. La meta es una web confiable, rápida y con un próximo paso obvio.",
-    "problems": [
-      {
-        "title": "Tu sitio es lento",
-        "description": "Cada segundo de carga te cuesta visitantes. Construyo pensando en velocidad desde el inicio."
-      },
-      {
-        "title": "La seguridad no te deja dormir",
-        "description": "Plugins desactualizados, dependencias vulnerables, sin respaldo. Yo lo arreglo."
-      },
-      {
-        "title": "No está convirtiendo",
-        "description": "Hermoso pero roto. Me enfoco en lo que realmente genera resultados, no solo estética."
-      },
-      {
-        "title": "La experiencia móvil es secundaria",
-        "description": "Más del 60% del tráfico viene de celulares. Diseño mobile-first, no mobile-last."
-      }
-    ]
-  },
-  "homeOffers": {
-    "eyebrow": "Un próximo paso claro",
-    "title": "Comienza por el problema que tu web tiene hoy",
-    "description": "No necesitas elegir una tecnología antes de entender qué le está costando confianza, tiempo u oportunidades calificadas a tu negocio.",
-    "items": {
+    "eyebrow": "Servicios basados en el problema real",
+    "titlePrefix": "Corrige la causa,",
+    "titleHighlight": "no solo la superficie.",
+    "description": "Elige la intervención según dónde falla la web hoy, no según una tecnología predeterminada o una reconstrucción innecesaria.",
+    "columns": {
+      "path": "Ruta",
+      "constraint": "Problema actual",
+      "intervention": "Intervención",
+      "outcome": "Resultado"
+    },
+    "paths": {
       "audit": {
-        "title": "Auditoría y plan de acción",
-        "description": "Identifica los problemas prioritarios de rendimiento, seguridad, SEO, usabilidad y mantenimiento antes de comprometerte con un proyecto mayor.",
-        "cta": "Solicitar revisión de mi web"
+        "context": "Cuando el problema no está claro",
+        "problem": "Sabes que la web no rinde, pero no qué debes corregir primero.",
+        "service": "Auditoría y plan de acción",
+        "action": "Reviso rendimiento, seguridad, SEO, usabilidad y riesgos de mantenimiento.",
+        "outcome": "Una hoja de ruta priorizada y un próximo paso claro."
       },
       "optimize": {
-        "title": "Optimizar y proteger",
-        "description": "Mejora la velocidad, estabilidad, seguridad y base técnica de tu web actual sin reconstruir todo innecesariamente.",
-        "cta": "Explorar optimización"
+        "context": "Cuando la base es frágil",
+        "problem": "La web es lenta, vulnerable o cada vez más difícil de mantener.",
+        "service": "Optimizar y proteger",
+        "action": "Elimino deuda técnica, mejoro la velocidad y refuerzo la plataforma actual.",
+        "outcome": "Una web más rápida, segura y limpia."
       },
       "modernize": {
-        "title": "Reconstruir y migrar",
-        "description": "Reemplaza una plataforma obsoleta o difícil de administrar preservando contenido, integraciones y fundamentos SEO importantes.",
-        "cta": "Explorar modernización"
+        "context": "Cuando la plataforma limita el crecimiento",
+        "problem": "El CMS o la arquitectura actual están frenando al negocio.",
+        "service": "Reconstruir y migrar",
+        "action": "Modernizo la plataforma preservando contenido, integraciones y SEO.",
+        "outcome": "Una base mantenible y preparada para crecer."
       }
-    }
-  },
-  "processSection": {
-    "eyebrow": "Cómo funciona",
-    "title": "Cómo entrego",
-    "titlePrefix": "Cómo",
-    "titleHighlight": "entrego",
-    "description": "Un proceso transparente construido alrededor de la comunicación y los resultados.",
-    "duration": "Duración: ",
-    "deliverable": "Entregable: ",
-    "steps": [
-      {
-        "title": "Descubrimiento",
-        "description": "Hablamos de tus objetivos, tu configuración actual y cómo se ve el éxito para ti. Sin jerga, sin discursos.",
-        "details": [
-          "Auditoría de estado actual",
-          "Alineación de objetivos",
-          "Definición de alcance"
-        ],
-        "duration": "1–2 semanas",
-        "deliverable": "Reporte de descubrimiento"
-      },
-      {
-        "title": "Estrategia",
-        "description": "Diseño la arquitectura, el stack tecnológico y el cronograma antes de escribir una sola línea de código.",
-        "details": [
-          "Diseño de arquitectura",
-          "Selección tecnológica",
-          "Plan de hitos"
-        ],
-        "duration": "1–2 semanas",
-        "deliverable": "Plan de arquitectura"
-      },
-      {
-        "title": "Construcción e Iteración",
-        "description": "Desarrollo por etapas con revisiones periódicas. Ves el progreso en tiempo real, no solo al final.",
-        "details": [
-          "Entrega por sprints",
-          "Demos regulares",
-          "Bucles de retroalimentación"
-        ],
-        "duration": "4–8 semanas",
-        "deliverable": "Código listo para producción"
-      },
-      {
-        "title": "Lanzamiento y Más Allá",
-        "description": "Despliegue con confianza, monitoreo de rendimiento, y me quedo para soporte. Sin desapariciones después del lanzamiento.",
-        "details": [
-          "Despliegue a producción",
-          "Monitoreo de rendimiento",
-          "Soporte continuo"
-        ],
-        "duration": "1–2 semanas",
-        "deliverable": "Sitio en vivo desplegado"
-      }
-    ]
+    },
+    "bottomNote": "¿No sabes qué ruta corresponde? Comienza con una revisión enfocada antes de comprometerte con un proyecto mayor.",
+    "bottomCta": "Solicitar revisión de mi web"
   },
   "skillsSection": {
     "titlePrefix": "Con qué",
@@ -925,9 +886,30 @@
     "message": "Cargando..."
   },
   "featuredCaseStudy": {
-    "badge": "Caso de Estudio Destacado",
-    "titlePrefix": "Prueba de que el trabajo",
-    "titleHighlight": "puede escalar",
+    "badge": "Trabajo seleccionado",
+    "titlePrefix": "Evidencia,",
+    "titleHighlight": "no promesas.",
+    "description": "Tres proyectos. Tres problemas muy distintos resueltos con responsabilidad técnica directa.",
+    "viewAll": "Explorar todo el trabajo",
+    "featuredLabel": "Proyecto destacado",
+    "outcomeLabel": "Resultado / contexto",
+    "cards": {
+      "co-active-training-institute": {
+        "label": "EdTech global",
+        "summary": "Rendimiento, seguridad, SEO y soporte continuo para una plataforma global de formación en liderazgo.",
+        "result": "150K+ usuarios · 60+ países"
+      },
+      "departamento-de-educacion-pr": {
+        "label": "Sector público",
+        "summary": "Plataforma WordPress construida desde cero con desarrollo personalizado e integraciones de archivos gubernamentales.",
+        "result": "Plataforma educativa pública · PageSpeed de hasta 98"
+      },
+      "govvalue": {
+        "label": "Recuperación de seguridad",
+        "summary": "Eliminación de una puerta trasera, refuerzo de WordPress y recuperación en buscadores después de un ataque grave.",
+        "result": "Plataforma limpia · Mayor seguridad · SEO recuperado"
+      }
+    },
     "caseStudy": "Caso de estudio",
     "results": "Resultados",
     "performanceImpact": "Impacto en rendimiento"

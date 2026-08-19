@@ -48,3 +48,6 @@ OliveroDev*.png
 # Local generated artifacts
 /output/
 /tmp/
+
+# Local project context (intentionally not versioned)
+/OLIVERODEV_PROJECT_NOTES.md

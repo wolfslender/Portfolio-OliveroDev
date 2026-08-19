@@ -33,7 +33,7 @@ const proofCards = [
     description:
       "Backdoors, old users, exposed endpoints, plugin risk and post-hack SEO cleanup are part of the work I can own. I've applied this discipline at government level — malware cleanup, access reviews, vulnerability reduction — and every client site benefits from that baseline.",
     descriptionEs:
-      "Backdoors, usuarios viejos, endpoints expuestos, riesgo de plugins y limpieza SEO post-hack son parte del trabajo que puedo asumir. He aplicado esta disciplina a nivel gubernamental — limpieza de malware, revisiones de acceso, reducción de vulnerabilidades — y cada sitio de cliente se beneficia de esa base.",
+      "Puertas traseras, usuarios antiguos, puntos de entrada expuestos, riesgo de plugins y recuperación SEO posterior a un ataque son parte del trabajo que puedo asumir. He aplicado esta disciplina a nivel gubernamental —limpieza de malware, revisiones de acceso y reducción de vulnerabilidades— y cada sitio de cliente se beneficia de esa base.",
     icon: ShieldCheck,
   },
   {
@@ -44,7 +44,7 @@ const proofCards = [
     description:
       "I look at Core Web Vitals, assets, hosting, plugins, layout stability and what is quietly hurting conversion.",
     descriptionEs:
-      "Reviso Core Web Vitals, assets, hosting, plugins, estabilidad visual y lo que afecta conversión silenciosamente.",
+      "Reviso Core Web Vitals, recursos, alojamiento, plugins, estabilidad visual y lo que afecta silenciosamente la conversión.",
     icon: Gauge,
   },
   {

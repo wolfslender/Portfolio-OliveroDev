@@ -32,12 +32,12 @@ function copy(locale = "en") {
       ? ["Riesgo de confianza", "Riesgo de velocidad", "Riesgo de conversión"]
       : ["Trust risk", "Speed risk", "Conversion risk"],
     securityItems: es
-      ? ["Endpoints públicos", "Plugins desactualizados", "Revisión de usuarios", "Estado de backups", "Hardening"]
+      ? ["Puntos de entrada públicos", "Plugins desactualizados", "Revisión de usuarios", "Estado de copias", "Refuerzo"]
       : ["Public endpoints", "Outdated plugins", "User access review", "Backup status", "Hardening"],
     recoverySteps: es ? ["Evaluar", "Limpiar", "Blindar", "Verificar"] : ["Assess", "Clean", "Harden", "Verify"],
     migrationSteps: es ? ["Plataforma actual", "Auditoría y plan", "Migrar", "Lanzar", "Monitorear"] : ["Old platform", "Audit & plan", "Migrate", "Launch", "Monitor"],
     maintenanceItems: es
-      ? ["Updates", "Backups", "Uptime", "Revisión de velocidad", "Revisión de seguridad", "Ajustes pequeños"]
+      ? ["Actualizaciones", "Copias de respaldo", "Disponibilidad", "Revisión de velocidad", "Revisión de seguridad", "Ajustes pequeños"]
       : ["Updates", "Backups", "Uptime", "Speed review", "Security review", "Small fixes"],
   }
 }

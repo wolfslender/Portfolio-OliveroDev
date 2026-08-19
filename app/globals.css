@@ -233,6 +233,21 @@ main > section:not(:first-child) {
   animation: pulse-slow 6s ease-in-out infinite;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 /* Blog prose — branded typography */
 .prose {
   --tw-prose-body: var(--foreground);

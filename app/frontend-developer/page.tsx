@@ -71,7 +71,7 @@ const selectedWorkEs = [
   {
     title: "Departamento de Educación de Puerto Rico",
     type: "Administración de sitio gubernamental",
-    description: "Durante tres años administré el sitio del Departamento de Educación de Puerto Rico: creaba landing pages, publicaba documentos gubernamentales y actualizaciones diarias, mantenía y actualizaba plugins e implementaba medidas de seguridad según evolucionaban los requerimientos.",
+    description: "Durante tres años administré el sitio del Departamento de Educación de Puerto Rico: creaba páginas de destino, publicaba documentos gubernamentales y actualizaciones diarias, mantenía plugins e implementaba medidas de seguridad según evolucionaban los requisitos.",
     href: "/es/work/",
     label: "Ver contexto del proyecto",
     icon: ExternalLink,
@@ -79,7 +79,7 @@ const selectedWorkEs = [
   {
     title: "Media Audit",
     type: "Producto WordPress",
-    description: "Plugin diseñado y mantenido de forma independiente con escaneo por lotes, flujos AJAX, filtros, exportación CSV, integraciones con page builders, puntuación de riesgo y un sistema de limpieza recuperable.",
+    description: "Plugin diseñado y mantenido de forma independiente con escaneo por lotes, flujos AJAX, filtros, exportación CSV, integraciones con constructores visuales, puntuación de riesgo y un sistema de limpieza recuperable.",
     href: "https://github.com/oliverodev/media-audit",
     label: "Ver código fuente",
     icon: Github,

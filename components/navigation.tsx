@@ -7,7 +7,7 @@ import { Menu, X, Moon, Sun, ArrowRight, Search, Zap, Shield, AlertTriangle, Ref
 import { Button } from "@/components/ui/button"
 import { useTheme } from "next-themes"
 import { useNav } from "@/hooks/use-nav"
-import { localizePath, stripSpanishPrefix, isSpanishPath } from "@/lib/i18n-routing"
+import { localizePath, stripSpanishPrefix, isSpanishPath, toEnglishPath, toSpanishPath } from "@/lib/i18n-routing"
 import { landingPages } from "@/lib/landing-pages"
 import { landingPagesEs } from "@/lib/landing-pages-es"
 
@@ -49,6 +49,8 @@ export function Navigation() {
   const megaRef = useRef<HTMLDivElement>(null)
   const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
   const isSpanish = isSpanishPath(pathname || "/")
+  const languageHref = isSpanish ? toEnglishPath(pathname || "/") : toSpanishPath(pathname || "/")
+  const languageLabel = isSpanish ? "Switch to English" : "Cambiar a español"
 
   const serviceLinks = (isSpanish ? landingPagesEs : landingPages).map((page) => ({
     href: localizePath(pathname || "/", `/${page.slug}`),
@@ -294,12 +296,30 @@ export function Navigation() {
                 {theme === "dark" ? <Sun aria-hidden="true" className="h-4 w-4" /> : <Moon aria-hidden="true" className="h-4 w-4" />}
               </Button>
             )}
+            <Link
+              href={languageHref}
+              prefetch={false}
+              aria-label={languageLabel}
+              title={languageLabel}
+              className="ml-1 inline-flex size-9 items-center justify-center rounded-full text-xs font-bold text-muted-foreground transition-colors hover:bg-primary/10 hover:text-primary"
+            >
+              {isSpanish ? "EN" : "ES"}
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center gap-1">
+            <Link
+              href={languageHref}
+              prefetch={false}
+              aria-label={languageLabel}
+              title={languageLabel}
+              className="inline-flex size-10 items-center justify-center rounded-full text-xs font-bold text-muted-foreground"
+            >
+              {isSpanish ? "EN" : "ES"}
+            </Link>
             {mounted && (
-              <Button variant="ghost" size="icon" onClick={toggleTheme} aria-label={themeLabel} className="w-9 h-9 rounded-full">
+              <Button variant="ghost" size="icon" onClick={toggleTheme} aria-label={themeLabel} className="size-10 rounded-full">
                 {theme === "dark" ? <Sun aria-hidden="true" className="h-4 w-4" /> : <Moon aria-hidden="true" className="h-4 w-4" />}
               </Button>
             )}
@@ -310,7 +330,7 @@ export function Navigation() {
               aria-label={isOpen ? (isSpanish ? "Cerrar menú" : "Close menu") : (isSpanish ? "Abrir menú" : "Open menu")}
               aria-expanded={isOpen}
               aria-controls="mobile-navigation-menu"
-              className="w-9 h-9 rounded-full"
+              className="size-10 rounded-full"
             >
               {isOpen ? <X aria-hidden="true" className="h-5 w-5" /> : <Menu aria-hidden="true" className="h-5 w-5" />}
             </Button>

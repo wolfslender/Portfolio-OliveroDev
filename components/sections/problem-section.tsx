@@ -1,74 +1,123 @@
+import Link from "next/link"
+import { ArrowRight, Check, RefreshCw, SearchCheck, ShieldCheck } from "lucide-react"
 import { ScrollReveal } from "@/components/scroll-reveal"
-import { AlertTriangle, TrendingDown, ShieldAlert, Smartphone } from "lucide-react"
 import en from "@/locales/en.json"
 import es from "@/locales/es.json"
 
-const painIcons = [TrendingDown, ShieldAlert, AlertTriangle, Smartphone]
+const paths = [
+  { key: "audit", icon: SearchCheck, href: "/website-audit/" },
+  { key: "optimize", icon: ShieldCheck, href: "/wordpress-speed-optimization/" },
+  { key: "modernize", icon: RefreshCw, href: "/website-migration/" },
+] as const
 
 interface ProblemSectionProps {
   locale?: "en" | "es"
 }
 
 export function ProblemSection({ locale }: ProblemSectionProps = {}) {
-  const copy = locale === "es" ? es.problemSection : en.problemSection
-
-  const problems = [
-    { icon: painIcons[0], key: "slow" },
-    { icon: painIcons[1], key: "security" },
-    { icon: painIcons[2], key: "conversion" },
-    { icon: painIcons[3], key: "mobile" },
-  ]
+  const isSpanish = locale === "es"
+  const copy = isSpanish ? es.problemSection : en.problemSection
 
   return (
-    <section className="py-20 md:py-28 bg-background">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="bg-background py-16 md:py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <p className="text-sm font-bold uppercase tracking-widest text-primary mb-4">
-              {copy.eyebrow}
-            </p>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-6 text-balance">
-              {copy.title}
-            </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed">
+          <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-end lg:gap-16">
+            <div className="max-w-3xl">
+              <p className="text-xs font-bold uppercase tracking-[0.22em] text-primary">
+                {copy.eyebrow}
+              </p>
+              <h2 className="mt-4 text-4xl font-bold leading-[1.02] tracking-[-0.045em] text-balance sm:text-5xl lg:text-6xl">
+                {copy.titlePrefix}{" "}
+                <span className="text-primary">{copy.titleHighlight}</span>
+              </h2>
+            </div>
+            <p className="max-w-xl text-lg leading-relaxed text-muted-foreground lg:pb-1">
               {copy.description}
             </p>
           </div>
         </ScrollReveal>
 
-        <div className="grid md:grid-cols-2 gap-4 md:gap-6">
-          {problems.map((problem, i) => {
-            const Icon = problem.icon
-            const localizedProblem = copy.problems[i] as { title: string; description: string; negativeOutcome?: string }
+        <div className="mt-12 overflow-hidden rounded-[1.75rem] border border-border/70 bg-card">
+          <div className="hidden grid-cols-[5rem_1fr_1fr_0.9fr_3rem] border-b border-border/70 bg-muted/40 px-6 py-4 text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground lg:grid">
+            <span>{copy.columns.path}</span>
+            <span>{copy.columns.constraint}</span>
+            <span>{copy.columns.intervention}</span>
+            <span>{copy.columns.outcome}</span>
+            <span />
+          </div>
+
+          {paths.map(({ key, icon: Icon, href }, index) => {
+            const item = copy.paths[key]
+            const localizedHref = isSpanish ? `/es${href}` : href
+
             return (
-              <ScrollReveal key={problem.key} delay={i * 100}>
-                <div className="group h-full rounded-2xl border border-border/60 bg-card p-6 md:p-8 transition-all duration-300 hover:border-primary/20 hover:shadow-lg hover:shadow-primary/5">
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center shrink-0 group-hover:bg-red-500/15 transition-colors">
-                      <Icon className="w-5 h-5 text-red-500 dark:text-red-400" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-bold mb-2">{localizedProblem.title}</h3>
-                      <p className="text-muted-foreground leading-relaxed text-sm">{localizedProblem.description}</p>
-                      <p className="mt-3 text-xs font-semibold text-red-600 dark:text-red-400">
-                        {localizedProblem.negativeOutcome || copy.riskLabel}
-                      </p>
-                    </div>
+              <ScrollReveal key={key} delay={index * 70}>
+                <Link
+                  href={localizedHref}
+                  className="group relative grid gap-6 border-b border-border/70 p-6 transition-colors last:border-b-0 hover:bg-primary/[0.045] md:p-8 lg:grid-cols-[5rem_1fr_1fr_0.9fr_3rem] lg:items-center lg:gap-0 lg:px-6 lg:py-8"
+                >
+                  <div className="flex items-center justify-between lg:block">
+                    <span className="text-3xl font-bold tracking-[-0.05em] text-muted-foreground transition-colors group-hover:text-primary">
+                      0{index + 1}
+                    </span>
+                    <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground lg:hidden">
+                      {copy.columns.path}
+                    </span>
                   </div>
-                </div>
+
+                  <div className="lg:pr-8">
+                    <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary">
+                      {item.context}
+                    </p>
+                    <h3 className="mt-3 text-xl font-bold leading-tight tracking-tight text-foreground md:text-2xl">
+                      {item.problem}
+                    </h3>
+                  </div>
+
+                  <div className="relative border-l-2 border-primary/25 pl-5 lg:border-l lg:border-border/70 lg:px-8">
+                    <div className="flex items-center gap-3">
+                      <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground transition-transform group-hover:scale-105">
+                        <Icon className="size-5" />
+                      </span>
+                      <h3 className="text-lg font-bold text-foreground">
+                        {item.service}
+                      </h3>
+                    </div>
+                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground lg:ml-[3.25rem]">
+                      {item.action}
+                    </p>
+                  </div>
+
+                  <div className="flex items-start gap-3 lg:px-6">
+                    <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-secondary/15 text-secondary">
+                      <Check className="size-3.5" />
+                    </span>
+                    <p className="text-sm font-bold leading-relaxed text-foreground">
+                      {item.outcome}
+                    </p>
+                  </div>
+
+                  <ArrowRight className="hidden size-5 text-muted-foreground transition-all group-hover:translate-x-1 group-hover:text-primary lg:block" />
+                </Link>
               </ScrollReveal>
             )
           })}
         </div>
 
-        <ScrollReveal delay={300}>
-          <div className="mt-12 text-center">
-            <p className="text-muted-foreground">
-              {copy.bottomCTA}{" "}
-              <span className="font-bold text-foreground">OliveroDev</span>
-            </p>
-          </div>
-        </ScrollReveal>
+        <div className="mt-7 flex flex-col gap-4 border-t border-border/70 pt-7 sm:flex-row sm:items-center sm:justify-between">
+          <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground">
+            {copy.bottomNote}
+          </p>
+          <Link
+            href={isSpanish ? "/es/contact/?audit=true" : "/contact/?audit=true"}
+            prefetch={false}
+            className="group inline-flex w-fit items-center gap-2 text-sm font-bold text-primary"
+          >
+            {copy.bottomCta}
+            <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+          </Link>
+        </div>
       </div>
     </section>
   )

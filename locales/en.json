@@ -1,8 +1,9 @@
 {
   "hero": {
+    "eyebrow": "Independent web specialist · Senior execution",
     "title": {
-      "prefix": "Turn your underperforming website into a",
-      "highlight": "fast, secure growth platform."
+      "prefix": "Your website shouldn't be the",
+      "highlight": "bottleneck."
     },
     "roles": [
       "Performance + conversion",
@@ -10,23 +11,29 @@
       "Migration + rebuilds",
       "Direct senior involvement"
     ],
-    "description": "I help established businesses fix websites that are slow, vulnerable, hard to manage, or not generating qualified opportunities. You work directly with me from audit to launch.",
+    "description": "I turn slow, vulnerable websites into fast, secure platforms built to earn trust and generate qualified opportunities.",
     "proof": [
-      "Personal reply within 24 hours",
-      "Clear scope and measurable priorities",
-      "Launch support included"
+      { "value": "150K+", "label": "Platform users" },
+      { "value": "60", "label": "Countries reached" },
+      { "value": "1:1", "label": "Senior involvement" }
     ],
     "location": "Based in Santo Domingo · Working worldwide",
     "buttons": {
       "primary": "Book a Strategy Call",
       "secondary": "Get a Free Website Review",
       "downloadCv": "Download My Resume"
+    },
+    "visual": {
+      "browserLabel": "Real client work",
+      "selectedWork": "Selected work",
+      "caseLinkLabel": "View the Co-Active Training Institute case study",
+      "users": "Platform users"
     }
   },
   "trustedBy": {
-    "eyebrow": "Selected work",
-    "title": "Some folks I've worked with",
-    "description": "Organizations I have worked with throughout my career."
+    "eyebrow": "Experience across real platforms",
+    "title": "Work trusted across industries",
+    "description": "Education, government, cybersecurity and global training."
   },
   "nav": {
     "home": "Home",
@@ -76,13 +83,35 @@
     "description": "A few projects I've shipped — from government portals to WordPress plugins. Each one taught me something.",
     "viewAll": "View all projects"
   },
+  "homeAuthority": {
+    "eyebrow": "The person behind OliveroDev",
+    "titlePrefix": "Senior execution,",
+    "titleHighlight": "without the agency layer.",
+    "description": "I'm Alexis Olivero. Since 2017, I have worked across global EdTech, government, cybersecurity and business platforms—handling the diagnosis, decisions and implementation directly.",
+    "profileLocation": "Santo Domingo · Working worldwide",
+    "availability": "Available",
+    "profileRole": "Full-stack developer & web specialist",
+    "stats": [
+      { "value": "8+", "label": "Years of professional experience" },
+      { "value": "Security+", "label": "Certified security discipline" },
+      { "value": "1:1", "label": "Direct senior involvement" }
+    ],
+    "expectations": [
+      "Direct contact with the person doing the work",
+      "Clear scope, priorities and technical tradeoffs",
+      "Visible progress instead of black-box delivery",
+      "Support through launch and beyond"
+    ],
+    "aboutCta": "More about Alexis"
+  },
   "cta": {
-    "badge": "Not getting enough leads?",
-    "titlePrefix": "Let's make your website",
-    "titleHighlight": "work harder for you.",
-    "description": "Book a quick call or request a free high-level website review. For a complete technical report and prioritized roadmap, choose the professional Website Audit & Action Plan.",
-    "primaryButton": "Book a Strategy Call",
-    "secondaryButton": "Get a Free Website Review"
+    "badge": "Ready when the website isn't",
+    "titlePrefix": "Bring me the website that's",
+    "titleHighlight": "holding the business back.",
+    "description": "Share the URL and the problem you are seeing. I will review the context and tell you the clearest next step—without forcing a rebuild.",
+    "primaryButton": "Request a Website Review",
+    "secondaryButton": "Book a Strategy Call",
+    "trust": ["Direct senior access", "Clear scope", "Visible progress", "Launch support"]
   },
   "footer": {
     "description": "I'm Alexis, a full-stack developer based in Santo Domingo. I build websites that actually perform.",
@@ -756,109 +785,41 @@
     }
   ],
   "problemSection": {
-    "eyebrow": "What is costing you",
-    "title": "Your website should support growth, not slow it down.",
-    "titlePrefix": "Your website should support growth,",
-    "titleHighlight": "not slow it down.",
-    "description": "I focus on the technical and conversion problems that cost established businesses trust, time, and qualified opportunities.",
-    "cta": "See how I solve these",
-    "riskLabel": "Risk: lost trust, slower decisions, and fewer qualified leads.",
-    "bottomCTA": "The goal is not more design noise. The goal is a website that feels trustworthy, loads fast, and makes the next step obvious.",
-    "problems": [
-      {
-        "title": "Your site is slow",
-        "description": "Every second of load time costs you visitors. I build for speed from the ground up."
-      },
-      {
-        "title": "Security keeps you up at night",
-        "description": "Outdated plugins, vulnerable dependencies, no backup plan. I fix that."
-      },
-      {
-        "title": "It's not converting",
-        "description": "Beautiful but broken. I focus on what actually drives results — not just aesthetics."
-      },
-      {
-        "title": "The mobile experience is an afterthought",
-        "description": "Over 60% of traffic comes from phones. I design mobile-first, not mobile-last."
-      }
-    ]
-  },
-  "homeOffers": {
-    "eyebrow": "A clear path forward",
-    "title": "Start with the problem your website has today",
-    "description": "You do not need to choose a technology before we understand what is costing your business trust, time, or qualified opportunities.",
-    "items": {
+    "eyebrow": "Services built around the constraint",
+    "titlePrefix": "Fix the constraint,",
+    "titleHighlight": "not just the surface.",
+    "description": "Choose the intervention based on where the website is failing today—not on a predetermined technology or oversized rebuild.",
+    "columns": {
+      "path": "Path",
+      "constraint": "Current constraint",
+      "intervention": "Intervention",
+      "outcome": "Outcome"
+    },
+    "paths": {
       "audit": {
-        "title": "Audit & Action Plan",
-        "description": "Identify the highest-priority performance, security, SEO, usability, and maintenance problems before committing to a larger project.",
-        "cta": "Request a website review"
+        "context": "When the problem is unclear",
+        "problem": "You know the site is underperforming, but not what to fix first.",
+        "service": "Audit & Action Plan",
+        "action": "Review performance, security, SEO, usability and maintenance risk.",
+        "outcome": "A prioritized roadmap and a clear next step."
       },
       "optimize": {
-        "title": "Optimize & Protect",
-        "description": "Improve an existing website's speed, stability, security, and technical foundation without rebuilding everything unnecessarily.",
-        "cta": "Explore optimization services"
+        "context": "When the foundation is fragile",
+        "problem": "The website is slow, exposed or increasingly difficult to maintain.",
+        "service": "Optimize & Protect",
+        "action": "Remove technical debt, improve speed and harden the existing platform.",
+        "outcome": "A faster, safer and cleaner website."
       },
       "modernize": {
-        "title": "Rebuild & Migrate",
-        "description": "Replace an outdated or difficult-to-manage platform while preserving important content, integrations, and SEO foundations.",
-        "cta": "Explore modernization services"
+        "context": "When the platform limits growth",
+        "problem": "The current CMS or architecture is holding the business back.",
+        "service": "Rebuild & Migrate",
+        "action": "Modernize the platform while preserving content, integrations and SEO.",
+        "outcome": "A maintainable foundation ready to grow."
       }
-    }
-  },
-  "processSection": {
-    "eyebrow": "How it works",
-    "title": "How I deliver",
-    "titlePrefix": "How",
-    "titleHighlight": "I deliver",
-    "description": "A transparent process built around communication and results.",
-    "duration": "Duration: ",
-    "deliverable": "Deliverable: ",
-    "steps": [
-      {
-        "title": "Discovery",
-        "description": "We talk about your goals, your current setup, and what success looks like for you. No jargon, no pitch.",
-        "details": [
-          "Current state audit",
-          "Goal alignment",
-          "Scope definition"
-        ],
-        "duration": "1–2 weeks",
-        "deliverable": "Discovery report"
-      },
-      {
-        "title": "Strategy",
-        "description": "I map out the architecture, tech stack, and timeline before writing a single line of code.",
-        "details": [
-          "Architecture design",
-          "Tech selection",
-          "Milestone plan"
-        ],
-        "duration": "1–2 weeks",
-        "deliverable": "Architecture blueprint"
-      },
-      {
-        "title": "Build & Iterate",
-        "description": "Development in stages with regular check-ins. You see progress as it happens, not just at the end.",
-        "details": [
-          "Sprint-based delivery",
-          "Regular demos",
-          "Feedback loops"
-        ],
-        "duration": "4–8 weeks",
-        "deliverable": "Production-ready codebase"
-      },
-      {
-        "title": "Launch & Beyond",
-        "description": "Deploy with confidence, monitor performance, and I stay around for support. No ghosting after launch.",
-        "details": [
-          "Production deployment",
-          "Performance monitoring",
-          "Ongoing support"
-        ],
-        "duration": "1–2 weeks",
-        "deliverable": "Live deployed site"
-      }
-    ]
+    },
+    "bottomNote": "Not sure which path fits? Start with a focused review before committing to a larger project.",
+    "bottomCta": "Request a website review"
   },
   "skillsSection": {
     "titlePrefix": "What",
@@ -925,9 +886,30 @@
     "message": "Loading..."
   },
   "featuredCaseStudy": {
-    "badge": "Featured Case Study",
-    "titlePrefix": "Proof that the work",
-    "titleHighlight": "can scale",
+    "badge": "Selected work",
+    "titlePrefix": "Evidence,",
+    "titleHighlight": "not promises.",
+    "description": "Three engagements. Three very different problems solved with direct technical ownership.",
+    "viewAll": "Explore all work",
+    "featuredLabel": "Featured engagement",
+    "outcomeLabel": "Outcome / context",
+    "cards": {
+      "co-active-training-institute": {
+        "label": "Global EdTech",
+        "summary": "Ongoing performance, security, SEO and platform delivery for a global leadership training business.",
+        "result": "150K+ users · 60+ countries"
+      },
+      "departamento-de-educacion-pr": {
+        "label": "Public sector",
+        "summary": "A from-scratch WordPress platform with custom development and government file-management integrations.",
+        "result": "Public education platform · PageSpeed up to 98"
+      },
+      "govvalue": {
+        "label": "Security recovery",
+        "summary": "Database backdoor removal, WordPress hardening and search remediation after a severe compromise.",
+        "result": "Clean platform · Stronger security · SEO recovery"
+      }
+    },
     "caseStudy": "Case study",
     "results": "Results",
     "performanceImpact": "Performance impact"

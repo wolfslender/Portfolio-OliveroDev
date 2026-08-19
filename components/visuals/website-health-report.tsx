@@ -11,6 +11,7 @@ interface HealthRow {
 interface WebsiteHealthReportProps {
   className?: string
   locale?: "en" | "es"
+  compact?: boolean
 }
 
 const statusStyles = {
@@ -25,7 +26,7 @@ const dotStyles = {
   bad: "status-bad",
 }
 
-export function WebsiteHealthReport({ className, locale = "en" }: WebsiteHealthReportProps) {
+export function WebsiteHealthReport({ className, locale = "en", compact = false }: WebsiteHealthReportProps) {
   const copy = (locale === "es" ? es : en).visuals.healthReport
   const sampleRows: HealthRow[] = [
     { ...copy.rows.performance, status: "warn" },
@@ -34,6 +35,7 @@ export function WebsiteHealthReport({ className, locale = "en" }: WebsiteHealthR
     { ...copy.rows.layout, status: "warn" },
     { ...copy.rows.plan, status: "good" },
   ]
+  const visibleRows = compact ? [sampleRows[0], sampleRows[1], sampleRows[4]] : sampleRows
 
   return (
     <div className={cn("report-card p-5 md:p-6 font-mono text-sm", className)}>
@@ -44,7 +46,7 @@ export function WebsiteHealthReport({ className, locale = "en" }: WebsiteHealthR
         </span>
       </div>
       <div className="space-y-0">
-        {sampleRows.map((row) => (
+        {visibleRows.map((row) => (
           <div key={row.label} className="report-row">
             <div className="flex items-center gap-3">
               <span className={cn("status-dot", dotStyles[row.status])} />

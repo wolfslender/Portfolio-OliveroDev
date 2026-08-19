@@ -45,7 +45,7 @@ export const landingPages: LandingPageData[] = [
       eyebrow: "Website Audit",
       title: "Know exactly what is holding your website back",
       description:
-        "A paid, in-depth technical and conversion audit for business owners who need more than a quick review. I assess speed, security, SEO basics, UX friction, plugins, hosting, and maintenance risks, then deliver a written, prioritized action plan.",
+        "A focused technical and conversion audit covering speed, security, SEO, UX, plugins, hosting, and maintenance risk—delivered as a prioritized written action plan.",
       primaryCta: { label: "Request an audit", href: "/contact?service=Website%20Audit%20and%20Action%20Plan" },
       secondaryCta: { label: "See my work", href: "/work" },
     },
@@ -114,7 +114,7 @@ export const landingPages: LandingPageData[] = [
       eyebrow: "WordPress Speed Optimization",
       title: "Make your WordPress site faster without rebuilding everything",
       description:
-        "Slow load times, poor PageSpeed scores, and heavy plugins are costing you visitors and trust. I improve performance by targeting the real bottlenecks — not just surface-level fixes.",
+        "I identify and fix the bottlenecks behind slow load times, weak PageSpeed scores, and heavy WordPress setups—without defaulting to a rebuild.",
       primaryCta: { label: "Request optimization", href: "/contact?service=WordPress%20Speed%20Optimization" },
       secondaryCta: { label: "See my work", href: "/work" },
     },
@@ -177,9 +177,9 @@ export const landingPages: LandingPageData[] = [
     slug: "wordpress-security",
     hero: {
       eyebrow: "WordPress Security",
-      title: "Harden your WordPress site before a small risk becomes a real incident",
+      title: "Harden WordPress before a small risk becomes an incident",
       description:
-        "Outdated plugins, public endpoints, old user accounts, and weak maintenance are common vulnerabilities I find across WordPress environments. A security review helps you reduce risk before something goes wrong.",
+        "I review outdated software, exposed access, and weak maintenance, then harden the site around the risks that matter most.",
       primaryCta: { label: "Request a security review", href: "/contact?service=WordPress%20Security" },
       secondaryCta: { label: "See my work", href: "/work" },
     },
@@ -244,7 +244,7 @@ export const landingPages: LandingPageData[] = [
       eyebrow: "Hacked WordPress Recovery",
       title: "Recover your hacked WordPress site and close the door behind the attacker",
       description:
-        "Malware, redirects, browser warnings, suspicious admin users, or spam pages — I help you recover your WordPress site and harden it to reduce the chance of it happening again.",
+        "I remove malware, suspicious users, redirects, and spam, then harden the site to reduce the chance of another incident.",
       primaryCta: { label: "Request recovery help", href: "/contact?service=Hacked%20WordPress%20Recovery" },
       secondaryCta: { label: "See my work", href: "/work" },
     },
@@ -310,7 +310,7 @@ export const landingPages: LandingPageData[] = [
       eyebrow: "Website Migration",
       title: "Migrate or rebuild your website without losing the things that matter",
       description:
-        "Moving from WordPress to Webflow, upgrading your CMS, or switching hosting? I plan and execute migrations with attention to content, SEO, redirects, integrations, and post-launch QA.",
+        "I move content, SEO signals, redirects, analytics, and integrations carefully—then verify the new platform after launch.",
       primaryCta: { label: "Request a migration plan", href: "/contact?service=Website%20Migration" },
       secondaryCta: { label: "See my work", href: "/work" },
     },
@@ -373,9 +373,9 @@ export const landingPages: LandingPageData[] = [
     slug: "wordpress-maintenance",
     hero: {
       eyebrow: "WordPress Maintenance",
-      title: "Keep your WordPress site healthy without hiring a full-time developer",
+      title: "Keep WordPress healthy without a full-time developer",
       description:
-        "Constant small fixes, plugin updates, security worries, layout issues, and no technical owner — I provide monthly WordPress maintenance so your site stays healthy while you focus on your business.",
+        "I handle updates, small fixes, security checks, and performance monitoring so the website has a reliable technical owner.",
       primaryCta: { label: "Request a maintenance plan", href: "/contact?service=WordPress%20Maintenance" },
       secondaryCta: { label: "See my work", href: "/work" },
     },

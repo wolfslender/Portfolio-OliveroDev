@@ -6,10 +6,9 @@ import { projects } from "@/lib/data"
 import { HeroSection } from "@/components/sections/hero-section"
 import { TrustedBySection } from "@/components/sections/trusted-by-section"
 import { ProblemSection } from "@/components/sections/problem-section"
-import { HomeOffersSection } from "@/components/sections/home-offers-section"
 import { FeaturedCaseStudy } from "@/components/sections/featured-case-study"
-import { ProcessSection } from "@/components/sections/process-section"
 import { HomePluginsSection } from "@/components/sections/home-plugins-section"
+import { HomeAuthoritySection } from "@/components/sections/home-authority-section"
 import { CTASection } from "@/components/sections/cta-section"
 import { ServicesContent } from "@/components/pages/services-content"
 import WorkContent from "@/components/pages/work-content"
@@ -127,17 +126,20 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 function SpanishHome() {
-  const featuredProject = projects.find((project) => project.slug === "co-active-training-institute")!
+  const selectedProjects = [
+    projects.find((project) => project.slug === "co-active-training-institute")!,
+    projects.find((project) => project.slug === "departamento-de-educacion-pr")!,
+    projects.find((project) => project.slug === "govvalue")!,
+  ]
 
   return (
     <main className="overflow-x-hidden">
       <HeroSection locale="es" />
       <TrustedBySection locale="es" />
+      <FeaturedCaseStudy projects={selectedProjects} locale="es" />
       <ProblemSection locale="es" />
-      <HomeOffersSection locale="es" />
-      <FeaturedCaseStudy project={featuredProject} locale="es" />
-      <ProcessSection locale="es" />
       <HomePluginsSection locale="es" />
+      <HomeAuthoritySection locale="es" />
       <CTASection locale="es" />
     </main>
   )

@@ -111,21 +111,23 @@ export function ContactSection() {
                 <p className="text-sm font-bold uppercase tracking-[0.25em] text-primary mb-3">
                   {t('contactPage.form.eyebrow')}
                 </p>
-                <h3 className="text-2xl md:text-3xl font-bold mb-3">
+                <h2 className="text-2xl md:text-3xl font-bold mb-3">
                   {t('contactPage.form.title')}
-                </h3>
+                </h2>
                 <p className="text-muted-foreground leading-relaxed">
                   {t('contactPage.form.description')}
                 </p>
               </div>
 
               <div className="grid sm:grid-cols-2 gap-4">
-                <label className="space-y-2">
+                <label htmlFor="contact-service" className="space-y-2">
                   <span className="text-sm font-medium">{t('contactPage.form.serviceLabel')}</span>
                   <select
+                    id="contact-service"
+                    name="service"
                     value={form.service}
                     onChange={(event) => updateField("service", event.target.value)}
-                    className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm outline-none transition-colors focus:border-primary"
+                    className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm outline-none transition-colors focus:border-primary focus-visible:ring-2 focus-visible:ring-primary/30"
                   >
                     <option value="">{t('contactPage.form.selectPlaceholder')}</option>
                     <option value={t('contactPage.form.services.audit')}>{t('contactPage.form.services.audit')}</option>
@@ -137,25 +139,32 @@ export function ContactSection() {
                   </select>
                 </label>
 
-                <label className="space-y-2">
+                <label htmlFor="contact-website" className="space-y-2">
                   <span className="text-sm font-medium">{t('contactPage.form.websiteLabel')}</span>
                   <div className="relative">
                     <Globe2 aria-hidden="true" className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
                     <input
+                      id="contact-website"
+                      name="website"
+                      type="url"
+                      inputMode="url"
+                      autoComplete="url"
                       value={form.website}
                       onChange={(event) => updateField("website", event.target.value)}
                       placeholder="https://"
-                      className="w-full rounded-xl border border-border bg-background py-3 pl-10 pr-4 text-sm outline-none transition-colors focus:border-primary"
+                      className="w-full rounded-xl border border-border bg-background py-3 pl-10 pr-4 text-sm outline-none transition-colors focus:border-primary focus-visible:ring-2 focus-visible:ring-primary/30"
                     />
                   </div>
                 </label>
 
-                <label className="space-y-2">
+                <label htmlFor="contact-platform" className="space-y-2">
                   <span className="text-sm font-medium">{t('contactPage.form.platformLabel')}</span>
                   <select
+                    id="contact-platform"
+                    name="platform"
                     value={form.platform}
                     onChange={(event) => updateField("platform", event.target.value)}
-                    className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm outline-none transition-colors focus:border-primary"
+                    className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm outline-none transition-colors focus:border-primary focus-visible:ring-2 focus-visible:ring-primary/30"
                   >
                     <option value="">{t('contactPage.form.selectPlaceholder')}</option>
                     <option>WordPress</option>
@@ -167,12 +176,14 @@ export function ContactSection() {
                   </select>
                 </label>
 
-                <label className="space-y-2">
+                <label htmlFor="contact-timeline" className="space-y-2">
                   <span className="text-sm font-medium">{t('contactPage.form.timelineLabel')}</span>
                   <select
+                    id="contact-timeline"
+                    name="timeline"
                     value={form.timeline}
                     onChange={(event) => updateField("timeline", event.target.value)}
-                    className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm outline-none transition-colors focus:border-primary"
+                    className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm outline-none transition-colors focus:border-primary focus-visible:ring-2 focus-visible:ring-primary/30"
                   >
                     <option value="">{t('contactPage.form.selectPlaceholder')}</option>
                     <option>{t('contactPage.form.timelines.urgent')}</option>
@@ -182,12 +193,14 @@ export function ContactSection() {
                   </select>
                 </label>
 
-                <label className="space-y-2 sm:col-span-2">
+                <label htmlFor="contact-budget" className="space-y-2 sm:col-span-2">
                   <span className="text-sm font-medium">{t('contactPage.form.budgetLabel')}</span>
                   <select
+                    id="contact-budget"
+                    name="budget"
                     value={form.budget}
                     onChange={(event) => updateField("budget", event.target.value)}
-                    className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm outline-none transition-colors focus:border-primary"
+                    className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm outline-none transition-colors focus:border-primary focus-visible:ring-2 focus-visible:ring-primary/30"
                   >
                     <option value="">{t('contactPage.form.selectPlaceholder')}</option>
                     <option>{t('contactPage.form.budgets.audit')}</option>
@@ -198,14 +211,16 @@ export function ContactSection() {
                   </select>
                 </label>
 
-                <label className="space-y-2 sm:col-span-2">
+                <label htmlFor="contact-problem" className="space-y-2 sm:col-span-2">
                   <span className="text-sm font-medium">{t('contactPage.form.problemLabel')}</span>
                   <textarea
+                    id="contact-problem"
+                    name="problem"
                     value={form.problem}
                     onChange={(event) => updateField("problem", event.target.value)}
                     placeholder={t('contactPage.form.problemPlaceholder')}
                     rows={5}
-                    className="w-full resize-none rounded-xl border border-border bg-background px-4 py-3 text-sm outline-none transition-colors focus:border-primary"
+                    className="w-full resize-none rounded-xl border border-border bg-background px-4 py-3 text-sm outline-none transition-colors focus:border-primary focus-visible:ring-2 focus-visible:ring-primary/30"
                   />
                 </label>
               </div>

@@ -4,12 +4,9 @@ import Script from "next/script"
 import { siteConfig } from "@/lib/config"
 import { ThemeProvider } from "@/components/theme-provider"
 import { I18nProvider } from "@/components/i18n-provider"
-import { LanguageSwitcher } from "@/components/language-switcher"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/sections/footer"
-import { ScrollProgress } from "@/components/scroll-progress"
 import { BackToTop } from "@/components/back-to-top"
-import { AvailabilityBadge } from "@/components/availability-badge"
 import { GoogleAnalytics } from "@/components/google-analytics"
 import { CookieConsent } from "@/components/cookie-consent"
 import { LanguageMeta } from "@/components/language-meta"
@@ -149,17 +146,14 @@ export default function RootLayout({
         >
           <I18nProvider>
             <LanguageMeta />
-            <ScrollProgress />
             <Navigation />
             <BackToTop />
-            <AvailabilityBadge />
 
             <div id="main-content" tabIndex={-1}>
               {children}
             </div>
 
             <Footer />
-            <LanguageSwitcher />
             <CookieConsent />
           </I18nProvider>
         </ThemeProvider>

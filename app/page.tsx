@@ -3,10 +3,9 @@ import { siteConfig } from "@/lib/config"
 import { projects } from "@/lib/data"
 import { HeroSection } from "@/components/sections/hero-section"
 import { ProblemSection } from "@/components/sections/problem-section"
-import { HomeOffersSection } from "@/components/sections/home-offers-section"
 import { FeaturedCaseStudy } from "@/components/sections/featured-case-study"
-import { ProcessSection } from "@/components/sections/process-section"
 import { HomePluginsSection } from "@/components/sections/home-plugins-section"
+import { HomeAuthoritySection } from "@/components/sections/home-authority-section"
 import { TrustedBySection } from "@/components/sections/trusted-by-section"
 import { CTASection } from "@/components/sections/cta-section"
 
@@ -24,17 +23,20 @@ export const metadata: Metadata = {
 }
 
 export default function Home() {
-  const featuredProject = projects.find(p => p.slug === "co-active-training-institute")!
+  const selectedProjects = [
+    projects.find(p => p.slug === "co-active-training-institute")!,
+    projects.find(p => p.slug === "departamento-de-educacion-pr")!,
+    projects.find(p => p.slug === "govvalue")!,
+  ]
 
   return (
     <main className="overflow-x-hidden">
       <HeroSection locale="en" />
       <TrustedBySection locale="en" />
+      <FeaturedCaseStudy projects={selectedProjects} locale="en" />
       <ProblemSection locale="en" />
-      <HomeOffersSection locale="en" />
-      <FeaturedCaseStudy project={featuredProject} locale="en" />
-      <ProcessSection locale="en" />
       <HomePluginsSection locale="en" />
+      <HomeAuthoritySection locale="en" />
       <CTASection locale="en" />
     </main>
   )
